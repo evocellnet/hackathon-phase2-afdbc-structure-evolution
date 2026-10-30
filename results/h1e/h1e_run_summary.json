@@ -1,0 +1,301 @@
+{
+ "run": {
+  "orthoxml": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/data/interim/ancestra_euk180/ancestra/hogs.orthoxml",
+  "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+  "threads": 40,
+  "max_chains": null,
+  "n_shards": 2,
+  "steps": {
+   "chains": {
+    "s": 84.3,
+    "n_orthoxml_genes": 3460494,
+    "n_qualifying": 2389,
+    "vs_pdb_chains_post_af2": {
+     "table_xray_qualifies": 1918,
+     "both": 1918,
+     "only_table": 0,
+     "only_rule": 471,
+     "only_rule_table_row_is_EM": 275,
+     "only_rule_table_qualifies_null": 197
+    }
+   },
+   "pairs": {
+    "s": 5.0,
+    "label_counts": {
+     "candidate": 956,
+     "ortholog_o2o0": 370,
+     "ortholog_o2o1": 204,
+     "out_paralog_o2o0": 382
+    },
+    "n_pairs_1to1": 204,
+    "n_by_set": {
+     "h1e_af": 204,
+     "h1e_pdb": 204,
+     "h1e_afpdb": 366
+    },
+    "n_genes": 366
+   },
+   "fetch": {
+    "s": 133.3,
+    "n": 366,
+    "n_ok": 361,
+    "chains_per_s": 2.746,
+    "failures": {
+     "FAIL: [Errno 2] No such file or directory: '/scratch/spascar": 5
+    }
+   },
+   "af": {
+    "s": 6.8,
+    "n_requested": 366,
+    "n_local_foldcomp": 366,
+    "n_remote_fetched": 0,
+    "n_available": 366,
+    "n_without_afdb_v4": 0
+   },
+   "store": {
+    "s": 1.8,
+    "n_input": 727,
+    "n_store": 727,
+    "n_store_by_kind": {
+     "af": 366,
+     "pdb": 361
+    },
+    "n_rejected": 0,
+    "rejected_by_reason": {},
+    "n_residues": 225189,
+    "n_entries_with_noCA_residues": 1,
+    "pdb_pseudo_plddt": 100.0,
+    "t_createdb_s": 0.4,
+    "t_total_s": 1.8
+   },
+   "run_seqonly_tdiaa": {
+    "s": 7.6,
+    "n_pairs": 774,
+    "pairs_per_s": 102.05
+   },
+   "run_tmalign": {
+    "s": 7.3,
+    "n_pairs": 774,
+    "pairs_per_s": 105.35
+   }
+  }
+ },
+ "pairs_by_species_pair": {
+  "9606-10090": 92,
+  "237561-559292": 21,
+  "9606-559292": 11,
+  "237561-330879": 5,
+  "284812-559292": 5,
+  "3702-9606": 4,
+  "5664-185431": 3,
+  "5661-9606": 3,
+  "9606-284812": 3,
+  "9544-9606": 2,
+  "9606-1257118": 2,
+  "5671-185431": 2,
+  "3702-39947": 2,
+  "3702-559292": 2,
+  "9606-235443": 2,
+  "9606-36329": 2,
+  "36329-126793": 2,
+  "10090-559292": 2,
+  "9544-10090": 1,
+  "330879-367110": 1,
+  "214684-367110": 1,
+  "235443-367110": 1,
+  "214684-235443": 1,
+  "5664-9606": 1,
+  "10090-45351": 1,
+  "5661-10090": 1,
+  "10090-1257118": 1,
+  "284812-367110": 1,
+  "185431-559292": 1,
+  "7227-9606": 1,
+  "235443-559292": 1,
+  "5661-559292": 1,
+  "5661-235443": 1,
+  "3702-235443": 1,
+  "3702-5661": 1,
+  "185431-353153": 1,
+  "6239-559292": 1,
+  "353153-403677": 1,
+  "7719-9606": 1,
+  "7719-10090": 1,
+  "9606-184922": 1,
+  "237561-367110": 1,
+  "10090-284812": 1,
+  "36329-559292": 1,
+  "36329-330879": 1,
+  "4556-39947": 1,
+  "7227-36329": 1,
+  "5763-330879": 1,
+  "5763-237561": 1,
+  "10090-36329": 1,
+  "331117-353153": 1,
+  "5851-126793": 1,
+  "9606-185431": 1,
+  "36329-353153": 1,
+  "5270-403677": 1,
+  "6239-9606": 1,
+  "3702-237561": 1
+ },
+ "n_pairs_by_set": {
+  "h1e_af": 204,
+  "h1e_pdb": 204,
+  "h1e_afpdb": 366
+ },
+ "status": {
+  "seqonly": {
+   "h1e_af": {
+    "ok": 203,
+    "fail_core": 1
+   },
+   "h1e_afpdb": {
+    "ok": 361,
+    "fail_align": 5
+   },
+   "h1e_pdb": {
+    "ok": 198,
+    "fail_core": 1,
+    "fail_align": 5
+   }
+  },
+  "tdiaa": {
+   "h1e_afpdb": {
+    "ok": 361,
+    "fail_align": 5
+   },
+   "h1e_af": {
+    "ok": 203,
+    "fail_cov": 1
+   },
+   "h1e_pdb": {
+    "ok": 198,
+    "fail_cov": 1,
+    "fail_align": 5
+   }
+  },
+  "tmalign": {
+   "h1e_af": {
+    "ok": 204
+   },
+   "h1e_afpdb": {
+    "ok": 360,
+    "fail_align": 5,
+    "fail_cov": 1
+   },
+   "h1e_pdb": {
+    "ok": 198,
+    "fail_cov": 1,
+    "fail_align": 5
+   }
+  }
+ },
+ "medians": {
+  "seqonly": {
+   "h1e_afpdb": {
+    "aa_ml": 0.0,
+    "tdi_ml": 0.2657,
+    "lddt_global": 0.9565,
+    "tm_short": null,
+    "n_core": 267.0,
+    "n_ok": 361
+   },
+   "h1e_pdb": {
+    "aa_ml": 0.2917,
+    "tdi_ml": 0.3893,
+    "lddt_global": 0.9041,
+    "tm_short": null,
+    "n_core": 276.0,
+    "n_ok": 198
+   },
+   "h1e_af": {
+    "aa_ml": 0.282,
+    "tdi_ml": 0.1691,
+    "lddt_global": 0.9407,
+    "tm_short": null,
+    "n_core": 278.0,
+    "n_ok": 203
+   }
+  },
+  "tdiaa": {
+   "h1e_afpdb": {
+    "aa_ml": 0.0,
+    "tdi_ml": 0.2649,
+    "lddt_global": 0.9547,
+    "tm_short": 0.9808,
+    "n_core": 267.0,
+    "n_ok": 361
+   },
+   "h1e_pdb": {
+    "aa_ml": 0.2936,
+    "tdi_ml": 0.3626,
+    "lddt_global": 0.9009,
+    "tm_short": 0.9581,
+    "n_core": 273.5,
+    "n_ok": 198
+   },
+   "h1e_af": {
+    "aa_ml": 0.282,
+    "tdi_ml": 0.1662,
+    "lddt_global": 0.9416,
+    "tm_short": 0.9252,
+    "n_core": 278.0,
+    "n_ok": 203
+   }
+  },
+  "tmalign": {
+   "h1e_afpdb": {
+    "aa_ml": 0.0,
+    "tdi_ml": 0.2645,
+    "lddt_global": 0.9559,
+    "tm_short": 0.982,
+    "n_core": 261.0,
+    "n_ok": 360
+   },
+   "h1e_pdb": {
+    "aa_ml": 0.3208,
+    "tdi_ml": 0.3819,
+    "lddt_global": 0.905,
+    "tm_short": 0.9645,
+    "n_core": 270.0,
+    "n_ok": 198
+   },
+   "h1e_af": {
+    "aa_ml": 0.3163,
+    "tdi_ml": 0.17,
+    "lddt_global": 0.9186,
+    "tm_short": 0.9374,
+    "n_core": 278.0,
+    "n_ok": 204
+   }
+  }
+ },
+ "paired_pdb_minus_af": {
+  "seqonly": {
+   "n": 198,
+   "aa_ml": 0.0007,
+   "tdi_ml": 0.1687,
+   "lddt_global": -0.0162
+  },
+  "tdiaa": {
+   "n": 198,
+   "aa_ml": 0.0011,
+   "tdi_ml": 0.1441,
+   "lddt_global": -0.0166
+  },
+  "tmalign": {
+   "n": 198,
+   "aa_ml": 0.0056,
+   "tdi_ml": 0.1579,
+   "lddt_global": -0.0081
+  }
+ },
+ "eta_full_run": {
+  "note": "linear scaling of measured per-item rates; euk180 counts from --plan-only if available",
+  "fetch_s": 133,
+  "af_store_s": 9,
+  "pairs_s": 15,
+  "total_s": 157
+ }
+}

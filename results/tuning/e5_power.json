@@ -1,0 +1,200 @@
+{
+  "step": "e5_power",
+  "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+  "split_md5": "29da378aec763731b728b38fa262941f",
+  "split_used": "tune",
+  "date": "2026-10-30 18:20:40 CET",
+  "args": {
+    "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+    "aln": "tdiaa",
+    "min_t_snr": 8.0,
+    "min_hogs": 50,
+    "min_lineages": 5,
+    "fs": [
+      1.5,
+      1.25,
+      2.0,
+      1.0
+    ],
+    "reps": 50,
+    "B": 200,
+    "P": 100,
+    "B_cv": 200,
+    "e4_B": 20,
+    "syn_hogs": 1400,
+    "skip_synthetic": false
+  },
+  "threads": {
+    "omp": "2",
+    "torch": 2
+  },
+  "tau_misfit_used": 3.0,
+  "noise": {
+    "summary": {
+      "kappa_aa": 1.4364403110245927,
+      "kappa_tdi": 1.1740163340266854,
+      "rho_tdi": 0.29399403773036403,
+      "eta_tdi": 0.05240013804330884,
+      "nu_tdi": 0.02620006902165442,
+      "tip_sd": 0.028161139877063104,
+      "alpha": {
+        "aa": 1.64,
+        "tdi": 1.6
+      }
+    },
+    "provisional": [],
+    "sources": {
+      "kappa": "results/tuning/se_calibration.json",
+      "rho": "results/tuning/se_calibration.json",
+      "eta": "results/tuning/floors_tuned.json",
+      "tip_sd": "floors.json floor_ident tdi_ml (q95-q05)/3.29/sqrt2 (upper bound)",
+      "alpha": "results/tuning/alpha.json"
+    }
+  },
+  "real_tune": {
+    "label": "real_tune",
+    "n_hogs": 1225,
+    "n_lineages": 106,
+    "n_lineages_without_D8": 182,
+    "n_contrasts_kept": 98,
+    "e4_beta": -0.13382722807059969,
+    "e4_flags": [
+      "censored_cells_gt2pct:0.030"
+    ],
+    "floor_F": 0.019510588613845536,
+    "sigma2_obs": 0.08150939921518191,
+    "sigma2_L": 0.06199881060133637,
+    "sigma_L_upper99": 0.44204169983202785,
+    "beta_contrast": 0.5660327550835694,
+    "beta_ci98": [
+      -0.47187991815254204,
+      1.603945428319681
+    ],
+    "beta_ci98_hog_only": [
+      -0.039637987012815845,
+      1.1717034971799547
+    ],
+    "n_contrasts": 98,
+    "power": {
+      "f=1.5": {
+        "detect_rate": 0.24,
+        "accept_rate": 0.0,
+        "reps": 50,
+        "runtime_s": 15.150491714477539
+      },
+      "f=1.25": {
+        "detect_rate": 0.08,
+        "accept_rate": 0.0,
+        "reps": 50,
+        "runtime_s": 15.043880224227905
+      },
+      "f=2.0": {
+        "detect_rate": 0.6,
+        "accept_rate": 0.0,
+        "reps": 50,
+        "runtime_s": 15.150099754333496
+      },
+      "f=1.0": {
+        "detect_rate": 0.18,
+        "accept_rate": 0.0,
+        "reps": 50,
+        "runtime_s": 15.043081998825073
+      }
+    },
+    "status": "ok",
+    "runtime_s": 98.6430435180664,
+    "fit_info": {
+      "panel": {
+        "n_nodes": 303,
+        "n_leaves": 180,
+        "age_filled": [
+          "N003",
+          "N004",
+          "N005",
+          "N036",
+          "N105",
+          "N117"
+        ],
+        "n_no_ci": 15
+      },
+      "branch_fit_s": 5.316086769104004,
+      "metrics": [
+        "aa_ml",
+        "tdi_ml"
+      ],
+      "n_hogs": 1400,
+      "n_pairs": 220104
+    }
+  },
+  "synthetic": {
+    "label": "synthetic_prod_tune_size",
+    "n_hogs": 1400,
+    "n_lineages": 88,
+    "n_lineages_without_D8": 145,
+    "n_contrasts_kept": 86,
+    "e4_beta": 0.004222148029073519,
+    "e4_flags": [
+      "re_slope_fallback"
+    ],
+    "floor_F": 0.005737028422117349,
+    "sigma2_obs": 0.006530085695239342,
+    "sigma2_L": 0.0007930572731219936,
+    "sigma_L_upper99": 0.0975347437989955,
+    "beta_contrast": 1.2319054707816761,
+    "beta_ci98": [
+      -3.1534373748095543,
+      5.617248316372907
+    ],
+    "beta_ci98_hog_only": [
+      0.01020085402913562,
+      2.4536100875342166
+    ],
+    "n_contrasts": 85,
+    "power": {
+      "f=1.5": {
+        "detect_rate": 0.62,
+        "accept_rate": 0.0,
+        "reps": 50,
+        "runtime_s": 12.916046619415283
+      },
+      "f=1.25": {
+        "detect_rate": 0.0,
+        "accept_rate": 0.0,
+        "reps": 50,
+        "runtime_s": 12.918524265289307
+      },
+      "f=2.0": {
+        "detect_rate": 1.0,
+        "accept_rate": 0.0,
+        "reps": 50,
+        "runtime_s": 12.932482719421387
+      },
+      "f=1.0": {
+        "detect_rate": 0.0,
+        "accept_rate": 0.0,
+        "reps": 50,
+        "runtime_s": 12.918006181716919
+      }
+    },
+    "status": "ok",
+    "runtime_s": 92.90507340431213,
+    "world": {
+      "n_hogs": 1400,
+      "n_pairs": 143599,
+      "panel": "real panel tree",
+      "truth": "N0 (b_3Di = r_h b_AA), lineage AA-rate SD 0.3, HOG-edge SD 0.2 (synth.make_world defaults)",
+      "build_fit_s": 6.476691484451294
+    }
+  },
+  "power_source": "real_tune",
+  "yaml": {
+    "power_f1.5": 0.24,
+    "power_f1.25": 0.08,
+    "power_f2": 0.6,
+    "null_rate_f1": 0.18,
+    "p_accept_f1.5": 0.0,
+    "min_t_snr": 8.0
+  },
+  "flags": [],
+  "runtime_s": 206.30277824401855
+}

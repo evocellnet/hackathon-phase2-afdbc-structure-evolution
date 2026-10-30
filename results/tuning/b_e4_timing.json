@@ -1,0 +1,93 @@
+{
+  "step": "b_e4_timing",
+  "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+  "split_md5": "29da378aec763731b728b38fa262941f",
+  "split_used": "tune",
+  "date": "2026-10-30 18:15:52 CET",
+  "args": {
+    "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+    "aln": "tdiaa",
+    "b1": 2,
+    "b2": 12,
+    "prod_hogs": 5600,
+    "prod_b2": 7,
+    "budget_s": 3600.0,
+    "skip_prod": false
+  },
+  "threads": {
+    "omp": "2",
+    "torch": 2
+  },
+  "tau_misfit_used": 3.0,
+  "tune": {
+    "per_rep_s": 0.17051146030426026,
+    "point_s": 24.207994508743287,
+    "t_B1_s": 24.549017429351807,
+    "t_B2_s": 26.25413203239441,
+    "B1": 2,
+    "B2": 12,
+    "n_hogs": 1225,
+    "n_cells": 1658,
+    "beta": -0.13382722807059969,
+    "se_boot_smallB": 0.046452253031664316,
+    "flags": [
+      "censored_cells_gt2pct:0.030"
+    ],
+    "fit_info": {
+      "panel": {
+        "n_nodes": 303,
+        "n_leaves": 180,
+        "age_filled": [
+          "N003",
+          "N004",
+          "N005",
+          "N036",
+          "N105",
+          "N117"
+        ],
+        "n_no_ci": 15
+      },
+      "branch_fit_s": 5.348778247833252,
+      "metrics": [
+        "aa_ml",
+        "tdi_ml"
+      ],
+      "n_hogs": 1400,
+      "n_pairs": 220104
+    },
+    "projected_total_s": {
+      "1000": 297.0263309955597,
+      "500": 160.6171627521515,
+      "200": 78.77166180610656
+    }
+  },
+  "production_scale": {
+    "per_rep_s": 0.8316396713256836,
+    "point_s": 98.91635508537293,
+    "t_B1_s": 100.57963442802429,
+    "t_B2_s": 104.73783278465271,
+    "B1": 2,
+    "B2": 7,
+    "n_hogs": 5600,
+    "n_cells": 7476,
+    "beta": -0.00042665896127315624,
+    "se_boot_smallB": 0.008895070259245826,
+    "flags": [
+      "re_slope_fallback"
+    ],
+    "n_pairs": 565685,
+    "world_s": 6.239515066146851,
+    "branch_fit_s": 14.265764713287354,
+    "panel": "real panel tree (ROOT/data/interim/timetree), ages NA-filled",
+    "projected_total_s": {
+      "1000": 1429.5398292064667,
+      "500": 764.2280921459198,
+      "200": 365.04104990959166
+    }
+  },
+  "basis": "production_scale",
+  "B_E4": 1000,
+  "rule": "largest of {1000,500,200} with point + (B + 3*max(20,B//5)) * per_rep <= budget_s (per alignment)",
+  "note": "timed with OMP/torch threads = 2 on a shared node; production uses 48 threads (fast REML is numpy/BLAS-bound, so 48 threads can only be faster); the main + 2 sensitivity alignments run sequentially -> 3x per endpoint run",
+  "runtime_s": 284.98979783058167
+}

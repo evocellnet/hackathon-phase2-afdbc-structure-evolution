@@ -1,0 +1,97 @@
+{
+  "step": "tau_misfit",
+  "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+  "split_md5": "29da378aec763731b728b38fa262941f",
+  "split_used": "tune",
+  "date": "2026-10-30 18:15:49 CET",
+  "args": {
+    "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+    "aln": "tdiaa",
+    "reps": 50
+  },
+  "threads": {
+    "omp": "2",
+    "torch": 2
+  },
+  "tau_misfit": 3.0,
+  "rule": "max(3, q95 of simulated misfit_ratio)",
+  "q95_sim": 1.3096660156705173,
+  "sim_quantiles": {
+    "0.5": 1.0281355176315459,
+    "0.9": 1.1990247335276853,
+    "0.95": 1.3096660156705173,
+    "0.99": 1.6533768671338118
+  },
+  "n_sim": 68900,
+  "reps_per_hog": 50,
+  "n_hogs_sim": 1378,
+  "n_skip": {
+    "underdetermined": 22,
+    "lt4_species": 0
+  },
+  "per_hog_q95_quantiles": {
+    "0.05": 1.035681028616161,
+    "0.5": 1.1393646134503443,
+    "0.95": 1.6393509868594067
+  },
+  "observed": {
+    "n": 1378,
+    "quantiles": {
+      "0.05": 0.9893309686186084,
+      "0.25": 1.1136736054048963,
+      "0.5": 1.3334564654465084,
+      "0.75": 1.8142221343781173,
+      "0.95": 4.828645736272661,
+      "0.99": 23.853663440037373
+    },
+    "max": 315.58108637266537,
+    "frac_gt_3": 0.09941944847605225,
+    "frac_excluded_at_tau": 0.09941944847605225,
+    "n_excluded_at_tau": 137,
+    "frac_obs_gt_own_sim_q95": 0.7031930333817126
+  },
+  "noise": {
+    "kappa": "results/tuning/se_calibration.json",
+    "s2_hm": "per-HOG two-pass s2 (branch engine)",
+    "provisional": [],
+    "summary": {
+      "kappa_aa": 1.4364403110245927,
+      "kappa_tdi": 1.1740163340266854,
+      "rho_tdi": 0.29399403773036403,
+      "eta_tdi": 0.05240013804330884,
+      "nu_tdi": 0.02620006902165442,
+      "tip_sd": 0.028161139877063104,
+      "alpha": {
+        "aa": 1.64,
+        "tdi": 1.6
+      }
+    }
+  },
+  "fit_info": {
+    "panel": {
+      "n_nodes": 303,
+      "n_leaves": 180,
+      "age_filled": [
+        "N003",
+        "N004",
+        "N005",
+        "N036",
+        "N105",
+        "N117"
+      ],
+      "n_no_ci": 15
+    },
+    "branch_fit_s": 5.238879442214966,
+    "metrics": [
+      "aa_ml",
+      "tdi_ml"
+    ],
+    "n_hogs": 1400,
+    "n_pairs": 220104
+  },
+  "runtime_s": {
+    "total": 113.2034764289856,
+    "simulation": 104.84746432304382,
+    "per_hog_sim_s": 0.0760866939935006
+  }
+}
