@@ -19,3 +19,4 @@ results/data_scout/*taxspan.parquet
 # panel per-protein tables (190 MB; regenerable with scripts/panel/extract_structures.py)
 data/processed/panel/protein_table*.parquet
 data/processed/pclu/
+data/processed/annotations/

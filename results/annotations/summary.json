@@ -1,0 +1,584 @@
+{
+ "definitions": {
+  "ted_has_domain": "protein has >=1 TED v1 domain (high or medium consensus) on its AFDB v4 model",
+  "ted_class": "CATH class (alpha=1, beta=2, alphabeta=3) covering >=60% of TED-domain residues (unlabelled domains stay in denominator), else mixed; none = modelled but no TED domain; no_model = no AFDB v4 model",
+  "afdb_in_cluster": "repId of file 5 is a cluster of AFDB v3 file 2 (non-singleton Foldseek cluster; includes AFDB50 non-representative members and clustered fragments)",
+  "denominators": "pct_of_modelled_* use proteins with an AFDB v4 model; pct_of_afdb_entries_* use proteins present in AFDB v3 file 5"
+ },
+ "all": {
+  "n_proteins": 3738038,
+  "n_with_v4_model": 3565866,
+  "pct_with_v4_model": 95.39405431405459,
+  "pct_of_modelled_with_ted_domain": 89.72810531859582,
+  "pct_of_modelled_with_cath_label": 69.73677642401593,
+  "ted_n_domains_mean_modelled": 1.6510412898297355,
+  "ted_frac_in_domain_mean_modelled": 0.5742129590666016,
+  "class_distribution_pct_of_modelled": {
+   "beta": 9.648680012092434,
+   "alpha": 19.15700141284053,
+   "none": 10.27189468140418,
+   "alphabeta": 25.57793815022774,
+   "mixed": 35.344485743435115
+  },
+  "class_labeled_distribution_pct_of_modelled": {
+   "beta": 11.170330012400914,
+   "alpha": 24.036377138120166,
+   "none": 10.27189468140418,
+   "alphabeta": 29.063234569106076,
+   "unlabeled": 19.991328894579887,
+   "mixed": 5.46683470438878
+  },
+  "pct_of_modelled_ted_proteins_with_all_domains_unlabeled": 19.991328894579887,
+  "class_distribution_pct_of_ted_proteins": {
+   "beta": 10.753241671417284,
+   "alpha": 21.35005675737846,
+   "alphabeta": 28.506049536439736,
+   "mixed": 39.39065203476452
+  },
+  "pct_of_all_in_afdb_cluster_entry": 95.395177898138,
+  "pct_of_afdb_entries_in_nonsingleton_cluster": 80.67148675737008,
+  "pct_of_all_in_nonsingleton_cluster": 76.95670830526602,
+  "afdb_cluflag_counts": {
+   "1": 2129291,
+   "2": 880946,
+   "3": 119019,
+   "4": 436652
+  },
+  "cluster_nmem_median": 62.0,
+  "cluster_nmem_p90": 815.0,
+  "pct_in_dark_cluster": 5.156411699495702,
+  "lca_group_pct_of_clustered": {
+   "cellular_organisms": 54.537971147899775,
+   "root_other": 0.006013895923447624,
+   "Archaea": 0.3039276997612866,
+   "Bacteria": 1.3114116977575816,
+   "Eukaryota": 43.84067555865791
+  },
+  "lca_rank_pct_of_clustered": {
+   "cellular root": 54.537971147899775,
+   "domain": 27.160248773669288,
+   "clade": 11.778719220932807,
+   "kingdom": 1.1247375873014327,
+   "genus": 0.9669510347203417,
+   "phylum": 0.8343324627668579,
+   "species": 0.7568123014414926,
+   "class": 0.7400568226258756
+  },
+  "pct_with_pfam_hit": 62.33264616357565,
+  "pfam_n_regions_mean_among_hits": 1.956341109811169,
+  "pct_pfam_hit_md5_matches_2026": 99.8009028256434,
+  "pct_with_ted_or_pfam_modelled": 92.64397484369856
+ },
+ "euk": {
+  "n_proteins": 3460494,
+  "n_with_v4_model": 3290300,
+  "pct_with_v4_model": 95.08180045970315,
+  "pct_of_modelled_with_ted_domain": 89.16873841291067,
+  "pct_of_modelled_with_cath_label": 68.90560131295018,
+  "ted_n_domains_mean_modelled": 1.6416317661003557,
+  "ted_frac_in_domain_mean_modelled": 0.5564133324288534,
+  "class_distribution_pct_of_modelled": {
+   "beta": 9.751512020180531,
+   "alpha": 19.598820776221014,
+   "none": 10.831261587089323,
+   "alphabeta": 24.038203203355316,
+   "mixed": 35.780202413153816
+  },
+  "class_labeled_distribution_pct_of_modelled": {
+   "beta": 11.276479348387685,
+   "alpha": 24.648147585326566,
+   "none": 10.831261587089323,
+   "alphabeta": 27.511260371394705,
+   "unlabeled": 20.26313709996049,
+   "mixed": 5.4697140078412305
+  },
+  "pct_of_modelled_ted_proteins_with_all_domains_unlabeled": 20.26313709996049,
+  "class_distribution_pct_of_ted_proteins": {
+   "beta": 10.93602106942966,
+   "alpha": 21.979475234319693,
+   "alphabeta": 26.958106205386038,
+   "mixed": 40.126397490864605
+  },
+  "pct_of_all_in_afdb_cluster_entry": 95.0830141592501,
+  "pct_of_afdb_entries_in_nonsingleton_cluster": 79.8157152052887,
+  "pct_of_all_in_nonsingleton_cluster": 75.89118778995137,
+  "afdb_cluflag_counts": {
+   "1": 1937805,
+   "2": 815195,
+   "3": 118356,
+   "4": 418986
+  },
+  "cluster_nmem_median": 56.0,
+  "cluster_nmem_p90": 616.0,
+  "pct_in_dark_cluster": 5.189455527166525,
+  "lca_group_pct_of_clustered": {
+   "cellular_organisms": 51.891432901405445,
+   "Eukaryota": 48.019846089992804,
+   "Bacteria": 0.08083892758004882,
+   "root_other": 0.006130507461322591,
+   "Archaea": 0.001751573560377883
+  },
+  "lca_rank_pct_of_clustered": {
+   "cellular root": 51.891432901405445,
+   "domain": 28.58994520620971,
+   "clade": 12.88194774979914,
+   "kingdom": 1.192745439245148,
+   "genus": 0.9913144798016914,
+   "species": 0.81436747251743,
+   "phylum": 0.7641049268718039,
+   "class": 0.7167362853694107
+  },
+  "pct_with_pfam_hit": 61.94095409499337,
+  "pfam_n_regions_mean_among_hits": 1.987222079410748,
+  "pct_pfam_hit_md5_matches_2026": 99.80144280540415,
+  "pct_with_ted_or_pfam_modelled": 92.25803118256694
+ },
+ "prok": {
+  "n_proteins": 277544,
+  "n_with_v4_model": 275566,
+  "pct_with_v4_model": 99.28732020868763,
+  "pct_of_modelled_with_ted_domain": 96.40703134639251,
+  "pct_of_modelled_with_cath_label": 79.66113381186358,
+  "ted_n_domains_mean_modelled": 1.7633924359318638,
+  "ted_frac_in_domain_mean_modelled": 0.7867432114423768,
+  "class_distribution_pct_of_modelled": {
+   "mixed": 30.141962361104056,
+   "alpha": 13.881610938940218,
+   "alphabeta": 43.96260786889529,
+   "none": 3.592968653607484,
+   "beta": 8.420850177452952
+  },
+  "class_labeled_distribution_pct_of_modelled": {
+   "alpha": 16.731744845155063,
+   "mixed": 5.432455382739525,
+   "alphabeta": 47.59404280644201,
+   "beta": 9.90289077752698,
+   "none": 3.592968653607484,
+   "unlabeled": 16.745897534528932
+  },
+  "pct_of_modelled_ted_proteins_with_all_domains_unlabeled": 16.745897534528932,
+  "class_distribution_pct_of_ted_proteins": {
+   "alphabeta": 45.601038902377056,
+   "mixed": 31.26531534074869,
+   "alpha": 14.398961097622946,
+   "beta": 8.734684659251313
+  },
+  "pct_of_all_in_afdb_cluster_entry": 99.28732020868763,
+  "pct_of_afdb_entries_in_nonsingleton_cluster": 90.88965982740976,
+  "pct_of_all_in_nonsingleton_cluster": 90.24190758942726,
+  "afdb_cluflag_counts": {
+   "1": 191486,
+   "2": 65751,
+   "3": 663,
+   "4": 17666
+  },
+  "cluster_nmem_median": 317.0,
+  "cluster_nmem_p90": 3285.0,
+  "pct_in_dark_cluster": 4.809930488179797,
+  "lca_group_pct_of_clustered": {
+   "cellular_organisms": 82.28826044773437,
+   "Bacteria": 14.214588299176318,
+   "Eukaryota": 0.01996318788154643,
+   "Archaea": 3.472396900116186,
+   "root_other": 0.004791165091571143
+  },
+  "lca_rank_pct_of_clustered": {
+   "cellular root": 82.28826044773437,
+   "domain": 12.169160068833072,
+   "phylum": 1.570703622520073,
+   "class": 0.9845844263178698,
+   "family": 0.8544244413301871,
+   "genus": 0.7114880160983147,
+   "order": 0.47632166285369776,
+   "kingdom": 0.41164093411748737
+  },
+  "pct_with_pfam_hit": 67.21636929639985,
+  "pfam_n_regions_mean_among_hits": 1.6015276996060144,
+  "pct_pfam_hit_md5_matches_2026": 99.79469861434966,
+  "pct_with_ted_or_pfam_modelled": 97.25220092464238
+ },
+ "Eukaryota": {
+  "n_proteins": 3460494,
+  "n_with_v4_model": 3290300,
+  "pct_with_v4_model": 95.08180045970315,
+  "pct_of_modelled_with_ted_domain": 89.16873841291067,
+  "pct_of_modelled_with_cath_label": 68.90560131295018,
+  "ted_n_domains_mean_modelled": 1.6416317661003557,
+  "ted_frac_in_domain_mean_modelled": 0.5564133324288534,
+  "class_distribution_pct_of_modelled": {
+   "beta": 9.751512020180531,
+   "alpha": 19.598820776221014,
+   "none": 10.831261587089323,
+   "alphabeta": 24.038203203355316,
+   "mixed": 35.780202413153816
+  },
+  "class_labeled_distribution_pct_of_modelled": {
+   "beta": 11.276479348387685,
+   "alpha": 24.648147585326566,
+   "none": 10.831261587089323,
+   "alphabeta": 27.511260371394705,
+   "unlabeled": 20.26313709996049,
+   "mixed": 5.4697140078412305
+  },
+  "pct_of_modelled_ted_proteins_with_all_domains_unlabeled": 20.26313709996049,
+  "class_distribution_pct_of_ted_proteins": {
+   "beta": 10.93602106942966,
+   "alpha": 21.979475234319693,
+   "alphabeta": 26.958106205386038,
+   "mixed": 40.126397490864605
+  },
+  "pct_of_all_in_afdb_cluster_entry": 95.0830141592501,
+  "pct_of_afdb_entries_in_nonsingleton_cluster": 79.8157152052887,
+  "pct_of_all_in_nonsingleton_cluster": 75.89118778995137,
+  "afdb_cluflag_counts": {
+   "1": 1937805,
+   "2": 815195,
+   "3": 118356,
+   "4": 418986
+  },
+  "cluster_nmem_median": 56.0,
+  "cluster_nmem_p90": 616.0,
+  "pct_in_dark_cluster": 5.189455527166525,
+  "lca_group_pct_of_clustered": {
+   "Bacteria": 0.08083892758004882,
+   "Eukaryota": 48.019846089992804,
+   "cellular_organisms": 51.891432901405445,
+   "root_other": 0.006130507461322591,
+   "Archaea": 0.001751573560377883
+  },
+  "lca_rank_pct_of_clustered": {
+   "cellular root": 51.891432901405445,
+   "domain": 28.58994520620971,
+   "clade": 12.88194774979914,
+   "kingdom": 1.192745439245148,
+   "genus": 0.9913144798016914,
+   "species": 0.81436747251743,
+   "phylum": 0.7641049268718039,
+   "class": 0.7167362853694107
+  },
+  "pct_with_pfam_hit": 61.94095409499337,
+  "pfam_n_regions_mean_among_hits": 1.987222079410748,
+  "pct_pfam_hit_md5_matches_2026": 99.80144280540415,
+  "pct_with_ted_or_pfam_modelled": 92.25803118256694
+ },
+ "Bacteria": {
+  "n_proteins": 199708,
+  "n_with_v4_model": 198197,
+  "pct_with_v4_model": 99.24339535722154,
+  "pct_of_modelled_with_ted_domain": 96.0963082185906,
+  "pct_of_modelled_with_cath_label": 79.72219559327336,
+  "ted_n_domains_mean_modelled": 1.790133049440708,
+  "ted_frac_in_domain_mean_modelled": 0.77523325707025,
+  "class_distribution_pct_of_modelled": {
+   "alphabeta": 43.37351221259656,
+   "none": 3.903691781409406,
+   "mixed": 30.101363794608396,
+   "alpha": 13.691932773957225,
+   "beta": 8.929499437428417
+  },
+  "class_labeled_distribution_pct_of_modelled": {
+   "alphabeta": 47.05116626386878,
+   "none": 3.903691781409406,
+   "unlabeled": 16.374112625317235,
+   "alpha": 16.495204266462157,
+   "mixed": 5.721580044097539,
+   "beta": 10.454245018844887
+  },
+  "pct_of_modelled_ted_proteins_with_all_domains_unlabeled": 16.374112625317235,
+  "class_distribution_pct_of_ted_proteins": {
+   "alphabeta": 45.13546151422871,
+   "mixed": 31.324162553817075,
+   "alpha": 14.248136091567783,
+   "beta": 9.292239840386433
+  },
+  "pct_of_all_in_afdb_cluster_entry": 99.24339535722154,
+  "pct_of_afdb_entries_in_nonsingleton_cluster": 91.26727447943207,
+  "pct_of_all_in_nonsingleton_cluster": 90.57674204338333,
+  "afdb_cluflag_counts": {
+   "1": 135520,
+   "2": 49545,
+   "3": 599,
+   "4": 12533
+  },
+  "cluster_nmem_median": 384.0,
+  "cluster_nmem_p90": 3563.0,
+  "pct_in_dark_cluster": 4.10693850925153,
+  "lca_group_pct_of_clustered": {
+   "cellular_organisms": 80.36862385219665,
+   "Bacteria": 19.611474440126266,
+   "Eukaryota": 0.016031931184317453,
+   "Archaea": 0.000552825213252326,
+   "root_other": 0.003316951279513956
+  },
+  "lca_rank_pct_of_clustered": {
+   "cellular root": 80.36862385219665,
+   "domain": 14.899745147576692,
+   "phylum": 1.4036232164476556,
+   "class": 0.7861174532448076,
+   "genus": 0.6694713332485668,
+   "family": 0.5771495226354284,
+   "order": 0.42788671505730036,
+   "kingdom": 0.2719900049201444
+  },
+  "pct_with_pfam_hit": 71.77629338834699,
+  "pfam_n_regions_mean_among_hits": 1.6315132235267853,
+  "pct_pfam_hit_md5_matches_2026": 99.99790711789205,
+  "pct_with_ted_or_pfam_modelled": 97.03577753447328
+ },
+ "Archaea": {
+  "n_proteins": 77836,
+  "n_with_v4_model": 77369,
+  "pct_with_v4_model": 99.4000205560409,
+  "pct_of_modelled_with_ted_domain": 97.20301412710516,
+  "pct_of_modelled_with_cath_label": 79.504711189236,
+  "ted_n_domains_mean_modelled": 1.6948907185048274,
+  "ted_frac_in_domain_mean_modelled": 0.8162283854357384,
+  "class_distribution_pct_of_modelled": {
+   "none": 2.7969858728948287,
+   "alphabeta": 45.47170055190063,
+   "mixed": 30.24596414584653,
+   "beta": 7.117837893730047,
+   "alpha": 14.367511535627965
+  },
+  "class_labeled_distribution_pct_of_modelled": {
+   "alphabeta": 48.98473548837389,
+   "alpha": 17.337693391409996,
+   "unlabeled": 17.698302937869173,
+   "none": 2.7969858728948287,
+   "beta": 8.490480683477879,
+   "mixed": 4.691801625974227
+  },
+  "pct_of_modelled_ted_proteins_with_all_domains_unlabeled": 17.698302937869173,
+  "class_distribution_pct_of_ted_proteins": {
+   "alphabeta": 46.78013429958114,
+   "alpha": 14.780932118875075,
+   "mixed": 31.116282162090286,
+   "beta": 7.322651419453494
+  },
+  "pct_of_all_in_afdb_cluster_entry": 99.4000205560409,
+  "pct_of_afdb_entries_in_nonsingleton_cluster": 89.92232030916776,
+  "pct_of_all_in_nonsingleton_cluster": 89.3828048717817,
+  "afdb_cluflag_counts": {
+   "1": 55966,
+   "2": 16206,
+   "3": 64,
+   "4": 5133
+  },
+  "cluster_nmem_median": 191.0,
+  "cluster_nmem_p90": 2599.0,
+  "pct_in_dark_cluster": 6.6377278215374,
+  "lca_group_pct_of_clustered": {
+   "cellular_organisms": 87.27936526188697,
+   "Archaea": 12.499281320071294,
+   "Bacteria": 0.18254470189156558,
+   "Eukaryota": 0.030184557005691944,
+   "root_other": 0.008624159144483412
+  },
+  "lca_rank_pct_of_clustered": {
+   "cellular root": 87.27936526188697,
+   "domain": 5.0695682170988325,
+   "phylum": 2.0051170010923935,
+   "family": 1.5753464037256368,
+   "class": 1.500603691140114,
+   "genus": 0.8207324785833381,
+   "kingdom": 0.7747369631460933,
+   "order": 0.602253780256425
+  },
+  "pct_with_pfam_hit": 55.516727478287685,
+  "pfam_n_regions_mean_among_hits": 1.5020596130704433,
+  "pct_pfam_hit_md5_matches_2026": 99.12061464408035,
+  "pct_with_ted_or_pfam_modelled": 97.80661505254042
+ },
+ "all_seq_match_only": {
+  "n_proteins": 3558525,
+  "n_with_v4_model": 3558525,
+  "pct_with_v4_model": 100.0,
+  "pct_of_modelled_with_ted_domain": 89.72945251192559,
+  "pct_of_modelled_with_cath_label": 69.72903098896313,
+  "ted_n_domains_mean_modelled": 1.6508870950745043,
+  "ted_frac_in_domain_mean_modelled": 0.5741864470446351,
+  "class_distribution_pct_of_modelled": {
+   "beta": 9.638993684180946,
+   "alpha": 19.154424937298458,
+   "none": 10.270547488074413,
+   "alphabeta": 25.58087971842266,
+   "mixed": 35.35515417202352
+  },
+  "class_labeled_distribution_pct_of_modelled": {
+   "beta": 11.16043866489627,
+   "alpha": 24.036335279364344,
+   "none": 10.270547488074413,
+   "alphabeta": 29.066987024118138,
+   "unlabeled": 20.000421522962462,
+   "mixed": 5.465270020584371
+  },
+  "pct_of_modelled_ted_proteins_with_all_domains_unlabeled": 20.000421522962462,
+  "class_distribution_pct_of_ted_proteins": {
+   "beta": 10.742285185457769,
+   "alpha": 21.346864826521394,
+   "alphabeta": 28.508899811935002,
+   "mixed": 39.40195017608583
+  },
+  "pct_of_all_in_afdb_cluster_entry": 100.0,
+  "pct_of_afdb_entries_in_nonsingleton_cluster": 80.66479791486641,
+  "pct_of_all_in_nonsingleton_cluster": 80.66479791486641,
+  "afdb_cluflag_counts": {
+   "1": 2124381,
+   "2": 879182,
+   "3": 119000,
+   "4": 435962
+  },
+  "cluster_nmem_median": 62.0,
+  "cluster_nmem_p90": 815.0,
+  "pct_in_dark_cluster": 5.162800468354215,
+  "lca_group_pct_of_clustered": {
+   "Eukaryota": 43.83107755261582,
+   "cellular_organisms": 54.54633498195596,
+   "Bacteria": 1.3138234516423577,
+   "root_other": 0.006026872885586612,
+   "Archaea": 0.3027371409002755
+  },
+  "lca_rank_pct_of_clustered": {
+   "cellular root": 54.54633498195596,
+   "domain": 27.16506699060818,
+   "clade": 11.759578634491758,
+   "kingdom": 1.125492383321657,
+   "genus": 0.9686543386343106,
+   "phylum": 0.834878663023602,
+   "species": 0.7577137876387792,
+   "class": 0.7408873159408698
+  },
+  "pct_with_pfam_hit": 62.238258829149714,
+  "pfam_n_regions_mean_among_hits": 1.7886266888932636,
+  "pct_pfam_hit_md5_matches_2026": 99.99995484846241,
+  "pct_with_ted_or_pfam_modelled": 92.63939413099529
+ },
+ "euk_seq_match_only": {
+  "n_proteins": 3283644,
+  "n_with_v4_model": 3283644,
+  "pct_with_v4_model": 100.0,
+  "pct_of_modelled_with_ted_domain": 89.17053736641365,
+  "pct_of_modelled_with_cath_label": 68.89766369314091,
+  "ted_n_domains_mean_modelled": 1.6414861050710734,
+  "ted_frac_in_domain_mean_modelled": 0.556387295074184,
+  "class_distribution_pct_of_modelled": {
+   "beta": 9.740733161085672,
+   "alpha": 19.59649097161568,
+   "none": 10.829462633586346,
+   "alphabeta": 24.0415526165443,
+   "mixed": 35.791760617168
+  },
+  "class_labeled_distribution_pct_of_modelled": {
+   "beta": 11.265502594069272,
+   "alpha": 24.648865711386495,
+   "none": 10.829462633586346,
+   "alphabeta": 27.515650295829875,
+   "unlabeled": 20.27287367327274,
+   "mixed": 5.467645091855268
+  },
+  "pct_of_modelled_ted_proteins_with_all_domains_unlabeled": 20.27287367327274,
+  "class_distribution_pct_of_ted_proteins": {
+   "beta": 10.923712527445806,
+   "alpha": 21.976419062151752,
+   "alphabeta": 26.961318532548873,
+   "mixed": 40.13854987785357
+  },
+  "pct_of_all_in_afdb_cluster_entry": 100.0,
+  "pct_of_afdb_entries_in_nonsingleton_cluster": 79.80801207439052,
+  "pct_of_all_in_nonsingleton_cluster": 79.80801207439052,
+  "afdb_cluflag_counts": {
+   "1": 1933153,
+   "2": 813774,
+   "3": 118337,
+   "4": 418380
+  },
+  "cluster_nmem_median": 56.0,
+  "cluster_nmem_p90": 617.0,
+  "pct_in_dark_cluster": 5.196917818020301,
+  "lca_group_pct_of_clustered": {
+   "Archaea": 0.001755315840466212,
+   "cellular_organisms": 51.9028577686654,
+   "root_other": 0.0061436054416317415,
+   "Bacteria": 0.08093532386149642,
+   "Eukaryota": 48.00830798619101
+  },
+  "lca_rank_pct_of_clustered": {
+   "cellular root": 51.9028577686654,
+   "domain": 28.59325554231437,
+   "clade": 12.860664936535793,
+   "kingdom": 1.1936910895970443,
+   "genus": 0.9930126981837442,
+   "species": 0.815496844056596,
+   "phylum": 0.764936116043167,
+   "class": 0.7175425883505793
+  },
+  "pct_with_pfam_hit": 61.82427205872501,
+  "pfam_n_regions_mean_among_hits": 1.8084911548212912,
+  "pct_pfam_hit_md5_matches_2026": 99.99995074107588,
+  "pct_with_ted_or_pfam_modelled": 92.25330151502416
+ },
+ "prok_seq_match_only": {
+  "n_proteins": 274881,
+  "n_with_v4_model": 274881,
+  "pct_with_v4_model": 100.0,
+  "pct_of_modelled_with_ted_domain": 96.40608117694566,
+  "pct_of_modelled_with_cath_label": 79.66028936157828,
+  "ted_n_domains_mean_modelled": 1.7631884342679196,
+  "ted_frac_in_domain_mean_modelled": 0.786809649713642,
+  "class_distribution_pct_of_modelled": {
+   "alphabeta": 43.969208493857344,
+   "none": 3.5939188230543397,
+   "mixed": 30.139587676121668,
+   "alpha": 13.873639865978369,
+   "beta": 8.423645140988283
+  },
+  "class_labeled_distribution_pct_of_modelled": {
+   "alphabeta": 47.598779108050394,
+   "none": 3.5939188230543397,
+   "unlabeled": 16.745791815367376,
+   "alpha": 16.71923486890691,
+   "mixed": 5.436898148653417,
+   "beta": 9.905377235967563
+  },
+  "pct_of_modelled_ted_proteins_with_all_domains_unlabeled": 16.745791815367376,
+  "class_distribution_pct_of_ted_proteins": {
+   "alphabeta": 45.608335031433725,
+   "mixed": 31.263160278035638,
+   "alpha": 14.390834786152558,
+   "beta": 8.73766990437808
+  },
+  "pct_of_all_in_afdb_cluster_entry": 100.0,
+  "pct_of_afdb_entries_in_nonsingleton_cluster": 90.89969841495046,
+  "pct_of_all_in_nonsingleton_cluster": 90.89969841495046,
+  "afdb_cluflag_counts": {
+   "1": 191228,
+   "2": 65408,
+   "3": 663,
+   "4": 17582
+  },
+  "cluster_nmem_median": 317.0,
+  "cluster_nmem_p90": 3285.0,
+  "pct_in_dark_cluster": 4.804975466850232,
+  "lca_group_pct_of_clustered": {
+   "cellular_organisms": 82.27129741541467,
+   "Bacteria": 14.244435017169202,
+   "Eukaryota": 0.020010725749001465,
+   "Archaea": 3.459454267487373,
+   "root_other": 0.004802574179760351
+  },
+  "lca_rank_pct_of_clustered": {
+   "cellular root": 82.27129741541467,
+   "domain": 12.186131766626913,
+   "phylum": 1.5684406842067349,
+   "class": 0.9857283503958122,
+   "family": 0.8560588475422827,
+   "genus": 0.7131822656944122,
+   "order": 0.4766554873412149,
+   "kingdom": 0.41021987785453
+  },
+  "pct_with_pfam_hit": 67.18361763817798,
+  "pfam_n_regions_mean_among_hits": 1.5702612697982943,
+  "pct_pfam_hit_md5_matches_2026": 100.0,
+  "pct_with_ted_or_pfam_modelled": 97.25153793823509
+ }
+}
