@@ -1,0 +1,325 @@
+{
+ "n_top_hogs": 109598,
+ "n_genes_in_hogs": 2924444,
+ "n_euk_panel_proteins": 3460494,
+ "member_status": {
+  "eligible_in_cluster": 2388071,
+  "no_model_or_seq_mismatch": 162692,
+  "fragment": 74658,
+  "structural_singleton": 299023
+ },
+ "primary": {
+  "n_hogs_with_ge1_eligible": 81786,
+  "n_hogs_with_ge2_eligible": 71961,
+  "hog_n_clusters_quantiles": {
+   "0.5": 2.0,
+   "0.9": 20.0,
+   "0.99": 74.0
+  },
+  "hog_frac_split": 0.7034087908728339,
+  "hog_frac_largest_median_split": 0.5,
+  "hog_frac_largest_mean_all": 0.6205048607256627,
+  "member_weighted_frac_in_largest": 0.3620777665556885,
+  "n_clusters_with_panel_hog_members": 354716,
+  "cluster_n_hogs_quantiles": {
+   "0.5": 1.0,
+   "0.9": 3.0,
+   "0.99": 9.0
+  },
+  "cluster_frac_multi_hog_ge2mem": 0.484644113274593,
+  "hog_table": [
+   {
+    "category": "1HOG_1cluster",
+    "n_hogs": 10226,
+    "n_members": 31605,
+    "frac_hogs": 0.14210475118466948,
+    "frac_members": 0.013289205574192072
+   },
+   {
+    "category": "HOG_split_only",
+    "n_hogs": 6924,
+    "n_members": 69807,
+    "frac_hogs": 0.09621878517530329,
+    "frac_members": 0.02935230417711204
+   },
+   {
+    "category": "cluster_merges_only",
+    "n_hogs": 11117,
+    "n_members": 33826,
+    "frac_hogs": 0.15448645794249663,
+    "frac_members": 0.014223087098643287
+   },
+   {
+    "category": "split_and_merged",
+    "n_hogs": 43694,
+    "n_members": 2243008,
+    "frac_hogs": 0.6071900056975307,
+    "frac_members": 0.9431354031500526
+   }
+  ],
+  "cluster_table": [
+   {
+    "category": "1cluster_1HOG",
+    "n_clusters": 10226,
+    "n_members": 31605,
+    "frac_clusters": 0.052969909817511256
+   },
+   {
+    "category": "cluster_is_part_of_split_HOG",
+    "n_clusters": 89265,
+    "n_members": 590660,
+    "frac_clusters": 0.46238597690789573
+   },
+   {
+    "category": "cluster_merges_whole_HOGs",
+    "n_clusters": 870,
+    "n_members": 5263,
+    "frac_clusters": 0.004506534474988734
+   },
+   {
+    "category": "merges_and_part_of_split",
+    "n_clusters": 92692,
+    "n_members": 1598880,
+    "frac_clusters": 0.4801375787996042
+   }
+  ]
+ },
+ "sens_with_singletons": {
+  "n_hogs_with_ge1_eligible": 108018,
+  "n_hogs_with_ge2_eligible": 102220,
+  "hog_n_clusters_quantiles": {
+   "0.5": 2.0,
+   "0.9": 19.0,
+   "0.99": 82.0
+  },
+  "hog_frac_split": 0.6866953629426726,
+  "hog_frac_largest_median_split": 0.5,
+  "hog_frac_largest_mean_all": 0.6262119925018143,
+  "member_weighted_frac_in_largest": 0.3470023451345916,
+  "n_clusters_with_panel_hog_members": 564005,
+  "cluster_n_hogs_quantiles": {
+   "0.5": 1.0,
+   "0.9": 2.0,
+   "0.99": 7.0
+  },
+  "cluster_frac_multi_hog_ge2mem": 0.4033686257106025,
+  "hog_table": [
+   {
+    "category": "1HOG_1cluster",
+    "n_hogs": 20417,
+    "n_members": 55006,
+    "frac_hogs": 0.1997358638231266,
+    "frac_members": 0.020514706321122324
+   },
+   {
+    "category": "HOG_split_only",
+    "n_hogs": 22309,
+    "n_members": 152452,
+    "frac_hogs": 0.21824496184699668,
+    "frac_members": 0.0568575793198513
+   },
+   {
+    "category": "cluster_merges_only",
+    "n_hogs": 11609,
+    "n_members": 34096,
+    "frac_hogs": 0.11356877323420075,
+    "frac_members": 0.012716238714412732
+   },
+   {
+    "category": "split_and_merged",
+    "n_hogs": 47885,
+    "n_members": 2439742,
+    "frac_hogs": 0.46845040109567604,
+    "frac_members": 0.9099114756446137
+   }
+  ],
+  "cluster_table": [
+   {
+    "category": "1cluster_1HOG",
+    "n_clusters": 20417,
+    "n_members": 55006,
+    "frac_clusters": 0.08629514571313848
+   },
+   {
+    "category": "cluster_is_part_of_split_HOG",
+    "n_clusters": 120743,
+    "n_members": 691474,
+    "frac_clusters": 0.510336228576259
+   },
+   {
+    "category": "cluster_merges_whole_HOGs",
+    "n_clusters": 1133,
+    "n_members": 6799,
+    "frac_clusters": 0.004788774065385997
+   },
+   {
+    "category": "merges_and_part_of_split",
+    "n_clusters": 94302,
+    "n_members": 1606405,
+    "frac_clusters": 0.3985798516452165
+   }
+  ]
+ },
+ "hog_levels_not_in_guide_tree": [],
+ "lca_consistency": [
+  {
+   "cons": "cluster_older_pre_euk",
+   "n": 38300,
+   "frac": 0.10797370290598676
+  },
+  {
+   "cons": "cluster_older_within_euk",
+   "n": 50188,
+   "frac": 0.14148783815785024
+  },
+  {
+   "cons": "cluster_younger",
+   "n": 85968,
+   "frac": 0.24235726609456582
+  },
+  {
+   "cons": "consistent",
+   "n": 95578,
+   "frac": 0.2694493623067468
+  },
+  {
+   "cons": "consistent_censored_pre_euk",
+   "n": 84536,
+   "frac": 0.23832023365171012
+  },
+  {
+   "cons": "incomparable",
+   "n": 146,
+   "frac": 0.0004115968831403151
+  }
+ ],
+ "lca_consistency_euk_lca_only": [
+  {
+   "cons": "cluster_older_within_euk",
+   "n": 50188,
+   "frac": 0.21643953769190963
+  },
+  {
+   "cons": "cluster_younger",
+   "n": 85968,
+   "frac": 0.37074348801104023
+  },
+  {
+   "cons": "consistent",
+   "n": 95578,
+   "frac": 0.4121873382784199
+  },
+  {
+   "cons": "incomparable",
+   "n": 146,
+   "frac": 0.0006296360186303261
+  }
+ ],
+ "lca_consistency_by_cluster_nhog": [
+  {
+   "multi": false,
+   "cons": "cluster_older_pre_euk",
+   "n": 24562,
+   "frac": 0.09405178553650337
+  },
+  {
+   "multi": false,
+   "cons": "cluster_older_within_euk",
+   "n": 35262,
+   "frac": 0.1350237790728842
+  },
+  {
+   "multi": false,
+   "cons": "cluster_younger",
+   "n": 77826,
+   "frac": 0.2980080718656425
+  },
+  {
+   "multi": false,
+   "cons": "consistent",
+   "n": 69870,
+   "frac": 0.2675432886342924
+  },
+  {
+   "multi": false,
+   "cons": "consistent_censored_pre_euk",
+   "n": 53514,
+   "frac": 0.20491357589774617
+  },
+  {
+   "multi": false,
+   "cons": "incomparable",
+   "n": 120,
+   "frac": 0.0004594989929313738
+  },
+  {
+   "multi": true,
+   "cons": "cluster_older_pre_euk",
+   "n": 13738,
+   "frac": 0.146833116008636
+  },
+  {
+   "multi": true,
+   "cons": "cluster_older_within_euk",
+   "n": 14926,
+   "frac": 0.15953057865372694
+  },
+  {
+   "multi": true,
+   "cons": "cluster_younger",
+   "n": 8142,
+   "frac": 0.08702250913832539
+  },
+  {
+   "multi": true,
+   "cons": "consistent",
+   "n": 25708,
+   "frac": 0.27476967144781
+  },
+  {
+   "multi": true,
+   "cons": "consistent_censored_pre_euk",
+   "n": 31022,
+   "frac": 0.33156623415489195
+  },
+  {
+   "multi": true,
+   "cons": "incomparable",
+   "n": 26,
+   "frac": 0.00027789059660973474
+  }
+ ],
+ "lca_consistency_hogs": [
+  {
+   "cons": "cluster_older_pre_euk",
+   "n": 24075,
+   "frac": 0.29436578387499085
+  },
+  {
+   "cons": "cluster_older_within_euk",
+   "n": 26145,
+   "frac": 0.31967573912405545
+  },
+  {
+   "cons": "cluster_younger",
+   "n": 5813,
+   "frac": 0.07107573423324286
+  },
+  {
+   "cons": "consistent",
+   "n": 15278,
+   "frac": 0.1868045875822268
+  },
+  {
+   "cons": "consistent_censored_pre_euk",
+   "n": 10376,
+   "frac": 0.12686767906487664
+  },
+  {
+   "cons": "incomparable",
+   "n": 99,
+   "frac": 0.001210476120607439
+  }
+ ],
+ "hog_root_at_euk_root_frac": 0.2056831242510943
+}

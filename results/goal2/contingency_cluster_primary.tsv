@@ -1,0 +1,5 @@
+category	n_clusters	n_members	frac_clusters
+1cluster_1HOG	10226	31605	0.052969909817511256
+cluster_is_part_of_split_HOG	89265	590660	0.46238597690789573
+cluster_merges_whole_HOGs	870	5263	0.004506534474988734
+merges_and_part_of_split	92692	1598880	0.4801375787996042
