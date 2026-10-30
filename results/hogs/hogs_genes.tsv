@@ -1,0 +1,7 @@
+step	genes_in	genes_out	hogs_in	hogs_out	note
+input	2924444	2924444	109598	109598	
+md5_match	2924444	2761752	109598	108446	0 genes not in panel protein table
+not_fragment	2761752	2624408	108446	107540	
+mean_plddt_ge70	2624408	1632375	107540	57348	
+length_0.5_2x_median	1632375	1521329	57348	57348	
+1to1_species_ge8	1521329	427876	57348	12336	522754 1:1 genes in all HOGs

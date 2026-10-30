@@ -1,0 +1,14 @@
+step	n
+candidates	459919
+fail_aa_ml_seq	203688
+capped_O2	56554
+capped_dcg_triplets_dropped	207857
+fail_pid	11874
+capped_O1	81827
+triplets	36500
+triplets_with_O2	23484
+dcg_groups	12808
+hogs_with_triplets	5001
+pairs_e6_orth	167670
+pairs_e6_ldo	108504
+pairs_e6_para	36500

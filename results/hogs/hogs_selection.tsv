@@ -1,0 +1,4 @@
+step	hogs_in	hogs_out	note
+presample	12336	12336	mean presample size 29.0; total presample pairs 7208119
+clade_closed	12336	8211	lazy=True; aa_ml_seq pairs computed 2987789; rounds 12
+dated_root	8211	8211	

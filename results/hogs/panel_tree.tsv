@@ -1,0 +1,11 @@
+item	value
+n_leaves	180
+n_internal_uncollapsed	166
+n_internal	123
+n_collapsed	43
+n_na_nodes	6
+modes	"{""direct"": 91, ""proxy_sole"": 43, ""proxy_group"": 16, ""ncbi_attach"": 16, ""shared_tip"": 14}"
+n_monotone_fixes	34
+n_reresolved	19
+monotone_ok	True
+human_mouse_check_87pm10	True

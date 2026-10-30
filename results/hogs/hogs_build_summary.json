@@ -1,0 +1,89 @@
+{
+ "args": {
+  "orthoxml": "data/interim/ancestra_euk180/ancestra/hogs.orthoxml",
+  "outdir": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/data/interim",
+  "pairlists": null,
+  "split": null,
+  "logs": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/logs/filters",
+  "log_tag": "hogs_",
+  "panel_tree": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/data/interim/timetree/panel_tree.nwk",
+  "node_ages": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/data/interim/timetree/node_ages.tsv",
+  "protein_table": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/data/processed/panel/protein_table.parquet",
+  "gene_flags": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/data/interim/hogs/gene_flags.parquet",
+  "fasta_dir": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/data/interim/ancestra_input",
+  "threads": 32,
+  "min_plddt": 70.0,
+  "min_1to1": 8,
+  "max_presample": 60,
+  "max_sel": 30,
+  "dmax": 2.0,
+  "alpha_aa": 1.0,
+  "n_hogs": 7000,
+  "pair_budget": 3500000.0,
+  "tune_frac": 0.2,
+  "pid_max": 0.95,
+  "exhaustive": false,
+  "k0": 48,
+  "e6_max_o": 5,
+  "e6_max_per_dcg": 5,
+  "no_cache": false,
+  "projection_only": false
+ },
+ "filters": {
+  "genes_in": 2924444,
+  "md5": 2761752,
+  "frag": 2624408,
+  "plddt": 1632375,
+  "length": 1521329,
+  "not_in_panel": 0,
+  "hog_md5": 108446,
+  "hog_frag": 107540,
+  "hog_plddt": 57348,
+  "hog_length": 57348
+ },
+ "presample_pairs_total": 7208119,
+ "seqonly_pairs_computed_selection": 2987789,
+ "initial_sample": {
+  "n": 7000,
+  "primary": 1087063,
+  "e6": 312674
+ },
+ "split_md5": "29da378aec763731b728b38fa262941f",
+ "final": {
+  "n_candidates": 12336,
+  "n_selected": 8211,
+  "n_dated": 8211,
+  "n_sampled": 7000,
+  "per_stratum_eligible": {
+   "1": 224,
+   "2": 756,
+   "3": 6275,
+   "4": 956
+  },
+  "per_stratum_sampled": {
+   "1": 224,
+   "2": 756,
+   "3": 5064,
+   "4": 956
+  },
+  "sel_size_mean": 16.681142857142856,
+  "primary_pairs": 1087063,
+  "e6_pairs": 312674,
+  "e6_triplets": 36500,
+  "total_pairs": 1399737,
+  "seqonly_pairs_computed_total": 3447708,
+  "wall_s": 736.6
+ },
+ "e6": {
+  "candidates": 459919,
+  "fail_aa_ml_seq": 203688,
+  "capped_O2": 56554,
+  "capped_dcg_triplets_dropped": 207857,
+  "fail_pid": 11874,
+  "capped_O1": 81827,
+  "triplets": 36500,
+  "triplets_with_O2": 23484,
+  "dcg_groups": 12808,
+  "hogs_with_triplets": 5001
+ }
+}

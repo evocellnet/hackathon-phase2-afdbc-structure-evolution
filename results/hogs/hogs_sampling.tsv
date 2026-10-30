@@ -1,0 +1,13 @@
+step	stratum	eligible	quota	sampled	tune	confirm
+initial_quota	1	224.0	224.0			
+initial_quota	2	756.0	756.0			
+initial_quota	3	6275.0	5064.0			
+initial_quota	4	956.0	956.0			
+final_quota	1	224.0		224.0		
+final_quota	2	756.0		756.0		
+final_quota	3	6275.0		5064.0		
+final_quota	4	956.0		956.0		
+split	1				45.0	179.0
+split	2				151.0	605.0
+split	3				1013.0	4051.0
+split	4				191.0	765.0
