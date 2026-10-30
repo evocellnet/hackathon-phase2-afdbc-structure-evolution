@@ -1,1 +1,55 @@
 [run_ancestra] 1000 species; 0 sequences skipped (no taxid/short)
+{
+ "returncode": 0,
+ "prep_s": 4.5,
+ "ancestra_wall_s": 800.8,
+ "ancestra_cpu_s": 19185.0,
+ "peak_rss_gb_max_single_process": 28.14,
+ "n_species": 1000,
+ "threads": 48,
+ "preset": "fast",
+ "n_genes": 14358,
+ "stages": {
+  "input": {
+   "wall_s": 0.011,
+   "peak_rss_mb": 44.2,
+   "children_max_rss_mb": 44.2
+  },
+  "families": {
+   "wall_s": 0.012,
+   "peak_rss_mb": 46.4,
+   "children_max_rss_mb": 44.2
+  },
+  "scores": {
+   "wall_s": 783.758,
+   "peak_rss_mb": 27478.0,
+   "children_max_rss_mb": 27478.0
+  },
+  "merge": {
+   "wall_s": 9.896,
+   "peak_rss_mb": 2598.1,
+   "children_max_rss_mb": 27478.0
+  },
+  "output": {
+   "wall_s": 4.463,
+   "peak_rss_mb": 1472.1,
+   "children_max_rss_mb": 27478.0
+  }
+ },
+ "merge_stats": {
+  "n_root_groups": 226,
+  "n_root_anc_genes": 793,
+  "merge_s_sum_nodes": 8.23,
+  "tree_clusters": 59,
+  "tree_units": 416,
+  "tree_s": 0.16
+ },
+ "families_stats": {
+  "source": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/data/interim/ancestra/families/tubulin_sp1000.onefamily.tsv",
+  "n_families": 1,
+  "n_singletons": 0,
+  "max_family": 14358,
+  "sum_g2": 206152164
+ },
+ "labels_wall_s": 110.6
+}
