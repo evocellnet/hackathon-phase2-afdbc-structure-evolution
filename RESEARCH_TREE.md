@@ -4,6 +4,22 @@ Legend: [ ] planned · [~] in progress · [x] done · [-] abandoned/negative · 
 
 ## Status summary (latest first)
 
+### M2 — 2026-10-30 ~11:40 (t ≈ 2.2 h)
+The design passed three review rounds: 5 reviewers in round 1, 3 in round 2, and a round-3 consistency check. DESIGN.md v3 is final, and ANALYSIS_PLAN.md is the executable, frozen specification; only its tuning values remain open. The core design is two engines.
+- Within-family pairwise distances test the response shape (does structure saturate relative to sequence?).
+- Per-family branch lengths on the fixed species tree estimate the 3Di/AA conservation ratio, its trend with node age, and lineage effects (the neutral-structural-clock null N0).
+- Paralogs and the more-diverged copy after duplication (MDO) serve as the positive control.
+
+Statistical safeguards: tuning on 20% of families and confirmation once on 80%, Holm correction over five endpoints, pre-registered interpretation rows, a spike-in power check, and a simulation of false-curvature rates.
+
+The distance library is built and verified (33 tests; ML distances unbiased within 1.6%; 1.3 M pairs/s on GPU). Running in parallel: species panel construction, the pair-metrics pipeline (demo on the 20-proteome Ancestra run), the statistical engines (synthetic checks V2–V4), the PDB control set, and the P-clu baseline. Next: launch Ancestra on the eukaryote panel as soon as it is final (target ≤ 13:00), then the node-move checkpoint by 20:30.
+
+**Decision notes M2:**
+- Primary alignment is coordinate-only TM-align, so neither the amino-acid nor the 3Di alphabet is favoured; the sequence-only and 3Di+AA alignments are sensitivity analyses.
+- AIC/BIC were dropped for equivalence-type decision rules with pre-set margins.
+- Goal 2 was cut to three items: duplication as positive control, cluster audit with domain architecture, and a cytoskeleton case study (time-boxed).
+- The reviewer-written ANALYSIS_PLAN.md was accepted wholesale. Any later simplification will be logged in DEVIATIONS.md, not edited silently.
+
 ### M1 — 2026-10-30 ~10:45 (t = 1.4 h)
 Scouting is complete. The literature review (LITERATURE.md) changed the framing in three ways. Illergård et al. 2009 measured "time" as substitutions per site, so testing linearity against geological time is a new question. Pairs taken from inside AFDB clusters are truncated by the structural clustering filter and can create artificial saturation, so the linearity test must use orthologs chosen without looking at structure. TimeTree ages are usable mainly for eukaryotes. The data are in place: AFDB clusters v3 and v6, the FoldComp v4 index plus all 2.3 M cluster representatives, TED, Pfam, NCBI taxonomy and TimeTree (API plus the 2015 tree). Ancestra installs and passes its tests. Its ortholog calls are reliable (148/149 Ensembl human–mouse 1:1 recovered), but its duplication timing is not (36% agreement).
 
@@ -28,9 +44,12 @@ Four scouting agents run in parallel: literature (LITERATURE.md), data acquisiti
 - [x] 1. Literature & datasets (LITERATURE.md)
 - [x] 2. Data acquisition scouting (DATA.md; agents/data_scout_report.md)
 - [x] 3. Ancestra feasibility (agents/ancestra_report.md): works; orthologs reliable, duplication timing not
-- [~] 4. DESIGN.md + review rounds (≤3) — round 1 in progress
+- [x] 4. DESIGN.md v3 + 3 review rounds; ANALYSIS_PLAN.md frozen pending tuning
+- [~] 4d. Pair-metrics pipeline (src/strucevo/pairs)
+- [~] 4e. Statistical engines E1–E6 + synthetic verification V2–V4
+- [~] 4f. PDB/SIFTS control set (H1e)
 - [~] 4a. Species panel + proteomes + AFDB v4 structures + TimeTree ages
-- [~] 4b. Distance library with toy/simulation tests (src/strucevo)
+- [x] 4b. Distance library with toy/simulation tests (src/strucevo): 33/33 pass
 - [~] 4c. P-clu baseline: in-cluster fident vs TM/LDDT (AFDB clusters file 8)
 - [ ] 5. Goal 1 — Is structural divergence linear in time? (Elofsson 2009 revisited at AFDB scale)
 - [ ] 6. Goal 2 — Evolution of AFDB clusters (orthologs/paralogs, domains, case studies)
