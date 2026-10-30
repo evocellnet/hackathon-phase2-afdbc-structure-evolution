@@ -4,6 +4,30 @@ Legend: [ ] planned · [~] in progress · [x] done · [-] abandoned/negative · 
 
 ## Status summary (latest first)
 
+### M3: 2026-10-30 ~14:00 (t = 4.6 h; node-1 stop target 20:30)
+**Orthology.** Ancestra has been running on the 180-eukaryote panel since 11:18. The families stage finished at 12:52. The scores stage is at about 13/34 DIAMOND blocks, ETA ~15:25. The merge stage follows, so the whole run should end around 17:30–18:30. Go/no-go checks are at 15:00, 17:00 and 18:30. If the merge stage has not finished by 19:30, it restarts first on node 2.
+
+**Ready to run on Ancestra's output.** The infrastructure is built and verified:
+- species panel, structures and the dated, collapsed panel tree;
+- HOG builder (tested on euk20);
+- pair-metrics pipeline (V5/V8/V9 pass);
+- statistical engines (V2–V4 and V6 pass after the logged pre-freeze fixes);
+- noise floors;
+- per-protein cluster and domain annotations;
+- PDB control set.
+
+Waiting for Ancestra: HOG building, then pair metrics (≤ 3.5M pairs per alignment, ~4–5 h, mostly node 2), then tuning on 20% of HOGs, freeze, and a single confirmation run.
+
+**Corrections to M2:**
+- The **primary alignment is Foldseek 3Di+AA**, not TM-align (D22). TM-align fails the identical-sequence invariant and mis-registers close homologs.
+- The E5 neutral-clock acceptance is practically unreachable at the pre-set margins; E5 can still reject. The margins are kept unchanged.
+
+**Decision notes M3:**
+- All agent "decisions for you" were resolved immediately and logged in DEVIATIONS.md (D1–D22, C9–C28). Every one was made before any endpoint was computed.
+- The pair budget is fixed at ≤ 3.5M pairs per alignment (primary + E6).
+- Node 1 runs only light or GPU work until Ancestra finishes, to avoid CPU contention.
+- LESSONS.md was pruned to 12 rules after a fresh-agent retrospective.
+
 ### M2 — 2026-10-30 ~11:10 (t = 1.8 h)
 The design passed three review rounds: 5 reviewers in round 1, 3 in round 2, and a round-3 consistency check. DESIGN.md v3 is final, and ANALYSIS_PLAN.md is the executable, frozen specification; only its tuning values remain open. The core design is two engines.
 - Within-family pairwise distances test the response shape (does structure saturate relative to sequence?).

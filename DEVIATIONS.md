@@ -1,4 +1,5 @@
 # DEVIATIONS from ANALYSIS_PLAN.md (after freeze) — date | change | reason | effect
+(Note: IDs follow the numbering of the source report (e.g. stats_engine_report D1–D21); missing numbers were items requiring no change. "Pre-freeze" = before the tuning freeze and before any endpoint computation.)
 
 ## Pre-freeze amendments (2026-10-30 ~12:40; before any real-data endpoint was computed; justified by synthetic verification only)
 Source: agents/stats_engine_report.md §4. PI decisions:

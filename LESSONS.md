@@ -1,14 +1,15 @@
-# LESSONS — process rules for running this project efficiently
-(One-line rules with evidence. Pruned at each milestone.)
+# LESSONS: process rules for running this project efficiently
+(One-line rules with evidence. Pruned at each milestone. Last pruned at M3 (13:55, node 1) from the fresh-agent retrospective in reviews/process_retro_M3.md.)
 
-1. Scout data access, tooling and the orthology software in parallel before designing — design depends on what is actually obtainable. (evidence: M0 plan)
-2. AFDB files are now `_v6` (v4 returns 404) and EBI returns 403 to curl's default user agent — use `-A "Mozilla/5.0"`. (evidence: env agent, M0)
-3. foldseek 10 GPU search (`makepaddedseqdb` + `--gpu 1`) works on the A100 in conda_envs/main. (evidence: env agent test)
-4. Agents write multi-GB run dirs under results/; gitignore `results/**/runs/` and never `git add -A` without a `git status` check first. Never `pkill -f` a pattern that matches your own shell command. (evidence: a stuck 6.5 GB `git add` cost ~10 min, M0)
-5. FoldComp index/lookup + afdb_rep_v4 (25 GB) downloaded from S3 in ~3 min with aria2c -x8 — bulk S3 downloads are cheap; don't over-deliberate them. (evidence: M0)
-6. Three short review rounds (5 → 3 → 1 reviewers) turned a plausible design into a much sharper one: per-HOG branch lengths, pre-set equivalence margins, a positive control and power checks. Running data acquisition in parallel with review cost nothing. (evidence: M2)
-7. Subagents may be blocked from writing some files; ask them to return content inline as a fallback. (evidence: the round-3 reviewer could not write ANALYSIS_PLAN.md)
-8. Agents put licence-restricted values (TimeTree ages) into "small" committed tables. Grep committed tables for restricted columns before every commit. (evidence: `nearest_age_at_selection_mya` in species_panel.tsv, M2)
-9. Run the pipeline end to end on a small real dataset before freezing tuning; it caught a primary-method flaw (TM-align mis-registration) that no reviewer predicted. (evidence: D22)
-10. Ancestra's families stage is single-threaded Python over all DIAMOND hits: 94 min for 3.46M proteins. Budget wall time, not CPU-h, when extrapolating. (evidence: euk180 run)
-11. `pgrep -f`/`pkill -f PATTERN` matches the caller's own command line. Use sentinel files (`.done`) or PID files for waits, never a self-matching pattern. (evidence: 2 agents' wait loops never exited; my own `pkill -f "git add -A"` killed my shell)
+1. Run the whole pipeline on a small real dataset before freezing tuning. It caught a primary-method flaw (TM-align mis-registration, D22) that no reviewer predicted.
+2. Never `pkill -f`/`pgrep -f` a pattern that matches your own command; use `.done` sentinels or PID files. Two agents' waits hung, and my own `pkill` killed my shell.
+3. Check `git status` and file sizes before each commit; gitignore run directories. A 6.5 GB accidental `git add` cost 10 min.
+4. Grep committed tables for licence-restricted columns before each commit. TimeTree ages leaked into species_panel.tsv at M2.
+5. Budget wall time, not CPU-h, for Ancestra: the families stage is single-threaded Python and took 94 min for 3.46M proteins. Ancestra does not use the GPU.
+6. Launch slow jobs early and run review and side work alongside them. Ancestra started at 11:18 while the design was still under review.
+7. Keep review rounds short and shrinking (5 → 3 → 1 reviewers). They sharpened the design but cannot replace checks on data.
+8. Log every change to the plan in DEVIATIONS.md with reason and effect *before* any endpoint is computed; never edit the plan silently.
+9. Every long job needs a sentinel, a resume rule in NODE_MOVE.md and an ETA. Update them when plans change.
+10. If a subagent's file write is blocked, have it return the content inline (round-3 reviewer, ANALYSIS_PLAN.md).
+11. AFDB: files are `_v6`; EBI needs `-A "Mozilla/5.0"`; bulk S3 downloads via `aria2c -x8` are cheap (25 GB in ~3 min). Don't over-deliberate them.
+12. Agents report "decisions for you". Decide immediately, record them in DEVIATIONS.md (C-items) and keep going. This kept the critical path moving. (M2–M3)
