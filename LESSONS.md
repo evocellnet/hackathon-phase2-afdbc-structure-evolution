@@ -1,17 +1,18 @@
 # LESSONS: process rules for running this project efficiently
-(One-line rules with evidence. Pruned at each milestone. Last pruned at M3 (13:55, node 1) from the fresh-agent retrospective in reviews/process_retro_M3.md.)
+(One-line rules with evidence. Pruned at each milestone. Last pruned at node 2 (M5) from reviews/retrospective_node2.md; previous prune M3.)
 
-1. Run the whole pipeline on a small real dataset before freezing tuning. It caught a primary-method flaw (TM-align mis-registration, D22) that no reviewer predicted.
-2. Never `pkill -f`/`pgrep -f` a pattern that matches your own command; use `.done` sentinels or PID files. Two agents' waits hung, and my own `pkill` killed my shell.
-3. Check `git status` and file sizes before each commit; gitignore run directories. A 6.5 GB accidental `git add` cost 10 min.
-4. Grep committed tables for licence-restricted columns before each commit. TimeTree ages leaked into species_panel.tsv at M2.
-5. Budget wall time, not CPU-h, for Ancestra: the families stage is single-threaded Python and took 94 min for 3.46M proteins. Ancestra does not use the GPU.
-6. Launch slow jobs early and run review and side work alongside them. Ancestra started at 11:18 while the design was still under review.
-7. Keep review rounds short and shrinking (5 → 3 → 1 reviewers). They sharpened the design but cannot replace checks on data.
-8. Log every change to the plan in DEVIATIONS.md with reason and effect *before* any endpoint is computed; never edit the plan silently.
-9. Every long job needs a sentinel, a resume rule in NODE_MOVE.md and an ETA. Update them when plans change.
-10. If a subagent's file write is blocked, have it return the content inline (round-3 reviewer, ANALYSIS_PLAN.md).
-11. AFDB: files are `_v6`; EBI needs `-A "Mozilla/5.0"`; bulk S3 downloads via `aria2c -x8` are cheap (25 GB in ~3 min). Don't over-deliberate them.
-12. Agents report "decisions for you". Decide immediately, record them in DEVIATIONS.md (C-items) and keep going. This kept the critical path moving. (M2–M3)
-13. Error patterns in wait loops must not match benign log text ("failed 0" matched /FAIL/i). Use `Traceback|exit status [1-9]`. A wait's own timeout can hide a deadline: check the clock at every notification. (evidence: a false wake at 17:40; a 2 h wait ran up to 20:11, leaving only 40 min before the node stop)
-13. The harness blocks subagents from writing "report" files and they return the text inline, so the PI must re-type long drafts. Ask writer agents to save under a neutral name (e.g. `technical report/draft_sections.md`) via Bash, and fall back to inline only if that is also blocked. (evidence: report draft, node 2)
+1. Run the whole pipeline on a small real dataset before freezing tuning; it catches flaws no reviewer predicts. (TM-align mis-registration and V5 failure found on euk20, D22)
+2. Test estimators on synthetic worlds with the real noise structure before any real endpoint is computed. (E1 SIMEX bias ĉ=0.95 and E4 null slope found pre-freeze, D31/D32)
+3. Log every plan change in DEVIATIONS.md with reason and effect before the affected endpoint is computed; report original-criterion results alongside; never edit the plan silently. (D1–D35, C9–C36; C34 reports both V6 criteria)
+4. Never change acceptance margins after seeing synthetic power; report "inconclusive" instead. (E5 margins kept despite CI ±0.24)
+5. Agents' "decisions for you" are decided immediately and logged as C-items; do not queue them. (M2–M5, all resolved pre-endpoint)
+6. Never `pkill -f`/`pgrep -f` a pattern matching your own command; use `.done` sentinels or PID files. (two hung waits; own shell killed)
+7. Error patterns in wait loops must not match benign log text, and a wait's timeout must not hide a deadline: check the clock at every notification. ("failed 0" matched /FAIL/i; 2 h wait left 40 min before node stop)
+8. Every long job needs a sentinel, a resume rule in NODE_MOVE.md and an ETA, updated when plans change; idempotent steps make a node move cheap. (node 1 to 2 resumed from the table; V3 rerun had to restart from scratch because it lacked per-step checkpoints)
+9. Launch slow jobs early and do review/side work alongside; budget wall time, not CPU-h. (Ancestra started 11:18 during review; 5.0 h wall, single-threaded families stage 94 min)
+10. Keep review rounds short and shrinking (5, 3, 1); they sharpen design but cannot replace data checks. (round 1-3, D22 missed by all reviewers)
+11. Check `git status`, file sizes and licence-restricted columns before each commit; gitignore run directories. (6.5 GB accidental add; TimeTree ages leaked into species_panel.tsv)
+12. Protect the confirm split mechanically (never load it outside the confirm runner, never rebuild split, md5 in ledger) and log any exploratory contact. (NODE_MOVE "things not to do"; C36 118/197 H1e pairs in confirm HOGs)
+13. Keep the critical path (freeze, dry run, confirm, V11 re-derivation) ahead of exploratory add-ons; start extras only when a job is waiting on compute. (X4-X7 run during V3 rerun; kinase X7 added after "no new endpoints" decision)
+14. If a subagent's write is blocked (reports, plans), have it save under a neutral name via Bash, else return the text inline. (round-3 ANALYSIS_PLAN, report draft)
+15. Don't over-deliberate cheap data logistics: AFDB files are `_v6`; EBI needs `-A "Mozilla/5.0"`; `aria2c -x8` pulled 25 GB in ~3 min. (panel fetch)
