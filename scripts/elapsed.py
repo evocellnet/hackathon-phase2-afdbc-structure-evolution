@@ -7,7 +7,7 @@ txt = (root / "START.txt").read_text()
 starts = [int(x) for x in re.findall(r"START_EPOCH: (\d+)", txt)]
 now = time.time()
 print(f"Wall-clock since project start: {(now - starts[0]) / 3600:.2f} h")
-node_budget = [11.5] + [47.5] * (len(starts) - 1)   # safe limits per node (h)
+node_budget = [11.5] + [36.5] * (len(starts) - 1)  # user: total cap 48 h   # safe limits per node (h)
 used = 0.0
 for i, s in enumerate(starts):
     end = starts[i + 1] if i + 1 < len(starts) else now
