@@ -1,0 +1,1 @@
+Ancestra human-mouse ortholog pairs for the sampled human genes: 187; also Ensembl orthologs: 170 (0.909); Ensembl paralog: 0; not reported by Ensembl (often mouse protein w/o 1:1 Ensembl gene mapping): 17

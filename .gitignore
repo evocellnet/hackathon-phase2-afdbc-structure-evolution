@@ -1,22 +1,17 @@
-# large / restricted data — never commit
+# Large / raw / regenerable data — ignored BY DIRECTORY (not by extension), see DESIGN §7
 data/raw/
 data/interim/
 conda_envs/
 tools/
-*.pdb
-*.cif
-*.gz
-*.tar
-*.dbtype
-logs/*.out
-__pycache__/
-.ipynb_checkpoints/
-# small processed results ARE committed (results/, data/processed/ small tables, see DATA.md)
 .venv_datascout/
-# intermediate run outputs (regenerable; large)
 results/**/runs/
 results/**/stages/
-*.npz
-*.dmnd
-*.parquet
-data/interim/
+# TimeTree-derived data must never be committed (licence: no redistribution)
+**/timetree/*.tsv
+**/*timetree_ages*
+# misc
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+logs/*.out
+results/data_scout/*taxspan.parquet

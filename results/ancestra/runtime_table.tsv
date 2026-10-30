@@ -1,0 +1,7 @@
+run	preset	threads	n_species	n_genes	n_families	max_family	sum_g2	wall_s	cpu_s	peak_rss_gb	families_s	scores_s	merge_s	merge_tree_s	output_s	n_root_hogs	n_ortholog_pairs
+euk20_accurate	accurate	48	20	357201	67203	7432	570705527	1010	22130	8.59	215.7	334.43	442.917	418.88	11.623	19968	2561019
+plumbing_structures	accurate	4	4	19	3	16	261	6	2	0.17	4.178	0.6	0.617	0	0.025	3	45
+tub_sp1000_accurate	accurate	48	1000	14358	4	6250	75066170	1112	27298	17.34	24.191	1061.566	19.865	11.28	3.876	216	14547152
+tub_sp1000_fast_onefam	fast	48	1000	14358	1	14358	206152164	801	19185	28.14	0.012	783.758	9.896	0.16	4.463	226	16602855
+tub_sp200_accurate	accurate	8	200	3320	1	3320	11022400	161	1012	2.88	8.098	147.733	4.844	2.57	0.225	51	700224
+tub_sp50_accurate	accurate	8	50	828	3	822	675702	16	73	0.4	4.503	9.883	0.604	0	0.038	24	40026

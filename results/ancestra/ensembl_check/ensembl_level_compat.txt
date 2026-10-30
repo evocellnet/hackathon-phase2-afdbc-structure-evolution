@@ -1,0 +1,26 @@
+Ensembl levels observed on human lineage: ['Opisthokonta', 'Bilateria', 'Chordata', 'Vertebrata', 'Gnathostomata', 'Euteleostomi', 'Sarcopterygii', 'Tetrapoda', 'Amniota', 'Mammalia', 'Theria', 'Eutheria', 'Boreoeutheria', 'Euarchontoglires', 'Simiiformes', 'Catarrhini', 'Homininae', 'Homo sapiens']
+human-human pairs paralogous in both: 855
+verdict
+compatible          0.358
+ancestra_younger    0.354
+ancestra_older      0.288
+
+verdict        ancestra_older  ancestra_younger  compatible
+ens_level                                                  
+Opisthokonta                0                47          45
+Bilateria                 169               166         134
+Chordata                    4                 1          20
+Vertebrata                 21                28          23
+Gnathostomata               3                 6           9
+Euteleostomi                0                39          46
+Sarcopterygii               0                 1           0
+Tetrapoda                   8                15           7
+Amniota                     7                 0           3
+Mammalia                    6                 0           0
+Theria                     10                 0           3
+Eutheria                    2                 0           4
+Boreoeutheria               0                 0           1
+Simiiformes                15                 0           1
+Catarrhini                  0                 0           2
+Homininae                   1                 0           6
+Homo sapiens                0                 0           2
