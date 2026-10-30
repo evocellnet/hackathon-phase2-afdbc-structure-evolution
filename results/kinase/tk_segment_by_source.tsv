@@ -1,0 +1,4 @@
+source	b_aa_seg	b_3di_seg	rho_seg	pct_vs_single_bg	pct_vs_pair_bg	bg_median	bg_q95
+linsi	0.166	0.162	1.676	90.551	95.06	0.734	2.067
+famsa	0.175	0.162	1.466	89.6	94.54	0.604	2.196
+foldmason	0.267	0.229	2.002	88.136	95.58	0.931	2.473

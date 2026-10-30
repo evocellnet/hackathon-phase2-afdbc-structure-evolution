@@ -1,0 +1,19 @@
+{
+ "spearman_rho_internal_linsi_vs_famsa": 0.7427656301719271,
+ "spearman_baa_internal_linsi_vs_famsa": 0.8776747989641543,
+ "spearman_rho_terminal_linsi_vs_famsa": 0.7987470029880119,
+ "rho_high_flags_linsi_famsa_overlap": [
+  12,
+  12,
+  5
+ ],
+ "spearman_rho_internal_linsi_vs_foldmason": 0.5942269125177672,
+ "spearman_baa_internal_linsi_vs_foldmason": 0.8457378453630329,
+ "spearman_rho_terminal_linsi_vs_foldmason": 0.6096625346501385,
+ "rho_high_flags_linsi_foldmason_overlap": [
+  12,
+  11,
+  2
+ ],
+ "rho_high_in_all_three": 1
+}

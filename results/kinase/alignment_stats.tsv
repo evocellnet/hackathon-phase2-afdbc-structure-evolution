@@ -1,0 +1,4 @@
+source	n_seq	cols_full	cols_kept	mean_gap_frac_kept	n_rows_occ_lt10pct	median_dom_len
+linsi	500	2088	244	0.155	0	257
+famsa	500	1663	252	0.097	0	257
+foldmason	500	1346	242	0.228	0	257
