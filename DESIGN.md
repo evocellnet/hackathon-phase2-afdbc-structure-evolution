@@ -1,6 +1,6 @@
 # DESIGN.md — Is protein structure a molecular clock? AFDB clusters revisited with orthology
 
-Version: **v2** (after review round 1; 5 reviews in `reviews/round1_*.md`) · 2026-10-30 · PI: agentic (Claude)
+Version: **v3** (after review rounds 1–2; reviews in `reviews/round{1,2}_*.md`). **§11 (v3 amendments) is binding and supersedes earlier text where they conflict.** · 2026-10-30 · PI: agentic (Claude)
 Inputs: PROMPT.md, LITERATURE.md, agents/data_scout_report.md, agents/ancestra_report.md
 Change log v1→v2 at the end (§10) — every change cites the review item that motivated it.
 
@@ -260,3 +260,95 @@ Seeds: global 20261030. Bootstrap and replicate seed list: `config/seeds.yaml` =
 | `-e inf`, row-count invariants, createdb from FoldComp v4 | algorithms C1–C3 |
 | Goal 2 cut to 3 items | external PI #8 |
 | ANALYSIS_PLAN, RESULTS_LEDGER, NODE_MOVE, .gitignore fix, licence guard | AI-FM review |
+
+## 11. v3 amendments (binding) — after review round 2
+
+Round-2 reviews: `reviews/round2_external_PI.md` (R1–R6), `reviews/round2_statistics.md` (M1–M8), `reviews/round2_molevo.md` (1–6).
+
+### 11.1 Two estimation engines, each with a defined job (R1, M1, M3, molevo-1)
+- **Pairwise engine** (E1, E2, Goal 2-i).
+  - Input: observed within-HOG pairwise distances.
+  - Curvature model: D_s = η + a_h · D_AA^c, with HOG-specific a_h as a random effect, d_AA ≤ 2, and one global c.
+  - Correction: pair-level SIMEX using per-pair column-bootstrap SEs. It handles correlated x/y errors because AA and 3Di come from the same alignment.
+  - Saturation shows up in total divergence, so curvature is never estimated on branch increments.
+- **Branch engine** (E3, E4, E5).
+  - Fit: plain, unconstrained weighted least squares on the fixed, collapsed species topology, with weights 1/(SE²_pair + s²_HOG).
+  - Branch SEs: sandwich estimator.
+  - Ratios are always **ratios of sums** over cells (HOG × lineage, HOG × age bin), never per-branch ratios. No minimum-branch-length cut.
+  - **Tip-noise correction:** subtract the per-protein AF noise floor (from §4.4b and the identical-sequence pairs) from terminal branches. Terminal-branch estimates are also reported separately (M2).
+
+### 11.2 Endpoints (replaces §5 table)
+
+| ID | Estimand | Null / decision (pre-specified) |
+|---|---|---|
+| E1 | global c for 3Di-ML vs AA-ML (pairwise engine) | **Linear** = TOST equivalence, c ∈ [0.9, 1.1]. **Concave** = one-sided c < 1. Otherwise "inconclusive" |
+| E2 | same as E1 for floor-corrected global-LDDT distance; plus d* for raw 1−LDDT | as E1 |
+| E3 | k = Σb_AA / Σb_3Di (all HOGs), SD of log k across HOGs | estimation only (outside Holm); only its CATH-class contrast is tested (α vs β, two-sided) |
+| E4 | mixed model on y = log(Σb_3Di / Σb_AA) per HOG × age bin, with log age as fixed effect, HOG random intercept and slope, adjusted for mean b_AA of the bin (R4) | slope = 0, two-sided |
+| E5 | per-lineage R_e = Σ_h b_3Di / Σ_h b_AA, residualised on the E4 fit and pLDDT. σ²_L = Var(log R_e) − mean bootstrap variance. Disattenuated sister-contrast slope β | **N0 accepted** only if the β 90% CI ⊂ [0.8, 1.25] **and** the σ_L upper 95% bound < 0.10, **and** E6 rejects, **and** spike-in power ≥ 80% (11.4) |
+| E6 | (a) paralog − ortholog residual of 3Di-ML at split-half-matched d_AA; (b) MDO − LDO 3Di excess with independent outgroups | one-sided > 0 |
+
+**Multiplicity**
+- Holm is applied over the tests of E1, E2, E4, E5 and E6.
+- CI-based rules use Bonferroni-level CIs (1 − 2α/m).
+- Everything else is exploratory.
+
+### 11.3 Outcome → interpretation (pre-registered; molevo-2)
+This table is used only if spike-in power ≥ 80%; otherwise the outcome is "inconclusive".
+
+| E1/E2 | E4 | E5 | Interpretation |
+|---|---|---|---|
+| linear | ≈ 0 | N0 margins met | structure follows a rescaled AA clock: "proportional", **not** "neutral" |
+| concave | > 0 | N0 met | saturation or under-correction; structure is clock-like only up to d* |
+| linear | > 0, robust to α and timescale | any | epoch effect: deep branches are structurally conservative |
+| any | < 0 | any | AA under-correction or early bursts; recheck with d_AA ≤ 1 |
+| any | any | β < 0.8 or σ_L excess, robust to guards | structure-specific lineage rates; **N0 rejected** |
+| any | any | excess not robust to guards | AF-quality or orthology artefact |
+
+- "Rising k means constraint" is **removed**: constraint slows both alphabets.
+- E6 > 0 with E5 meeting N0 is interpreted as: duplication, not ortholog lineage, changes the structure change per AA change.
+
+### 11.4 Power: spike-in positive control for E5 (molevo-3)
+- On the 20% tuning HOGs, swap a known ortholog for an out-paralog in a random 10% of lineages, giving a known structural perturbation.
+- E5's ability to detect it (power) is estimated over 50 replicates.
+- Power below 80% means E5 is reported as inconclusive.
+- The errors-in-variables simulation (stats S2/S10) reports the minimal detectable departure of c from 1 and of the E4 slope from 0.
+
+### 11.5 Species tree vs gene trees (molevo-4)
+- **Short internodes:** collapse internodes shorter than 5 My or with contested placement (TimeTree CI overlap with the parent node) into polytomies before fitting.
+- **HOGs that fit their own gene tree better:**
+  - Per HOG, compare the AA least-squares fit on the species tree with an unconstrained FastME AA tree.
+  - Exclude HOGs where the species-tree fit is >3× worse in relative SS; the threshold is set on the tuning set.
+  - Report the excluded fraction.
+- **Hidden paralogy:** pairs with d_AA more than 3 MAD above the HOG's expectation at their node age are flagged. A sensitivity analysis removes them.
+- **E5 noise floor:** comes from a parametric bootstrap (simulate under the fitted tree plus measured noise).
+
+### 11.6 Pair budget and HOG/pair exclusion rules (R2, R5, M8)
+- **Size limits:** at most 30 species per HOG, chosen on AA information only (largest clade-closed set with all D_AA ≤ 2, maximal node coverage, seed 20261030). Up to ~7,000 HOGs, depth-stratified. Primary plus E6 pairs ≤ 3.5M.
+- **Failed pairs:** structural failures within a chosen subset get weight 0 (sensitivity: imputed at the floor).
+- **Exclusions:** a HOG × metric is excluded if >10% of its pairs fail. Exclusion rates are reported by root age.
+- **No selective drops:** pairs are never dropped individually on a structural outcome.
+- **Alignment robustness:** a result counts as "alignment-robust" only if the sign and decision of E1–E6 agree between TM-align (primary) and both sensitivity alignments.
+
+### 11.7 Goal 2-i rules (molevo-5)
+- **Paralog triplet:** two in-HOG paralogs P1, P2 in the same species, plus the closest outgroup species ortholog(s) from a sister clade (outgroup set O1).
+- **Paralog vs ortholog pairs:** the ortholog pair shares P1 with the paralog pair (P1–O vs P1–P2).
+- **MDO choice:** pick the more-diverged copy (MDO) with O1 on alignment columns from half A. Measure the excess with outgroup set O2, a different sister-clade species, on columns from half B.
+- **Excluded:** pairs above 95% AA identity, and recent in-paralogs.
+- **Primary metric:** 3Di-ML. LDDT-corrected distance is secondary.
+- **Check:** reproduce the direction of the PMID 40813247 result first.
+
+### 11.8 Case study (molevo-6)
+- **Tree:** one fixed reference topology for the actin and tubulin superfamilies (AA ML tree, IQ-TREE LG+G4, UFBoot ≥ 95 nodes only).
+- **Estimates:** b_3Di and b_AA come from the same branch engine on that topology.
+- **Focal question:** the eukaryote stem relative to the Asgard homologs.
+- **Descriptive only:** MreB/FtsZ/ParM, without tests.
+- **Time box:** 4 h.
+
+### 11.9 Ancestra contingency (R6)
+- Use the `fast` preset if the projected `accurate` wall time is over 5 h.
+- If stage S2 has not finished by 19:30, kill it cleanly. It is relaunched first on node 2, because it cannot resume mid-stage; NODE_MOVE.md records this.
+
+### 11.10 H1e additions (stats S9)
+- Restrict to PDB entries released after 2018-04-30, which AF2 did not train on, so the comparison with AF predictions is not circular.
+- Add the same-protein AF-vs-PDB distance as the floor.
