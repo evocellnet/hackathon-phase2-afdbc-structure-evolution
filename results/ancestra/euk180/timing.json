@@ -1,0 +1,69 @@
+{
+ "returncode": 0,
+ "prep_s": 4.2,
+ "ancestra_wall_s": 18151.7,
+ "ancestra_cpu_s": 301528.8,
+ "peak_rss_gb_max_single_process": 161.33,
+ "n_species": 180,
+ "threads": 40,
+ "preset": "accurate",
+ "cmd": [
+  "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/conda_envs/ancestra/bin/python",
+  "-m",
+  "ancestra",
+  "run",
+  "--proteomes",
+  "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/data/interim/ancestra_input",
+  "--tree",
+  "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/data/interim/ancestra_euk180/guide_tree.nwk",
+  "--out",
+  "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/data/interim/ancestra_euk180/ancestra",
+  "--threads",
+  "40",
+  "--preset",
+  "accurate"
+ ],
+ "n_genes": 3460494,
+ "stages": {
+  "input": {
+   "wall_s": 2.096,
+   "peak_rss_mb": 2055.7,
+   "children_max_rss_mb": 2204.5
+  },
+  "families": {
+   "wall_s": 5651.418,
+   "peak_rss_mb": 36510.6,
+   "children_max_rss_mb": 20013.4
+  },
+  "scores": {
+   "wall_s": 8854.32,
+   "peak_rss_mb": 157553.5,
+   "children_max_rss_mb": 157553.5
+  },
+  "merge": {
+   "wall_s": 3412.623,
+   "peak_rss_mb": 54761.3,
+   "children_max_rss_mb": 157553.5
+  },
+  "output": {
+   "wall_s": 184.416,
+   "peak_rss_mb": 26244.8,
+   "children_max_rss_mb": 157553.5
+  }
+ },
+ "merge_stats": {
+  "n_root_groups": 109598,
+  "n_root_anc_genes": 645648,
+  "merge_s_sum_nodes": 3275.958,
+  "tree_clusters": 528076,
+  "tree_units": 2350572,
+  "tree_s": 2866.46
+ },
+ "families_stats": {
+  "source": "ancestra.families",
+  "n_families": 378791,
+  "n_singletons": 287803,
+  "max_family": 7998,
+  "sum_g2": 8796300016
+ }
+}
