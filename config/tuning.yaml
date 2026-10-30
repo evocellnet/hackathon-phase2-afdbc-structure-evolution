@@ -1,0 +1,52 @@
+# config/tuning.yaml -- ANALYSIS_PLAN §3 step 2-4. Filled ONLY from split == 'tune' by
+#   python scripts/tuning/write_tuning_yaml.py   (merges results/tuning/<step>.json fragments)
+# null = not yet tuned. scripts/endpoints/run_confirm.py refuses to run while any value below is null.
+# Alignment-dependent quantities are keyed by alignment (primary = tdiaa, D22); metric keys: aa_ml, tdi_ml, lddt_D.
+schema_version: 1
+split_md5: null                 # md5 of data/interim/split.tsv the values were tuned on
+primary_alignment: tdiaa        # D22
+alpha:                          # §3.2: pooled profile likelihood, tdiaa primary core counts with aa_ml_seq <= 2 (± 0.05)
+  aa: null                      # LG+G4
+  tdi: null                     # Q.3Di.AF+G4
+alpha_selection_aa: 1.0         # C26: selection variable aa_ml_seq always at alpha = 1 (never re-tuned)
+eta:                            # §1.4 floor_ident medians (recomputed at tuned alpha); nu = eta / 2; eta_aa = 0
+  tdiaa: {tdi_ml: null, lddt_D: null, lddt_raw: null}
+  seqonly: {tdi_ml: null, lddt_D: null, lddt_raw: null}
+  tmalign: {tdi_ml: null, lddt_D: null, lddt_raw: null}
+s0:                             # C28: S0_ok (status-ok random pairs) with fallback to unconditional S0 if n < 200
+  tdiaa: {bin_lo: null, median: null, q95: null, source: null}
+  seqonly: {bin_lo: null, median: null, q95: null, source: null}
+  tmalign: {bin_lo: null, median: null, q95: null, source: null}
+kappa:                          # §2.3: bootstrap SD / Fisher SE by aa_ml bin (SE used everywhere = kappa x Fisher SE)
+  tdiaa: {bin_edges: null, aa_ml: null, tdi_ml: null}
+  seqonly: {bin_edges: null, aa_ml: null, tdi_ml: null}
+  tmalign: {bin_edges: null, aa_ml: null, tdi_ml: null}
+rho:                            # §2.3: correlation of AA and 3Di (and AA and lddt_D) estimation errors by aa_ml bin
+  tdiaa: {bin_edges: null, aa_tdi: null, aa_lddt: null}
+  seqonly: {bin_edges: null, aa_tdi: null, aa_lddt: null}
+  tmalign: {bin_edges: null, aa_tdi: null, aa_lddt: null}
+lddt_se_model:                  # §2.3: SD of S (block bootstrap) by length bin x S bin; lddt_D_se by delta method
+  tdiaa: {len_bin_lo: null, s_bin_lo: null, sd_S: null}
+  seqonly: {len_bin_lo: null, s_bin_lo: null, sd_S: null}
+  tmalign: {len_bin_lo: null, s_bin_lo: null, sd_S: null}
+tau_misfit: null                # max(3, q95 of misfit_ratio under parametric simulation)
+B_E4: null                      # largest of {1000, 500, 200} with E4 bootstrap <= 1 h
+e5:
+  min_t_snr: 8                  # D8 (threshold confirmed by spike-in power / null rate on tune)
+  power_f1.5: null
+  power_f1.25: null
+  power_f2: null
+  null_rate_f1: null
+  p_accept_f1.5: null
+v3:
+  false_concave_rate: null
+  min_detectable_c: null        # minimal detectable |c - 1| at 80% power
+  min_detectable_beta_e4: null
+sample:
+  hogs_per_stratum: null
+  n_primary_pairs: null
+  n_e6_pairs: null
+throughput_pairs_per_s:         # measured, 48 threads
+  tmalign: null
+  tdiaa: null
+  seqonly: null
