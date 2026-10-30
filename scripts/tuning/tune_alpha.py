@@ -4,8 +4,8 @@
 Pooled profile likelihood (per-pair d free; strucevo.distances.profile_alpha, validated in
 profile_alpha_validation.json) over the core count matrices of split == 'tune', pair_set == 'primary',
 status == 'ok' pairs with aa_ml_seq <= 2 (aa_ml_seq at fixed alpha = 1, C26). Coarse grid then Brent
-refinement on log(alpha) (precision << 0.05) and a profile 95% CI. Primary alignment = tdiaa (D22);
-seqonly / tmalign values are reported for information only.
+refinement on log(alpha) (precision << 0.05) and a profile 95% CI. Primary alignment = tdiaa (D22), but
+alpha is taken from seqonly (DEVIATIONS C29); tdiaa / tmalign values are reported for information only.
 
   python scripts/tuning/tune_alpha.py [--root R] [--alns tdiaa seqonly tmalign]
 Output: ROOT/results/tuning/alpha.json
@@ -48,7 +48,9 @@ def main():
             print(f"{aln} {key}: alpha={r['alpha']:.3f} CI95={r['ci95'][0]:.3f}-{r['ci95'][1]:.3f} "
                   f"n={df.height} ({r['seconds']} s)", flush=True)
         res["by_alignment"][aln] = out
-    p = res["by_alignment"].get("tdiaa")
+    # DEVIATIONS C29: alpha (AA and 3Di) is taken from the seqonly alignment (3Di columns not optimised), applied to all
+    res["alpha_source_alignment"] = "seqonly"
+    p = res["by_alignment"].get("seqonly")
     # top-level keys = config/tuning.yaml nesting (collector merges them); 2 decimals (precision target +-0.05)
     res["alpha"] = {"aa": round(p["aa"]["alpha"], 2) if p else None, "tdi": round(p["tdi"]["alpha"], 2) if p else None}
     res["alpha_at_grid_boundary"] = {k: bool(p[k]["at_grid_boundary"]) for k in ("aa", "tdi")} if p else None
