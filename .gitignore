@@ -1,0 +1,14 @@
+# large / restricted data — never commit
+data/raw/
+data/interim/
+conda_envs/
+tools/
+*.pdb
+*.cif
+*.gz
+*.tar
+*.dbtype
+logs/*.out
+__pycache__/
+.ipynb_checkpoints/
+# small processed results ARE committed (results/, data/processed/ small tables, see DATA.md)

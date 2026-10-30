@@ -1,0 +1,6 @@
+PROJECT START (node 1): 2026-10-30T09:22:47+01:00
+START_EPOCH: 1793348567
+SLURM_JOB_ID: 66670604
+Node-1 hard budget: 12 h -> must checkpoint & pause all running work by 2026-10-30T20:52:47+01:00 (30 min safety margin)
+Total project budget: 48 h of compute (node 1: 12 h; then restarted on a new node with a fresh 48 h allocation)
+Check: python3 scripts/elapsed.py   (prints hours elapsed and remaining for node 1)
