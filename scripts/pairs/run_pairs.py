@@ -39,11 +39,17 @@ def main():
     ap.add_argument("--alns", nargs="+", default=list(ALIGNMENTS), choices=ALIGNMENTS)
     ap.add_argument("--n-shards", type=int, default=200)
     ap.add_argument("--shards", type=int, nargs="*", help="run only these shard ids")
+    ap.add_argument("--shard-offset", type=int, default=0,
+                    help="shard id = offset + md5 %% n_shards; lets separate runs (e.g. tune / confirm split) share --out")
     ap.add_argument("--threads", type=int, default=48)
     ap.add_argument("--alpha-aa", type=float, default=1.0, help="placeholder until §Tuning")
     ap.add_argument("--alpha-tdi", type=float, default=1.0, help="placeholder until §Tuning")
     ap.add_argument("--tmalign-fast", type=int, default=1)
     ap.add_argument("--device", default=None)
+    ap.add_argument("--dump-columns", metavar="DIR", default=None,
+                    help="also save per-aligned-column states of every pair of this run to DIR/{aln}/cols_shard_k.npz "
+                         "(ANALYSIS_PLAN §2.3 column bootstrap; default off -> outputs unchanged). Use with a separate "
+                         "--out (e.g. data/interim/pairs_bootsub), never the production pairs dir")
     a = ap.parse_args()
     t0 = time.time()
     os.makedirs(a.out, exist_ok=True)
@@ -56,11 +62,13 @@ def main():
     pairs = pl.read_csv(a.pairs, separator="\t", infer_schema_length=0)
     n_in = pairs.height
     pairs = prepare_pairs(pairs, store, a.n_shards)
+    if a.shard_offset:
+        pairs = pairs.with_columns(pl.col("shard") + a.shard_offset)
     n_nostruct = int(((pairs["qidx"] < 0) | (pairs["tidx"] < 0)).sum())
     print(f"{n_in} pairs, {n_nostruct} without structure in store, {pairs['shard'].n_unique()} shards", flush=True)
     del store
     with Runner(a.store, a.out, a.threads, a.alpha_aa, a.alpha_tdi, a.device, a.tmalign_fast,
-                log=lambda s: print(s, flush=True)) as R:
+                log=lambda s: print(s, flush=True), dump_dir=a.dump_columns) as R:
         infos = R.run(pairs, a.alns, a.shards)
     summ = {}
     for i in infos:

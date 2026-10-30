@@ -56,8 +56,11 @@ class E5Data:
             pl = []
             for c in lin:
                 leaves = [panel.taxid[panel.leaf_order[k]] for k in range(len(panel.leaf_order)) if (panel.clade[c] >> k) & 1]
-                pl.append(np.mean([species_plddt.get(int(t), np.nan) for t in leaves]))
-            self.plddt = np.asarray(pl)
+                v = [species_plddt.get(int(t), np.nan) for t in leaves]
+                pl.append(np.nanmean(v) if np.isfinite(v).any() else np.nan)   # panel species outside the sample: ignored
+            self.plddt = np.asarray(pl, float)
+            if not np.isfinite(self.plddt).all():                       # no sampled descendant: mean-impute (driver flags)
+                self.plddt = np.where(np.isfinite(self.plddt), self.plddt, np.nanmean(self.plddt) if np.isfinite(self.plddt).any() else 0.0)
         else:
             self.plddt = None
         # ---- sister contrasts: sparse path-length operators

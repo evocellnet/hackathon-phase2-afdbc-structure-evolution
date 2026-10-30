@@ -34,7 +34,7 @@ def _counts(ca, cb, sel):
 
 
 def pair_metrics(qidx: int, tidx: int, qi, ti, lddt_res=None, halves: bool = False, all_cols: bool = False,
-                 inhouse_lddt: bool = False, store=None) -> dict:
+                 inhouse_lddt: bool = False, store=None, dump: bool = False) -> dict:
     """Compute all post-hoc quantities for one aligned pair. ``lddt_res``: per-M-column lDDT (Foldseek) or None."""
     st = store if store is not None else STORE
     xq, pq, aq, sq = st.get(qidx)
@@ -64,6 +64,11 @@ def pair_metrics(qidx: int, tidx: int, qi, ti, lddt_res=None, halves: bool = Fal
         if inhouse_lddt:  # V9: in-house lDDT on the same Foldseek alignment
             out["lddt_global_inhouse"] = float(per_residue_lddt(xq, xt, qi, ti).sum() / len_a)
     out["lddt_global"] = float(pr.sum() / len_a)
+    if dump:  # per-aligned-column states for the §2.3 column bootstrap (run_pairs.py --dump-columns)
+        out["dump"] = {"qi": qi.astype(np.int32), "ti": ti.astype(np.int32), "aa_q": eaq.astype(np.int8),
+                       "aa_t": eat.astype(np.int8), "tdi_q": esq.astype(np.int8), "tdi_t": est.astype(np.int8),
+                       "plddt_q": np.asarray(pq[qi], np.float32), "plddt_t": np.asarray(pt[ti], np.float32),
+                       "lddt": np.asarray(pr, np.float32)}
     out["lddt_core"] = float(pr[core].mean()) if core.any() else np.nan
     if core.sum() >= 3:
         out["rmsd_core"] = float(kabsch_rmsd(np.asarray(xq[qi[core]], np.float64), np.asarray(xt[ti[core]], np.float64)))
@@ -98,24 +103,28 @@ _LIMITED = False
 
 
 def worker_foldseek(task):
-    """task: list of (row_i, qidx, tidx, qstart, tstart, cigar, lddtfull_str, halves, inhouse)."""
+    """task: list of (row_i, qidx, tidx, qstart, tstart, cigar, lddtfull_str, halves, inhouse[, dump])."""
     _single_thread()
     res = []
-    for row_i, qidx, tidx, qs, ts, cig, lf, halves, inhouse in task:
+    for t in task:
+        row_i, qidx, tidx, qs, ts, cig, lf, halves, inhouse = t[:9]
+        dump = len(t) > 9 and bool(t[9])
         qi, ti = cigar_to_pairs(qs, ts, cig)
         lr = np.array(lf.split(","), dtype=float) if lf else np.zeros(0)
         if len(lr) != len(qi):
             raise ValueError(f"lddtfull length {len(lr)} != M columns {len(qi)} (row {row_i})")
-        res.append((row_i, pair_metrics(qidx, tidx, qi, ti, lr, halves=halves, inhouse_lddt=inhouse)))
+        res.append((row_i, pair_metrics(qidx, tidx, qi, ti, lr, halves=halves, inhouse_lddt=inhouse, dump=dump)))
     return res
 
 
 def worker_seqonly(task):
-    """task: list of (row_i, qidx, tidx, halves). Aligns with Biopython then computes metrics."""
+    """task: list of (row_i, qidx, tidx, halves[, dump]). Aligns with Biopython then computes metrics."""
     _single_thread()
     res = []
-    for row_i, qidx, tidx, halves in task:
+    for t in task:
+        row_i, qidx, tidx, halves = t[:4]
+        dump = len(t) > 4 and bool(t[4])
         qi, ti, _ = seqonly_pairs(STORE.seq(qidx), STORE.seq(tidx))
-        m = pair_metrics(qidx, tidx, qi, ti, None, halves=halves, all_cols=True)
+        m = pair_metrics(qidx, tidx, qi, ti, None, halves=halves, all_cols=True, dump=dump)
         res.append((row_i, m))
     return res

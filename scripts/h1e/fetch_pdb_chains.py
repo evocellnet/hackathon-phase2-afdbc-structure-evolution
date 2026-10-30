@@ -14,6 +14,9 @@ import xml.etree.ElementTree as ET
 import gemmi, requests
 ROOT = "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution"
 NS = "{http://www.ebi.ac.uk/pdbe/docs/sifts/eFamily.xsd}"
+# plain HTTP: the HTTPS endpoint of ftp.ebi.ac.uk has ~20 s time-to-first-byte per file from this node (2026-10-30),
+# HTTP ~0.05 s; same files (integrity checked by the gzip CRC on read)
+SIFTS_URL = "http://ftp.ebi.ac.uk/pub/databases/msd/sifts/xml"
 
 def http(url, tries=5):
     for k in range(tries):
@@ -60,7 +63,7 @@ def uniprot_seq(acc, d):
 
 def extract(acc, pdb, chain, out, cache):
     cif = cached(f"https://files.rcsb.org/download/{pdb.upper()}.cif.gz", f"{cache}/{pdb}.cif.gz")
-    xml = cached(f"https://ftp.ebi.ac.uk/pub/databases/msd/sifts/xml/{pdb}.xml.gz", f"{cache}/{pdb}.sifts.xml.gz")
+    xml = cached(f"{SIFTS_URL}/{pdb}.xml.gz", f"{cache}/{pdb}.sifts.xml.gz")
     mp = sifts_map(xml, chain, acc)
     st = gemmi.read_structure(cif); st.remove_hydrogens(); st.remove_alternative_conformations(); st.setup_entities()
     src = next((c for c in st[0] if c.name == chain), None)

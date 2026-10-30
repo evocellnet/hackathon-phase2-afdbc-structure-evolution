@@ -203,12 +203,18 @@ def two_pass(engine: CurveEngine, wmult=None, fixed_s2=None):
 def simex(engine: CurveEngine, w, c0, kx=1.0, ky=1.0, rho=0.0, lambdas=LAMBDAS, B_s=50, rng=None,
           window=0.3, batch=None):
     """SIMEX for c (quadratic extrapolant to lambda=-1). w: pass-2 weights (tensor, incl. bootstrap mult).
+    kx, ky, rho: scalars or per-pair arrays (n,) (per-pair Sigma_ij, ANALYSIS_PLAN §4.1).
     Returns dict(c_simex, c_lambda, n_clip, boundary_any)."""
     rng = np.random.default_rng(rng)
     dev = engine.dev
+    n = engine.n
+    _t = lambda v: (torch.as_tensor(np.asarray(v, float), dtype=torch.float64, device=dev)
+                    if np.ndim(v) else float(v))      # scalars stay scalars; per-pair arrays (n,) -> tensors
+    kx, ky, rho = _t(kx), _t(ky), _t(rho)
     sx = engine.sx * kx
     sy = engine.sy * ky
-    n = engine.n
+    rho_c = (torch.sqrt(torch.clamp(1 - rho * rho, min=0.0)) if torch.is_tensor(rho)
+             else math.sqrt(max(0.0, 1 - rho * rho)))
     win = None if window is None else (max(GRID[0], c0 - window), min(GRID[-1], c0 + window))
     c_lam, n_clip, bnd = [], 0, False
     batch = batch or B_s
@@ -219,7 +225,7 @@ def simex(engine: CurveEngine, w, c0, kx=1.0, ky=1.0, rho=0.0, lambdas=LAMBDAS, 
             z1 = torch.as_tensor(rng.standard_normal((R, n)), dtype=torch.float64, device=dev)
             z2 = torch.as_tensor(rng.standard_normal((R, n)), dtype=torch.float64, device=dev)
             ex = math.sqrt(lam) * sx * z1
-            ey = math.sqrt(lam) * sy * (rho * z1 + math.sqrt(max(0.0, 1 - rho * rho)) * z2)
+            ey = math.sqrt(lam) * sy * (rho * z1 + rho_c * z2)
             xs = engine.x + ex
             clip = xs < 1e-4
             n_clip += int((clip & (engine.w0 > 0)).sum())

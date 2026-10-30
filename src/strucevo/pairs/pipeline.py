@@ -94,7 +94,8 @@ def _chunks(lst, n):
 
 class Runner:
     def __init__(self, store_dir: str, out_dir: str, threads: int = 48, alpha_aa: float = 1.0,
-                 alpha_tdi: float = 1.0, device: str | None = None, tmalign_fast: int = 1, log=print):
+                 alpha_tdi: float = 1.0, device: str | None = None, tmalign_fast: int = 1, log=print,
+                 dump_dir: str | None = None):
         self.store = Store(store_dir)
         posthoc.STORE = self.store
         self.out = out_dir
@@ -104,6 +105,7 @@ class Runner:
         self.tmalign_fast = tmalign_fast
         self.log = log
         self.pool = None
+        self.dump_dir = dump_dir   # §2.3: per-column dumps for every pair of the run (None = off, default)
 
     def __enter__(self):
         self.pool = mp.get_context("fork").Pool(self.threads)
@@ -118,7 +120,9 @@ class Runner:
         os.makedirs(d, exist_ok=True)
         pq = os.path.join(d, f"shard_{k:04d}.parquet")
         done = os.path.join(d, f"shard_{k:04d}.done")
-        if os.path.exists(done) and os.path.exists(pq):
+        dump_missing = bool(self.dump_dir) and not os.path.exists(
+            os.path.join(self.dump_dir, aln, f"cols_shard_{k:04d}.npz"))
+        if os.path.exists(done) and os.path.exists(pq) and not dump_missing:
             info = json.load(open(done))
             if info.get("parquet_md5") == md5_file(pq) and info["rows_in"] == sp.height:
                 info["skipped"] = True
@@ -132,7 +136,8 @@ class Runner:
         res = [None] * n
         t0 = time.time()
         if aln == "seqonly":
-            tasks = [(i, int(qidx[i]), int(tidx[i]), bool(halves[i])) for i in np.where(has)[0]]
+            tasks = [(i, int(qidx[i]), int(tidx[i]), bool(halves[i])) + ((True,) if self.dump_dir else ())
+                     for i in np.where(has)[0]]
             for part in self.pool.imap_unordered(posthoc.worker_seqonly, _chunks(tasks, 100)):
                 for i, m in part:
                     res[i] = m
@@ -161,7 +166,8 @@ class Runner:
             qs = fs["qstart"].to_list(); ts = fs["tstart"].to_list(); cg = fs["cigar"].to_list()
             lf = fs["lddtfull"].to_list(); qtm = fs["qtmscore"].to_numpy()
             tasks = [(int(rows_fs[j]), int(fq[j]), int(ft[j]), int(qs[j]), int(ts[j]), cg[j], lf[j],
-                      bool(halves[rows_fs[j]]), False) for j in range(len(rows_fs))]
+                      bool(halves[rows_fs[j]]), False) + ((True,) if self.dump_dir else ())
+                     for j in range(len(rows_fs))]
             t1 = time.time()
             for part in self.pool.imap_unordered(posthoc.worker_foldseek, _chunks(tasks, 100)):
                 for i, m in part:
@@ -171,6 +177,8 @@ class Runner:
             tm_short[rows_fs] = qtm
             cleanup_foldseek(wd)
             shutil.rmtree(wd, ignore_errors=True)
+        if self.dump_dir:
+            self._write_dump(sp, k, aln, res)
         aligned = np.array([r is not None for r in res])
         empty = posthoc._empty(True, aln == "seqonly")
         res = [r if r is not None else empty for r in res]
@@ -245,6 +253,31 @@ class Runner:
             info["fail_align_with_structures"] = int((has & ~aligned).sum())
         json.dump(info, open(done, "w"), indent=1)
         return info
+
+    def _write_dump(self, sp: pl.DataFrame, k: int, aln: str, res: list) -> None:
+        """{dump_dir}/{aln}/cols_shard_{k}.npz: pair_id, len_a, offsets (n+1) and per-aligned-column arrays
+        (query order) qi, ti, aa_q, aa_t, tdi_q, tdi_t (AA_ORDER codes, -1 invalid), plddt_q, plddt_t, lddt."""
+        keys = ("qi", "ti", "aa_q", "aa_t", "tdi_q", "tdi_t", "plddt_q", "plddt_t", "lddt")
+        dts = (np.int32, np.int32, np.int8, np.int8, np.int8, np.int8, np.float32, np.float32, np.float32)
+        parts = {c: [] for c in keys}
+        nc = np.zeros(len(res), np.int64)
+        for i, r in enumerate(res):
+            dmp = r.pop("dump", None) if r is not None else None
+            if dmp is None:
+                continue
+            nc[i] = len(dmp["qi"])
+            for c in keys:
+                parts[c].append(dmp[c])
+        qidx = sp["qidx"].to_numpy()
+        len_a = np.where(qidx >= 0, self.store.len[np.maximum(qidx, 0)], -1)
+        dd = os.path.join(self.dump_dir, aln)
+        os.makedirs(dd, exist_ok=True)
+        f = os.path.join(dd, f"cols_shard_{k:04d}.npz")
+        np.savez_compressed(f + ".tmp.npz", pair_id=np.array(sp["pair_id"].to_list()), len_a=len_a,
+                            offsets=np.concatenate([[0], np.cumsum(nc)]),
+                            **{c: (np.concatenate(parts[c]) if parts[c] else np.zeros(0)).astype(dt)
+                               for c, dt in zip(keys, dts)})
+        os.replace(f + ".tmp.npz", f)
 
     def run(self, pairs: pl.DataFrame, alns=ALIGNMENTS, shards=None) -> list[dict]:
         alns = [a for a in ALIGNMENTS if a in alns]
