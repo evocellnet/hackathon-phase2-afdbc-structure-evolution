@@ -23,8 +23,8 @@ Ages
      Representative pair = the dated spanning pair at the (lower) median of TimeTree 6 `median_age` (median of
      study estimates = the API median); lo95/hi95 = its CI. Nodes with no dated spanning pair -> NA.
   6. Monotonicity, top-down: a child older than (or as old as) its parent is set to the parent's age (logged).
-  7. Collapse, top-down: an internal child whose internode (parent age - child age) < 5 My, or whose CI overlaps
-     the parent's CI, is merged into the parent (logged). NA-aged nodes are not collapsed.
+  7. Collapse, top-down: an internal child whose internode (parent age - child age) < 5 My, (and, only with --ci-overlap-collapse, whose CI overlaps
+     the parent's CI; off by default, DEVIATIONS D30) is merged into the parent (logged). NA-aged nodes are not collapsed.
 Outputs (TimeTree licence: everything with ages stays in data/interim/timetree/)
   panel_tree.nwk, node_ages.tsv, panel_tree_mapping.tsv, panel_tree_fixes.tsv, panel_tree_uncollapsed.nwk
   logs/filters/panel_tree.tsv (counts only)
@@ -109,6 +109,9 @@ def main(argv=None):
     ap.add_argument("--pairs", default=str(TTDIR / "pairwise_ages.tsv"))
     ap.add_argument("--outdir", default=str(TTDIR))
     ap.add_argument("--min-internode", type=float, default=MIN_INTERNODE)
+    ap.add_argument("--ci-overlap-collapse", action="store_true",
+                    help="also collapse nodes whose CI overlaps the parent's (OFF by default since DEVIATIONS D30: "
+                         "it merged well-supported deep clades such as Opisthokonta into the root)")
     a = ap.parse_args(argv)
     out = Path(a.outdir)
     fixes = []                     # (step, node, detail)
@@ -320,7 +323,7 @@ def main(argv=None):
                     continue
                 ci_c, ci_p = info[c.id], info[p.id]
                 short = (p.age - c.age) < a.min_internode
-                ovl = (ci_c["hi95"] >= ci_p["lo95"]) and not (np.isnan(ci_c["hi95"]) or np.isnan(ci_p["lo95"]))
+                ovl = a.ci_overlap_collapse and (ci_c["hi95"] >= ci_p["lo95"]) and not (np.isnan(ci_c["hi95"]) or np.isnan(ci_p["lo95"]))
                 if short or ovl:
                     why = "internode<%.0fMy" % a.min_internode if short else "CI_overlap"
                     fixes.append(("collapse", ncbi_lca_name(ls[c.id]),
