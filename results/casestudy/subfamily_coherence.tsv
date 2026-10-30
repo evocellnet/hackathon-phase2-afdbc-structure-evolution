@@ -1,0 +1,38 @@
+superfamily	subfamily	domain	n	largest_pure_clade	frac	ufboot
+actin	ALP_bacterial	Bacteria	2	1	0.5	
+actin	Arp1	Eukaryota	21	17	0.81	99
+actin	Arp10	Eukaryota	16	15	0.94	96
+actin	Arp2	Eukaryota	29	27	0.93	100
+actin	Arp3	Eukaryota	32	29	0.91	100
+actin	Arp4	Eukaryota	35	21	0.6	55
+actin	Arp5	Eukaryota	15	7	0.47	89
+actin	Arp6	Eukaryota	31	31	1.0	98
+actin	Arp7	Eukaryota	1	1	1.0	
+actin	Arp7_plant	Eukaryota	7	7	1.0	100
+actin	Arp8	Eukaryota	17	5	0.29	98
+actin	Arp9	Eukaryota	3	3	1.0	100
+actin	Asgard_actin	Asgard	6	2	0.33	100
+actin	FtsA	Bacteria	53	53	1.0	100
+actin	MreB	Bacteria	68	67	0.99	86
+actin	Ta0583_archaeal_actin	Archaea	3	3	1.0	100
+actin	actin	Eukaryota	42	8	0.19	49
+actin	actin-like_metazoan_orphan	Eukaryota	6	2	0.33	97
+actin	actin-like_other	Eukaryota	6	2	0.33	98
+actin	actin_POTE	Eukaryota	2	2	1.0	100
+actin	actin_divergent	Eukaryota	1	1	1.0	
+actin	crenactin	Archaea	1	1	1.0	
+actin	salactin	Archaea	2	2	1.0	100
+actin	volactin	Archaea	1	1	1.0	
+tubulin	Asgard_FtsZ	Asgard	1	1	1.0	
+tubulin	BtubA	Bacteria	1	1	1.0	
+tubulin	BtubB	Bacteria	1	1	1.0	
+tubulin	CetZ	Archaea	15	15	1.0	96
+tubulin	FtsZ	Archaea	120	24	0.2	69
+tubulin	artubulin	Archaea	3	3	1.0	100
+tubulin	euk_FtsZ	Eukaryota	24	9	0.38	25
+tubulin	tubulin_alpha	Eukaryota	62	62	1.0	100
+tubulin	tubulin_beta	Eukaryota	62	57	0.92	78
+tubulin	tubulin_delta	Eukaryota	10	7	0.7	99
+tubulin	tubulin_divergent	Eukaryota	16	6	0.38	98
+tubulin	tubulin_epsilon	Eukaryota	32	10	0.31	100
+tubulin	tubulin_gamma	Eukaryota	53	53	1.0	100

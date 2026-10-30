@@ -1,0 +1,171 @@
++ [] bl=0.00 n=86
+  - FtsA[B] x53 (bs 100)  bl=0.21
+  + [98] bl=0.21 n=85
+    + [98] bl=0.22 n=2
+      - volactin[A]  bl=1.61
+      - salactin[A] x2 (bs 100)  bl=1.12
+    + [64] bl=0.23 n=83
+      + [96] bl=0.16 n=11
+        + [98] bl=0.21 n=4
+          - ALP_bacterial[B]  bl=2.08
+          + [100] bl=0.13 n=3
+            - ALP_bacterial[B]  bl=2.09
+            + [] bl=0.35 n=2
+              - MreB[A]  bl=0.71
+              - Ta0583_archaeal_actin[A] x3 (bs 100)  bl=1.29
+        + [86] bl=0.13 n=7
+          - MreB[B]  bl=1.62
+          + [99] bl=0.39 n=6
+            + [56] bl=0.02 n=5
+              - MreB[B]  bl=0.32
+              + [60] bl=0.04 n=4
+                - MreB[B]  bl=0.35
+                + [99] bl=0.10 n=3
+                  - MreB[B]  bl=0.45
+                  + [99] bl=0.10 n=2
+                    - MreB[A]  bl=0.94
+                    - MreB[B]  bl=0.30
+            - MreB[B] x61 (bs 75)  bl=0.03
+      + [100] bl=0.41 n=72
+        - crenactin[A]  bl=1.21
+        + [100] bl=0.39 n=71
+          - Arp4  bl=1.57
+          + [68] bl=0.12 n=70
+            + [72] bl=0.08 n=8
+              - actin-like_metazoan_orphan  bl=1.24
+              + [100] bl=0.48 n=7
+                - Arp8  bl=1.21
+                + [97] bl=0.17 n=6
+                  - Arp8  bl=0.78
+                  + [95] bl=0.09 n=5
+                    - Arp8 x3 (bs 57)  bl=0.04
+                    + [90] bl=0.11 n=4
+                      - Arp8 x4 (bs 87)  bl=0.10
+                      + [98] bl=0.09 n=3
+                        + [100] bl=0.21 n=2
+                          - Arp8  bl=0.48
+                          - actin x3 (bs 100)  bl=0.20
+                        - Arp8 x5 (bs 98)  bl=0.07
+            + [94] bl=0.11 n=62
+              - Asgard_actin[A]  bl=1.44
+              + [95] bl=0.06 n=61
+                - Arp9 x3 (bs 100)  bl=0.45
+                + [94] bl=0.08 n=60
+                  + [94] bl=0.33 n=2
+                    - Asgard_actin[A] x2 (bs 100)  bl=0.80
+                    - Arp2 x2 (bs 89)  bl=0.17
+                  + [86] bl=0.11 n=58
+                    + [99] bl=0.15 n=4
+                      + [92] bl=0.12 n=3
+                        - Arp1  bl=1.49
+                        + [100] bl=1.01 n=2
+                          - actin_divergent  bl=0.49
+                          - Arp10  bl=0.38
+                      - Arp10 x15 (bs 96)  bl=0.10
+                    + [50] bl=0.07 n=54
+                      + [44] bl=0.07 n=7
+                        + [84] bl=0.12 n=2
+                          - actin-like_metazoan_orphan x2 (bs 97)  bl=0.24
+                          - Arp3 x3 (bs 89)  bl=0.21
+                        + [82] bl=0.09 n=5
+                          + [94] bl=0.24 n=2
+                            - actin  bl=1.36
+                            - Arp8 x2 (bs 100)  bl=0.55
+                          + [100] bl=0.79 n=3
+                            - Arp4  bl=0.76
+                            + [100] bl=0.32 n=2
+                              - actin  bl=0.35
+                              - Arp4  bl=0.55
+                      + [69] bl=0.06 n=47
+                        + [67] bl=0.15 n=10
+                          + [5] bl=0.11 n=9
+                            - actin  bl=1.30
+                            + [100] bl=0.53 n=8
+                              + [83] bl=0.04 n=3
+                                - actin-like_other x2 (bs 98)  bl=0.21
+                                + [100] bl=0.19 n=2
+                                  - actin-like_other x2 (bs 90)  bl=0.06
+                                  - Arp5 x3 (bs 100)  bl=0.15
+                              + [86] bl=0.07 n=5
+                                - Arp5 x7 (bs 89)  bl=0.09
+                                + [83] bl=0.07 n=4
+                                  + [87] bl=0.06 n=3
+                                    - actin-like_other  bl=0.58
+                                    + [96] bl=0.08 n=2
+                                      - actin-like_other  bl=0.68
+                                      - Arp5  bl=0.78
+                                  - Arp5 x4 (bs 74)  bl=0.06
+                          - Arp6 x31 (bs 98)  bl=0.21
+                        + [88] bl=0.15 n=37
+                          + [78] bl=0.17 n=14
+                            - actin  bl=1.54
+                            + [55] bl=0.07 n=13
+                              + [55] bl=0.06 n=6
+                                - Arp4 x2 (bs 100)  bl=0.29
+                                + [93] bl=0.16 n=5
+                                  - Arp4  bl=1.23
+                                  + [99] bl=0.15 n=4
+                                    - Arp4  bl=0.96
+                                    + [100] bl=1.00 n=3
+                                      - actin-like_metazoan_orphan  bl=0.42
+                                      + [100] bl=0.50 n=2
+                                        - Arp4  bl=0.02
+                                        - Arp1  bl=0.02
+                              + [96] bl=0.12 n=7
+                                + [55] bl=0.06 n=6
+                                  + [70] bl=0.04 n=3
+                                    + [100] bl=0.27 n=2
+                                      - Arp1  bl=0.88
+                                      - Arp4  bl=0.58
+                                    - Arp4 x2 (bs 70)  bl=0.14
+                                  + [66] bl=0.11 n=3
+                                    - Arp4  bl=1.00
+                                    + [70] bl=0.05 n=2
+                                      - Arp7  bl=1.39
+                                      - Arp4 x2 (bs 100)  bl=0.20
+                                - Arp4 x21 (bs 55)  bl=0.08
+                          + [70] bl=0.05 n=23
+                            - actin  bl=0.82
+                            + [22] bl=0.05 n=22
+                              - Asgard_actin[A] x2 (bs 72)  bl=0.25
+                              + [60] bl=0.01 n=21
+                                + [68] bl=0.17 n=2
+                                  - actin  bl=0.89
+                                  - Arp7_plant x7 (bs 100)  bl=0.50
+                                + [81] bl=0.03 n=19
+                                  - actin  bl=0.79
+                                  + [87] bl=0.05 n=18
+                                    - actin x2 (bs 100)  bl=0.14
+                                    + [97] bl=0.06 n=17
+                                      + [98] bl=0.09 n=2
+                                        - Asgard_actin[A]  bl=0.28
+                                        - Arp3 x29 (bs 100)  bl=0.67
+                                      + [95] bl=0.08 n=15
+                                        + [44] bl=0.05 n=11
+                                          - actin-like_metazoan_orphan x2 (bs 46)  bl=0.16
+                                          + [47] bl=0.06 n=10
+                                            - Arp1  bl=0.37
+                                            + [67] bl=0.02 n=9
+                                              - actin  bl=0.29
+                                              + [69] bl=0.02 n=8
+                                                - actin x6 (bs 53)  bl=0.02
+                                                + [96] bl=0.04 n=7
+                                                  - actin x8 (bs 49)  bl=0.02
+                                                  + [50] bl=0.02 n=6
+                                                    - actin x6 (bs 82)  bl=0.01
+                                                    + [70] bl=0.03 n=5
+                                                      - actin x2 (bs 60)  bl=0.01
+                                                      + [93] bl=0.01 n=4
+                                                        - actin x3 (bs 96)  bl=0.00
+                                                        + [96] bl=0.00 n=3
+                                                          - actin  bl=0.01
+                                                          + [100] bl=0.01 n=2
+                                                            - actin  bl=0.01
+                                                            - actin_POTE x2 (bs 100)  bl=0.05
+                                        + [70] bl=0.04 n=4
+                                          + [76] bl=0.09 n=2
+                                            - actin  bl=0.90
+                                            - Arp1 x17 (bs 99)  bl=0.09
+                                          + [99] bl=0.09 n=2
+                                            - actin  bl=0.43
+                                            - Arp2 x27 (bs 100)  bl=0.24

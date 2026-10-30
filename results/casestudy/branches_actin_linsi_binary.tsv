@@ -1,0 +1,798 @@
+split_size	terminal	ufboot	b_aa	b_3di	tip	domains	subfamilies	ratio	rho	supported	class	clade_label	focal
+130	False	100.0	0.3855623381	0.0521152253		"{""Bacteria"": 121, ""Archaea"": 9}"	"{""MreB"": 68, ""FtsA"": 53, ""Ta0583_archaeal_actin"": 3, ""salactin"": 2, ""ALP_bacterial"": 2, ""crenactin"": 1}"	0.1351667944457877	0.3338466245830807	True	EUK+ASGARD_STEM		EUK+ASGARD_STEM
+4	False	94.0	0.3253758527	0.0872395675		"{""Asgard"": 2, ""Eukaryota"": 2}"	"{""Asgard_actin"": 2, ""Arp2"": 2}"	0.26811936649901247	0.6622243714372463	False	mixed_split		
+30	False	98.0	0.091650628	0.0051747527		"{""Eukaryota"": 29, ""Asgard"": 1}"	"{""Arp3"": 29, ""Asgard_actin"": 1}"	0.05646172659067868	0.13945404947803935	True	mixed_split		
+109	False	97.0	0.0590945112	0.0286597554		"{""Eukaryota"": 108, ""Asgard"": 1}"	"{""actin"": 30, ""Arp3"": 29, ""Arp2"": 27, ""Arp1"": 18, ""actin_POTE"": 2, ""actin-like_metazoan_orphan"": 2}"	0.484981681344375	1.1978496491339448	True	mixed_split		
+111	False	87.0	0.0503145584	0.0021946167		"{""Eukaryota"": 110, ""Asgard"": 1}"	"{""actin"": 32, ""Arp3"": 29, ""Arp2"": 27, ""Arp1"": 18, ""actin_POTE"": 2, ""actin-like_metazoan_orphan"": 2}"	0.04361792629784862	0.10773132207178823	False	mixed_split		
+112	False	81.0	0.0346966851	0.0090450115		"{""Eukaryota"": 111, ""Asgard"": 1}"	"{""actin"": 33, ""Arp3"": 29, ""Arp2"": 27, ""Arp1"": 18, ""actin_POTE"": 2, ""actin-like_metazoan_orphan"": 2}"	0.2606880592175072	0.6438698867996363	False	mixed_split		
+120	False	60.0	0.0106411283	0.0100854371		"{""Eukaryota"": 119, ""Asgard"": 1}"	"{""actin"": 34, ""Arp3"": 29, ""Arp2"": 27, ""Arp1"": 18, ""Arp7_plant"": 7, ""actin_POTE"": 2}"	0.9477789211506829	2.3409062482727974	False	mixed_split		
+122	False	22.0	0.0536608477	0.0218780852		"{""Eukaryota"": 119, ""Asgard"": 3}"	"{""actin"": 34, ""Arp3"": 29, ""Arp2"": 27, ""Arp1"": 18, ""Arp7_plant"": 7, ""Asgard_actin"": 3}"	0.40771039105295387	1.0069983417049089	False	mixed_split		
+123	False	70.0	0.0507641042	0.0471605321		"{""Eukaryota"": 120, ""Asgard"": 3}"	"{""actin"": 35, ""Arp3"": 29, ""Arp2"": 27, ""Arp1"": 18, ""Arp7_plant"": 7, ""Asgard_actin"": 3}"	0.9290133814672927	2.294557497401944	False	mixed_split		
+131	False	68.0	0.1234016658	0.0252622973		"{""Bacteria"": 121, ""Archaea"": 9, ""Eukaryota"": 1}"	"{""MreB"": 68, ""FtsA"": 53, ""Ta0583_archaeal_actin"": 3, ""salactin"": 2, ""ALP_bacterial"": 2, ""Arp4"": 1}"	0.20471601526792355	0.5056252978071903	False	mixed_split		
+150	False	94.0	0.110457847	0.0397547841		"{""Bacteria"": 121, ""Eukaryota"": 20, ""Archaea"": 9}"	"{""MreB"": 68, ""FtsA"": 53, ""Arp8"": 15, ""actin"": 3, ""Ta0583_archaeal_actin"": 3, ""salactin"": 2}"	0.3599090981738944	0.8889345794930902	False	mixed_split		
+151	False	95.0	0.0588839409	0.0191155754		"{""Bacteria"": 121, ""Eukaryota"": 20, ""Archaea"": 9, ""Asgard"": 1}"	"{""MreB"": 68, ""FtsA"": 53, ""Arp8"": 15, ""actin"": 3, ""Ta0583_archaeal_actin"": 3, ""salactin"": 2}"	0.32463138689143	0.8018026408911815	True	mixed_split		
+154	False	94.0	0.0829557156	0.0096594979		"{""Bacteria"": 121, ""Eukaryota"": 23, ""Archaea"": 9, ""Asgard"": 1}"	"{""MreB"": 68, ""FtsA"": 53, ""Arp8"": 15, ""actin"": 3, ""Arp9"": 3, ""Ta0583_archaeal_actin"": 3}"	0.11644161984662574	0.28759757088397614	False	mixed_split		
+158	False	86.0	0.1070894323	2.6341e-06		"{""Bacteria"": 121, ""Eukaryota"": 25, ""Archaea"": 9, ""Asgard"": 3}"	"{""MreB"": 68, ""FtsA"": 53, ""Arp8"": 15, ""actin"": 3, ""Asgard_actin"": 3, ""Arp9"": 3}"	2.4597198280226573e-05	6.075228500996907e-05	False	mixed_split		
+160	False	88.0	0.1506754889	0.0417068758		"{""Eukaryota"": 157, ""Asgard"": 3}"	"{""actin"": 36, ""Arp4"": 32, ""Arp3"": 29, ""Arp2"": 27, ""Arp1"": 20, ""Arp7_plant"": 7}"	0.2767993394577929	0.6836629184238991	False	mixed_split		
+176	False	50.0	0.0704601415	0.0159659743		"{""Bacteria"": 121, ""Eukaryota"": 43, ""Archaea"": 9, ""Asgard"": 3}"	"{""MreB"": 68, ""FtsA"": 53, ""Arp10"": 16, ""Arp8"": 15, ""actin"": 3, ""Asgard_actin"": 3}"	0.2265958307790228	0.5596659561273866	False	mixed_split		
+187	False	69.0	0.0588963263	0.0194799968		"{""Bacteria"": 121, ""Eukaryota"": 54, ""Archaea"": 9, ""Asgard"": 3}"	"{""MreB"": 68, ""FtsA"": 53, ""Arp8"": 17, ""Arp10"": 16, ""actin"": 5, ""Arp4"": 3}"	0.3307506261218197	0.8169164665201626	False	mixed_split		
+2	False	81.0	0.0804229322	0.0754389859		"{""Eukaryota"": 2}"	"{""actin"": 2}"	0.9380282941237997	2.316823307386017	False	within_eukaryote		
+2	False	99.0	0.0480331225	0.0133977545		"{""Eukaryota"": 2}"	"{""Arp3"": 2}"	0.2789274109756242	0.6889190132807193	True	within_eukaryote		
+2	False	74.0	0.0167689743	0.0078433701		"{""Eukaryota"": 2}"	"{""Arp2"": 2}"	0.4677310585418454	1.1552425708334362	False	within_eukaryote		
+2	False	100.0	0.4416953211	0.0890859087		"{""Eukaryota"": 2}"	"{""Arp5"": 2}"	0.2016908589344801	0.49815350538289577	True	within_eukaryote		
+2	False	100.0	0.1631304088	0.0180089644		"{""Eukaryota"": 2}"	"{""Arp3"": 2}"	0.1103961213146914	0.27266587640173606	True	within_eukaryote		
+2	False	100.0	0.5015391061	0.1669816165		"{""Eukaryota"": 2}"	"{""Arp4"": 1, ""Arp1"": 1}"	0.3329383780229217	0.8223199651427555	True	within_eukaryote		
+2	False	100.0	0.0080413698	0.0116769574		"{""Eukaryota"": 2}"	"{""Arp4"": 2}"	1.452110484957426	3.586547908548442	True	within_eukaryote		
+2	False	90.0	0.0604768047	0.0294646151		"{""Eukaryota"": 2}"	"{""actin-like_other"": 2}"	0.48720522266613736	1.2033415435591626	False	within_eukaryote		
+2	False	100.0	0.2257142108	0.0358830785		"{""Eukaryota"": 2}"	"{""Arp1"": 2}"	0.15897571700434557	0.39265195812468867	True	within_eukaryote		
+2	False	100.0	0.6404855437	0.263449613		"{""Eukaryota"": 2}"	"{""Arp8"": 2}"	0.41132796140579003	1.0159333294468174	True	within_eukaryote		
+2	False	100.0	0.4285036943	0.1330354459		"{""Eukaryota"": 2}"	"{""Arp4"": 2}"	0.3104651083984832	0.7668135425910733	True	within_eukaryote		
+2	False	97.0	0.0640968936	0.0045494096		"{""Eukaryota"": 2}"	"{""actin"": 2}"	0.07097706838011258	0.17530529445977797	True	within_eukaryote		
+2	False	100.0	0.4566148636	0.1389876709		"{""Eukaryota"": 2}"	"{""Arp6"": 2}"	0.3043870928865663	0.7518015348628668	True	within_eukaryote		
+2	False	96.0	0.0631463718	0.0528250135		"{""Eukaryota"": 2}"	"{""Arp3"": 2}"	0.8365486724607033	2.066180172027941	True	within_eukaryote		
+2	False	100.0	0.4216187011	0.1679393033		"{""Eukaryota"": 2}"	"{""Arp10"": 2}"	0.3983203374562078	0.9838059762220892	True	within_eukaryote		
+2	False	100.0	0.4436302051	0.1870533764		"{""Eukaryota"": 2}"	"{""Arp5"": 2}"	0.42164256231794617	1.0414092217513138	True	within_eukaryote		
+2	False	100.0	0.1777570366	0.0310349872		"{""Eukaryota"": 2}"	"{""Arp6"": 2}"	0.1745921725159993	0.43122282889138763	True	within_eukaryote		
+2	False	100.0	0.2722367028	0.0615421252		"{""Eukaryota"": 2}"	"{""Arp1"": 1, ""Arp4"": 1}"	0.2260610878953093	0.558345201962286	True	within_eukaryote		
+2	False	100.0	0.1204440837	0.0084042935		"{""Eukaryota"": 2}"	"{""Arp7_plant"": 2}"	0.0697775535486929	0.17234262911546208	True	within_eukaryote		
+2	False	100.0	0.0968743397	0.0613963517		"{""Eukaryota"": 2}"	"{""Arp6"": 2}"	0.6337731115394637	1.5653475759819646	True	within_eukaryote		
+2	False	100.0	0.171766604	0.0556154173		"{""Eukaryota"": 2}"	"{""Arp6"": 2}"	0.3237848103464862	0.7997116930134907	True	within_eukaryote		
+2	False	100.0	0.3230206952	0.0430586669		"{""Eukaryota"": 2}"	"{""actin"": 1, ""Arp4"": 1}"	0.1333000254777484	0.32923591733496055	True	within_eukaryote		
+2	False	100.0	1.0151646932	0.2880048127		"{""Eukaryota"": 2}"	"{""Arp8"": 2}"	0.28370255056068966	0.700713065502817	True	within_eukaryote		
+2	False	100.0	0.1510729977	0.0361407002		"{""Eukaryota"": 2}"	"{""Arp2"": 2}"	0.23922673641366424	0.5908628579170767	True	within_eukaryote		
+2	False	62.0	0.12534365	0.0596651888		"{""Eukaryota"": 2}"	"{""Arp1"": 2}"	0.4760128558566788	1.1756976692203944	False	within_eukaryote		
+2	False	100.0	0.1159292518	0.0196485778		"{""Eukaryota"": 2}"	"{""Arp6"": 2}"	0.16948766161190734	0.41861526693457796	True	within_eukaryote		
+2	False	98.0	0.2101152455	0.0523333337		"{""Eukaryota"": 2}"	"{""actin-like_other"": 2}"	0.24906966448562629	0.6151737718979252	True	within_eukaryote		
+2	False	89.0	0.1716719097	0.0443772582		"{""Eukaryota"": 2}"	"{""Arp2"": 2}"	0.2585004050898608	0.6384666296663696	False	within_eukaryote		
+2	False	46.0	0.1633338976	0.0129246387		"{""Eukaryota"": 2}"	"{""actin-like_metazoan_orphan"": 2}"	0.07913016764990245	0.19544252329819517	False	within_eukaryote		
+2	False	100.0	0.0415606458	0.0164311615		"{""Eukaryota"": 2}"	"{""Arp7_plant"": 2}"	0.39535385419829067	0.9764790996278894	True	within_eukaryote		
+2	False	100.0	0.0389829914	0.015400988		"{""Eukaryota"": 2}"	"{""Arp3"": 2}"	0.39506942507239196	0.9757765920038554	True	within_eukaryote		
+2	False	92.0	0.0267983013	0.0092060559		"{""Eukaryota"": 2}"	"{""actin"": 2}"	0.3435313230096416	0.8484833356858743	False	within_eukaryote		
+2	False	98.0	0.0775101422	0.0293551377		"{""Eukaryota"": 2}"	"{""Arp1"": 2}"	0.37872640749715974	0.9354111954923509	True	within_eukaryote		
+2	False	100.0	0.238359021	0.0514429241		"{""Eukaryota"": 2}"	"{""Arp2"": 2}"	0.21582117548636853	0.533053781774598	True	within_eukaryote		
+2	False	68.0	0.0625946048	0.0842564524		"{""Eukaryota"": 2}"	"{""Arp4"": 2}"	1.346065729933325	3.3246294124807187	False	within_eukaryote		
+2	False	100.0	0.2877046429	0.1671635971		"{""Eukaryota"": 2}"	"{""Arp4"": 2}"	0.581025024188096	1.4350657934800464	True	within_eukaryote		
+2	False	100.0	0.2083417284	0.0468238295		"{""Eukaryota"": 2}"	"{""Arp2"": 2}"	0.2247453251904576	0.5550954175787167	True	within_eukaryote		
+2	False	98.0	0.0184669172	0.0100871004		"{""Eukaryota"": 2}"	"{""actin"": 2}"	0.5462254631216953	1.3491148315842219	True	within_eukaryote		
+2	False	100.0	0.0631465446	0.0210632113		"{""Eukaryota"": 2}"	"{""Arp3"": 2}"	0.3335607899596773	0.823857251907882	True	within_eukaryote		
+2	False	100.0	0.4229569022	0.1247791231		"{""Eukaryota"": 2}"	"{""Arp4"": 2}"	0.2950161646516807	0.728656406850812	True	within_eukaryote		
+2	False	100.0	0.1398376711	0.0459444598		"{""Eukaryota"": 2}"	"{""actin"": 2}"	0.3285556705756665	0.8114951757127737	True	within_eukaryote		
+2	False	100.0	0.8416679044	0.3267983406		"{""Eukaryota"": 2}"	"{""Arp6"": 2}"	0.38827468517165903	0.9589943564697466	True	within_eukaryote		
+2	False	100.0	0.8250366033	0.1803740985		"{""Eukaryota"": 2}"	"{""Arp6"": 2}"	0.2186255710092566	0.5399803200797405	True	within_eukaryote		
+2	False	33.0	0.0596488706	0.0197592097		"{""Eukaryota"": 2}"	"{""Arp8"": 2}"	0.33125873970864417	0.8181714493475772	False	within_eukaryote		
+2	False	99.0	2.9334e-06	0.0087022323		"{""Eukaryota"": 2}"	"{""actin"": 2}"	2966.602679484557	7327.171551902601	True	within_eukaryote		
+2	False	88.0	0.114357777	0.0472347269		"{""Eukaryota"": 2}"	"{""Arp6"": 2}"	0.41304341636511527	1.020170308285764	False	within_eukaryote		
+2	False	79.0	0.114261468	0.0346611449		"{""Eukaryota"": 2}"	"{""Arp4"": 2}"	0.303349374961645	0.7492384894941814	False	within_eukaryote		
+2	False	100.0	0.5504649773	0.2988166024		"{""Eukaryota"": 2}"	"{""Arp8"": 2}"	0.5428439859438084	1.3407629671594499	True	within_eukaryote		
+2	False	100.0	0.8561161878	0.1139427832		"{""Eukaryota"": 2}"	"{""Arp10"": 2}"	0.13309266291623786	0.3287237553686356	True	within_eukaryote		
+2	False	100.0	0.0428645923	0.0189926186		"{""Eukaryota"": 2}"	"{""Arp2"": 2}"	0.44308408364355306	1.0943673432324812	True	within_eukaryote		
+2	False	100.0	0.102242687	0.0382322185		"{""Eukaryota"": 2}"	"{""Arp4"": 2}"	0.3739359715771163	0.9235793630608324	True	within_eukaryote		
+2	False	100.0	0.4423445617	0.0827641266		"{""Eukaryota"": 2}"	"{""Arp2"": 2}"	0.18710329857323077	0.4621238887342722	True	within_eukaryote		
+2	False	100.0	0.3948941123	0.0705232633		"{""Eukaryota"": 2}"	"{""Arp2"": 2}"	0.17858778113770324	0.4410915282045605	True	within_eukaryote		
+2	False	100.0	0.0648853408	0.0487062408		"{""Eukaryota"": 2}"	"{""Arp4"": 2}"	0.7506509205234845	1.8540224844753457	True	within_eukaryote		
+2	False	96.0	0.1056573756	0.0249965837		"{""Eukaryota"": 2}"	"{""Arp1"": 2}"	0.23658153118086722	0.584329501541203	True	within_eukaryote		
+2	False	96.0	0.0790588454	0.0690724296		"{""Eukaryota"": 2}"	"{""actin-like_other"": 1, ""Arp5"": 1}"	0.8736837636639708	2.1578996279980833	True	within_eukaryote		
+2	False	82.0	0.020069222	0.0111562618		"{""Eukaryota"": 2}"	"{""Arp3"": 2}"	0.5558891022282776	1.3729829221914567	False	within_eukaryote		
+2	False	100.0	1.0044861843	0.56318633		"{""Eukaryota"": 2}"	"{""actin_divergent"": 1, ""Arp10"": 1}"	0.5606710563097189	1.3847938054453373	True	within_eukaryote		
+2	False	98.0	0.0024643158	0.006280835		"{""Eukaryota"": 2}"	"{""actin"": 2}"	2.5487135212134744	6.295032811683972	True	within_eukaryote		
+2	False	98.0	0.1641066644	0.045632442		"{""Eukaryota"": 2}"	"{""Arp6"": 2}"	0.27806574563464226	0.6867907977912084	True	within_eukaryote		
+2	False	100.0	0.2220409951	2.6943e-06		"{""Eukaryota"": 2}"	"{""Arp10"": 2}"	1.2134245744965138e-05	2.9970208292858306e-05	True	within_eukaryote		
+2	False	100.0	0.2774702944	0.1019794466		"{""Eukaryota"": 2}"	"{""Arp3"": 2}"	0.3675328446258354	0.9077643670166714	True	within_eukaryote		
+2	False	100.0	0.1066279597	0.0497130507		"{""Eukaryota"": 2}"	"{""Arp5"": 2}"	0.46622903448465775	1.1515327420726764	True	within_eukaryote		
+2	False	100.0	0.4137825527	0.0789422136		"{""Eukaryota"": 2}"	"{""Arp5"": 2}"	0.19078188068803031	0.4712095685960527	True	within_eukaryote		
+2	False	100.0	1.1656851054	0.2923352818		"{""Eukaryota"": 2}"	"{""Arp3"": 2}"	0.2507840929302141	0.6194082153621032	True	within_eukaryote		
+2	False	97.0	0.009213779	0.0173165754		"{""Eukaryota"": 2}"	"{""actin"": 2}"	1.879421614084731	4.641957846254347	True	within_eukaryote		
+2	False	90.0	0.0529416661	0.0965977549		"{""Eukaryota"": 2}"	"{""Arp10"": 2}"	1.824607384239462	4.506572926548318	False	within_eukaryote		
+2	False	97.0	0.2402008929	0.1254762669		"{""Eukaryota"": 2}"	"{""actin-like_metazoan_orphan"": 2}"	0.5223805181783319	1.29022052684502	True	within_eukaryote		
+2	False	60.0	0.0059792141	2.4597e-06		"{""Eukaryota"": 2}"	"{""actin"": 2}"	0.00041137513373204016	0.0010160498397329193	False	within_eukaryote		
+2	False	100.0	0.339724025	0.1172799416		"{""Eukaryota"": 2}"	"{""Arp2"": 2}"	0.34522121772223796	0.8526571836195646	True	within_eukaryote		
+2	False	100.0	0.1957283702	0.0371279642		"{""Eukaryota"": 2}"	"{""Arp1"": 2}"	0.18969127552669932	0.46851589776250135	True	within_eukaryote		
+2	False	100.0	0.1528864148	0.0299129722		"{""Eukaryota"": 2}"	"{""Arp3"": 2}"	0.1956548738429832	0.4832453080176157	True	within_eukaryote		
+2	False	66.0	0.0966854845	0.0214082638		"{""Eukaryota"": 2}"	"{""Arp6"": 2}"	0.22142169438060788	0.546886427110472	False	within_eukaryote		
+2	False	99.0	0.0511106006	0.0288333904		"{""Eukaryota"": 2}"	"{""Arp1"": 2}"	0.5641371860537283	1.3933547520901781	True	within_eukaryote		
+2	False	100.0	0.1292093035	0.0671508535		"{""Eukaryota"": 2}"	"{""actin"": 2}"	0.5197060248838814	1.283614832284582	True	within_eukaryote		
+2	False	100.0	0.2237715731	0.0607546605		"{""Eukaryota"": 2}"	"{""Arp8"": 2}"	0.2715030316779768	0.6705816399760782	True	within_eukaryote		
+2	False	100.0	0.196863733	0.0877762571		"{""Eukaryota"": 2}"	"{""Arp4"": 2}"	0.4458731720788816	1.1012560747705484	True	within_eukaryote		
+2	False	93.0	0.0954218737	0.0476632217		"{""Eukaryota"": 2}"	"{""Arp10"": 2}"	0.49949995584712564	1.23370813758436	False	within_eukaryote		
+2	False	100.0	0.2687648145	0.0840253418		"{""Eukaryota"": 2}"	"{""Arp1"": 2}"	0.3126352009890789	0.7721734247231726	True	within_eukaryote		
+2	False	70.0	0.1354806669	0.0044869846		"{""Eukaryota"": 2}"	"{""Arp4"": 2}"	0.0331190029003319	0.08180017417123582	False	within_eukaryote		
+2	False	99.0	0.3461963206	0.0540880906		"{""Eukaryota"": 2}"	"{""Arp9"": 2}"	0.15623531326462053	0.3858834722531902	True	within_eukaryote		
+2	False	100.0	0.0525938537	0.0382079914		"{""Eukaryota"": 2}"	"{""actin_POTE"": 2}"	0.7264725573817383	1.7943046746692297	True	within_eukaryote	stem:actin_POTE	
+3	False	85.0	0.045396845	0.0265808608		"{""Eukaryota"": 3}"	"{""Arp2"": 3}"	0.5855222053426841	1.4461733199605982	False	within_eukaryote		
+3	False	100.0	0.9977565863	0.3492943514		"{""Eukaryota"": 3}"	"{""Arp4"": 1, ""Arp1"": 1, ""actin-like_metazoan_orphan"": 1}"	0.3500797250512723	0.8646571446969933	True	within_eukaryote		
+3	False	100.0	0.1309801834	0.041738797		"{""Eukaryota"": 3}"	"{""Arp2"": 3}"	0.3186649760027745	0.7870662839018746	True	within_eukaryote		
+3	False	100.0	0.0870372624	0.0057527073		"{""Eukaryota"": 3}"	"{""Arp4"": 3}"	0.0660947637985452	0.1632465568724446	True	within_eukaryote		
+3	False	99.0	0.2076799367	0.0663111338		"{""Eukaryota"": 3}"	"{""Arp8"": 3}"	0.3192948478975533	0.7886219959157154	True	within_eukaryote		
+3	False	99.0	0.0804848154	0.0282829811		"{""Eukaryota"": 3}"	"{""Arp6"": 3}"	0.3514076656501842	0.8679370070952349	True	within_eukaryote		
+3	False	77.0	0.0813555332	0.0175156607		"{""Eukaryota"": 3}"	"{""actin"": 3}"	0.21529771868055314	0.5317609029395776	False	within_eukaryote		
+3	False	92.0	0.1194306109	0.0455186116		"{""Eukaryota"": 3}"	"{""Arp10"": 3}"	0.38113019147254484	0.941348268792784	False	within_eukaryote		
+3	False	98.0	0.0177538263	0.0134320548		"{""Eukaryota"": 3}"	"{""actin"": 3}"	0.7565723902570795	1.8686478419178825	True	within_eukaryote		
+3	False	90.0	0.1845041193	0.0196693496		"{""Eukaryota"": 3}"	"{""Arp5"": 3}"	0.10660656073492882	0.26330609234090846	False	within_eukaryote		
+3	False	99.0	0.0856261244	0.016625695		"{""Eukaryota"": 3}"	"{""Arp1"": 3}"	0.19416615100239196	0.4795683317505603	True	within_eukaryote		
+3	False	100.0	0.021380998	0.0092564481		"{""Eukaryota"": 3}"	"{""actin"": 3}"	0.43292872016544787	1.0692847492974782	True	within_eukaryote		
+3	False	83.0	0.1503875051	0.001080422		"{""Eukaryota"": 3}"	"{""Arp10"": 3}"	0.007184253766837707	0.017744290526687086	False	within_eukaryote		
+3	False	63.0	0.091007703	0.0288089999		"{""Eukaryota"": 3}"	"{""Arp3"": 3}"	0.31655562057203007	0.7818564156536307	False	within_eukaryote		
+3	False	57.0	0.0355935321	0.0318076036		"{""Eukaryota"": 3}"	"{""Arp8"": 3}"	0.8936343690375139	2.20717535647604	False	within_eukaryote		
+3	False	54.0	0.0350025861	0.0244003402		"{""Eukaryota"": 3}"	"{""Arp2"": 3}"	0.6971010693407023	1.721760436406518	False	within_eukaryote		
+3	False	96.0	0.0069591713	0.00999578		"{""Eukaryota"": 3}"	"{""Arp3"": 3}"	1.4363463074978482	3.5476121813545896	True	within_eukaryote		
+3	False	78.0	0.0490362178	0.0197611137		"{""Eukaryota"": 3}"	"{""Arp1"": 3}"	0.40299016903379525	0.9953399296308484	False	within_eukaryote		
+3	False	100.0	0.1226329311	0.024389762		"{""Eukaryota"": 3}"	"{""Arp3"": 3}"	0.19888427831926786	0.4912215701479834	True	within_eukaryote		
+3	False	87.0	0.0581740657	0.0075703312		"{""Eukaryota"": 3}"	"{""actin-like_other"": 2, ""Arp5"": 1}"	0.13013240709424923	0.32141225983361577	False	within_eukaryote		
+3	False	97.0	0.2324249259	0.0712636431		"{""Eukaryota"": 3}"	"{""Arp6"": 3}"	0.3066092968473654	0.7572901261584566	True	within_eukaryote		
+3	False	100.0	0.0085800112	0.0100281511		"{""Eukaryota"": 3}"	"{""actin_POTE"": 2, ""actin"": 1}"	1.1687806538061396	2.8867554176383425	True	within_eukaryote		
+3	False	100.0	0.1376836797	0.0763878801		"{""Eukaryota"": 3}"	"{""Arp6"": 3}"	0.5548070785618319	1.3703104466752396	True	within_eukaryote		
+3	False	100.0	0.2251448893	0.0272411158		"{""Eukaryota"": 3}"	"{""Arp5"": 3}"	0.1209937115814425	0.2988407202587335	True	within_eukaryote		
+3	False	100.0	0.0645093806	0.0389096014		"{""Eukaryota"": 3}"	"{""Arp4"": 3}"	0.6031619128582983	1.489741393294486	True	within_eukaryote		
+3	False	100.0	0.1251298418	0.025407601		"{""Eukaryota"": 3}"	"{""actin"": 3}"	0.20304989309112992	0.5015101653358891	True	within_eukaryote		
+3	False	96.0	0.0034629431	0.0034374952		"{""Eukaryota"": 3}"	"{""actin"": 3}"	0.992651366405645	2.4517360896297773	True	within_eukaryote		
+3	False	81.0	0.0275444116	0.0170192214		"{""Eukaryota"": 3}"	"{""Arp3"": 3}"	0.6178829174916919	1.5261006021333214	False	within_eukaryote		
+3	False	94.0	0.2436371882	0.0539884584		"{""Eukaryota"": 3}"	"{""Arp8"": 2, ""actin"": 1}"	0.22159366884369586	0.5473111844945012	False	within_eukaryote		
+3	False	100.0	0.3351328033	0.1347752044		"{""Eukaryota"": 3}"	"{""Arp7_plant"": 3}"	0.4021546177303139	0.9932762128468781	True	within_eukaryote		
+3	False	100.0	0.2001788258	0.0380894886		"{""Eukaryota"": 3}"	"{""actin"": 3}"	0.19027731053860544	0.4699633376564084	True	within_eukaryote		
+3	False	100.0	0.4536212386	0.2001659048		"{""Eukaryota"": 3}"	"{""Arp9"": 3}"	0.441262197990921	1.089867492673759	True	within_eukaryote	stem:Arp9	
+3	False	100.0	0.1515455232	0.0206264503		"{""Eukaryota"": 3}"	"{""Arp5"": 3}"	0.13610728884929543	0.3361695389004448	True	within_eukaryote		
+3	False	100.0	0.7870282906	0.3158380531		"{""Eukaryota"": 3}"	"{""Arp4"": 2, ""actin"": 1}"	0.4013045742729493	0.9911767020894195	True	within_eukaryote		
+3	False	100.0	0.115326199	0.0243471397		"{""Eukaryota"": 3}"	"{""actin"": 3}"	0.2111154265996402	0.5214311166931979	True	within_eukaryote		
+3	False	100.0	0.0900909866	0.0203282523		"{""Eukaryota"": 3}"	"{""Arp2"": 3}"	0.22564135511420846	0.5573085096831509	True	within_eukaryote		
+3	False	100.0	0.310500396	0.0634010712		"{""Eukaryota"": 3}"	"{""Arp10"": 3}"	0.2041899849944153	0.5043260627993669	True	within_eukaryote		
+3	False	94.0	0.0654156511	0.0098999329		"{""Eukaryota"": 3}"	"{""Arp6"": 3}"	0.15133890335916875	0.37378989611851415	False	within_eukaryote		
+3	False	99.0	0.1683010411	0.0578989713		"{""Eukaryota"": 3}"	"{""Arp6"": 3}"	0.3440202800979584	0.8496910041385429	True	within_eukaryote		
+3	False	100.0	0.1224036112	0.062530936		"{""Eukaryota"": 3}"	"{""Arp5"": 3}"	0.5108585881328965	1.2617626687584782	True	within_eukaryote		
+3	False	100.0	0.0704745277	0.0381521904		"{""Eukaryota"": 3}"	"{""Arp2"": 3}"	0.5413614201489712	1.337101198095841	True	within_eukaryote		
+3	False	94.0	0.0675684822	0.0260348835		"{""Eukaryota"": 3}"	"{""Arp4"": 3}"	0.38531106001371745	0.9516745390577482	False	within_eukaryote		
+3	False	100.0	0.0905153447	0.0038859937		"{""Eukaryota"": 3}"	"{""Arp3"": 3}"	0.0429318776046157	0.10603685974859313	True	within_eukaryote		
+3	False	92.0	0.1167836385	0.0388351		"{""Eukaryota"": 3}"	"{""actin_divergent"": 1, ""Arp1"": 1, ""Arp10"": 1}"	0.332538877010584	0.8213332430337248	False	within_eukaryote		
+3	False	100.0	0.2278615462	0.1154083317		"{""Eukaryota"": 3}"	"{""Arp4"": 3}"	0.506484457885242	1.2509590640369659	True	within_eukaryote		
+3	False	97.0	0.0755981209	0.0244933499		"{""Eukaryota"": 3}"	"{""Arp1"": 3}"	0.3239941629289889	0.8002287701055594	True	within_eukaryote		
+3	False	89.0	0.2075116504	0.1146279402		"{""Eukaryota"": 3}"	"{""Arp3"": 3}"	0.5523927932674763	1.364347436310113	False	within_eukaryote		
+3	False	70.0	0.0525480037	0.0104036906		"{""Eukaryota"": 3}"	"{""Arp4"": 2, ""Arp7"": 1}"	0.1979845068786124	0.4889992369219072	False	within_eukaryote		
+3	False	100.0	0.0512335679	0.0133349871		"{""Eukaryota"": 3}"	"{""Arp2"": 3}"	0.26027832233015336	0.6428578832423194	True	within_eukaryote		
+4	False	81.0	0.0445569673	0.0367773621		"{""Eukaryota"": 4}"	"{""Arp4"": 4}"	0.8254009266918847	2.0386465065896955	False	within_eukaryote		
+4	False	96.0	0.0046459759	0.0063267285		"{""Eukaryota"": 4}"	"{""actin_POTE"": 2, ""actin"": 2}"	1.3617652429062321	3.363405425739696	True	within_eukaryote		
+4	False	100.0	0.0178812743	0.0021120871		"{""Eukaryota"": 4}"	"{""actin"": 4}"	0.11811725856696913	0.29173620813657236	True	within_eukaryote		
+4	False	97.0	0.0712435437	0.0205461059		"{""Eukaryota"": 4}"	"{""Arp6"": 4}"	0.28839253120981406	0.712296784828928	True	within_eukaryote		
+4	False	66.0	0.1082902433	0.0365127441		"{""Eukaryota"": 4}"	"{""Arp4"": 3, ""Arp7"": 1}"	0.33717482745742433	0.8327835138991245	False	within_eukaryote		
+4	False	98.0	0.0686623718	0.0430801989		"{""Eukaryota"": 4}"	"{""Arp4"": 4}"	0.6274207804164434	1.5496580398621678	True	within_eukaryote		
+4	False	100.0	0.0715588198	0.0531913799		"{""Eukaryota"": 4}"	"{""Arp3"": 4}"	0.7433238844444999	1.8359255378606316	True	within_eukaryote		
+4	False	100.0	0.1471746631	0.0221057665		"{""Eukaryota"": 4}"	"{""Arp7_plant"": 4}"	0.15020089758914487	0.370979151167165	True	within_eukaryote		
+4	False	100.0	0.0300303934	0.0218235462		"{""Eukaryota"": 4}"	"{""Arp3"": 4}"	0.7267152950450525	1.7949042091176783	True	within_eukaryote		
+4	False	33.0	0.02549947	0.0225862629		"{""Eukaryota"": 4}"	"{""Arp3"": 4}"	0.88575420979338	2.187712258489453	False	within_eukaryote		
+4	False	78.0	0.0459128958	0.0099209828		"{""Eukaryota"": 4}"	"{""Arp1"": 4}"	0.2160827067675396	0.5336997343238157	False	within_eukaryote		
+4	False	87.0	0.0988577012	0.0403211025		"{""Eukaryota"": 4}"	"{""Arp8"": 4}"	0.40787012049193794	1.0073928552706855	False	within_eukaryote		
+4	False	74.0	0.0641435299	0.093399436		"{""Eukaryota"": 4}"	"{""Arp5"": 4}"	1.4561006565371453	3.596403178985671	False	within_eukaryote		
+4	False	83.0	0.043150272	2.3169e-06		"{""Eukaryota"": 4}"	"{""Arp3"": 4}"	5.3693751918875494e-05	0.00013261746653692668	False	within_eukaryote		
+4	False	100.0	0.214607503	0.0312112401		"{""Eukaryota"": 4}"	"{""actin"": 3, ""Arp8"": 1}"	0.14543405828639644	0.3592055996993095	True	within_eukaryote		
+4	False	84.0	0.149282121	0.0478535259		"{""Eukaryota"": 4}"	"{""Arp10"": 4}"	0.3205576500349965	0.7917409737151837	False	within_eukaryote		
+4	False	70.0	0.0415910362	0.0080682242		"{""Eukaryota"": 4}"	"{""Arp4"": 3, ""Arp1"": 1}"	0.19398949718881972	0.47913201690250434	False	within_eukaryote		
+4	False	100.0	0.0531115311	0.0162610171		"{""Eukaryota"": 4}"	"{""Arp2"": 4}"	0.3061673569414383	0.756198584804182	True	within_eukaryote		
+4	False	69.0	0.0431142372	0.0019929277		"{""Eukaryota"": 4}"	"{""Arp6"": 4}"	0.046224352544036194	0.11416889875681842	False	within_eukaryote		
+4	False	99.0	0.1453580069	0.0882583415		"{""Eukaryota"": 4}"	"{""Arp4"": 2, ""Arp1"": 1, ""actin-like_metazoan_orphan"": 1}"	0.6071790841265312	1.49966334989463	True	within_eukaryote		
+4	False	34.0	0.0709715455	0.0161898023		"{""Eukaryota"": 4}"	"{""Arp8"": 4}"	0.2281168063333213	0.5634225929327344	False	within_eukaryote		
+4	False	100.0	0.1261495428	0.0231038665		"{""Eukaryota"": 4}"	"{""Arp6"": 4}"	0.18314665267260885	0.4523514229152141	True	within_eukaryote		
+4	False	30.0	0.0330193252	0.0052761923		"{""Eukaryota"": 4}"	"{""Arp2"": 4}"	0.15979103958187493	0.39466571225395247	False	within_eukaryote		
+5	False	93.0	0.1630293846	0.0444492833		"{""Eukaryota"": 5}"	"{""Arp4"": 3, ""actin-like_metazoan_orphan"": 1, ""Arp1"": 1}"	0.27264583871832887	0.673404243519616	False	within_eukaryote		
+5	False	100.0	0.0495912607	0.0156300097		"{""Eukaryota"": 5}"	"{""Arp3"": 5}"	0.3151766960423331	0.7784506287391622	True	within_eukaryote		
+5	False	98.0	0.0713080576	0.0408646687		"{""Eukaryota"": 5}"	"{""Arp8"": 5}"	0.5730722456251564	1.4154233340270412	True	within_eukaryote		
+5	False	84.0	0.1236456531	0.018160473		"{""Eukaryota"": 5}"	"{""Arp3"": 3, ""actin-like_metazoan_orphan"": 2}"	0.14687514315859115	0.36276491559706797	False	within_eukaryote		
+5	False	97.0	0.1782732307	0.0339485675		"{""Eukaryota"": 5}"	"{""Arp6"": 5}"	0.19042997855987134	0.4703404103227417	True	within_eukaryote		
+5	False	100.0	0.1937564418	0.0946424803		"{""Eukaryota"": 5}"	"{""Arp5"": 3, ""actin-like_other"": 2}"	0.48846107732352045	1.2064433618722574	True	within_eukaryote		
+5	False	93.0	0.1267400539	0.0472881845		"{""Eukaryota"": 5}"	"{""Arp6"": 5}"	0.37311160161973067	0.9215432629312902	False	within_eukaryote		
+5	False	55.0	0.0233895943	0.006962054		"{""Eukaryota"": 5}"	"{""actin"": 5}"	0.29765603929265244	0.735176597270541	False	within_eukaryote		
+5	False	99.0	0.0621226473	0.0192405163		"{""Eukaryota"": 5}"	"{""Arp7_plant"": 5}"	0.30971822895899026	0.7649688352362264	True	within_eukaryote		
+5	False	76.0	0.0043856189	0.005539684		"{""Eukaryota"": 5}"	"{""actin"": 5}"	1.263147602724897	3.1198310594622427	False	within_eukaryote		
+5	False	74.0	0.0488958522	0.003275997		"{""Eukaryota"": 5}"	"{""Arp4"": 5}"	0.06699948671719848	0.16548111968658674	False	within_eukaryote		
+5	False	85.0	0.0588929606	2.1329e-06		"{""Eukaryota"": 5}"	"{""Arp3"": 5}"	3.621655250933334e-05	8.945076976080962e-05	False	within_eukaryote		
+5	False	65.0	0.0690075321	0.0081585497		"{""Eukaryota"": 5}"	"{""Arp4"": 5}"	0.11822694496851888	0.2920071210857933	False	within_eukaryote		
+6	False	83.0	0.1638519962	0.0322081801		"{""Eukaryota"": 6}"	"{""Arp10"": 6}"	0.19656873792789348	0.48550244847379015	False	within_eukaryote		
+6	False	82.0	0.013460482	0.0093558142		"{""Eukaryota"": 6}"	"{""actin"": 6}"	0.6950578887145349	1.7167140124067752	False	within_eukaryote		
+6	False	100.0	0.1032099681	0.0401513927		"{""Eukaryota"": 6}"	"{""Arp6"": 6}"	0.38902630665574256	0.9608507761359395	True	within_eukaryote		
+6	False	87.0	0.050751624	0.0222434841		"{""Eukaryota"": 6}"	"{""Arp5"": 6}"	0.4382812282026679	1.082504835995594	False	within_eukaryote		
+6	False	88.0	0.0269044266	0.0239889781		"{""Eukaryota"": 6}"	"{""Arp3"": 6}"	0.8916368468525547	2.2022417036383537	False	within_eukaryote		
+6	False	82.0	0.089867228	0.046463943		"{""Eukaryota"": 6}"	"{""Arp8"": 2, ""Arp4"": 2, ""actin"": 2}"	0.5170287771644632	1.2770023346074324	False	within_eukaryote		
+6	False	53.0	0.0213908548	0.0098851777		"{""Eukaryota"": 6}"	"{""actin"": 6}"	0.4621216773440956	1.1413880366148292	False	within_eukaryote		
+7	False	83.0	0.0249878416	0.0349287126		"{""Eukaryota"": 7}"	"{""Arp3"": 7}"	1.397828318232976	3.4524771242976406	False	within_eukaryote		
+7	False	100.0	0.5038370771	0.2328466426		"{""Eukaryota"": 7}"	"{""Arp7_plant"": 7}"	0.4621467001599513	1.1414498401268918	True	within_eukaryote	stem:Arp7_plant	
+7	False	98.0	0.0795910632	0.0175023609		"{""Eukaryota"": 7}"	"{""Arp3"": 7}"	0.2199035946538279	0.5431368932723424	True	within_eukaryote		
+7	False	29.0	0.0231906533	0.0096732805		"{""Eukaryota"": 7}"	"{""Arp2"": 7}"	0.41711979282619005	1.030238494985313	False	within_eukaryote		
+7	False	74.0	0.113953565	0.0526929261		"{""Eukaryota"": 7}"	"{""Arp4"": 7}"	0.46240699972835425	1.14209275048552	False	within_eukaryote		
+7	False	65.0	0.0331534707	0.0036455993		"{""Eukaryota"": 7}"	"{""Arp1"": 7}"	0.10996131696100221	0.27159195905074507	False	within_eukaryote		
+7	False	93.0	0.0134819389	0.0035078188		"{""Eukaryota"": 7}"	"{""actin"": 5, ""actin_POTE"": 2}"	0.26018652257799507	0.642631148284808	False	within_eukaryote		
+7	False	83.0	0.0404022883	0.0172138747		"{""Eukaryota"": 7}"	"{""actin-like_other"": 4, ""Arp5"": 3}"	0.42606187481712515	1.0523244215004686	False	within_eukaryote		
+7	False	83.0	0.0663317068	0.0173658351		"{""Eukaryota"": 7}"	"{""Arp5"": 5, ""actin-like_other"": 2}"	0.2618029286109068	0.6466234875294866	False	within_eukaryote		
+7	False	100.0	0.1205687511	0.0253528411		"{""Eukaryota"": 7}"	"{""Arp4"": 7}"	0.21027704831223054	0.5193604175801274	True	within_eukaryote		
+7	False	89.0	0.089609785	0.0216919822		"{""Eukaryota"": 7}"	"{""Arp5"": 7}"	0.24207157957136044	0.5978892972845211	False	within_eukaryote		
+7	False	55.0	0.0570354783	0.0376580412		"{""Eukaryota"": 7}"	"{""Arp4"": 5, ""actin-like_metazoan_orphan"": 1, ""Arp1"": 1}"	0.6602564284974183	1.6307583598244644	False	within_eukaryote		
+7	False	100.0	0.180784596	0.0244602873		"{""Eukaryota"": 7}"	"{""Arp2"": 7}"	0.13530072717036137	0.3341774231952951	True	within_eukaryote		
+8	False	93.0	0.0396459653	0.0266103208		"{""Eukaryota"": 8}"	"{""Arp2"": 8}"	0.6711987108559568	1.6577845539841418	False	within_eukaryote		
+8	False	49.0	0.0152639941	0.0036430915		"{""Eukaryota"": 8}"	"{""actin"": 8}"	0.23867222930857918	0.589493288370806	False	within_eukaryote		
+8	False	68.0	0.1746516599	0.021364322		"{""Eukaryota"": 8}"	"{""Arp7_plant"": 7, ""actin"": 1}"	0.12232533038754131	0.3021296674108075	False	within_eukaryote		
+8	False	55.0	0.0554310847	0.0341603021		"{""Eukaryota"": 8}"	"{""Arp4"": 6, ""Arp1"": 1, ""Arp7"": 1}"	0.6162661669869866	1.5221074120824516	False	within_eukaryote		
+9	False	98.0	0.0888499277	0.0387777336		"{""Eukaryota"": 9}"	"{""Arp8"": 6, ""actin"": 3}"	0.4364408008404041	1.077959189520797	True	within_eukaryote		
+9	False	72.0	0.0198068925	0.0111613228		"{""Eukaryota"": 9}"	"{""Arp1"": 9}"	0.5635070115112707	1.3917982925709576	False	within_eukaryote		
+9	False	95.0	0.0362921484	0.0026399684		"{""Eukaryota"": 9}"	"{""Arp6"": 9}"	0.07274213614755307	0.1796648112977447	True	within_eukaryote		
+9	False	81.0	0.0612338521	0.016422508		"{""Eukaryota"": 9}"	"{""Arp6"": 9}"	0.2681932858507851	0.6624069438373824	False	within_eukaryote		
+9	False	63.0	0.0878608255	0.0114344398		"{""Eukaryota"": 9}"	"{""Arp4"": 9}"	0.1301426401917883	0.3214375344218492	False	within_eukaryote		
+9	False	70.0	0.0272310142	0.0135235708		"{""Eukaryota"": 9}"	"{""actin"": 7, ""actin_POTE"": 2}"	0.4966238385641913	1.226604454680954	False	within_eukaryote		
+10	False	96.0	0.0655829637	0.0287244092		"{""Eukaryota"": 10}"	"{""Arp6"": 10}"	0.4379858362515569	1.0817752514388856	True	within_eukaryote		
+10	False	97.0	0.2520902755	0.0262682522		"{""Eukaryota"": 10}"	"{""Arp10"": 10}"	0.10420176719589487	0.2573665255329697	True	within_eukaryote		
+10	False	85.0	0.0525444294	0.0098080348		"{""Eukaryota"": 10}"	"{""Arp6"": 10}"	0.18666174344258843	0.46103329773123247	False	within_eukaryote		
+11	False	84.0	0.0452466672	0.0199191043		"{""Eukaryota"": 11}"	"{""Arp3"": 11}"	0.4402336245441742	1.0873270331271658	False	within_eukaryote		
+11	False	44.0	0.0712581954	0.0152642142		"{""Eukaryota"": 11}"	"{""Arp3"": 3, ""actin-like_metazoan_orphan"": 2, ""Arp8"": 2, ""Arp4"": 2, ""actin"": 2}"	0.21420994615869826	0.5290742284036868	False	within_eukaryote		
+12	False	95.0	0.0561548604	0.022796383		"{""Eukaryota"": 12}"	"{""Arp1"": 12}"	0.4059556525938759	1.002664337084978	True	within_eukaryote		
+12	False	75.0	0.0672711877	0.0173580964		"{""Eukaryota"": 12}"	"{""Arp4"": 12}"	0.25803166249136994	0.6373088887067936	False	within_eukaryote		
+12	False	69.0	0.0639727455	0.0228935865		"{""Eukaryota"": 12}"	"{""Arp6"": 12}"	0.35786468629832374	0.8838851144472164	False	within_eukaryote		
+12	False	49.0	0.1526349706	0.057473283		"{""Eukaryota"": 12}"	"{""Arp10"": 12}"	0.3765407283407961	0.9300128163137557	False	within_eukaryote		
+13	False	90.0	0.1081643912	0.0467488768		"{""Eukaryota"": 13}"	"{""Arp8"": 10, ""actin"": 3}"	0.4322020979488488	1.0674900749815466	False	within_eukaryote		
+14	False	86.0	0.0734206122	0.0025160556		"{""Eukaryota"": 14}"	"{""Arp5"": 12, ""actin-like_other"": 2}"	0.03426906320456968	0.08464069245245293	False	within_eukaryote		
+14	False	96.0	0.0555754457	0.0343343335		"{""Eukaryota"": 14}"	"{""Arp1"": 14}"	0.6177968177770278	1.5258879456207803	True	within_eukaryote		
+14	False	41.0	0.0844812338	0.0429506255		"{""Eukaryota"": 14}"	"{""Arp10"": 14}"	0.5084043351175583	1.255700942663671	False	within_eukaryote		
+15	False	90.0	0.0425557345	0.0007630582		"{""Eukaryota"": 15}"	"{""Arp2"": 15}"	0.017930796142174448	0.04428702916790089	False	within_eukaryote		
+15	False	50.0	0.0163224691	0.0131516818		"{""Eukaryota"": 15}"	"{""actin"": 13, ""actin_POTE"": 2}"	0.8057409525131219	1.9900886041412291	False	within_eukaryote		
+15	False	96.0	0.0950516284	2.4501e-06		"{""Eukaryota"": 15}"	"{""Arp10"": 15}"	2.5776517890776083e-05	6.366507045332362e-05	True	within_eukaryote		
+16	False	95.0	0.0901995465	0.0181025158		"{""Eukaryota"": 16}"	"{""Arp8"": 13, ""actin"": 3}"	0.2006940888555354	0.49569159654126405	True	within_eukaryote		
+16	False	17.0	0.0116591768	0.0098637969		"{""Eukaryota"": 16}"	"{""Arp3"": 16}"	0.846011435387102	2.0895521212937433	False	within_eukaryote		
+17	False	97.0	0.1702743819	0.0806979669		"{""Eukaryota"": 17}"	"{""Arp8"": 14, ""actin"": 3}"	0.47392899624438456	1.1705507727468787	True	within_eukaryote		
+17	False	99.0	0.0937043179	0.0279499393		"{""Eukaryota"": 17}"	"{""Arp1"": 17}"	0.2982780295122345	0.7367128424421643	True	within_eukaryote		
+18	False	99.0	0.1495855891	0.2380872367		"{""Eukaryota"": 18}"	"{""Arp10"": 16, ""actin_divergent"": 1, ""Arp1"": 1}"	1.591645546422493	3.9311836563451306	True	within_eukaryote		
+18	False	76.0	0.0891710315	2.3602e-06		"{""Eukaryota"": 18}"	"{""Arp1"": 17, ""actin"": 1}"	2.6468237052971624e-05	6.537353819057575e-05	False	within_eukaryote		
+18	False	100.0	0.4844852392	0.1384415611		"{""Eukaryota"": 18}"	"{""Arp8"": 15, ""actin"": 3}"	0.28574980184865867	0.7057695435746998	True	within_eukaryote		
+18	False	52.0	0.0393167381	0.0345974895		"{""Eukaryota"": 18}"	"{""Arp2"": 18}"	0.8799684605575152	2.1734221152556996	False	within_eukaryote		
+19	False	72.0	0.0849694384	2.2959e-06		"{""Eukaryota"": 19}"	"{""Arp8"": 15, ""actin"": 3, ""actin-like_metazoan_orphan"": 1}"	2.702030333767629e-05	6.673707918783373e-05	False	within_eukaryote		
+21	False	100.0	0.5293665133	0.3018730591		"{""Eukaryota"": 21}"	"{""Arp5"": 15, ""actin-like_other"": 6}"	0.5702534095293709	1.4084611291475848	True	within_eukaryote		
+21	False	55.0	0.0830007671	0.0668094777		"{""Eukaryota"": 21}"	"{""Arp4"": 21}"	0.804926027002948	1.9880758307232183	False	within_eukaryote		
+21	False	71.0	0.0552826057	0.013284809		"{""Eukaryota"": 21}"	"{""Arp2"": 21}"	0.2403072147519993	0.5935315166484411	False	within_eukaryote		
+22	False	93.0	0.0806245359	0.0244577066		"{""Eukaryota"": 22}"	"{""Arp6"": 22}"	0.30335314587528683	0.7492478032224241	False	within_eukaryote		
+22	False	5.0	0.1094241193	0.0177459481		"{""Eukaryota"": 22}"	"{""Arp5"": 15, ""actin-like_other"": 6, ""actin"": 1}"	0.1621758366758909	0.40055589011469983	False	within_eukaryote		
+22	False	96.0	0.0513227197	0.0180586108		"{""Eukaryota"": 22}"	"{""Arp2"": 22}"	0.35186387053451496	0.8690637813253748	True	within_eukaryote		
+23	False	96.0	0.0390020139	0.0141298801		"{""Eukaryota"": 23}"	"{""actin"": 21, ""actin_POTE"": 2}"	0.3622859100616853	0.8948050348017437	True	within_eukaryote		
+23	False	90.0	0.0466893805	2.792e-06		"{""Eukaryota"": 23}"	"{""Arp3"": 23}"	5.979946553370953e-05	0.00014769788543227044	False	within_eukaryote		
+24	False	100.0	0.1187942855	0.0101421034		"{""Eukaryota"": 24}"	"{""Arp2"": 24}"	0.08537534745305572	0.2108674078324908	True	within_eukaryote		
+26	False	61.0	0.0518604458	0.0597328718		"{""Eukaryota"": 26}"	"{""Arp3"": 26}"	1.1518001991413656	2.844815623941493	False	within_eukaryote		
+26	False	93.0	0.0979303253	0.0477448827		"{""Eukaryota"": 26}"	"{""Arp2"": 26}"	0.4875393046407046	1.204166688077834	False	within_eukaryote		
+27	False	63.0	0.0621994708	0.0382608682		"{""Eukaryota"": 27}"	"{""Arp3"": 27}"	0.6151317319567935	1.519305486452776	False	within_eukaryote		
+27	False	100.0	0.2351994974	0.0656160349		"{""Eukaryota"": 27}"	"{""Arp2"": 27}"	0.2789803363754977	0.6890497330050045	True	within_eukaryote		
+27	False	98.0	0.1345515474	0.0520520108		"{""Eukaryota"": 27}"	"{""Arp6"": 27}"	0.3868555345949147	0.9554892157895682	True	within_eukaryote		
+28	False	99.0	0.0911018881	0.0295687093		"{""Eukaryota"": 28}"	"{""Arp2"": 27, ""actin"": 1}"	0.3245674696395233	0.8016447725412723	True	within_eukaryote		
+29	False	96.0	0.1242079552	0.0579767658		"{""Eukaryota"": 29}"	"{""Arp4"": 27, ""Arp1"": 1, ""Arp7"": 1}"	0.46677175955956807	1.152873211343094	True	within_eukaryote		
+29	False	69.0	0.0249222163	0.0035441689		"{""Eukaryota"": 29}"	"{""actin"": 27, ""actin_POTE"": 2}"	0.1422092183671482	0.35124061150619523	False	within_eukaryote		
+29	False	100.0	0.6726318269	0.1991603511		"{""Eukaryota"": 29}"	"{""Arp3"": 29}"	0.2960911796545261	0.7313115717642631	True	within_eukaryote		
+30	False	67.0	0.0191003177	0.0043357964		"{""Eukaryota"": 30}"	"{""actin"": 28, ""actin_POTE"": 2}"	0.22700127129299008	0.5606673481305942	False	within_eukaryote		
+30	False	98.0	0.1843874468	0.0959141535		"{""Eukaryota"": 30}"	"{""Arp6"": 30}"	0.5201772418055957	1.2847786845413862	True	within_eukaryote		
+31	False	47.0	0.0594288425	0.038619856		"{""Eukaryota"": 31}"	"{""actin"": 28, ""actin_POTE"": 2, ""Arp1"": 1}"	0.6498503819925485	1.6050566072960453	False	within_eukaryote		
+31	False	98.0	0.2096980593	0.0450161878		"{""Eukaryota"": 31}"	"{""Arp6"": 31}"	0.21467145642773244	0.5302141063312446	True	within_eukaryote	stem:Arp6	
+33	False	44.0	0.0451021875	0.0123197702		"{""Eukaryota"": 33}"	"{""actin"": 28, ""actin-like_metazoan_orphan"": 2, ""actin_POTE"": 2, ""Arp1"": 1}"	0.2731523875643504	0.6746553616150338	False	within_eukaryote		
+36	False	55.0	0.0660949544	0.0168511547		"{""Eukaryota"": 36}"	"{""Arp4"": 32, ""Arp1"": 2, ""actin-like_metazoan_orphan"": 1, ""Arp7"": 1}"	0.2549537230636171	0.6297067280367882	False	within_eukaryote		
+37	False	78.0	0.1709518834	0.0813582124		"{""Eukaryota"": 37}"	"{""Arp4"": 32, ""Arp1"": 2, ""actin"": 1, ""actin-like_metazoan_orphan"": 1, ""Arp7"": 1}"	0.47591293398993934	1.175450873562705	False	within_eukaryote		
+46	False	70.0	0.0353021018	0.0174120963		"{""Eukaryota"": 46}"	"{""Arp2"": 27, ""Arp1"": 17, ""actin"": 2}"	0.4932311508999161	1.2182249016285422	False	within_eukaryote		
+53	False	67.0	0.1514877209	0.0500024026		"{""Eukaryota"": 53}"	"{""Arp6"": 31, ""Arp5"": 15, ""actin-like_other"": 6, ""actin"": 1}"	0.33007561472924635	0.8152492650755346	False	within_eukaryote		
+79	False	95.0	0.0780205306	0.0117258609		"{""Eukaryota"": 79}"	"{""actin"": 30, ""Arp2"": 27, ""Arp1"": 18, ""actin_POTE"": 2, ""actin-like_metazoan_orphan"": 2}"	0.15029199122109022	0.37120414208798	True	within_eukaryote		
+2	False	98.0	0.082830115	0.057532672		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.6945864073712804	1.71554950705881	True	within_prok_or_mixed		
+2	False	100.0	1.12474126	0.4249652004		"{""Archaea"": 2}"	"{""salactin"": 2}"	0.3778337432024144	0.9332064161091563	True	within_prok_or_mixed	stem:salactin	
+2	False	100.0	0.2338080666	0.0556810365		"{""Bacteria"": 2}"	"{""FtsA"": 2}"	0.23814848353910473	0.5881996958283798	True	within_prok_or_mixed		
+2	False	96.0	0.0993685007	0.0163365154		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.16440336006800596	0.4060576198012445	True	within_prok_or_mixed		
+2	False	100.0	0.0795127271	0.0417972175		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.525667009854074	1.2983377878717801	True	within_prok_or_mixed		
+2	False	100.0	0.1342059858	0.0631403813		"{""Bacteria"": 2}"	"{""FtsA"": 2}"	0.47047365975236555	1.162016484208121	True	within_prok_or_mixed		
+2	False	96.0	0.1261199011	0.037824919		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.2999123744159042	0.7407494886593943	True	within_prok_or_mixed		
+2	False	100.0	0.1804430755	0.0372376294		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.20636773839514835	0.5097048662620817	True	within_prok_or_mixed		
+2	False	100.0	0.0761397797	0.0082696522		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.10861145425667683	0.26825795154292953	True	within_prok_or_mixed		
+2	False	99.0	0.0957978923	0.036481155		"{""Archaea"": 1, ""Bacteria"": 1}"	"{""MreB"": 2}"	0.38081375408297996	0.9405667043942846	True	within_prok_or_mixed		
+2	False	85.0	0.1337717428	0.0197067503		"{""Bacteria"": 2}"	"{""FtsA"": 2}"	0.14731624099017118	0.3638543771233822	False	within_prok_or_mixed		
+2	False	88.0	0.0966923574	0.0391287589		"{""Bacteria"": 2}"	"{""FtsA"": 2}"	0.4046727161499529	0.9994956298361716	False	within_prok_or_mixed		
+2	False	48.0	0.0424661676	0.0026644947		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.06274394066112997	0.1549704044447148	False	within_prok_or_mixed		
+2	False	99.0	0.3767152149	0.0121785634		"{""Bacteria"": 2}"	"{""FtsA"": 2}"	0.032328302437247804	0.07984723386707866	True	within_prok_or_mixed		
+2	False	100.0	0.0420493008	0.0477788389		"{""Bacteria"": 2}"	"{""MreB"": 2}"	1.1362576307095218	2.806427245866849	True	within_prok_or_mixed		
+2	False	98.0	0.1627942538	0.0891341308		"{""Bacteria"": 2}"	"{""FtsA"": 2}"	0.5475262714708914	1.3523276804084408	True	within_prok_or_mixed		
+2	False	100.0	0.1324003248	0.0127742987		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.09648238189216286	0.23830052091198434	True	within_prok_or_mixed		
+2	False	100.0	0.0832482543	0.0236636952		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.28425455162967905	0.7020764454246681	True	within_prok_or_mixed		
+2	False	100.0	0.103840736	0.0400924341		"{""Bacteria"": 2}"	"{""FtsA"": 2}"	0.3860954346471504	0.95361185528141	True	within_prok_or_mixed		
+2	False	100.0	0.2415982689	0.1042481521		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.43149378749542855	1.0657406286400777	True	within_prok_or_mixed		
+2	False	72.0	0.24835677	0.0787019833		"{""Asgard"": 2}"	"{""Asgard_actin"": 2}"	0.316890831282755	0.7826843480223643	False	within_prok_or_mixed		
+2	False	100.0	0.0524680844	0.0426980381		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.8137906803397611	2.009970517260163	True	within_prok_or_mixed		
+2	False	100.0	0.0862327818	0.0313941926		"{""Bacteria"": 2}"	"{""FtsA"": 2}"	0.36406331727547264	0.899195028670175	True	within_prok_or_mixed		
+2	False	100.0	0.0643163444	0.0150399614		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.2338435360452482	0.57756696464818	True	within_prok_or_mixed		
+2	False	100.0	0.0468538493	0.0061983231		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.13229058428716975	0.32674271228728907	True	within_prok_or_mixed		
+2	False	89.0	0.0889875573	0.0472189313		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.5306239741002532	1.3105809263478476	False	within_prok_or_mixed		
+2	False	99.0	0.0468383369	0.0237456926		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.5069713011095405	1.2521615114856872	True	within_prok_or_mixed		
+2	False	89.0	0.1242937369	0.0686614957		"{""Bacteria"": 2}"	"{""FtsA"": 2}"	0.5524131578346648	1.3643977344772396	False	within_prok_or_mixed		
+2	False	100.0	0.292332442	0.0455181585		"{""Archaea"": 2}"	"{""Ta0583_archaeal_actin"": 2}"	0.15570683222356826	0.38457818412799005	True	within_prok_or_mixed		
+2	False	100.0	0.0958111093	0.031363943		"{""Bacteria"": 2}"	"{""FtsA"": 2}"	0.3273518408162298	0.8085218529865196	True	within_prok_or_mixed		
+2	False	99.0	0.0674279878	0.0214977515		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.31882534540056373	0.7874623780931875	True	within_prok_or_mixed		
+2	False	79.0	0.0494717843	0.0414175983		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.8371963713465657	2.067779914684249	False	within_prok_or_mixed		
+2	False	100.0	0.0765202219	0.0133315169		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.17422214114096812	0.4303088934381537	True	within_prok_or_mixed		
+2	False	100.0	0.7983652506	0.3564088226		"{""Asgard"": 2}"	"{""Asgard_actin"": 2}"	0.44642326595771303	1.102614744149405	True	within_prok_or_mixed		
+2	False	24.0	0.0892759347	0.0320855999		"{""Bacteria"": 2}"	"{""FtsA"": 2}"	0.35939808424094827	0.8876724331402934	False	within_prok_or_mixed		
+2	False	100.0	0.0788009545	0.0161654882		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.2051433044507094	0.5066806535399264	True	within_prok_or_mixed		
+2	False	100.0	0.3520807852	0.065623896		"{""Bacteria"": 2}"	"{""FtsA"": 2}"	0.1863887458746783	0.4603590247565727	True	within_prok_or_mixed		
+2	False	98.0	0.0727699429	0.0142991495		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.1964980173153331	0.4853277765960665	True	within_prok_or_mixed		
+2	False	100.0	0.2348293847	0.0505116094		"{""Bacteria"": 2}"	"{""MreB"": 2}"	0.21509918558331084	0.5312705487467884	True	within_prok_or_mixed		
+2	False	90.0	0.0959053621	0.0072187071		"{""Bacteria"": 2}"	"{""FtsA"": 2}"	0.07526906673344388	0.18590604273416636	False	within_prok_or_mixed		
+2	False	86.0	0.095232597	2.4532e-06		"{""Bacteria"": 2}"	"{""MreB"": 2}"	2.576008716847237e-05	6.362448843609781e-05	False	within_prok_or_mixed		
+2	False	100.0	0.3868126417	0.0814633722		"{""Bacteria"": 2}"	"{""FtsA"": 2}"	0.21060162832832252	0.5201620933409807	True	within_prok_or_mixed		
+3	False	100.0	0.0316379934	0.0130322566		"{""Bacteria"": 3}"	"{""MreB"": 3}"	0.41191792523731924	1.0173904730787997	True	within_prok_or_mixed		
+3	False	99.0	0.1160203845	0.0379299493		"{""Bacteria"": 3}"	"{""FtsA"": 3}"	0.32692487155134364	0.8074672874146465	True	within_prok_or_mixed		
+3	False	89.0	0.0988116546	0.05009492		"{""Bacteria"": 3}"	"{""FtsA"": 3}"	0.5069737998294788	1.2521676830400295	False	within_prok_or_mixed		
+3	False	100.0	0.0740730731	0.0192373333		"{""Bacteria"": 3}"	"{""FtsA"": 3}"	0.25970750901652545	0.6414480392136649	True	within_prok_or_mixed		
+3	False	100.0	0.0694215746	0.0098090461		"{""Bacteria"": 3}"	"{""MreB"": 3}"	0.14129679651489785	0.34898703320082386	True	within_prok_or_mixed		
+3	False	83.0	0.14311541	0.0096797845		"{""Bacteria"": 3}"	"{""FtsA"": 3}"	0.06763621401776371	0.16705376377380637	False	within_prok_or_mixed		
+3	False	74.0	0.0364905908	0.0282311902		"{""Bacteria"": 3}"	"{""MreB"": 3}"	0.773656703853641	1.9108441553757598	False	within_prok_or_mixed		
+3	False	100.0	1.2920958036	0.5938625222		"{""Archaea"": 3}"	"{""Ta0583_archaeal_actin"": 3}"	0.459611834157651	1.1351890091135635	True	within_prok_or_mixed	stem:Ta0583_archaeal_actin	
+3	False	85.0	0.0917108387	0.0316842774		"{""Bacteria"": 3}"	"{""FtsA"": 3}"	0.3454801836852027	0.8532968001242851	False	within_prok_or_mixed		
+3	False	82.0	0.0365567271	0.0118860151		"{""Bacteria"": 3}"	"{""FtsA"": 3}"	0.32513892908098985	0.8030562124322749	False	within_prok_or_mixed		
+3	False	99.0	0.1765001254	0.1287385132		"{""Bacteria"": 3}"	"{""FtsA"": 3}"	0.7293961571315687	1.8015256338708943	True	within_prok_or_mixed		
+3	False	96.0	0.1056104408	0.0280167129		"{""Bacteria"": 3}"	"{""MreB"": 3}"	0.265283552343624	0.6552202326796236	True	within_prok_or_mixed		
+3	False	100.0	0.1416347919	2.0848e-06		"{""Bacteria"": 3}"	"{""FtsA"": 3}"	1.4719547167986483e-05	3.635560906487764e-05	True	within_prok_or_mixed		
+3	False	84.0	0.0353254834	0.0197305624		"{""Bacteria"": 3}"	"{""MreB"": 3}"	0.5585362322317151	1.3795210325321192	False	within_prok_or_mixed		
+3	False	100.0	0.169259389	0.0388504818		"{""Bacteria"": 3}"	"{""FtsA"": 3}"	0.22953221106097696	0.5669184817912685	True	within_prok_or_mixed		
+3	False	95.0	0.1003563927	0.0145241997		"{""Bacteria"": 3}"	"{""MreB"": 3}"	0.14472620337618014	0.3574572784977954	True	within_prok_or_mixed		
+3	False	99.0	0.0957306441	0.02858702		"{""Bacteria"": 2, ""Archaea"": 1}"	"{""MreB"": 3}"	0.29861932162639654	0.7375557951864163	True	within_prok_or_mixed		
+3	False	67.0	0.0922268533	0.0101663609		"{""Bacteria"": 3}"	"{""FtsA"": 3}"	0.11023211284169444	0.2722607941081331	False	within_prok_or_mixed		
+3	False	100.0	0.165927561	0.0247917122		"{""Bacteria"": 3}"	"{""MreB"": 3}"	0.1494128645692562	0.3690327991446248	True	within_prok_or_mixed		
+3	False	98.0	0.217484105	0.0558898224		"{""Archaea"": 3}"	"{""salactin"": 2, ""volactin"": 1}"	0.2569834811606117	0.6347199999145468	True	within_prok_or_mixed		
+4	False	42.0	0.0261231427	0.0221839992		"{""Bacteria"": 4}"	"{""MreB"": 4}"	0.8492086673782936	2.09744892104138	False	within_prok_or_mixed		
+4	False	99.0	0.1200675834	0.0284247008		"{""Bacteria"": 4}"	"{""FtsA"": 4}"	0.23673917634624436	0.5847188671879863	True	within_prok_or_mixed		
+4	False	100.0	0.3489889758	2.1949e-06		"{""Archaea"": 4}"	"{""Ta0583_archaeal_actin"": 3, ""MreB"": 1}"	6.289310414372121e-06	1.5533882129870857e-05	True	within_prok_or_mixed		
+4	False	91.0	0.0271107752	0.0243973686		"{""Bacteria"": 4}"	"{""MreB"": 4}"	0.8999140902470395	2.222685554359469	False	within_prok_or_mixed		
+4	False	100.0	0.0362528013	0.00781476		"{""Bacteria"": 4}"	"{""MreB"": 4}"	0.21556292809846947	0.5324159400686449	True	within_prok_or_mixed		
+4	False	86.0	0.0599222396	2.8287e-06		"{""Bacteria"": 4}"	"{""MreB"": 4}"	4.720617952337015e-05	0.00011659389984025174	False	within_prok_or_mixed		
+4	False	98.0	0.0512157165	0.0133745901		"{""Bacteria"": 4}"	"{""FtsA"": 4}"	0.2611423018947709	0.6449918146012672	True	within_prok_or_mixed		
+4	False	98.0	0.0909545683	0.0584297066		"{""Bacteria"": 4}"	"{""FtsA"": 4}"	0.6424054084592912	1.5866683685693719	True	within_prok_or_mixed		
+4	False	100.0	0.0477263401	0.0425410184		"{""Bacteria"": 4}"	"{""MreB"": 4}"	0.8913530413366014	2.20154073626003	True	within_prok_or_mixed		
+4	False	60.0	0.0367291876	0.0126996061		"{""Bacteria"": 3, ""Archaea"": 1}"	"{""MreB"": 4}"	0.34576332692967054	0.8539961317672871	False	within_prok_or_mixed		
+5	False	56.0	0.0175944251	0.0166748207		"{""Bacteria"": 4, ""Archaea"": 1}"	"{""MreB"": 5}"	0.9477331941922897	2.340793307881079	False	within_prok_or_mixed		
+5	False	98.0	0.0627171971	0.0115790765		"{""Bacteria"": 5}"	"{""MreB"": 5}"	0.18462362853265968	0.45599938547503066	True	within_prok_or_mixed		
+5	False	97.0	0.0711137723	0.0254404192		"{""Bacteria"": 5}"	"{""MreB"": 5}"	0.357742507213332	0.8835833459893168	True	within_prok_or_mixed		
+5	False	81.0	0.1059775728	0.0318478584		"{""Bacteria"": 5}"	"{""FtsA"": 5}"	0.30051507652570053	0.7422380943913688	False	within_prok_or_mixed		
+5	False	89.0	0.1363943096	0.0538046716		"{""Bacteria"": 5}"	"{""FtsA"": 5}"	0.3944788588159692	0.9743179604508339	False	within_prok_or_mixed		
+5	False	48.0	0.0921645174	0.0111227849		"{""Bacteria"": 5}"	"{""FtsA"": 5}"	0.12068402476113871	0.29807582899930696	False	within_prok_or_mixed		
+5	False	98.0	0.0856123938	0.0473922068		"{""Bacteria"": 5}"	"{""FtsA"": 5}"	0.553567126165324	1.367247905139686	True	within_prok_or_mixed		
+5	False	100.0	0.068851625	0.0223204075		"{""Bacteria"": 5}"	"{""MreB"": 5}"	0.3241812738624542	0.8006909128516095	True	within_prok_or_mixed		
+5	False	98.0	0.1277312819	0.0557242664		"{""Archaea"": 4, ""Bacteria"": 1}"	"{""Ta0583_archaeal_actin"": 3, ""MreB"": 1, ""ALP_bacterial"": 1}"	0.4362617016842137	1.077516834954315	True	within_prok_or_mixed		
+5	False	96.0	0.0663899496	0.0218138475		"{""Bacteria"": 5}"	"{""MreB"": 5}"	0.32857153276103707	0.8115343535083721	True	within_prok_or_mixed		
+6	False	94.0	0.0736654251	0.0169703352		"{""Bacteria"": 6}"	"{""MreB"": 6}"	0.23037042380415176	0.5689887720288879	False	within_prok_or_mixed		
+6	False	72.0	0.0302107547	2.844e-06		"{""Bacteria"": 6}"	"{""MreB"": 6}"	9.413866115698196e-05	0.00023251179699044944	False	within_prok_or_mixed		
+6	False	60.0	0.0375955902	0.0191195952		"{""Bacteria"": 6}"	"{""MreB"": 6}"	0.508559517174437	1.2560842247123223	False	within_prok_or_mixed		
+6	False	96.0	0.206354899	0.2183087528		"{""Archaea"": 4, ""Bacteria"": 2}"	"{""Ta0583_archaeal_actin"": 3, ""ALP_bacterial"": 2, ""MreB"": 1}"	1.057928616465752	2.6129634804544737	True	within_prok_or_mixed		
+6	False	88.0	0.0978054303	0.0053761668		"{""Bacteria"": 6}"	"{""FtsA"": 6}"	0.05496797860312671	0.13576466166894985	False	within_prok_or_mixed		
+6	False	95.0	0.038505879	0.0215982218		"{""Bacteria"": 6}"	"{""FtsA"": 6}"	0.5609071227798748	1.385376862804668	True	within_prok_or_mixed		
+7	False	86.0	0.0408224566	0.0031302798		"{""Bacteria"": 7}"	"{""MreB"": 7}"	0.07668033873297081	0.18939172422378434	False	within_prok_or_mixed		
+7	False	87.0	0.0903717519	0.0297336218		"{""Bacteria"": 7}"	"{""FtsA"": 7}"	0.32901455570875127	0.8126285698528054	False	within_prok_or_mixed		
+7	False	51.0	0.078444074	0.0297293242		"{""Bacteria"": 7}"	"{""FtsA"": 7}"	0.3789875089863385	0.9360560865041807	False	within_prok_or_mixed		
+7	False	96.0	0.0611160042	0.0154143505		"{""Bacteria"": 7}"	"{""MreB"": 7}"	0.25221463185906384	0.6229414839780334	True	within_prok_or_mixed		
+8	False	97.0	0.1062037347	0.0306960455		"{""Bacteria"": 8}"	"{""MreB"": 8}"	0.28902981224444646	0.7138707965763781	True	within_prok_or_mixed		
+8	False	60.0	0.0549852887	0.0145086012		"{""Bacteria"": 8}"	"{""FtsA"": 8}"	0.26386332677380303	0.6517124368886872	False	within_prok_or_mixed		
+8	False	85.0	0.0619909581	0.0156498089		"{""Bacteria"": 8}"	"{""FtsA"": 8}"	0.252453089606305	0.6235304475200673	False	within_prok_or_mixed		
+8	False	69.0	0.0576541644	0.0323160051		"{""Bacteria"": 8}"	"{""FtsA"": 8}"	0.5605146729001939	1.3844075561921476	False	within_prok_or_mixed		
+9	False	75.0	0.0369709028	0.0120557003		"{""Bacteria"": 9}"	"{""MreB"": 9}"	0.3260861755315318	0.8053958035386436	False	within_prok_or_mixed		
+9	False	94.0	0.0365261279	2.7212e-06		"{""Bacteria"": 9}"	"{""MreB"": 9}"	7.450009504018629e-05	0.0001840067700226503	False	within_prok_or_mixed		
+9	False	96.0	0.1134334111	0.0071522362		"{""Bacteria"": 9}"	"{""FtsA"": 9}"	0.06305228883309143	0.15573198939483346	True	within_prok_or_mixed		
+10	False	98.0	0.0398403747	0.0156163155		"{""Bacteria"": 10}"	"{""MreB"": 10}"	0.3919721041177858	0.9681265611646581	True	within_prok_or_mixed		
+10	False	78.0	0.0218056923	0.0263115432		"{""Bacteria"": 10}"	"{""FtsA"": 10}"	1.2066364524459514	2.980254939089721	False	within_prok_or_mixed		
+10	False	54.0	0.0173525109	0.0068875395		"{""Bacteria"": 10}"	"{""MreB"": 10}"	0.39691889777173406	0.9803445794335015	False	within_prok_or_mixed		
+10	False	85.0	0.0606865356	0.0211074134		"{""Bacteria"": 10}"	"{""MreB"": 10}"	0.3478104853294674	0.8590523804159387	False	within_prok_or_mixed		
+11	False	82.0	0.0400900076	0.0144785561		"{""Bacteria"": 11}"	"{""FtsA"": 11}"	0.3611512435832015	0.892002537521087	False	within_prok_or_mixed		
+11	False	77.0	0.0305050584	0.0180880715		"{""Bacteria"": 11}"	"{""MreB"": 11}"	0.5929531837906594	1.4645269924167514	False	within_prok_or_mixed		
+12	False	76.0	0.025328585	0.0048793439		"{""Bacteria"": 12}"	"{""FtsA"": 12}"	0.1926417879245919	0.4758033281470552	False	within_prok_or_mixed		
+12	False	98.0	0.0311934917	0.0092861154		"{""Bacteria"": 12}"	"{""MreB"": 12}"	0.29769400262427176	0.7352703623862338	True	within_prok_or_mixed		
+13	False	96.0	0.0504076921	0.029532023		"{""Bacteria"": 13}"	"{""MreB"": 13}"	0.5858634222216256	1.4470160868824036	True	within_prok_or_mixed		
+14	False	95.0	0.047301795	0.0089628233		"{""Bacteria"": 14}"	"{""MreB"": 14}"	0.18948167400412608	0.4679982058167431	True	within_prok_or_mixed		
+17	False	53.0	0.0275280722	0.0201283311		"{""Bacteria"": 17}"	"{""FtsA"": 17}"	0.7311929056913764	1.8059633986664254	False	within_prok_or_mixed		
+17	False	55.0	0.0138672917	0.0367115767		"{""Bacteria"": 17}"	"{""FtsA"": 17}"	2.6473501455226476	6.538654066600202	False	within_prok_or_mixed		
+18	False	43.0	0.0321698464	0.005793734		"{""Bacteria"": 18}"	"{""FtsA"": 18}"	0.18009827985998714	0.44482228842521354	False	within_prok_or_mixed		
+20	False	49.0	0.0259479447	0.0147148841		"{""Bacteria"": 20}"	"{""MreB"": 20}"	0.5670924718750461	1.400653972288234	False	within_prok_or_mixed		
+25	False	60.0	0.0860437406	0.03347038		"{""Bacteria"": 25}"	"{""FtsA"": 25}"	0.38899261894711257	0.9607675713232325	False	within_prok_or_mixed		
+33	False	94.0	0.0375927239	0.0067049628		"{""Bacteria"": 33}"	"{""MreB"": 33}"	0.17835799336690258	0.44052397851924896	False	within_prok_or_mixed		
+38	False	95.0	0.0251484013	0.0085229372		"{""Bacteria"": 38}"	"{""MreB"": 38}"	0.3389057259874408	0.8370586366029745	True	within_prok_or_mixed		
+40	False	83.0	0.0196449303	0.0117354125		"{""Bacteria"": 40}"	"{""MreB"": 40}"	0.597376133220488	1.4754511749713815	False	within_prok_or_mixed		
+43	False	68.0	0.0682331106	0.0033334414		"{""Bacteria"": 43}"	"{""FtsA"": 43}"	0.0488537217589491	0.12066314196781212	False	within_prok_or_mixed		
+44	False	90.0	0.0942171168	0.0418993231		"{""Bacteria"": 44}"	"{""FtsA"": 44}"	0.44471030873235123	1.0983839344295547	False	within_prok_or_mixed		
+47	False	95.0	0.0766639198	0.0420389959		"{""Bacteria"": 47}"	"{""FtsA"": 47}"	0.5483543759524804	1.3543730043884474	True	within_prok_or_mixed		
+49	False	96.0	0.2276272219	0.1493788373		"{""Bacteria"": 49}"	"{""FtsA"": 49}"	0.6562432913477472	1.62084636703881	True	within_prok_or_mixed		
+51	False	52.0	0.0130700202	0.0038539028		"{""Bacteria"": 51}"	"{""MreB"": 51}"	0.29486586409407384	0.7282851815507245	False	within_prok_or_mixed		
+52	False	96.0	0.132812145	0.3638795301		"{""Bacteria"": 52}"	"{""FtsA"": 52}"	2.739806138211231	6.767009863659082	True	within_prok_or_mixed		
+53	False	100.0	0.4280072892	0.2884839128		"{""Bacteria"": 53}"	"{""FtsA"": 53}"	0.6740163545794118	1.6647438138394195	True	within_prok_or_mixed	stem:FtsA	
+56	False	98.0	0.226050827	2.5928e-06		"{""Bacteria"": 53, ""Archaea"": 3}"	"{""FtsA"": 53, ""salactin"": 2, ""volactin"": 1}"	1.1469986791952767e-05	2.8329564152250132e-05	True	within_prok_or_mixed		
+61	False	75.0	0.0329899828	0.0094458887		"{""Bacteria"": 61}"	"{""MreB"": 61}"	0.2863259661960176	0.7071926040486836	False	within_prok_or_mixed		
+66	False	99.0	0.3894664902	0.1887582788		"{""Bacteria"": 65, ""Archaea"": 1}"	"{""MreB"": 66}"	0.48465858693791164	1.1970516426600786	True	within_prok_or_mixed		
+67	False	86.0	0.1339517407	0.1181671771		"{""Bacteria"": 66, ""Archaea"": 1}"	"{""MreB"": 67}"	0.8821623107134435	2.1788406758748278	False	within_prok_or_mixed		
+73	False	64.0	0.1598427522	0.0240505287		"{""Bacteria"": 68, ""Archaea"": 5}"	"{""MreB"": 68, ""Ta0583_archaeal_actin"": 3, ""ALP_bacterial"": 2}"	0.1504636798915178	0.3716281935966099	False	within_prok_or_mixed		
+129	False	100.0	0.4109034858	0.3993733338		"{""Bacteria"": 121, ""Archaea"": 8}"	"{""MreB"": 68, ""FtsA"": 53, ""Ta0583_archaeal_actin"": 3, ""salactin"": 2, ""ALP_bacterial"": 2, ""volactin"": 1}"	0.9719395128090684	2.400580164534215	True	within_prok_or_mixed		
+1	True		0.5893793879	0.2613994659	D8LSR0_2880	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.44351647048836335	1.0954352896112196	True	within_eukaryote		
+1	True		0.4132207375	0.179419373	I0ZAG1_574566	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.4341974076264747	1.0724182631775057	True	within_eukaryote		
+1	True		0.0136333615	0.1244729354	A0A2G5DES6_218851	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	9.13002529860299	22.55012513091176	True	within_eukaryote		
+1	True		1e-06	0.0349388428	Q84M92_3702	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	34938.842800000006	86294.97195257615	True	within_eukaryote		
+1	True		0.9503561229	0.4735097761	A0A5B8MY54_1764295	"{""Eukaryota"": 1}"	"{""Arp5"": 1}"	0.49824456820995766	1.2306074727581333	True	within_eukaryote		
+1	True		0.2156666374	0.0941995926	Q38E94_185431	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.4367833325341215	1.0788052038857092	True	within_eukaryote		
+1	True		0.6878940553	0.2039634885	Q3M0X7_5888	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	0.29650421736970634	0.73233172799127	True	within_eukaryote		
+1	True		0.0147091256	0.0242249749	A0E1L7_5888	"{""Eukaryota"": 1}"	"{""Arp8"": 1}"	1.6469350768206101	4.06774251441288	True	within_eukaryote		
+1	True		0.2081176945	0.086785721	A0A058ZB61_691883	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	0.4170030866837226	1.0299502440736106	True	within_eukaryote		
+1	True		0.3617260343	0.1949888612	L1JU91_905079	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.5390512230543092	1.3313952737574202	True	within_eukaryote		
+1	True		0.8347512917	0.3172576303	D2UYJ9_5762	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.38006246106417374	0.9387110960000062	True	within_eukaryote		
+1	True		0.0565222552	0.0714983911	A0A6P5P169_10089	"{""Eukaryota"": 1}"	"{""Arp5"": 1}"	1.2649599851776614	3.124307438197049	True	within_eukaryote		
+1	True		0.5452725679	0.3060796944	A0A3M7P316_10195	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.5613333815394383	1.3864296735091222	True	within_eukaryote		
+1	True		0.5685619826	0.266418757	I0Z3E8_574566	"{""Eukaryota"": 1}"	"{""Arp7_plant"": 1}"	0.4685834880863524	1.1573479749550284	True	within_eukaryote		
+1	True		0.0024527118	0.0154317885	A8E073_37360	"{""Eukaryota"": 1}"	"{""actin"": 1}"	6.291725142758313	15.539846234622477	True	within_eukaryote		
+1	True		0.1737538801	0.095065724	Q4R6J9_9541	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	0.547128639344843	1.3513455742362013	True	within_eukaryote		
+1	True		0.6559929973	0.3953600095	L1JXP6_905079	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.6026893749281795	1.488574278297016	True	within_eukaryote		
+1	True		0.0684469703	0.0680895799	Q54UQ7_44689	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.9947785797028915	2.4569900647792644	True	within_eukaryote		
+1	True		0.1481238739	0.0822321663	A0A3M7QNB9_10195	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.555158085829674	1.3711773947452421	True	within_eukaryote		
+1	True		0.4439105332	0.1581654785	B6K570_402676	"{""Eukaryota"": 1}"	"{""actin-like_other"": 1}"	0.35630035034275687	0.8800213823773594	True	within_eukaryote		
+1	True		0.1515195999	0.082035651	A0A835YZY0_303371	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.5414194008837269	1.3372444039228963	True	within_eukaryote		
+1	True		0.1408031095	0.0612621243	A0A066VYB8_1037660	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	0.43509070586257187	1.0746246083238105	True	within_eukaryote		
+1	True		0.0345268254	0.0286202262	H3G9P8_164328	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	0.8289272433370025	2.0473561080418174	True	within_eukaryote		
+1	True		1.2261632729	0.6633810782	A0A1J4KC75_1144522	"{""Eukaryota"": 1}"	"{""actin-like_metazoan_orphan"": 1}"	0.5410218140289236	1.3362624095654885	True	within_eukaryote		
+1	True		0.0375298712	0.0518060094	Q00VM6_70448	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	1.3803940099853047	3.409416363818036	True	within_eukaryote		
+1	True		0.7170799468	0.2544960795	A9V6F1_81824	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.3549061448945821	0.8765778533304738	True	within_eukaryote		
+1	True		0.1804330753	0.0936842156	V7PL99_1323249	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.5192186379588909	1.2824110419569268	True	within_eukaryote		
+1	True		0.9472845295	0.3148740493	A0A060RP13_5854	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.3323964864771921	0.8209815545947087	True	within_eukaryote		
+1	True		0.2664090041	0.06235261	A0A090LXL2_70448	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.23404843320008492	0.5780730373401409	True	within_eukaryote		
+1	True		0.489395907	0.2195289805	Q6CA98_284591	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.44857134553027633	1.107920256628091	True	within_eukaryote		
+1	True		0.0242555539	0.0146445162	D0N3N1_403677	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.6037592981952064	1.4912168672015198	True	within_eukaryote		
+1	True		0.1813335886	0.0683133573	A0A0G4ITX9_37360	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	0.3767275430184698	0.9304742273416613	True	within_eukaryote		
+1	True		1.2989007142	0.4796936501	A0A6A5BQY6_5763	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.3693074034495746	0.9121473256853188	True	within_eukaryote		
+1	True		0.2292801549	0.0835778802	A9V5L4_81824	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	0.3645229576735601	0.9003302882289496	True	within_eukaryote		
+1	True		0.0329902222	0.0225993077	A0A0L0G1C7_667725	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.6850304785155403	1.6919474485330794	True	within_eukaryote		
+1	True		0.7592587484	0.2495432766	Q55DS6_44689	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.32866697568630876	0.811770086689535	True	within_eukaryote		
+1	True		1.0605278835	0.3631169429	A9US37_81824	"{""Eukaryota"": 1}"	"{""Arp8"": 1}"	0.3423926410134788	0.8456709205327951	True	within_eukaryote		
+1	True		0.6001421811	0.1964921292	A0A0G4IPQ3_37360	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.32740929631016735	0.8086637615284321	True	within_eukaryote		
+1	True		0.5282496397	0.2276702103	A0A0M0JID9_1460289	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.4309898070717037	1.0644958542559075	True	within_eukaryote		
+1	True		0.0321403029	0.0795364381	F0ZQN1_5786	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	2.474663613080012	6.112137952170538	True	within_eukaryote		
+1	True		1.3647295325	0.746755638	A0A0M0K603_1460289	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.5471821487090154	1.3514777362859545	True	within_eukaryote		
+1	True		0.6313959435	0.162811433	A0A2V3J4A3_448386	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	0.2578594852819165	0.6368836305622778	True	within_eukaryote		
+1	True		0.0027561739	0.1572927249	A0A0G4J1Y9_37360	"{""Eukaryota"": 1}"	"{""actin"": 1}"	57.06923097269008	140.95451627674913	True	within_eukaryote		
+1	True		0.034257827	0.0519136134	B9WMR7_573826	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	1.51537963572529	3.7428155222822355	True	within_eukaryote		
+1	True		0.7549988186	0.1707043241	D2VT74_5762	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.22609879630876553	0.5584383374590799	True	within_eukaryote		
+1	True		0.4822274425	0.1446262018	A2E0V9_412133	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.2999128399873261	0.740750638567908	True	within_eukaryote		
+1	True		0.1938087506	0.0703463537	D7MP57_81972	"{""Eukaryota"": 1}"	"{""Arp8"": 1}"	0.36296789222477965	0.896489453257537	True	within_eukaryote		
+1	True		0.004957017	0.0238233644	D7KGE2_81972	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	4.8059880367567835	11.870244392763432	True	within_eukaryote		
+1	True		0.8320768514	0.445000757	Q9UTQ7_284812	"{""Eukaryota"": 1}"	"{""Arp9"": 1}"	0.5348072792209876	1.3209132146874845	True	within_eukaryote		
+1	True		0.0941859991	0.0381679703	A0A0C3TFJ8_905079	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.4052403824848315	1.000897701184876	True	within_eukaryote		
+1	True		0.0278343012	0.0644494465	K7MPR6_3847	"{""Eukaryota"": 1}"	"{""Arp5"": 1}"	2.315468458751894	5.718944008788675	True	within_eukaryote		
+1	True		0.0176884581	0.0304603408	B0E8V0_370354	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	1.7220461290518025	4.253258279280148	True	within_eukaryote		
+1	True		0.837478373	0.2828495614	A0A3Q8ICD3_5661	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.33773954112603694	0.834178292497635	True	within_eukaryote		
+1	True		0.016497943	0.0855572407	G5AD87_1094619	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	5.185933828235434	12.808667328143237	True	within_eukaryote		
+1	True		0.4825555366	0.1960908927	A0A5J4YTE0_35688	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.4063592225707767	1.0036611090741625	True	within_eukaryote		
+1	True		1.4111576294	0.635082151	A0A1J4J264_1144522	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.45004338124155985	1.1115560175817538	True	within_eukaryote		
+1	True		0.5923887146	0.2728123244	L8GFV6_1257118	"{""Eukaryota"": 1}"	"{""Arp8"": 1}"	0.4605292397985868	1.137454896810728	True	within_eukaryote		
+1	True		0.0447922711	0.0836897663	A4SBH2_436017	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	1.8683974767245055	4.614729479540896	True	within_eukaryote		
+1	True		0.2491838479	0.0900116067	T1INQ6_126957	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.36122568721277054	0.8921864048278116	True	within_eukaryote		
+1	True		0.5784910303	0.1828483144	L1JA51_905079	"{""Eukaryota"": 1}"	"{""actin-like_other"": 1}"	0.31607804585176813	0.780676860356789	True	within_eukaryote		
+1	True		0.4896715213	0.1419604315	A1DH17_331117	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.28990951142741084	0.7160435536065741	True	within_eukaryote		
+1	True		0.0403544977	0.019170319	A0A835YQJ4_303371	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.4750478903867016	1.1733143141492617	True	within_eukaryote		
+1	True		0.5389880373	0.1240816179	A0A2Y9JV04_391180	"{""Eukaryota"": 1}"	"{""actin-like_metazoan_orphan"": 1}"	0.23021219268904913	0.5685979591528585	True	within_eukaryote		
+1	True		0.1467285398	0.0465454293	A0A0D2WMU8_595528	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	0.3172213760420725	0.7835007560212685	True	within_eukaryote		
+1	True		0.429819671	0.2982903343	D8LG62_2880	"{""Eukaryota"": 1}"	"{""Arp10"": 1}"	0.6939894900715236	1.7140751891503612	True	within_eukaryote		
+1	True		0.7825765762	0.4582847017	A0A0L0FSI0_667725	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.5856100420553324	1.4463902666608017	True	within_eukaryote		
+1	True		0.0916125593	0.0428753859	A0A0D3CV18_109376	"{""Eukaryota"": 1}"	"{""Arp7_plant"": 1}"	0.4680077298091595	1.1559259174282168	True	within_eukaryote		
+1	True		0.2055543316	0.0302707227	A0A061JAL5_429131	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	0.14726385216199453	0.3637249826702227	True	within_eukaryote		
+1	True		0.0273344995	0.0334180271	A0A5D2C468_34276	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	1.2225585875461153	3.019580803708619	True	within_eukaryote		
+1	True		0.1385052453	0.0860092411	I4Y6Z6_671144	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.620981832953008	1.533754571222924	True	within_eukaryote		
+1	True		0.7256082015	0.2065261091	A0A2V3IM71_448386	"{""Eukaryota"": 1}"	"{""actin-like_other"": 1}"	0.2846248273835146	0.7029909844657823	True	within_eukaryote		
+1	True		0.7852862541	0.2216800161	Q4N681_5875	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.2822919858110375	0.6972291308400316	True	within_eukaryote		
+1	True		0.0192045581	0.1420186924	A0DTS3_5888	"{""Eukaryota"": 1}"	"{""Arp8"": 1}"	7.395051302950834	18.264936489997424	True	within_eukaryote		
+1	True		0.0050232969	0.005886293	A0A182I9Z1_7173	"{""Eukaryota"": 1}"	"{""actin"": 1}"	1.1717987443664737	2.894209758405873	True	within_eukaryote		
+1	True		0.1313975924	0.1010725508	A0A5B8N1N6_1764295	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.7692115886896569	1.8998652259762439	True	within_eukaryote		
+1	True		0.1692056359	0.2256447942	A0A673IK62_307959	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	1.3335536549938287	3.2937260090064524	True	within_eukaryote		
+1	True		1.2405598241	0.7917267038	A8BCP8_184922	"{""Eukaryota"": 1}"	"{""actin-like_metazoan_orphan"": 1}"	0.6382011479167327	1.5762843227187917	True	within_eukaryote		
+1	True		0.1006290774	0.0415436178	A0A5D2DRV2_34276	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.41283910052026374	1.0196656713634178	True	within_eukaryote		
+1	True		1.0827967146	0.3671471463	Q3M0X1_5888	"{""Eukaryota"": 1}"	"{""Arp5"": 1}"	0.33907301467536244	0.8374718206547423	True	within_eukaryote		
+1	True		0.0196282898	0.0072546077	A0A5D2BJJ9_34276	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.3695995817220918	0.9128689728210397	True	within_eukaryote		
+1	True		0.5185309283	0.1540713035	A0DT77_5888	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.29713040262636153	0.7338783344278226	True	within_eukaryote		
+1	True		0.2783798481	0.1562419228	A0A6I8UTK3_46245	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.5612544293934472	1.3862346706790942	True	within_eukaryote		
+1	True		0.4962718009	0.1253861896	A0A0G4IZZ9_37360	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	0.25265628506920873	0.6240323172263005	True	within_eukaryote		
+1	True		0.4852125937	0.1416406311	Q9US07_284812	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.29191458123523967	0.720995848215185	True	within_eukaryote		
+1	True		0.4420380276	0.1523440761	L8GW12_1257118	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.3446402042085304	0.8512221462556636	True	within_eukaryote		
+1	True		0.379675105	0.2081884951	A0A811ZJ52_34880	"{""Eukaryota"": 1}"	"{""Arp10"": 1}"	0.5483332785277033	1.3543208961463449	True	within_eukaryote		
+1	True		0.565263472	0.2078113718	Q7PZT7_7165	"{""Eukaryota"": 1}"	"{""Arp10"": 1}"	0.3676363007585248	0.9080198919096926	True	within_eukaryote		
+1	True		0.3251137905	0.1060419234	I0Z7H8_574566	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	0.32616864156059233	0.8055994852606043	True	within_eukaryote		
+1	True		0.0759871663	0.0289460145	A5K8W3_126793	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.3809329378821697	0.9408610748365787	True	within_eukaryote		
+1	True		0.3512268845	0.1547552646	A2D880_412133	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.4406133796400771	1.0882649850661403	True	within_eukaryote		
+1	True		0.8467747634	0.2109193789	B6A9U7_441375	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.249085575074426	0.6152130692444939	True	within_eukaryote		
+1	True		0.0990410348	0.0323824067	B4H1G3_7234	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.3269594947729686	0.8075528028381577	True	within_eukaryote		
+1	True		0.4240404009	0.2456669635	Q580C6_185431	"{""Eukaryota"": 1}"	"{""actin-like_metazoan_orphan"": 1}"	0.5793480125445283	1.4309237652630782	True	within_eukaryote		
+1	True		0.6294803985	0.2273119113	A0A2V3ILE1_448386	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.3611103885707412	0.8919016302822708	True	within_eukaryote		
+1	True		0.7775101574	0.2707509559	G4YLN0_1094619	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.34822819139159966	0.8600840669294978	True	within_eukaryote		
+1	True		0.1233583183	0.0564734102	A0A0D1E575_5270	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.45779977368579283	1.1307134256350124	True	within_eukaryote		
+1	True		0.1768840899	0.0918094602	A0A061J4D0_429131	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.5190374117418007	1.2819634337916996	True	within_eukaryote		
+1	True		0.2820740372	0.1398223391	L1JCH3_905079	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	0.49569375646175207	1.22430725756418	True	within_eukaryote		
+1	True		0.1679225868	0.0618754524	A0A2G5VDS8_1611254	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.36847605542008005	0.9100939905105184	True	within_eukaryote		
+1	True		0.1214989091	0.0221608436	A0A0D2X2M2_595528	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.18239541214119429	0.45049594415882954	True	within_eukaryote		
+1	True		0.2904537266	0.1053326539	A0A1Y1IIG9_105231	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.36264865709593547	0.8957009787608978	True	within_eukaryote		
+1	True		0.3270961763	0.1324341421	A0A197K7Z4_1314771	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.40487829481239956	1.0000033857744959	True	within_eukaryote		
+1	True		0.5082491908	0.2221292898	A0A553P8Q8_6832	"{""Eukaryota"": 1}"	"{""Arp10"": 1}"	0.4370479950009593	1.0794588901077575	True	within_eukaryote		
+1	True		0.0398371056	0.0392814463	L1IBR0_905079	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.9860517150623513	2.435435700666514	True	within_eukaryote		
+1	True		1.289005124	0.6232730044	A1D6A2_331117	"{""Eukaryota"": 1}"	"{""Arp10"": 1}"	0.48353027679663435	1.194264844810113	True	within_eukaryote		
+1	True		0.1095647092	0.1122374755	P32381_559292	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	1.0243944087427013	2.530137797546838	True	within_eukaryote		
+1	True		0.7853188767	0.1819158603	A9V3W1_81824	"{""Eukaryota"": 1}"	"{""actin-like_other"": 1}"	0.23164585201928586	0.5721389348056735	True	within_eukaryote		
+1	True		0.3057482535	0.2172537627	L1J8V5_905079	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.7105641985294283	1.7550128358172683	True	within_eukaryote		
+1	True		0.3680670655	0.1557273027	B4HT89_7238	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	0.42309491203308974	1.0449963605312407	True	within_eukaryote		
+1	True		0.508036601	0.1471430559	A0D9D4_5888	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	0.28963081717019834	0.7153552104565973	True	within_eukaryote		
+1	True		0.3368389935	0.134556223	A0A1Y1IBP6_105231	"{""Eukaryota"": 1}"	"{""Arp8"": 1}"	0.3994674773305306	0.9866392813732365	True	within_eukaryote		
+1	True		0.1886873237	0.1423666763	A0A0M0JGL0_1460289	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	0.7545110795378779	1.8635566386482927	True	within_eukaryote		
+1	True		0.5351417109	0.1495329415	B4I6K8_7238	"{""Eukaryota"": 1}"	"{""Arp8"": 1}"	0.27942681060782176	0.6901524736302881	True	within_eukaryote		
+1	True		0.2343098519	0.1025071332	A0A830H7L8_41880	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.4374853740411587	1.080539166641892	True	within_eukaryote		
+1	True		0.6469922438	0.3154605644	G4YR93_1094619	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.487580133182425	1.20426752993693	True	within_eukaryote		
+1	True		0.1175874492	0.0918508145	A0A2I4E499_51240	"{""Eukaryota"": 1}"	"{""Arp8"": 1}"	0.7811277064423301	1.9292966829119191	True	within_eukaryote		
+1	True		0.0102357297	0.0178622226	C4LWT9_294381	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	1.7450854138909122	4.310162695101223	True	within_eukaryote		
+1	True		0.8817905198	0.5149739103	B8CAA7_35128	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	0.5840093522629409	1.4424367447445237	True	within_eukaryote		
+1	True		0.508116295	0.1701602081	A0A0D2X0I4_595528	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.3348843754361391	0.8271263576485022	True	within_eukaryote		
+1	True		0.1461640757	0.0684425348	D8LPW8_2880	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	0.46825825341979016	1.156544682281895	True	within_eukaryote		
+1	True		0.5141338954	0.1516515172	P38696_559292	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	0.29496502478603165	0.7285300971931882	True	within_eukaryote		
+1	True		0.1630733453	0.0849449601	A0A1J4K875_1144522	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	0.5209003344092187	1.286564641114303	True	within_eukaryote		
+1	True		0.2220563005	0.0761496528	A0A0M0JNM0_1460289	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.3429294851284798	0.8469968645004332	True	within_eukaryote		
+1	True		0.0487486269	0.0572290399	H2R3T8_9598	"{""Eukaryota"": 1}"	"{""actin_POTE"": 1}"	1.1739620895865683	2.899552975299473	True	within_eukaryote		
+1	True		0.2229958566	0.1106766546	Q59Z11_237561	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.4963170898665029	1.2258468202505572	True	within_eukaryote		
+1	True		0.9907734296	0.7103553725	L1JI97_905079	"{""Eukaryota"": 1}"	"{""Arp10"": 1}"	0.7169705517706386	1.770835800430983	True	within_eukaryote		
+1	True		0.0513351679	0.0270199337	D8UA08_3068	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.5263435341759153	1.3000087260798003	True	within_eukaryote		
+1	True		0.5539705531	0.148593092	A0A1J4KN17_1144522	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.26823283506402684	0.6625046259004942	True	within_eukaryote		
+1	True		0.6250779464	0.2636523089	A0A251NLD5_3760	"{""Eukaryota"": 1}"	"{""Arp8"": 1}"	0.42179109088466155	1.0417760704352337	True	within_eukaryote		
+1	True		0.0910516824	0.0911257918	Q54KZ7_44689	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	1.0008139267506824	2.471896686249085	True	within_eukaryote		
+1	True		0.7490311168	0.2952945004	A4S172_436017	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.3942352911339023	0.9737163759503731	True	within_eukaryote		
+1	True		0.1434637311	0.03754417	L8HGQ4_1257118	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	0.26169798953458284	0.6463642999341807	True	within_eukaryote		
+1	True		0.6264964648	0.1702376	C4M3T9_294381	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.2717295460786772	0.6711411048091637	True	within_eukaryote		
+1	True		0.0193956804	0.0230116361	C4M5I6_294381	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	1.186430979755678	2.930349717297553	True	within_eukaryote		
+1	True		1.1627181747	0.433907655	A4RYY1_436017	"{""Eukaryota"": 1}"	"{""Arp7_plant"": 1}"	0.37318385868695586	0.9217217296774634	True	within_eukaryote		
+1	True		0.4303467684	0.1468691469	M2W7W2_130081	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.3412809336202279	0.8429251295840444	True	within_eukaryote		
+1	True		0.5375213879	0.2308606933	A0A0L0G6T9_667725	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	0.4294911765314706	1.060794407096453	True	within_eukaryote		
+1	True		1.3204305552	0.6117062721	Q8IBH5_36329	"{""Eukaryota"": 1}"	"{""Arp10"": 1}"	0.46326273630296855	1.1442063225957313	True	within_eukaryote		
+1	True		0.4694754416	0.1819733606	A4RW28_436017	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.38760996737086834	0.9573525790272605	True	within_eukaryote		
+1	True		0.4987298943	0.07764877	A0A1J4KRE0_1144522	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.15569303321788067	0.3845441021517895	True	within_eukaryote		
+1	True		0.186217409	0.0709597017	L8HDV5_1257118	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	0.38105836656764996	0.9411708694384642	True	within_eukaryote		
+1	True		0.934666412	0.300038575	L1JBP9_905079	"{""Eukaryota"": 1}"	"{""Arp8"": 1}"	0.32101140165931197	0.7928616886718262	True	within_eukaryote		
+1	True		0.028164423	0.0650379998	A5A3E0_9606	"{""Eukaryota"": 1}"	"{""actin_POTE"": 1}"	2.309225358531222	5.703524260586827	True	within_eukaryote		
+1	True		0.0196925968	0.0160407351	A0A6A3A6N9_106335	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.8145566205874889	2.0118623026456546	True	within_eukaryote		
+1	True		1.5148636189	0.5806708049	A0BR70_5888	"{""Eukaryota"": 1}"	"{""Arp10"": 1}"	0.38331556560956104	0.9467458946082474	True	within_eukaryote		
+1	True		0.4898509445	0.1459816064	Q6CF37_284591	"{""Eukaryota"": 1}"	"{""Arp5"": 1}"	0.2980122995353334	0.7360565195915508	True	within_eukaryote		
+1	True		0.5801277459	0.2452389617	A0A4D9CU81_1027361	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.42273268850387524	1.0441017095700438	True	within_eukaryote		
+1	True		1.2045094405	0.4659275957	Q5KBY2_214684	"{""Eukaryota"": 1}"	"{""Arp9"": 1}"	0.3868193805991178	0.9553999195277796	True	within_eukaryote		
+1	True		0.5875946252	0.2532112456	D2V943_5762	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.43092845771660065	1.0643443283193381	True	within_eukaryote		
+1	True		0.1911441166	0.0321023117	A0A058Z5X3_691883	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.16794820720105805	0.4148129894531237	True	within_eukaryote		
+1	True		2.3342e-06	0.0312419513	B0EQZ8_370354	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	13384.436337931626	33058.03701039722	True	within_eukaryote		
+1	True		0.3086114625	0.0896548126	A0A5B8MZ76_1764295	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.29051031310931946	0.7175274654975932	True	within_eukaryote		
+1	True		0.5860675167	0.2452913494	A0A5B8MPL2_1764295	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.4185376981498214	1.0337405600317882	True	within_eukaryote		
+1	True		0.2470627947	0.1148974776	A0A2K6BMY1_9545	"{""Eukaryota"": 1}"	"{""Arp8"": 1}"	0.4650537436829213	1.1486299073293356	True	within_eukaryote		
+1	True		1.0313410928	0.4157693889	A5KAJ7_126793	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	0.4031347066480429	0.9956969211156262	True	within_eukaryote		
+1	True		0.1844572763	0.0777009204	A0A830HA72_41880	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.42124074451597004	1.0404167774351107	True	within_eukaryote		
+1	True		0.3272032974	0.1929736893	W7EDF0_930091	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.5897669456065818	1.4566573461235661	True	within_eukaryote		
+1	True		0.9552093894	0.393731719	A0A167GL51_1330018	"{""Eukaryota"": 1}"	"{""Arp10"": 1}"	0.4121941465078316	1.0180727082326086	True	within_eukaryote		
+1	True		0.0246924578	0.1416081434	Q4UGT7_5874	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	5.734874371234118	14.164488098535301	True	within_eukaryote		
+1	True		1.2314207441	0.3512633253	Q3M0W4_5888	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.2852504531720597	0.70453620907967	True	within_eukaryote		
+1	True		0.3244138886	0.0805608199	A0A060RMX1_5854	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	0.24832728416054628	0.6133401768444873	True	within_eukaryote		
+1	True		0.0416509997	0.1100072538	A0A2G5E6V5_218851	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	2.641167189079497	6.5233828666952745	True	within_eukaryote		
+1	True		0.0170068121	0.0732378366	Q54I79_44689	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	4.306382417196224	10.63627527781244	True	within_eukaryote		
+1	True		0.0983146438	0.042149609	B8CFV4_35128	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.428721575656057	1.0588935803764996	True	within_eukaryote		
+1	True		0.0824035607	0.0637614891	A0A445H2H5_3848	"{""Eukaryota"": 1}"	"{""Arp5"": 1}"	0.7737710428816458	1.9111265597836915	True	within_eukaryote		
+1	True		0.511781942	0.1850133947	A0A0M0J7N5_1460289	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.361508250910502	0.892884305056223	True	within_eukaryote		
+1	True		0.5284124063	0.2000909014	A0A2V3J460_448386	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.3786642762630382	0.9352577384034431	True	within_eukaryote		
+1	True		1.3927007711	0.5333434589	Q12406_559292	"{""Eukaryota"": 1}"	"{""Arp7"": 1}"	0.3829562458551295	0.9458584156408365	True	within_eukaryote		
+1	True		0.2488391087	0.1143014776	Q38C43_185431	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.4593388804402192	1.134514844444603	True	within_eukaryote		
+1	True		0.8476730259	0.3850056859	A0A0D2WMJ7_595528	"{""Eukaryota"": 1}"	"{""Arp10"": 1}"	0.4541912673123317	1.121800824892308	True	within_eukaryote		
+1	True		0.0844134322	0.0676519534	A0A5J5QHJ0_3634	"{""Eukaryota"": 1}"	"{""Arp7_plant"": 1}"	0.8014358809592391	1.9794555665468598	True	within_eukaryote		
+1	True		0.8568638557	0.6517825832	D0NQE5_403677	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.7606606100423475	1.8787452802825464	True	within_eukaryote		
+1	True		0.1139431719	0.1192149536	Q54E71_44689	"{""Eukaryota"": 1}"	"{""Arp5"": 1}"	1.0462667627387685	2.5841600267726856	True	within_eukaryote		
+1	True		1.544358237	0.4085541498	A8BS34_184922	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.26454623027985963	0.653399130956914	True	within_eukaryote		
+1	True		0.0024723391	0.0066070431	A0A0G4IGX9_37360	"{""Eukaryota"": 1}"	"{""actin"": 1}"	2.6723854749536584	6.600488485771995	True	within_eukaryote		
+1	True		1.5698624501	1.201343751	A0A6A5BU80_5763	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.765254147535967	1.8900907959724649	True	within_eukaryote		
+1	True		0.2493621986	0.1188276893	A0A2K5KXA4_9531	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.47652647420955163	1.1769662481944951	True	within_eukaryote		
+1	True		0.8962490164	0.2313138038	A0A0D2ULE5_595528	"{""Eukaryota"": 1}"	"{""Arp8"": 1}"	0.2580909987819318	0.6374554426026716	True	within_eukaryote		
+1	True		0.9809065134	0.4986104355	C4M3P3_294381	"{""Eukaryota"": 1}"	"{""actin-like_metazoan_orphan"": 1}"	0.5083159594605257	1.255482664832073	True	within_eukaryote		
+1	True		0.2577829692	0.0902595988	A0A0G4IW28_37360	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.3501379438684811	0.864800938560657	True	within_eukaryote		
+1	True		0.1015140115	0.0584530081	A0A1Y1IGF1_105231	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	0.5758122178040418	1.4221907539923	True	within_eukaryote		
+1	True		0.5498635714	0.1413566458	A0A4D9D7T7_1027361	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.25707585145183165	0.6349481440387155	True	within_eukaryote		
+1	True		0.8221418237	0.3078738648	L8GWG1_1257118	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.37447780410249915	0.9249176278353289	True	within_eukaryote		
+1	True		0.1539276892	0.0618904886	A2FH22_412133	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	0.4020750842272763	0.9930797741309992	True	within_eukaryote		
+1	True		0.4414404865	0.1917585974	P53946_559292	"{""Eukaryota"": 1}"	"{""Arp5"": 1}"	0.4343928644161641	1.0729010192401702	True	within_eukaryote		
+1	True		0.8083019659	0.3048062249	A0A830HJA4_41880	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.3770944990349181	0.9313805670086189	True	within_eukaryote		
+1	True		0.0856088816	0.0336560356	A0A164ZG22_1328760	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	0.3931371952416675	0.9710042038625888	True	within_eukaryote		
+1	True		0.027445849	0.0176848229	A0A0D3CB83_109376	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.6443532827131709	1.5914793966583072	True	within_eukaryote		
+1	True		0.4640406597	0.2293252031	L1I7D8_905079	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.49419204611996204	1.220598203644808	True	within_eukaryote		
+1	True		0.4825541972	0.1594743302	A0A0D2U825_595528	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.33047962513919255	0.8162471248842991	True	within_eukaryote		
+1	True		0.9630289035	0.3323488346	M2Y1P6_130081	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.3451078502339052	0.852377178804236	True	within_eukaryote		
+1	True		1.2148738764	0.490547726	A0A2V3IJT2_448386	"{""Eukaryota"": 1}"	"{""Arp8"": 1}"	0.40378489942810003	0.9973028234072384	True	within_eukaryote		
+1	True		0.1309037649	0.0374688357	A9V006_81824	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.2862319179942853	0.7069603156761941	True	within_eukaryote		
+1	True		0.8268324466	0.2907103018	A0A7J7IFC8_2690220	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.3515951786790947	0.8684001429713484	True	within_eukaryote		
+1	True		0.0227756329	0.1583515513	A0A3Q8IHJ0_5661	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	6.952674026459217	17.172314880122553	True	within_eukaryote		
+1	True		0.1530110164	0.0944578261	A0A2R6WPF9_3197	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.6173269632630191	1.5247274583562116	True	within_eukaryote		
+1	True		0.3861322393	0.1336745112	B9WLM0_573826	"{""Eukaryota"": 1}"	"{""Arp5"": 1}"	0.34618842353679635	0.855046072087264	True	within_eukaryote		
+1	True		0.0300917032	0.0400382054	A0A5J5TAS5_3634	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	1.3305396884281377	3.2862818540371213	True	within_eukaryote		
+1	True		0.1085882525	0.064081571	A0A1Y1HVV5_105231	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.5901335505882647	1.4575628187745377	True	within_eukaryote		
+1	True		0.2946908117	0.1054132023	A0A1Y1ILU8_105231	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.3577078012439435	0.8834976261882315	True	within_eukaryote		
+1	True		0.2269736338	0.2433444237	F6UT25_13616	"{""Eukaryota"": 1}"	"{""Arp5"": 1}"	1.072126394709023	2.64803037955887	True	within_eukaryote		
+1	True		0.8063282876	0.2995875131	A0A0G4ISM7_37360	"{""Eukaryota"": 1}"	"{""Arp8"": 1}"	0.37154533421084457	0.9176747603911871	True	within_eukaryote		
+1	True		0.0508977127	0.0401008384	F0ZQ25_5786	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	0.7878711296195438	1.9459521719695592	True	within_eukaryote		
+1	True		0.0355308162	0.0800266918	Q9LSD6_3702	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	2.252317856970592	5.562969197582113	True	within_eukaryote		
+1	True		0.4319718664	0.1785739651	A0A1Y1HUH0_105231	"{""Eukaryota"": 1}"	"{""Arp5"": 1}"	0.4133925817628201	1.0210327071458014	True	within_eukaryote		
+1	True		0.485657763	0.3242769121	B8BQ22_35128	"{""Eukaryota"": 1}"	"{""actin_divergent"": 1}"	0.6677066378943066	1.6491595305394056	True	within_eukaryote		
+1	True		0.2896667998	0.1291591113	A0A3N4JCA9_1336337	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.4458885567458118	1.1012940731498548	True	within_eukaryote		
+1	True		0.2630555222	0.1220906751	A0A672NW31_75366	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.46412511730955025	1.1463363056979592	True	within_eukaryote		
+1	True		0.6011238991	0.2110556503	A0A5J4Z349_35688	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.3511017456068401	0.8671814193469162	True	within_eukaryote		
+1	True		0.7765864559	0.250282298	A0A6A5BG08_5763	"{""Eukaryota"": 1}"	"{""Arp5"": 1}"	0.3222851700522428	0.7960077518763592	True	within_eukaryote		
+1	True		0.7224776845	0.2050298266	D8LII8_2880	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.28378707190367203	0.7009218236166391	True	within_eukaryote		
+1	True		0.1442054598	0.1498430551	Q4DQ26_353153	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	1.0390941876113349	2.5664445811583954	True	within_eukaryote		
+1	True		0.2701804305	0.1903177626	I0Z9X2_574566	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.7044098724981489	1.7398123497766642	True	within_eukaryote		
+1	True		0.6764238053	0.2232379665	A0A0G4IKT4_37360	"{""Eukaryota"": 1}"	"{""actin-like_other"": 1}"	0.3300267742661599	0.8151286346809815	True	within_eukaryote		
+1	True		0.2531167047	0.0797900221	A0A836CG82_303371	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	0.3152301709781227	0.7785827057547217	True	within_eukaryote		
+1	True		0.0063805258	0.0170924823	A0A6P6NAA8_7957	"{""Eukaryota"": 1}"	"{""actin"": 1}"	2.6788516864864023	6.616459293564678	True	within_eukaryote		
+1	True		0.056882686	0.0250273269	A0A4U6VCM9_4556	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.43998145411065853	1.0867042008080743	True	within_eukaryote		
+1	True		0.7820377923	0.4811846791	A0A2P6NEB5_1890364	"{""Eukaryota"": 1}"	"{""Arp8"": 1}"	0.6152959407304592	1.5197110634662725	True	within_eukaryote		
+1	True		0.5793854465	0.2229237596	A0A058Z6W9_691883	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	0.3847589906627038	0.9503109904870554	True	within_eukaryote		
+1	True		0.3843722704	0.1138746994	D2VQU2_5762	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	0.2962614844236693	0.73173220519396	True	within_eukaryote		
+1	True		0.7798766379	0.5086201581	I4YHZ9_671144	"{""Eukaryota"": 1}"	"{""Arp9"": 1}"	0.6521802723435577	1.610811171740089	True	within_eukaryote		
+1	True		0.4418597724	0.1804731531	A1D9Y0_331117	"{""Eukaryota"": 1}"	"{""actin-like_other"": 1}"	0.4084398815482665	1.0088001003433684	True	within_eukaryote		
+1	True		0.6363073096	0.5219824126	R0ETY5_81985	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.8203306872714259	2.026123591303522	True	within_eukaryote		
+1	True		0.2111120155	0.2785113882	F0ZUA7_5786	"{""Eukaryota"": 1}"	"{""Arp10"": 1}"	1.3192588187857075	3.2584193877566356	True	within_eukaryote		
+1	True		0.1373895186	0.0363608091	Q4WQN0_330879	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	0.2646548984996589	0.6536675291128974	True	within_eukaryote		
+1	True		1.2872179338	0.5033490749	B6AAT9_441375	"{""Eukaryota"": 1}"	"{""Arp10"": 1}"	0.3910364062548924	0.9658154937576268	True	within_eukaryote		
+1	True		0.0781841674	0.0808718161	F0ZVL6_5786	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	1.0343758690458342	2.554790870398599	True	within_eukaryote		
+1	True		0.354223431	0.1404348125	A0A6A5BGI0_5763	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	0.3964582808752705	0.9792069080346879	True	within_eukaryote		
+1	True		0.3845826642	0.3606474289	K0S4T2_159749	"{""Eukaryota"": 1}"	"{""Arp10"": 1}"	0.9377630935346773	2.3161682920630673	True	within_eukaryote		
+1	True		0.6595455071	0.2098133837	B6K4X9_402676	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.31811813050253734	0.785715637649064	True	within_eukaryote		
+1	True		0.0541007541	0.0282200633	A0A058Z5J4_691883	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.5216205165613393	1.2883434092026955	True	within_eukaryote		
+1	True		0.0398233319	0.0844769279	Q4N8V8_5875	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	2.1212923145689877	5.2393509950176735	True	within_eukaryote		
+1	True		0.0307164377	0.0417712814	G5A791_1094619	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	1.3598999274580592	3.3587983085204964	True	within_eukaryote		
+1	True		0.5931985542	0.2332747796	A8IY68_3055	"{""Eukaryota"": 1}"	"{""Arp7_plant"": 1}"	0.39324906972269896	0.9712805211195191	True	within_eukaryote		
+1	True		0.679866488	0.3580351754	A0A3Q8IEK0_5661	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	0.5266257150771638	1.3007056808443924	True	within_eukaryote		
+1	True		0.0810780671	0.0500274106	A0A0B2SL60_3848	"{""Eukaryota"": 1}"	"{""Arp7_plant"": 1}"	0.6170276671531555	1.5239882309709762	True	within_eukaryote		
+1	True		0.0601748378	0.0375749373	A0A0M0LRC6_1460289	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.6244293906513861	1.5422696470252177	True	within_eukaryote		
+1	True		0.5961819824	0.1586421761	A0A6P5P3Q5_10089	"{""Eukaryota"": 1}"	"{""actin-like_metazoan_orphan"": 1}"	0.26609689789914054	0.6572291037891457	True	within_eukaryote		
+1	True		0.4840966966	0.1633952205	A0A2G5BAB3_763665	"{""Eukaryota"": 1}"	"{""Arp8"": 1}"	0.33752599769341207	0.8336508644819304	True	within_eukaryote		
+1	True		1.4880171011	0.7111126578	Q57ZL0_185431	"{""Eukaryota"": 1}"	"{""Arp1"": 1}"	0.4778927992657597	1.1803409158410028	True	within_eukaryote		
+1	True		0.2448964211	0.0853079597	A0A6P4ZWM0_7741	"{""Eukaryota"": 1}"	"{""Arp8"": 1}"	0.3483430232129268	0.8603676884809446	True	within_eukaryote		
+1	True		0.0074997889	0.0180819757	A9V489_81824	"{""Eukaryota"": 1}"	"{""actin"": 1}"	2.4109979548891034	5.954891010153134	True	within_eukaryote		
+1	True		0.2887269074	0.1491683208	A0A2V3IBW5_448386	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.5166415632795297	1.2760459603070224	True	within_eukaryote		
+1	True		0.1274655074	0.1638015158	Q8I345_36329	"{""Eukaryota"": 1}"	"{""Arp3"": 1}"	1.285065419980433	3.1739655777734264	True	within_eukaryote		
+1	True		0.3359274034	0.1858653428	A0A1Y1IGW9_105231	"{""Eukaryota"": 1}"	"{""Arp7_plant"": 1}"	0.5532902077020609	1.3665639479989982	True	within_eukaryote		
+1	True		0.1213447555	0.0505168854	F0ZR20_5786	"{""Eukaryota"": 1}"	"{""Arp5"": 1}"	0.41630876581229753	1.0282353504101687	True	within_eukaryote		
+1	True		0.4654063245	0.1579409371	B4GLL4_7234	"{""Eukaryota"": 1}"	"{""Arp5"": 1}"	0.33936138979134134	0.8381840744259296	True	within_eukaryote		
+1	True		0.5697176261	0.2366894893	A0A835Z6C3_303371	"{""Eukaryota"": 1}"	"{""Arp10"": 1}"	0.41545052927404946	1.0261156036738288	True	within_eukaryote		
+1	True		0.3727380468	0.1152932113	S2J5R5_1220926	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.30931430877477034	0.7639711982747545	True	within_eukaryote		
+1	True		0.8973244389	0.6028522637	A0A0M0K4U6_1460289	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.6718331046895551	1.6593514346730827	True	within_eukaryote		
+1	True		1.2896753856	0.4538842764	B6AA21_441375	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	0.35193683733743425	0.869244001038072	True	within_eukaryote		
+1	True		1.0015441953	0.5248342085	A0A0M0JTM3_1460289	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.5240250115400973	1.294282238600675	True	within_eukaryote		
+1	True		0.0226431296	0.0210443656	A0A7M7RHK4_7668	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.929392975783701	2.2954950522338344	True	within_eukaryote		
+1	True		0.7360591948	0.1878461098	A0A267EHB0_282301	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.2552051670939876	0.6303277662226456	True	within_eukaryote		
+1	True		0.5216249344	0.26059104	L8GY82_1257118	"{""Eukaryota"": 1}"	"{""Arp5"": 1}"	0.49957550495500236	1.2338947352968994	True	within_eukaryote		
+1	True		0.1159042901	0.0544818448	D6WDF4_7070	"{""Eukaryota"": 1}"	"{""Arp2"": 1}"	0.47005891458369753	1.160992110765001	True	within_eukaryote		
+1	True		0.1545173268	0.1564018507	Q54JY2_44689	"{""Eukaryota"": 1}"	"{""Arp10"": 1}"	1.0121961979217984	2.500009602784148	True	within_eukaryote		
+1	True		0.6300443921	0.2659344266	Q8ILM5_36329	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.4220883955710079	1.0425103792306476	True	within_eukaryote		
+1	True		0.7568819133	0.2255856898	A0A1J4KFG0_1144522	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	0.29804608332685334	0.7361399617180788	True	within_eukaryote		
+1	True		0.0165110757	0.148713651	Q4Q2G7_5664	"{""Eukaryota"": 1}"	"{""Arp4"": 1}"	9.006902621129646	22.246026106793874	True	within_eukaryote		
+1	True		1.5920686714	0.6804422974	Q04549_559292	"{""Eukaryota"": 1}"	"{""Arp10"": 1}"	0.42739506757685697	1.055617256139183	True	within_eukaryote		
+1	True		0.0248304004	0.0732633388	A0A1Y1IK53_105231	"{""Eukaryota"": 1}"	"{""actin"": 1}"	2.950550036237031	7.287523346988099	True	within_eukaryote		
+1	True		1.7290367665	0.7848617184	D3KG82_184922	"{""Eukaryota"": 1}"	"{""Arp6"": 1}"	0.45393003411301375	1.1211556085713992	True	within_eukaryote		
+1	True		0.8916484658	0.2702097503	Q4UHY0_5874	"{""Eukaryota"": 1}"	"{""actin"": 1}"	0.30304515811347676	0.7484871084444294	True	within_eukaryote		
+1	True		0.7081332433	0.4333544708	O28258_224325	"{""Archaea"": 1}"	"{""MreB"": 1}"	0.6119674155961208	1.5114899845726355	True	within_prok_or_mixed		
+1	True		0.2172672533	0.085460988	A0A521E2Y1_1302730	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.3933450011539314	0.9715174608549009	True	within_prok_or_mixed		
+1	True		0.3005987841	0.0915445556	A6DIQ4_313628	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.30454067162675524	0.7521808569014639	True	within_prok_or_mixed		
+1	True		1.1424412528	0.3635120382	Q9ZDS4_272947	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.3181888235470063	0.7858902414367341	True	within_prok_or_mixed		
+1	True		0.2510924555	0.1155800558	A0A0G3WMI4_1408281	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.4603087558717988	1.136910326563022	True	within_prok_or_mixed		
+1	True		0.1835901733	0.0865508614	D1C644_479434	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.4714351527876683	1.1643912627601471	True	within_prok_or_mixed		
+1	True		0.237656008	0.1118159757	A0A1V0N211_74969	"{""Archaea"": 1}"	"{""Ta0583_archaeal_actin"": 1}"	0.47049505140219305	1.1620693191526685	True	within_prok_or_mixed		
+1	True		0.4817627964	0.2174683991	A9WG66_324602	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.45140139654835326	1.1149101610913639	True	within_prok_or_mixed		
+1	True		0.1755882628	0.0639792883	Q1CXG7_246197	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.3643710990687016	0.8999552147291764	True	within_prok_or_mixed		
+1	True		1.6108041944	0.9131026227	D4GU28_309800	"{""Archaea"": 1}"	"{""volactin"": 1}"	0.5668613391214298	1.4000831006481853	True	within_prok_or_mixed		
+1	True		0.2148689032	0.0852688399	P47203_208964	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.3968412303041905	0.9801527496132735	True	within_prok_or_mixed		
+1	True		0.3019311707	0.0653717407	Q8F2L2_189518	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.2165120631581084	0.5347601958248988	True	within_prok_or_mixed		
+1	True		0.1665319903	0.0583239862	A9WGS2_324602	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.35022692093532254	0.8650207018061501	True	within_prok_or_mixed		
+1	True		1.1475815071	0.2449229829	A0A7W7YLI2_48465	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.21342534833881519	0.5271363609348517	True	within_prok_or_mixed		
+1	True		0.3604641426	0.1479508083	O25925_85962	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.410445286548732	1.0137532228397073	True	within_prok_or_mixed		
+1	True		0.7681769945	0.3532175372	D2Z3B2_469381	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.4598126990641087	1.1356851226101738	True	within_prok_or_mixed		
+1	True		0.872264232	0.2028530534	A0A2M9A8L5_1896222	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.23255917869620957	0.5743947479251815	True	within_prok_or_mixed		
+1	True		0.8049964289	0.3075044289	A0A5D0MFK7_2703815	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.38199477396464265	0.9434836893141033	True	within_prok_or_mixed		
+1	True		0.2582062427	0.0975971674	A0A081BSN1_1499966	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.37798143987321964	0.9335712101046983	True	within_prok_or_mixed		
+1	True		0.6715670664	0.3007304254	A0A1D8CWJ1_274537	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.4478040101223165	1.1060250253553452	True	within_prok_or_mixed		
+1	True		0.4298699963	0.1776122354	Q9K0X8_122586	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.41317662765197277	1.0204993250287895	True	within_prok_or_mixed		
+1	True		0.3528302206	0.1153242106	B8E0U1_515635	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.32685468496402376	0.8072939345185908	True	within_prok_or_mixed		
+1	True		1.2058839069	0.646411492	A3MWN5_410359	"{""Archaea"": 1}"	"{""crenactin"": 1}"	0.5360478635640378	1.3239773170591955	True	within_prok_or_mixed		
+1	True		0.520069565	0.1561089091	E6W424_653733	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.30016928427642176	0.7413840268246854	True	within_prok_or_mixed		
+1	True		0.1401034034	0.0605062506	Q9HVU0_208964	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.4318685280417678	1.0666661952113847	True	within_prok_or_mixed		
+1	True		0.3282272437	0.0861176926	O84715_272561	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.26237216517807294	0.648029437173531	True	within_prok_or_mixed		
+1	True		0.3578177214	0.153674844	A0A345ZD35_2066483	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.42947801299144933	1.0607618946482464	True	within_prok_or_mixed		
+1	True		0.3052195279	0.1015365578	Q9RWN6_243230	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.33266730506596787	0.8216504457384829	True	within_prok_or_mixed		
+1	True		0.5547035166	0.1901165619	Q8A154_226186	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.3427354545457014	0.8465176310067927	True	within_prok_or_mixed		
+1	True		0.4492048186	0.1736117668	D2Z8Y7_469381	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.38648687549942506	0.9545786697108831	True	within_prok_or_mixed		
+1	True		0.1470784348	0.0744441849	A0A6P1M985_2697043	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.5061529584621335	1.2501402981269671	True	within_prok_or_mixed		
+1	True		0.5097730754	0.163194781	I0ALP9_945713	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.3201322095560796	0.7906901840709537	True	within_prok_or_mixed		
+1	True		1.6191563588	0.5147948546	Q9ZBP3_100226	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.3179401740925924	0.785276105535969	True	within_prok_or_mixed		
+1	True		0.2255069801	0.0920051109	A0A2T4TVU2_2033718	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.40799229744108484	1.007694618453291	True	within_prok_or_mixed		
+1	True		0.5099637254	0.1688852658	Q89FV2_224911	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.33117113509893575	0.8179550759152635	True	within_prok_or_mixed		
+1	True		0.588997474	0.1948017198	A0A150WL87_959	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.33073438919366227	0.8168763631524592	True	within_prok_or_mixed		
+1	True		0.2888377714	0.1685037582	Q9HKL4_273075	"{""Archaea"": 1}"	"{""Ta0583_archaeal_actin"": 1}"	0.5833854671543142	1.4408958194122576	True	within_prok_or_mixed		
+1	True		0.2253595048	0.1073088984	Q7ND37_251221	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.4761676171379305	1.1760799120010557	True	within_prok_or_mixed		
+1	True		0.0893906065	0.0629207544	P0A9X4_83333	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.7038855296277692	1.7385172824628448	True	within_prok_or_mixed		
+1	True		0.6559531126	0.2160011845	Q8F8E6_189518	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.3292936344853012	0.8133178627218564	True	within_prok_or_mixed		
+1	True		0.2931547388	0.1122038621	A0A2S8SX00_1960156	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.3827461993597492	0.9453396246628026	True	within_prok_or_mixed		
+1	True		1.0172160953	0.3967696861	O25629_85962	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.39005447115244835	0.9633902256223965	True	within_prok_or_mixed		
+1	True		0.5406352179	0.1272680438	C7ND47_523794	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.23540464917241197	0.5814227366980601	True	within_prok_or_mixed		
+1	True		0.1212155875	0.0760007294	A0A7W7YJ12_48465	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.6269880876500309	1.5485893378918307	True	within_prok_or_mixed		
+1	True		0.1842912647	0.0852821978	A0A388TH62_2218525	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.4627576783893002	1.1429588869338256	True	within_prok_or_mixed		
+1	True		2.0897876224	1.1021092981	A0A0H2XJI5_367830	"{""Bacteria"": 1}"	"{""ALP_bacterial"": 1}"	0.5273786131598824	1.3025652535641663	True	within_prok_or_mixed		
+1	True		0.9586301654	0.2186454159	A0A5B9DE59_2594042	"{""Asgard"": 1}"	"{""Asgard_actin"": 1}"	0.22808109299248638	0.5633343850386344	True	within_prok_or_mixed		
+1	True		0.6936811498	0.1294425088	A0A1D8D3E4_274537	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.18660231554125475	0.46088651756715704	True	within_prok_or_mixed		
+1	True		0.3190906227	0.1192423477	M1E753_747365	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.3736943025496186	0.9229824680214318	True	within_prok_or_mixed		
+1	True		1.0994351407	0.5433181211	M1E4M4_747365	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.49417932990032903	1.2205667960271356	True	within_prok_or_mixed		
+1	True		0.3013284016	0.0993375685	W0RKT1_861299	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.3296654678833301	0.8142362489671483	True	within_prok_or_mixed		
+1	True		1.1851029169	0.3550733786	A0A410P565_1930593	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.29961396055694745	0.7400124403336572	True	within_prok_or_mixed		
+1	True		0.4929221719	0.240686774	A0A2X3K5L1_2026885	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.48828555037858706	1.2060098302617042	True	within_prok_or_mixed		
+1	True		0.1157269603	0.0550206053	A0A0S4N2T2_1643428	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.47543463646992545	1.1742695330326007	True	within_prok_or_mixed		
+1	True		0.952998435	0.2723312824	A0A6P1MAH0_2697043	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.2857625704285653	0.7058010805162986	True	within_prok_or_mixed		
+1	True		1.2170992779	0.3466117796	Q9X104_243274	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.28478513289240365	0.7033869208587709	True	within_prok_or_mixed		
+1	True		0.2313744454	0.1543219083	R0EET6_1292034	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.6669790522164554	1.6473624765836499	True	within_prok_or_mixed		
+1	True		0.2532925408	0.0912081658	B5YHP6_289376	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.3600902162848058	0.8893819206483389	True	within_prok_or_mixed		
+1	True		0.1365944739	0.0472606023	Q9L1G6_100226	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.34599205187904747	0.85456105640444	True	within_prok_or_mixed		
+1	True		0.2454849482	0.0444130055	A0A081BNN4_1499966	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.18091946502486217	0.44685052247911194	True	within_prok_or_mixed		
+1	True		0.2329200676	0.1088512421	A0A2A8CX25_1850348	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.4673330349831995	1.1542594978671554	True	within_prok_or_mixed		
+1	True		0.1852084381	0.1084958354	A0A4Y6Q2E6_2292766	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.5858039542529893	1.4468692077566432	True	within_prok_or_mixed		
+1	True		0.6455207944	0.2048831259	C7NDZ0_523794	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.3173919843905806	0.7839221392575038	True	within_prok_or_mixed		
+1	True		0.3037610181	0.0856015362	Q9X1N0_243274	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.2818055349413513	0.6960276524626231	True	within_prok_or_mixed		
+1	True		0.833281531	0.1754067292	A0A4R1L296_768535	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.21050116038153255	0.5199139489276124	True	within_prok_or_mixed		
+1	True		0.5034245773	0.1744965831	A0A3R5XY50_139438	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.3466191182716418	0.8561098391466474	True	within_prok_or_mixed		
+1	True		0.629307404	0.2108792175	D4GWW7_309800	"{""Archaea"": 1}"	"{""salactin"": 1}"	0.3350973088185691	0.8276522789095396	True	within_prok_or_mixed		
+1	True		0.163214353	0.1012365061	Q7NKL0_251221	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.6202671777279293	1.5319894540163537	True	within_prok_or_mixed		
+1	True		0.2291435313	0.0540910059	A0A150WR44_959	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.236057311297969	0.5830347379924892	True	within_prok_or_mixed		
+1	True		0.3864419784	0.1482365203	Q9WZ57_243274	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.38359321343335717	0.947431653186582	True	within_prok_or_mixed		
+1	True		0.3178940794	0.0968287076	O67013_224324	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.3045942465577105	0.7523131808937211	True	within_prok_or_mixed		
+1	True		0.2835300259	0.1078341463	A0A5B9D7W0_2594042	"{""Asgard"": 1}"	"{""Asgard_actin"": 1}"	0.38032707808531263	0.9393646699763417	True	within_prok_or_mixed		
+1	True		1.1145899312	0.3814513105	Q8A261_226186	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.3422346639084729	0.8452807350328438	True	within_prok_or_mixed		
+1	True		0.2167848577	0.0917096095	A0A4R1L4R6_768535	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.42304435131218115	1.044871481295323	True	within_prok_or_mixed		
+1	True		0.1081139048	0.0768724067	A0A1D8D1A3_274537	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.7110316368852493	1.7561673554456383	True	within_prok_or_mixed		
+1	True		0.6483012858	0.2310460749	A0A345ZBM5_2066483	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.35638688363064175	0.8802351097664929	True	within_prok_or_mixed		
+1	True		0.1961743939	0.0963005854	A0A410P5A1_1930593	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.4908927382698543	1.212449288123543	True	within_prok_or_mixed		
+1	True		1.0255624847	0.2928650642	A0A0H2XHQ1_367830	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.28556530544861886	0.7053138584291463	True	within_prok_or_mixed		
+1	True		0.8179664652	0.204454998	B0VH46_459349	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.24995523251678653	0.6173610243163444	True	within_prok_or_mixed		
+1	True		1.4359414835	0.603375133	A0A5B9D996_2594042	"{""Asgard"": 1}"	"{""Asgard_actin"": 1}"	0.4201947920115228	1.037833393590612	True	within_prok_or_mixed		
+1	True		0.5061005879	0.1561669509	S0ETG4_1303518	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.3085689972185073	0.762130363413342	True	within_prok_or_mixed		
+1	True		0.8916173688	0.2667909751	A0A5B9DE16_2594042	"{""Asgard"": 1}"	"{""Asgard_actin"": 1}"	0.2992213750378883	0.7390427987072838	True	within_prok_or_mixed		
+1	True		0.2301809079	0.0794094443	S0EYX7_1303518	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.3449871017734395	0.8520789438263675	True	within_prok_or_mixed		
+1	True		0.393418084	0.1602742962	H1XY52_880073	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.40738924497431084	1.0062051473793894	True	within_prok_or_mixed		
+1	True		0.4252550169	0.1656615644	Q7NIF4_251221	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.38955816584512115	0.9621644079036793	True	within_prok_or_mixed		
+1	True		0.1113788959	0.0516501712	Q74BF2_243231	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.46373391280852155	1.1453700750292093	True	within_prok_or_mixed		
+1	True		0.4270037397	0.1816333013	P39763_224308	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.42536700364172475	1.0506081686487334	True	within_prok_or_mixed		
+1	True		0.2283618342	0.1335515336	A0A0S6VVH1_1499966	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.5848242289166199	1.444449397492543	True	within_prok_or_mixed		
+1	True		0.2050655568	0.0738492554	S0EXE4_1303518	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.360125106099729	0.8894680945270063	True	within_prok_or_mixed		
+1	True		0.9420584334	0.5014382711	R4PW41_1332188	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.5322793717691696	1.3146695705032145	True	within_prok_or_mixed		
+1	True		1.1978424107	0.351727192	A6DKI8_313628	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.29363394454739355	0.7252424802415499	True	within_prok_or_mixed		
+1	True		2.0843447636	1.5113940457	E6W6T3_653733	"{""Bacteria"": 1}"	"{""ALP_bacterial"": 1}"	0.7251171073491597	1.7909568670954628	True	within_prok_or_mixed		
+1	True		0.3422518299	0.0656877778	E6W0W4_653733	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.19192820041077008	0.47404084806597585	True	within_prok_or_mixed		
+1	True		0.5194769225	0.137729302	P0ABH0_83333	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.2651307421649708	0.6548428089006957	True	within_prok_or_mixed		
+1	True		0.1829264875	0.1073615944	E6W438_653733	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.5869111459323243	1.4496038454050986	True	within_prok_or_mixed		
+1	True		0.3027265377	0.0594651652	A0A2A8D1L2_1850348	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.19643195357695922	0.4851646066684679	True	within_prok_or_mixed		
+1	True		0.1134160617	0.050513564	A0A4Y6Q1M9_2292766	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.4453828077156729	1.1000449305087918	True	within_prok_or_mixed		
+1	True		0.4296241244	0.3058866555	A0A2S8SSJ5_1960156	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.7119866835392263	1.75852621216823	True	within_prok_or_mixed		
+1	True		0.4199222102	0.1116853857	A0A150WNZ9_959	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.2659668457327052	0.6569078897146226	True	within_prok_or_mixed		
+1	True		0.7298192202	0.3216947035	B8E321_515635	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.44078683404890684	1.088693397748	True	within_prok_or_mixed		
+1	True		0.3347526119	0.093911299	Q5SJC6_300852	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.28053940630059654	0.6929004585779337	True	within_prok_or_mixed		
+1	True		1.2486516583	0.4566000768	P77277_83333	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.3656745047867446	0.9031744787593334	True	within_prok_or_mixed		
+1	True		0.7392797132	0.219047406	R4PLE2_1332188	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.29629841329183115	0.731823415302449	True	within_prok_or_mixed		
+1	True		0.864307906	0.2362441464	Q74F76_243231	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.2733333164720583	0.6751022354598671	True	within_prok_or_mixed		
+1	True		1.2802638885	0.2704309093	Q9WZU0_243274	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.2112305999795448	0.5217155818555228	True	within_prok_or_mixed		
+1	True		0.1272247479	0.0633447681	I0AKQ1_945713	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.49789658966186096	1.2297480052817775	True	within_prok_or_mixed		
+1	True		0.8786643232	0.3117974272	A0A5B9DDL8_2594042	"{""Asgard"": 1}"	"{""Asgard_actin"": 1}"	0.3548538605328456	0.876448716897552	True	within_prok_or_mixed		
+1	True		0.3850052381	0.1440621814	D2Z946_469381	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.3741823932343013	0.9241879965555654	True	within_prok_or_mixed		
+1	True		0.3688985408	0.1964937277	P28264_224308	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.532649782983365	1.3155844441160267	True	within_prok_or_mixed		
+1	True		0.6269897623	0.2281595968	W0RIK2_861299	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.36389684572047437	0.8987838628438849	True	within_prok_or_mixed		
+1	True		1.1029082564	0.4413475393	Q9L095_100226	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.40016704629685285	0.9883671372347841	True	within_prok_or_mixed		
+1	True		0.2762379845	0.1104434985	Q01465_224308	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.39981285955262974	0.9874923362193736	True	within_prok_or_mixed		
+1	True		0.3164389833	0.1232294436	A0A2T4TZC3_2033718	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.3894256084218686	0.9618370061294658	True	within_prok_or_mixed		
+1	True		0.228706606	0.0848533727	H1XSC9_880073	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.3710140873674633	0.9163626410484857	True	within_prok_or_mixed		
+1	True		1.6628499582	1.2468673922	O67697_224324	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.7498375821891397	1.8520136312012974	True	within_prok_or_mixed		
+1	True		0.1087522937	0.0492190286	D1C7E1_479434	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.4525792231635478	1.1178192590058262	True	within_prok_or_mixed		
+1	True		0.2242706454	0.062015583	A0A3R5V189_139438	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.27652117774660845	0.6829758906021035	True	within_prok_or_mixed		
+1	True		0.2928380036	0.1161990092	A0A2M9A4U1_1896222	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.3968030370768447	0.9800584166812571	True	within_prok_or_mixed		
+1	True		0.1444732222	0.078967219	A9WBG3_324602	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.5465872346273454	1.3500083660985738	True	within_prok_or_mixed		
+1	True		0.247492128	0.0604199985	Q9ZCH4_272947	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.24412897084144836	0.6029708199601294	True	within_prok_or_mixed		
+1	True		0.7295579185	0.2150967581	A0A5B9DDW0_2594042	"{""Asgard"": 1}"	"{""Asgard_actin"": 1}"	0.2948316407040684	0.7282006536658846	True	within_prok_or_mixed		
+1	True		0.4349192627	0.2024657971	Q5SHB4_300852	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.4655250168573415	1.149793898523932	True	within_prok_or_mixed		
+1	True		0.1518583296	0.0447808731	A0A0Q0VP91_312540	"{""Archaea"": 1}"	"{""Ta0583_archaeal_actin"": 1}"	0.2948858532683346	0.7283345525399717	True	within_prok_or_mixed		
+1	True		0.3320202326	0.105747747	A0A2S8SRT3_1960156	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.31849790048005644	0.7866536263439399	True	within_prok_or_mixed		
+1	True		0.3028822459	0.1872897418	Q9HSN1_64091	"{""Archaea"": 1}"	"{""salactin"": 1}"	0.6183582706984939	1.5272746705443263	True	within_prok_or_mixed		
+1	True		0.3348011573	0.0979372345	B0VJH9_459349	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.2925235841172524	0.722500016138638	True	within_prok_or_mixed		
+1	True		0.1026984783	0.057512217	Q748E0_243231	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.5600104105924225	1.3831620855864104	True	within_prok_or_mixed		
+1	True		0.3216742852	0.0980993723	P39751_224308	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.30496491890549166	0.7532286994768199	True	within_prok_or_mixed		
+1	True		0.5112590347	0.1885863635	R0CZM0_1292034	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.36886656411003077	0.911058502604964	True	within_prok_or_mixed		
+1	True		0.9422574313	0.3803532948	A5ULV7_420247	"{""Archaea"": 1}"	"{""MreB"": 1}"	0.4036617618130533	0.9969986874890114	True	within_prok_or_mixed		
+1	True		0.5734887854	0.1877229034	A0A0S4MW56_1643428	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.3273349160072346	0.8084800506313039	True	within_prok_or_mixed		
+1	True		0.1585443253	0.0719348356	Q1D0T5_246197	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.4537206580171431	1.1206384734039831	True	within_prok_or_mixed		
+1	True		0.1995901651	0.0902206702	A0A521ER07_1302730	"{""Bacteria"": 1}"	"{""MreB"": 1}"	0.4520296386086812	1.1164618475992933	True	within_prok_or_mixed		
+1	True		1.0467244231	0.2320012721	A0A0G3WK96_1408281	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.22164503567510194	0.5474380547317571	True	within_prok_or_mixed		
+1	True		0.621809869	0.2119683917	B5YFS9_289376	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.34088939765605425	0.8419580802389875	True	within_prok_or_mixed		
+1	True		0.7547101254	0.2469819221	O66808_224324	"{""Bacteria"": 1}"	"{""FtsA"": 1}"	0.32725401950728883	0.8082802454679263	True	within_prok_or_mixed		

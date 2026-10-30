@@ -1,0 +1,141 @@
++ [] bl=0.00 n=71
+  + [99] bl=0.20 n=37
+    - FtsZ[A] x7 (bs 100)  bl=1.20
+    + [54] bl=0.05 n=36
+      - FtsZ[A] x2 (bs 100)  bl=1.27
+      + [37] bl=0.11 n=35
+        - FtsZ[A] x3 (bs 65)  bl=0.29
+        + [86] bl=0.25 n=34
+          - FtsZ[A]  bl=0.61
+          + [62] bl=0.10 n=33
+            - FtsZ[A] x7 (bs 17)  bl=0.15
+            + [13] bl=0.05 n=32
+              + [11] bl=0.03 n=6
+                - FtsZ[A] x3 (bs 27)  bl=0.13
+                + [26] bl=0.03 n=5
+                  - FtsZ[A] x2 (bs 100)  bl=0.45
+                  + [88] bl=0.11 n=4
+                    - FtsZ[A] x2 (bs 96)  bl=0.11
+                    + [88] bl=0.09 n=3
+                      - FtsZ[A] x2 (bs 100)  bl=0.16
+                      + [61] bl=0.04 n=2
+                        - Asgard_FtsZ[A]  bl=0.52
+                        - FtsZ[A] x11 (bs 41)  bl=0.05
+              + [97] bl=0.13 n=26
+                - FtsZ[A] x24 (bs 69)  bl=0.07
+                + [100] bl=0.23 n=25
+                  + [92] bl=0.10 n=5
+                    - FtsZ[B] x2 (bs 45)  bl=0.17
+                    + [44] bl=0.08 n=4
+                      - FtsZ[B] x2 (bs 24)  bl=0.10
+                      + [80] bl=0.08 n=3
+                        - FtsZ[B]  bl=0.55
+                        + [100] bl=0.21 n=2
+                          - FtsZ[B]  bl=0.56
+                          - euk_FtsZ  bl=0.47
+                  + [86] bl=0.09 n=20
+                    - FtsZ[B] x2 (bs 82)  bl=0.06
+                    + [82] bl=0.05 n=19
+                      - FtsZ[B]  bl=0.49
+                      + [74] bl=0.06 n=18
+                        - FtsZ[B] x2 (bs 93)  bl=0.11
+                        + [43] bl=0.06 n=17
+                          + [100] bl=0.12 n=3
+                            + [25] bl=0.05 n=2
+                              - FtsZ[B] x2 (bs 100)  bl=0.10
+                              - euk_FtsZ x5 (bs 100)  bl=0.25
+                            - euk_FtsZ x9 (bs 25)  bl=0.03
+                          + [30] bl=0.03 n=14
+                            - FtsZ[B] x16 (bs 68)  bl=0.04
+                            + [44] bl=0.06 n=13
+                              - FtsZ[B] x7 (bs 77)  bl=0.03
+                              + [38] bl=0.03 n=12
+                                - FtsZ[B] x8 (bs 43)  bl=0.03
+                                + [84] bl=0.05 n=11
+                                  + [93] bl=0.14 n=4
+                                    - FtsZ[B] x2 (bs 82)  bl=0.11
+                                    + [100] bl=0.14 n=3
+                                      - FtsZ[B]  bl=0.23
+                                      + [100] bl=0.28 n=2
+                                        - FtsZ[B]  bl=0.06
+                                        - euk_FtsZ  bl=0.13
+                                  + [88] bl=0.05 n=7
+                                    - FtsZ[B] x3 (bs 68)  bl=0.05
+                                    + [74] bl=0.07 n=6
+                                      - FtsZ[B]  bl=0.54
+                                      + [100] bl=0.16 n=5
+                                        - euk_FtsZ x4 (bs 100)  bl=0.09
+                                        + [100] bl=0.13 n=4
+                                          + [100] bl=0.06 n=2
+                                            - FtsZ[B]  bl=0.29
+                                            - euk_FtsZ x2 (bs 100)  bl=0.20
+                                          + [100] bl=0.08 n=2
+                                            - euk_FtsZ x2 (bs 100)  bl=0.08
+                                            - FtsZ[B] x3 (bs 100)  bl=0.06
+  + [96] bl=0.20 n=34
+    - CetZ[A] x15 (bs 93)  bl=0.27
+    + [100] bl=1.48 n=33
+      + [98] bl=0.23 n=11
+        - tubulin_divergent x6 (bs 98)  bl=0.16
+        + [99] bl=0.12 n=10
+          - tubulin_divergent  bl=1.39
+          + [98] bl=0.25 n=9
+            - tubulin_divergent  bl=0.76
+            + [72] bl=0.08 n=8
+              - tubulin_divergent  bl=1.00
+              + [87] bl=0.12 n=7
+                - tubulin_delta x7 (bs 99)  bl=0.05
+                + [87] bl=0.09 n=6
+                  - tubulin_delta  bl=0.56
+                  + [89] bl=0.08 n=5
+                    + [100] bl=0.57 n=2
+                      - tubulin_delta  bl=0.03
+                      - tubulin_divergent  bl=0.00
+                    + [100] bl=0.19 n=3
+                      + [100] bl=0.13 n=2
+                        - tubulin_delta  bl=0.38
+                        - tubulin_divergent  bl=0.40
+                      - tubulin_divergent x2 (bs 100)  bl=0.39
+      + [89] bl=0.10 n=22
+        + [100] bl=0.46 n=10
+          - tubulin_epsilon  bl=0.51
+          + [98] bl=0.11 n=9
+            - tubulin_epsilon x4 (bs 100)  bl=0.48
+            + [99] bl=0.12 n=8
+              - tubulin_epsilon  bl=0.39
+              + [99] bl=0.14 n=7
+                - tubulin_epsilon x5 (bs 93)  bl=0.09
+                + [77] bl=0.04 n=6
+                  - tubulin_epsilon x10 (bs 100)  bl=0.06
+                  + [77] bl=0.04 n=5
+                    - tubulin_epsilon x6 (bs 79)  bl=0.05
+                    + [89] bl=0.06 n=4
+                      - tubulin_epsilon  bl=0.35
+                      + [94] bl=0.06 n=3
+                        - tubulin_epsilon  bl=0.32
+                        + [100] bl=0.72 n=2
+                          - tubulin_divergent  bl=0.04
+                          - tubulin_epsilon x3 (bs 93)  bl=0.04
+        + [81] bl=0.06 n=12
+          - artubulin[A] x3 (bs 100)  bl=2.13
+          + [91] bl=0.06 n=11
+            - tubulin_gamma x53 (bs 100)  bl=0.33
+            + [99] bl=0.13 n=10
+              - BtubA[B]  bl=0.80
+              + [43] bl=0.07 n=9
+                + [42] bl=0.07 n=2
+                  - BtubB[B]  bl=0.78
+                  - tubulin_alpha x62 (bs 100)  bl=0.30
+                + [100] bl=0.22 n=7
+                  - tubulin_divergent  bl=0.96
+                  + [79] bl=0.11 n=6
+                    - tubulin_beta  bl=0.41
+                    + [74] bl=0.10 n=5
+                      + [71] bl=0.08 n=4
+                        - tubulin_beta  bl=0.21
+                        + [73] bl=0.08 n=3
+                          + [92] bl=0.18 n=2
+                            - tubulin_divergent  bl=1.28
+                            - tubulin_beta  bl=0.62
+                          - tubulin_beta x2 (bs 100)  bl=0.27
+                      - tubulin_beta x57 (bs 78)  bl=0.06

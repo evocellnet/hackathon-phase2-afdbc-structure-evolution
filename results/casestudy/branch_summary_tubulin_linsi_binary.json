@@ -1,0 +1,111 @@
+{
+ "EUK_monophyletic": false,
+ "EUK+ASGARD_monophyletic": false,
+ "smallest_clade_with_all_euk_size": 240,
+ "non_euk_in_that_clade": [
+  "A0A128A4V4_1078905:Archaea:artubulin",
+  "A0A3G1B1N5_1603555:Archaea:artubulin",
+  "A0A7W7YIU5_48465:Bacteria:BtubA",
+  "A0A7W7YJ10_48465:Bacteria:BtubB",
+  "F9CX71_1001994:Archaea:artubulin"
+ ],
+ "n_non_euk_in_that_clade": 5,
+ "scale_sum3di_over_sumaa": 0.49738598036923215,
+ "tree_length_aa": 149.86056873450002,
+ "tree_length_3di": 74.5385458987,
+ "n_supported_internal_baa_ge_0.02": 193,
+ "rho_supported_internal_quantiles": {
+  "0.05": 0.20538612180779156,
+  "0.25": 0.48037630382981183,
+  "0.5": 0.7415357315090602,
+  "0.75": 1.0151724296588311,
+  "0.95": 1.8466682657910958
+ },
+ "focal": {
+  "EUK_STEM": "not a split in the ML tree",
+  "TUBULIN_CLADE_STEM(euk+artubulin+BtubAB)": {
+   "n_tips": 240,
+   "b_aa": 1.484688713,
+   "b_3di": 0.8964219982,
+   "rho": 1.2139018096360732,
+   "ufboot": 100.0,
+   "rho_percentile_among_supported_internal": 84.4559585492228,
+   "b_aa_percentile_among_supported_internal": 98.96373056994818
+  },
+  "TUBULIN+CetZ_STEM": {
+   "n_tips": 255,
+   "b_aa": 0.398598544,
+   "b_3di": 0.1740155099,
+   "rho": 0.8777254895092781,
+   "ufboot": 99.0,
+   "rho_percentile_among_supported_internal": 64.76683937823834,
+   "b_aa_percentile_among_supported_internal": 90.67357512953367
+  },
+  "ARTUBULIN_STEM": {
+   "n_tips": 3,
+   "b_aa": 2.1312339066,
+   "b_3di": 0.7860618867,
+   "rho": 0.7415357315090602,
+   "ufboot": 100.0,
+   "rho_percentile_among_supported_internal": 49.740932642487046,
+   "b_aa_percentile_among_supported_internal": 99.48186528497409
+  },
+  "FtsZ_ALL_STEM": {
+   "n_tips": 145,
+   "b_aa": 0.398598544,
+   "b_3di": 0.1740155099,
+   "rho": 0.8777254895092781,
+   "ufboot": 99.0,
+   "rho_percentile_among_supported_internal": 64.76683937823834,
+   "b_aa_percentile_among_supported_internal": 90.67357512953367
+  }
+ },
+ "rho_within_eukaryote_supported_internal": {
+  "n": 104,
+  "median": 0.7486962842190266,
+  "q25": 0.4431916190290408,
+  "q75": 1.0223189355128526,
+  "pooled": 0.7553340480523484
+ },
+ "rho_within_prok_or_mixed_supported_internal": {
+  "n": 88,
+  "median": 0.7240589843379207,
+  "q25": 0.4920655086598665,
+  "q75": 1.006036315268154,
+  "pooled": 0.7571641774508853
+ },
+ "subfamily_stems": [
+  {
+   "clade_label": "stem:CetZ",
+   "split_size": 15,
+   "ufboot": 96.0,
+   "b_aa": 0.2672774215,
+   "b_3di": 0.1009752081,
+   "rho": 0.7595545054394309
+  },
+  {
+   "clade_label": "stem:artubulin",
+   "split_size": 3,
+   "ufboot": 100.0,
+   "b_aa": 2.1312339066,
+   "b_3di": 0.7860618867,
+   "rho": 0.7415357315090602
+  },
+  {
+   "clade_label": "stem:tubulin_alpha",
+   "split_size": 62,
+   "ufboot": 100.0,
+   "b_aa": 0.3005544443,
+   "b_3di": 0.1012037247,
+   "rho": 0.6769861790645791
+  },
+  {
+   "clade_label": "stem:tubulin_gamma",
+   "split_size": 53,
+   "ufboot": 100.0,
+   "b_aa": 0.3343137224,
+   "b_3di": 0.148406598,
+   "rho": 0.8924943318251778
+  }
+ ]
+}

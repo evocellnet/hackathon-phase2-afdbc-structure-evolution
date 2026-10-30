@@ -1,0 +1,111 @@
+{
+ "EUK_monophyletic": false,
+ "EUK+ASGARD_monophyletic": true,
+ "smallest_clade_with_all_euk_size": 270,
+ "non_euk_in_that_clade": [
+  "A0A5B9D7W0_2594042:Asgard:Asgard_actin",
+  "A0A5B9D996_2594042:Asgard:Asgard_actin",
+  "A0A5B9DDL8_2594042:Asgard:Asgard_actin",
+  "A0A5B9DDW0_2594042:Asgard:Asgard_actin",
+  "A0A5B9DE16_2594042:Asgard:Asgard_actin",
+  "A0A5B9DE59_2594042:Asgard:Asgard_actin"
+ ],
+ "n_non_euk_in_that_clade": 6,
+ "scale_sum3di_over_sumaa": 0.40487692399043634,
+ "tree_length_aa": 245.3075542711,
+ "tree_length_3di": 99.3193680049,
+ "n_supported_internal_baa_ge_0.02": 209,
+ "rho_supported_internal_quantiles": {
+  "0.05": 0.17352769525318842,
+  "0.25": 0.49569159654126405,
+  "0.5": 0.7721734247231726,
+  "0.75": 1.102614744149405,
+  "0.95": 1.8221655762647364
+ },
+ "focal": {
+  "EUK_STEM": "not a split in the ML tree",
+  "EUK+ASGARD_STEM": {
+   "n_tips": 270,
+   "b_aa": 0.3855623381,
+   "b_3di": 0.0521152253,
+   "rho": 0.3338466245830807,
+   "ufboot": 100.0,
+   "rho_percentile_among_supported_internal": 10.526315789473683,
+   "b_aa_percentile_among_supported_internal": 84.21052631578947
+  },
+  "ASGARD_ACTINS_STEM": "not a split in the ML tree",
+  "EUK+ASGARD+crenactin+Ta0583_STEM": "not a split in the ML tree"
+ },
+ "rho_within_eukaryote_supported_internal": {
+  "n": 131,
+  "median": 0.7721734247231726,
+  "q25": 0.49692255096207993,
+  "q75": 1.0858213720563223,
+  "pooled": 0.8092541414078124
+ },
+ "rho_within_prok_or_mixed_supported_internal": {
+  "n": 74,
+  "median": 0.764105933376291,
+  "q25": 0.5074367067204653,
+  "q75": 1.188292853047089,
+  "pooled": 0.9841610731268838
+ },
+ "subfamily_stems": [
+  {
+   "clade_label": "stem:Arp6",
+   "split_size": 31,
+   "ufboot": 98.0,
+   "b_aa": 0.2096980593,
+   "b_3di": 0.0450161878,
+   "rho": 0.5302141063312446
+  },
+  {
+   "clade_label": "stem:Arp7_plant",
+   "split_size": 7,
+   "ufboot": 100.0,
+   "b_aa": 0.5038370771,
+   "b_3di": 0.2328466426,
+   "rho": 1.1414498401268918
+  },
+  {
+   "clade_label": "stem:Arp9",
+   "split_size": 3,
+   "ufboot": 100.0,
+   "b_aa": 0.4536212386,
+   "b_3di": 0.2001659048,
+   "rho": 1.089867492673759
+  },
+  {
+   "clade_label": "stem:FtsA",
+   "split_size": 53,
+   "ufboot": 100.0,
+   "b_aa": 0.4280072892,
+   "b_3di": 0.2884839128,
+   "rho": 1.6647438138394195
+  },
+  {
+   "clade_label": "stem:Ta0583_archaeal_actin",
+   "split_size": 3,
+   "ufboot": 100.0,
+   "b_aa": 1.2920958036,
+   "b_3di": 0.5938625222,
+   "rho": 1.1351890091135635
+  },
+  {
+   "clade_label": "stem:actin_POTE",
+   "split_size": 2,
+   "ufboot": 100.0,
+   "b_aa": 0.0525938537,
+   "b_3di": 0.0382079914,
+   "rho": 1.7943046746692297
+  },
+  {
+   "clade_label": "stem:salactin",
+   "split_size": 2,
+   "ufboot": 100.0,
+   "b_aa": 1.12474126,
+   "b_3di": 0.4249652004,
+   "rho": 0.9332064161091563
+  }
+ ]
+}
