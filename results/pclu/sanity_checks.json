@@ -1,0 +1,21 @@
+{
+ "self_pairs_n": 2302908,
+ "self_fident_min": 1.0,
+ "self_tm_min": 1.0,
+ "self_tm_mean": 1.0,
+ "self_lddt_min": 0.8714,
+ "self_lddt_frac_ge_0.999": 0.9993113055319622,
+ "self_alnlen_ne_repLen": 1723,
+ "pairs_n": 27742339,
+ "frac_fident_gt_1_minus_mm_over_aln(+1e-3)": 0.0,
+ "n_pairs_fident_eq_1": 5817,
+ "n_clusters": 2302908,
+ "frac_pairs_kimura_undefined(fident<0.146)": 0.2210384639882023,
+ "n_pairs_cluster_balanced_max5": 6475524,
+ "n_pairs_nominal_pass": 12092085,
+ "spearman_fident_vs_tm_1Msample": 0.5896352295889051,
+ "pearson_fident_vs_tm_1Msample": 0.48852485934959494,
+ "spearman_fident_vs_lddt_1Msample": 0.8204783909418891,
+ "pearson_fident_vs_lddt_1Msample": 0.7295262233205992,
+ "spearman_tm_vs_lddt_1Msample": 0.7198762749884228
+}

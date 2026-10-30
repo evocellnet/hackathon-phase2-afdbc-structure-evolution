@@ -1,0 +1,16 @@
+{
+ "n_rows_file8": 30045247,
+ "n_exact_duplicate_pairs": 0,
+ "n_nan": {
+  "fident": 0,
+  "evalue": 0,
+  "lddt": 2,
+  "tm": 0
+ },
+ "orientation_query_is_rep_frac": 1.0,
+ "n_target_not_in_file1": 0,
+ "n_query_not_in_file2": 0,
+ "n_self_pairs": 2302908,
+ "n_clusters_file2": 2302908,
+ "frac_member_taxid_unresolved": 0.0
+}

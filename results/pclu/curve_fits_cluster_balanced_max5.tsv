@@ -1,0 +1,161 @@
+family	k	params	se	rss	rmse	aic	bic	n_fit	data	window	y	x	dAIC
+linear	2	-0.20173;0.82714	0.0612;0.084	0.334394	0.086203	-216.594361	-212.981036	45	bin_medians_weighted_n	fident[0.10,1.0]	1-TM	p=1-fident	112.422445
+linear_origin	1	0.55693	0.0199	0.418805	0.096472	-208.465523	-206.658860	45	bin_medians_weighted_n	fident[0.10,1.0]	1-TM	p=1-fident	120.551282
+saturating	2	3369.3;0.0001653	5.9e+06;0.289	0.418829	0.096474	-206.462940	-202.849615	45	bin_medians_weighted_n	fident[0.10,1.0]	1-TM	p=1-fident	122.553865
+saturating_offset	3	-0.20172;3961.1;0.00020883	0.066;4.71e+06;0.248	0.334416	0.086206	-214.591470	-209.171482	45	bin_medians_weighted_n	fident[0.10,1.0]	1-TM	p=1-fident	114.425336
+power	2	0.86033;2.7195	0.0428;0.206	0.152889	0.058288	-251.811757	-248.198432	45	bin_medians_weighted_n	fident[0.10,1.0]	1-TM	p=1-fident	77.205049
+exponential_CL	2	0.024266;3.685	0.00403;0.204	0.091833	0.045174	-274.750142	-271.136817	45	bin_medians_weighted_n	fident[0.10,1.0]	1-TM	p=1-fident	54.266663
+broken_stick	3	0.23423;2.2879;0.70207	0.0061;0.087;0.00528	0.026301	0.024176	-329.016805	-323.596818	45	bin_medians_weighted_n	fident[0.10,1.0]	1-TM	p=1-fident	0.000000
+hill_sigmoid	3	1.0621e+05;74.51;2.7195	9.79e+09;2.53e+06;0.935	0.152889	0.058288	-249.811619	-244.391631	45	bin_medians_weighted_n	fident[0.10,1.0]	1-TM	p=1-fident	79.205186
+linear	2	-0.018679;0.29518	0.0207;0.0141	0.097517	0.046552	-272.047614	-268.434289	45	bin_medians_weighted_n	fident[0.10,1.0]	1-TM	dP=-ln(fident)	102.352641
+linear_origin	1	0.2832	0.00484	0.099368	0.046991	-273.201410	-271.394748	45	bin_medians_weighted_n	fident[0.10,1.0]	1-TM	dP=-ln(fident)	101.198845
+saturating	2	4751.7;5.9603e-05	2.8e+06;0.0352	0.099380	0.046994	-271.195936	-267.582611	45	bin_medians_weighted_n	fident[0.10,1.0]	1-TM	dP=-ln(fident)	103.204320
+saturating_offset	3	-0.018687;5037.6;5.86e-05	0.0223;2.62e+06;0.0305	0.097527	0.046554	-270.043049	-264.623061	45	bin_medians_weighted_n	fident[0.10,1.0]	1-TM	dP=-ln(fident)	104.357207
+power	2	0.25309;1.226	0.00877;0.0601	0.076354	0.041192	-283.056582	-279.443257	45	bin_medians_weighted_n	fident[0.10,1.0]	1-TM	dP=-ln(fident)	91.343673
+exponential_CL	2	0.11061;0.84696	0.00331;0.0168	0.015314	0.018447	-355.355199	-351.741874	45	bin_medians_weighted_n	fident[0.10,1.0]	1-TM	dP=-ln(fident)	19.045057
+broken_stick	3	0.22394;0.41467;1.0759	0.00414;0.00827;0.0163	0.009593	0.014601	-374.400256	-368.980268	45	bin_medians_weighted_n	fident[0.10,1.0]	1-TM	dP=-ln(fident)	0.000000
+hill_sigmoid	3	2.3399e+05;73461;1.226	3.06e+10;7.85e+09;0.286	0.076354	0.041192	-281.056495	-275.636507	45	bin_medians_weighted_n	fident[0.10,1.0]	1-TM	dP=-ln(fident)	93.343761
+linear	2	-0.21688;0.77894	0.0415;0.0568	0.153248	0.058357	-251.706082	-248.092757	45	bin_medians_weighted_n	fident[0.10,1.0]	1-LDDT	p=1-fident	97.900991
+linear_origin	1	0.48843	0.0154	0.250819	0.074658	-231.535805	-229.729143	45	bin_medians_weighted_n	fident[0.10,1.0]	1-LDDT	p=1-fident	118.071268
+saturating	2	3714.4;0.0001315	3.95e+06;0.14	0.250835	0.074660	-229.533090	-225.919765	45	bin_medians_weighted_n	fident[0.10,1.0]	1-LDDT	p=1-fident	120.073982
+saturating_offset	3	-0.21689;3919.1;0.00019878	0.0439;3.04e+06;0.154	0.153262	0.058359	-249.702054	-244.282067	45	bin_medians_weighted_n	fident[0.10,1.0]	1-LDDT	p=1-fident	99.905019
+power	2	0.73254;2.5837	0.022;0.123	0.044038	0.031283	-307.821688	-304.208363	45	bin_medians_weighted_n	fident[0.10,1.0]	1-LDDT	p=1-fident	41.785385
+exponential_CL	2	0.023621;3.5539	0.00191;0.0997	0.017400	0.019664	-349.607073	-345.993748	45	bin_medians_weighted_n	fident[0.10,1.0]	1-LDDT	p=1-fident	0.000000
+broken_stick	3	0.17381;1.488;0.63884	0.00772;0.0656;0.00894	0.029546	0.025624	-323.780390	-318.360402	45	bin_medians_weighted_n	fident[0.10,1.0]	1-LDDT	p=1-fident	25.826683
+hill_sigmoid	3	1.1775e+05;103.51;2.5837	8.91e+09;3.04e+06;0.573	0.044038	0.031283	-305.821514	-300.401526	45	bin_medians_weighted_n	fident[0.10,1.0]	1-LDDT	p=1-fident	43.785559
+linear	2	-0.027395;0.26555	0.00938;0.00641	0.020080	0.021124	-343.162293	-339.548968	45	bin_medians_weighted_n	fident[0.10,1.0]	1-LDDT	dP=-ln(fident)	52.187567
+linear_origin	1	0.24798	0.00238	0.024061	0.023123	-337.022004	-335.215342	45	bin_medians_weighted_n	fident[0.10,1.0]	1-LDDT	dP=-ln(fident)	58.327856
+saturating	2	3995.9;6.2061e-05	1.12e+06;0.0173	0.024068	0.023127	-335.008384	-331.395059	45	bin_medians_weighted_n	fident[0.10,1.0]	1-LDDT	dP=-ln(fident)	60.341476
+saturating_offset	3	-0.027407;3787.8;7.0112e-05	0.0095;1.27e+06;0.0235	0.020084	0.021126	-341.151370	-335.731382	45	bin_medians_weighted_n	fident[0.10,1.0]	1-LDDT	dP=-ln(fident)	54.198490
+power	2	0.2273;1.176	0.00349;0.0268	0.012032	0.016352	-366.207264	-362.593939	45	bin_medians_weighted_n	fident[0.10,1.0]	1-LDDT	dP=-ln(fident)	29.142597
+exponential_CL	2	0.10127;0.81884	0.0022;0.0123	0.006296	0.011829	-395.349860	-391.736535	45	bin_medians_weighted_n	fident[0.10,1.0]	1-LDDT	dP=-ln(fident)	0.000000
+broken_stick	3	0.14649;0.29814;0.76347	0.00545;0.00535;0.0237	0.007554	0.012956	-385.154460	-379.734472	45	bin_medians_weighted_n	fident[0.10,1.0]	1-LDDT	dP=-ln(fident)	10.195401
+hill_sigmoid	3	3.2634e+05;1.7211e+05;1.176	3.21e+10;1.44e+10;0.129	0.012032	0.016352	-364.207152	-358.787165	45	bin_medians_weighted_n	fident[0.10,1.0]	1-LDDT	dP=-ln(fident)	31.142708
+linear	2	-0.047919;0.55146	0.0396;0.0577	0.126800	0.054946	-239.718242	-236.242903	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	p=1-fident	91.520415
+linear_origin	1	0.48333	0.0127	0.131445	0.055943	-240.207078	-238.469408	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	p=1-fident	91.031580
+saturating	2	2711.9;0.00017824	3.37e+06;0.221	0.131453	0.055945	-238.204499	-234.729160	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	p=1-fident	93.034158
+saturating_offset	3	-0.047933;2345.6;0.00023513	0.0419;2.57e+06;0.258	0.126808	0.054948	-237.715386	-232.502377	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	p=1-fident	93.523271
+power	2	0.61028;1.7187	0.0347;0.171	0.095229	0.047617	-251.743842	-248.268502	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	p=1-fident	79.494815
+exponential_CL	2	0.050122;2.6625	0.00706;0.188	0.055631	0.036394	-274.320801	-270.845462	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	p=1-fident	56.917856
+broken_stick	3	0.22851;1.6612;0.6732	0.00444;0.0842;0.00604	0.013680	0.018048	-331.238657	-326.025648	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	p=1-fident	0.000000
+hill_sigmoid	3	72942;899.88;1.7187	9.15e+09;6.58e+07;0.911	0.095229	0.047617	-249.743739	-244.530730	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	p=1-fident	81.494918
+linear	2	0.048465;0.22818	0.0168;0.0133	0.049711	0.034403	-279.046323	-275.570984	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	dP=-ln(fident)	78.571527
+linear_origin	1	0.26446	0.00467	0.060072	0.037819	-273.094834	-271.357164	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	dP=-ln(fident)	84.523017
+saturating	2	1106.9;0.00023897	5.25e+05;0.113	0.060075	0.037820	-271.092906	-267.617567	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	dP=-ln(fident)	86.524945
+saturating_offset	3	0.048458;2763.8;8.2567e-05	0.0176;1.61e+06;0.0482	0.049716	0.034405	-277.042119	-271.829110	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	dP=-ln(fident)	80.575732
+power	2	0.26976;0.9389	0.00758;0.0683	0.059154	0.037529	-271.741439	-268.266100	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	dP=-ln(fident)	85.876412
+exponential_CL	2	0.1126;0.82903	0.0043;0.0261	0.013835	0.018149	-332.766468	-329.291129	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	dP=-ln(fident)	24.851383
+broken_stick	3	0.22036;0.36204;1.0163	0.00365;0.0112;0.0179	0.007300	0.013184	-357.617851	-352.404842	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	dP=-ln(fident)	0.000000
+hill_sigmoid	3	2.5306e+05;2.2956e+06;0.9389	8.2e+10;7.91e+11;0.389	0.059155	0.037529	-269.741398	-264.528389	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	dP=-ln(fident)	87.876452
+linear	2	0.12186;0.11219	0.00506;0.00255	0.008453	0.014186	-353.459589	-349.984250	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	dK(Kimura)	25.185892
+linear_origin	1	0.16729	0.0044	0.130928	0.055833	-240.372728	-238.635058	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	dK(Kimura)	138.272753
+saturating	2	0.64939;0.40776	0.0568;0.0575	0.050311	0.034611	-278.542031	-275.066692	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	dK(Kimura)	100.103450
+saturating_offset	3	0.12185;2046;5.484e-05	0.00584;7.83e+05;0.021	0.008454	0.014188	-351.452441	-346.239432	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	dK(Kimura)	27.193041
+power	2	0.23244;0.60901	0.00554;0.0276	0.027269	0.025481	-304.266140	-300.790801	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	dK(Kimura)	74.379341
+exponential_CL	2	0.17322;0.32473	0.00363;0.00846	0.011050	0.016220	-342.204751	-338.729411	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	dK(Kimura)	36.440731
+broken_stick	3	0.2085;0.12202;0.90294	0.00397;0.00237;0.0418	0.004425	0.010264	-378.645481	-373.432473	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	dK(Kimura)	0.000000
+hill_sigmoid	3	77913;1.1819e+09;0.60901	4.76e+09;1.18e+14;0.162	0.027269	0.025481	-302.265962	-297.052953	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-TM	dK(Kimura)	76.379519
+linear	2	-0.1162;0.59861	0.0284;0.0413	0.065107	0.039372	-267.714487	-264.239148	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	p=1-fident	81.509919
+linear_origin	1	0.43339	0.0107	0.092424	0.046910	-254.999659	-253.261989	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	p=1-fident	94.224747
+saturating	2	2594;0.00016708	2.68e+06;0.173	0.092432	0.046912	-252.995782	-249.520443	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	p=1-fident	96.228624
+saturating_offset	3	-0.1162;2758.9;0.00021699	0.033;2.65e+06;0.209	0.065114	0.039374	-265.710136	-260.497127	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	p=1-fident	83.514270
+power	2	0.60563;2.041	0.0209;0.109	0.026263	0.025006	-305.845804	-302.370465	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	p=1-fident	43.378602
+exponential_CL	2	0.033146;3.0739	0.00228;0.0913	0.009349	0.014920	-349.224406	-345.749067	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	p=1-fident	0.000000
+broken_stick	3	0.15133;1.0144;0.56587	0.00682;0.0438;0.0103	0.015077	0.018946	-327.156043	-321.943034	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	p=1-fident	22.068363
+hill_sigmoid	3	89852;341.71;2.0411	7.9e+09;1.47e+07;0.556	0.026263	0.025006	-303.845655	-298.632646	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	p=1-fident	45.378751
+linear	2	0.0015053;0.23675	0.00811;0.00642	0.011613	0.016628	-340.119142	-336.643803	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	dP=-ln(fident)	111.182411
+linear_origin	1	0.23787	0.00206	0.011623	0.016635	-342.083010	-340.345341	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	dP=-ln(fident)	109.218543
+saturating	2	2324.6;0.00010234	7.46e+05;0.0328	0.011626	0.016637	-340.072091	-336.596751	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	dP=-ln(fident)	111.229462
+saturating_offset	3	0.0014956;2773.3;8.5373e-05	0.00839;8.33e+05;0.0256	0.011615	0.016630	-338.109569	-332.896560	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	dP=-ln(fident)	113.191984
+power	2	0.2322;1.0733	0.00326;0.0338	0.010472	0.015790	-344.464107	-340.988768	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	dP=-ln(fident)	106.837446
+exponential_CL	2	0.09008;0.90841	0.000969;0.00729	0.000823	0.004426	-451.301553	-447.826214	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	dP=-ln(fident)	0.000000
+broken_stick	3	0.13319;0.26689;0.65147	0.00556;0.00601;0.0263	0.005573	0.011519	-368.957291	-363.744282	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	dP=-ln(fident)	82.344262
+hill_sigmoid	3	3.453e+05;5.6361e+05;1.0733	6.89e+10;1.05e+11;0.18	0.010472	0.015790	-342.464045	-337.251037	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	dP=-ln(fident)	108.837508
+linear	2	0.087241;0.11101	0.00459;0.00232	0.006961	0.012874	-361.615553	-358.140214	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	dK(Kimura)	41.928805
+linear_origin	1	0.15045	0.00321	0.069734	0.040747	-266.831114	-265.093444	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	dK(Kimura)	136.713245
+saturating	2	0.60963;0.38029	0.0233;0.0228	0.006707	0.012637	-363.176914	-359.701574	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	dK(Kimura)	40.367445
+saturating_offset	3	0.048844;0.78252;0.21108	0.00581;0.0611;0.026	0.002446	0.007631	-403.544358	-398.331350	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	dK(Kimura)	0.000000
+power	2	0.19955;0.66723	0.00223;0.0127	0.004453	0.010297	-380.375497	-376.900157	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	dK(Kimura)	23.168862
+exponential_CL	2	0.14891;0.34082	0.00606;0.0163	0.032368	0.027761	-297.066181	-293.590841	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	dK(Kimura)	106.478178
+broken_stick	3	-0.12725;0.11101;-1.9323	2.55e+05;0.00336;2.29e+06	0.006961	0.012874	-359.615553	-354.402544	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	dK(Kimura)	43.928805
+hill_sigmoid	3	8.0245;198.59;0.69368	20.8;868;0.0714	0.004438	0.010279	-378.519043	-373.306034	42	bin_medians_weighted_n	fident[0.16,1.0] (Kimura-valid)	1-LDDT	dK(Kimura)	25.025315
+linear	2	-0.60493;1.3488	0.0983;0.13	0.064566	0.056818	-110.715920	-108.724455	20	bin_medians_weighted_n	fident[0.10,0.50]	1-TM	p=1-fident	36.497066
+linear_origin	1	0.55839	0.0303	0.200475	0.100119	-90.055954	-89.060222	20	bin_medians_weighted_n	fident[0.10,0.50]	1-TM	p=1-fident	57.157031
+saturating	2	3545.8;0.00015749	9.59e+06;0.426	0.200486	0.100121	-88.054849	-86.063385	20	bin_medians_weighted_n	fident[0.10,0.50]	1-TM	p=1-fident	59.158136
+saturating_offset	3	-0.60506;3438.4;0.0003924	0.241;6.33e+06;0.723	0.064572	0.056821	-108.714003	-105.726806	20	bin_medians_weighted_n	fident[0.10,0.50]	1-TM	p=1-fident	38.498983
+power	2	0.93365;3.1262	0.0474;0.223	0.028347	0.037648	-127.179267	-125.187803	20	bin_medians_weighted_n	fident[0.10,0.50]	1-TM	p=1-fident	20.033719
+exponential_CL	2	0.016332;4.1655	0.00293;0.219	0.016612	0.028820	-137.867313	-135.875849	20	bin_medians_weighted_n	fident[0.10,0.50]	1-TM	p=1-fident	9.345672
+broken_stick	3	0.24567;2.2879;0.70707	0.00957;0.116;0.00721	0.009420	0.021703	-147.212986	-144.225789	20	bin_medians_weighted_n	fident[0.10,0.50]	1-TM	p=1-fident	0.000000
+hill_sigmoid	3	1.2673e+05;43.832;3.1263	1.42e+10;1.58e+06;1.15	0.028347	0.037648	-125.179185	-122.191988	20	bin_medians_weighted_n	fident[0.10,0.50]	1-TM	p=1-fident	22.033801
+linear	2	-0.11203;0.35212	0.0248;0.0161	0.016487	0.028711	-138.018313	-136.026849	20	bin_medians_weighted_n	fident[0.10,0.50]	1-TM	dP=-ln(fident)	34.632222
+linear_origin	1	0.28195	0.00627	0.035221	0.041965	-124.836775	-123.841043	20	bin_medians_weighted_n	fident[0.10,0.50]	1-TM	dP=-ln(fident)	47.813760
+saturating	2	5526.8;5.1017e-05	3.77e+06;0.0348	0.035227	0.041969	-122.833290	-120.841825	20	bin_medians_weighted_n	fident[0.10,0.50]	1-TM	dP=-ln(fident)	49.817246
+saturating_offset	3	-0.11206;3817.2;9.2259e-05	0.0329;2.2e+06;0.0531	0.016490	0.028714	-136.014721	-133.027524	20	bin_medians_weighted_n	fident[0.10,0.50]	1-TM	dP=-ln(fident)	36.635814
+power	2	0.23474;1.3577	0.00733;0.0533	0.009813	0.022150	-148.396407	-146.404942	20	bin_medians_weighted_n	fident[0.10,0.50]	1-TM	dP=-ln(fident)	24.254129
+exponential_CL	2	0.1041;0.87955	0.00367;0.0196	0.003542	0.013307	-168.778380	-166.786915	20	bin_medians_weighted_n	fident[0.10,0.50]	1-TM	dP=-ln(fident)	3.872156
+broken_stick	3	0.23458;0.41467;1.1016	0.006;0.00969;0.0206	0.002640	0.011490	-172.650535	-169.663339	20	bin_medians_weighted_n	fident[0.10,0.50]	1-TM	dP=-ln(fident)	0.000000
+hill_sigmoid	3	2.2862e+05;25758;1.3577	2.63e+10;2.18e+09;0.298	0.009813	0.022150	-146.396342	-143.409145	20	bin_medians_weighted_n	fident[0.10,0.50]	1-TM	dP=-ln(fident)	26.254193
+linear	2	-0.49999;1.1457	0.06;0.0791	0.024050	0.034677	-130.466808	-128.475343	20	bin_medians_weighted_n	fident[0.10,0.50]	1-LDDT	p=1-fident	39.164387
+linear_origin	1	0.49243	0.0231	0.116895	0.076451	-100.844188	-99.848455	20	bin_medians_weighted_n	fident[0.10,0.50]	1-LDDT	p=1-fident	68.787008
+saturating	2	3644.5;0.00013512	6.88e+06;0.255	0.116902	0.076453	-98.843032	-96.851567	20	bin_medians_weighted_n	fident[0.10,0.50]	1-LDDT	p=1-fident	70.788164
+saturating_offset	3	-0.5001;2769.3;0.00041385	0.171;3.01e+06;0.45	0.024054	0.034680	-128.464001	-125.476804	20	bin_medians_weighted_n	fident[0.10,0.50]	1-LDDT	p=1-fident	41.167194
+power	2	0.76928;2.8246	0.0238;0.132	0.008410	0.020506	-151.482374	-149.490910	20	bin_medians_weighted_n	fident[0.10,0.50]	1-LDDT	p=1-fident	18.148821
+exponential_CL	2	0.019614;3.7798	0.00174;0.109	0.003394	0.013026	-169.631195	-167.639731	20	bin_medians_weighted_n	fident[0.10,0.50]	1-LDDT	p=1-fident	0.000000
+broken_stick	3	0.20299;1.5545;0.66553	0.0102;0.082;0.0101	0.007575	0.019462	-151.571388	-148.584191	20	bin_medians_weighted_n	fident[0.10,0.50]	1-LDDT	p=1-fident	18.059807
+hill_sigmoid	3	1.3347e+05;71.599;2.8246	1.3e+10;2.46e+06;0.741	0.008410	0.020506	-149.482275	-146.495078	20	bin_medians_weighted_n	fident[0.10,0.50]	1-LDDT	p=1-fident	20.148920
+linear	2	-0.072104;0.29288	0.00933;0.00608	0.002340	0.010818	-177.062710	-175.071245	20	bin_medians_weighted_n	fident[0.10,0.50]	1-LDDT	dP=-ln(fident)	17.168445
+linear_origin	1	0.24771	0.00336	0.010100	0.022473	-149.818316	-148.822583	20	bin_medians_weighted_n	fident[0.10,0.50]	1-LDDT	dP=-ln(fident)	44.412839
+saturating	2	5567.2;4.4496e-05	1.74e+06;0.0139	0.010103	0.022476	-147.812841	-145.821377	20	bin_medians_weighted_n	fident[0.10,0.50]	1-LDDT	dP=-ln(fident)	46.418314
+saturating_offset	3	-0.072135;2613.9;0.00011206	0.0135;7.75e+05;0.0332	0.002342	0.010820	-175.052938	-172.065741	20	bin_medians_weighted_n	fident[0.10,0.50]	1-LDDT	dP=-ln(fident)	19.178217
+power	2	0.21975;1.2356	0.00237;0.0187	0.000992	0.007043	-194.231155	-192.239690	20	bin_medians_weighted_n	fident[0.10,0.50]	1-LDDT	dP=-ln(fident)	0.000000
+exponential_CL	2	0.10391;0.80498	0.00342;0.0185	0.002505	0.011193	-175.700257	-173.708792	20	bin_medians_weighted_n	fident[0.10,0.50]	1-LDDT	dP=-ln(fident)	18.530898
+broken_stick	3	0.18604;0.30722;0.92134	0.00504;0.00494;0.0202	0.000987	0.007027	-192.321733	-189.334536	20	bin_medians_weighted_n	fident[0.10,0.50]	1-LDDT	dP=-ln(fident)	1.909422
+hill_sigmoid	3	3.5583e+05;1.0602e+05;1.2356	2.81e+10;6.79e+09;0.105	0.000992	0.007043	-192.231065	-189.243869	20	bin_medians_weighted_n	fident[0.10,0.50]	1-LDDT	dP=-ln(fident)	2.000089
+linear	2	0.13582;0.17891	0.0082;0.0145	0.004514	0.011356	-309.457949	-306.347253	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	p=1-fident	6.680017
+linear_origin	1	0.41147	0.0105	0.042035	0.034656	-233.360666	-231.805318	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	p=1-fident	82.777300
+saturating	2	0.26086;4.5277	0.0112;0.821	0.016085	0.021438	-264.982429	-261.871733	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	p=1-fident	51.155536
+saturating_offset	3	0.13581;468.56;0.00038188	0.0102;5.83e+05;0.475	0.004514	0.011357	-307.454866	-302.788822	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	p=1-fident	8.683099
+power	2	0.28223;0.29493	0.00712;0.0389	0.007546	0.014683	-291.473301	-288.362605	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	p=1-fident	24.664664
+exponential_CL	2	0.14484;0.86163	0.00567;0.0665	0.003730	0.010323	-316.137966	-313.027269	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	p=1-fident	0.000000
+broken_stick	3	0.19575;0.27159;0.42934	0.00506;0.0281;0.0265	0.004211	0.010969	-309.890589	-305.224544	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	p=1-fident	6.247377
+hill_sigmoid	3	5962.5;4.6043e+14;0.29494	1.52e+08;3.98e+19;0.261	0.007546	0.014683	-289.472983	-284.806939	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	p=1-fident	26.664982
+linear	2	0.155;0.094596	0.0051;0.0058	0.002805	0.008952	-326.115352	-323.004656	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	dP=-ln(fident)	6.336844
+linear_origin	1	0.26239	0.0094	0.081323	0.048203	-210.263623	-208.708275	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	dP=-ln(fident)	122.188574
+saturating	2	0.24902;4.1998	0.00643;0.683	0.018316	0.022876	-260.435616	-257.324919	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	dP=-ln(fident)	72.016581
+saturating_offset	3	0.155;437.72;0.00021614	0.00628;4.16e+05;0.205	0.002805	0.008952	-324.111927	-319.445882	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	dP=-ln(fident)	8.340270
+power	2	0.24774;0.23438	0.00254;0.0246	0.005576	0.012622	-302.062746	-298.952050	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	dP=-ln(fident)	30.389450
+exponential_CL	2	0.16213;0.4314	0.00374;0.0249	0.002340	0.008177	-332.452197	-329.341500	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	dP=-ln(fident)	0.000000
+broken_stick	3	0.10759;0.094596;-0.50126	3.53e+04;0.00592;3.74e+05	0.002805	0.008952	-324.115352	-319.449308	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	dP=-ln(fident)	8.336844
+hill_sigmoid	3	5600;3.7709e+18;0.23439	1.15e+08;3.3e+23;0.182	0.005576	0.012622	-300.062346	-295.396302	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	dP=-ln(fident)	32.389850
+linear	2	0.16353;0.068833	0.00399;0.00365	0.002162	0.007859	-335.227390	-332.116694	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	dK(Kimura)	5.319734
+linear_origin	1	0.20935	0.00887	0.112017	0.056573	-199.055765	-197.500417	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	dK(Kimura)	141.491359
+saturating	2	0.24535;4.2291	0.0055;0.712	0.019531	0.023623	-258.188855	-255.078159	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	dK(Kimura)	82.358269
+saturating_offset	3	0.16352;458.28;0.00015022	0.00511;3.97e+05;0.13	0.002162	0.007859	-333.224374	-328.558330	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	dK(Kimura)	7.322750
+power	2	0.23693;0.21068	0.00202;0.0194	0.004647	0.011523	-308.440495	-305.329799	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	dK(Kimura)	32.106629
+exponential_CL	2	0.16988;0.3064	0.00304;0.0154	0.001857	0.007284	-340.547124	-337.436428	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	dK(Kimura)	0.000000
+broken_stick	3	0.10357;0.068833;-0.87111	4.64e+04;0.00429;6.74e+05	0.002162	0.007859	-333.227390	-328.561346	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	dK(Kimura)	7.319734
+hill_sigmoid	3	5520.4;5.3571e+20;0.21069	1.03e+08;4.75e+25;0.153	0.004647	0.011523	-306.440046	-301.774002	35	bin_medians_weighted_n	fident[0.30,1.0]	1-TM	dK(Kimura)	34.107078
+linear	2	0.019486;0.32145	0.00974;0.0172	0.006364	0.013484	-297.438019	-294.327323	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	p=1-fident	48.852809
+linear_origin	1	0.35482	0.00432	0.007136	0.014279	-295.428757	-293.873409	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	p=1-fident	50.862071
+saturating	2	877.54;0.00040438	5.66e+05;0.261	0.007137	0.014279	-293.425669	-290.314973	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	p=1-fident	52.865159
+saturating_offset	3	0.019481;1218;0.00026395	0.0104;6.99e+05;0.151	0.006365	0.013485	-295.432844	-290.766800	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	p=1-fident	50.857984
+power	2	0.35507;1.0014	0.0141;0.0724	0.007136	0.014279	-293.429058	-290.318362	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	p=1-fident	52.861769
+exponential_CL	2	0.059912;2.0909	0.00231;0.0632	0.001576	0.006710	-346.290828	-343.180132	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	p=1-fident	0.000000
+broken_stick	3	0.11442;0.43774;0.37718	0.00565;0.0241;0.0179	0.003947	0.010619	-312.156223	-307.490179	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	p=1-fident	34.134604
+hill_sigmoid	3	1.3519e+06;3.7301e+06;1.0014	1.76e+12;4.84e+12;0.205	0.007136	0.014279	-291.429054	-286.763010	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	p=1-fident	54.861773
+linear	2	0.05466;0.16913	0.00381;0.00433	0.001563	0.006682	-346.587080	-343.476383	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	dP=-ln(fident)	45.938928
+linear_origin	1	0.2283	0.00351	0.011326	0.017989	-279.258899	-277.703551	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	dP=-ln(fident)	113.267108
+saturating	2	0.43716;0.72626	0.0648;0.154	0.006625	0.013758	-296.028039	-292.917342	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	dP=-ln(fident)	96.497969
+saturating_offset	3	0.054655;1103;0.00015335	0.00423;4.6e+05;0.064	0.001563	0.006683	-344.577209	-339.911165	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	dP=-ln(fident)	47.948798
+power	2	0.22409;0.68479	0.00223;0.036	0.004165	0.010908	-312.277121	-309.166425	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	dP=-ln(fident)	80.248886
+exponential_CL	2	0.085433;0.95679	0.00117;0.0141	0.000421	0.003466	-392.526007	-389.415311	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	dP=-ln(fident)	0.000000
+broken_stick	3	0.0573;0.16921;0.016058	0.0181;0.00449;0.109	0.001562	0.006681	-344.596279	-339.930234	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	dP=-ln(fident)	47.929729
+hill_sigmoid	3	48739;6.2264e+07;0.6848	4.05e+09;7.55e+12;0.213	0.004165	0.010908	-310.276971	-305.610927	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	dP=-ln(fident)	82.249036
+linear	2	0.070731;0.12225	0.00189;0.00173	0.000487	0.003729	-387.417476	-384.306780	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	dK(Kimura)	0.000000
+linear_origin	1	0.18303	0.00385	0.021039	0.024518	-257.585192	-256.029844	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	dK(Kimura)	129.832285
+saturating	2	0.33117;0.92095	0.025;0.123	0.006846	0.013986	-294.879905	-291.769208	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	dK(Kimura)	92.537572
+saturating_offset	3	0.070726;971.84;0.00012581	0.00216;2.05e+05;0.0265	0.000487	0.003729	-385.404745	-380.738701	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	dK(Kimura)	2.012732
+power	2	0.19696;0.57839	0.00165;0.0246	0.002872	0.009059	-325.278324	-322.167627	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	dK(Kimura)	62.139153
+exponential_CL	2	0.09755;0.65354	0.00161;0.0135	0.000856	0.004945	-367.649957	-364.539261	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	dK(Kimura)	19.767519
+broken_stick	3	0.069916;0.12225;-0.0066713	1.8e+03;0.00192;1.47e+04	0.000487	0.003729	-385.417476	-380.751432	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	dK(Kimura)	2.000000
+hill_sigmoid	3	43711;1.7509e+09;0.57839	2.56e+09;1.77e+14;0.145	0.002872	0.009059	-323.278120	-318.612075	35	bin_medians_weighted_n	fident[0.30,1.0]	1-LDDT	dK(Kimura)	64.139357
