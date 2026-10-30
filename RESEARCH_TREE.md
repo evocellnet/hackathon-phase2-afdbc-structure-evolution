@@ -50,7 +50,7 @@ Four scouting agents run in parallel: literature (LITERATURE.md), data acquisiti
 - [~] 4f. PDB/SIFTS control set (H1e)
 - [~] 4a. Species panel + proteomes + AFDB v4 structures + TimeTree ages
 - [x] 4b. Distance library with toy/simulation tests (src/strucevo): 33/33 pass
-- [~] 4c. P-clu baseline: in-cluster fident vs TM/LDDT (AFDB clusters file 8)
+- [x] 4c. P-clu baseline (agents/pclu_report.md): 27.7M member→rep pairs. Median TM 0.39 at 10% id → plateau ≈0.83 from ≥40% id; LDDT rises smoothly 0.52→0.94. Plateau tracks rep pLDDT/length (at id ≥0.6, TM 0.58 for pLDDT<60 vs 0.97 for ≥90), i.e. a prediction-quality ceiling, not saturation. Older (cross-superkingdom) clusters have higher TM at equal identity [exploratory; confounded with pLDDT → check in X7]. Artefact below 7% id (short alignments).
 - [ ] 5. Goal 1 — Is structural divergence linear in time? (Elofsson 2009 revisited at AFDB scale)
 - [ ] 6. Goal 2 — Evolution of AFDB clusters (orthologs/paralogs, domains, case studies)
 - [ ] 7. Verification & independent review of results
