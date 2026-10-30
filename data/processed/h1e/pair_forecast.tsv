@@ -1,0 +1,16 @@
+A	B	nA	nB	pairs_both	nA_post	nB_post	pairs_both_postAF2
+human	mouse	3331	796	513	2394	457	304
+human	rat	3331	290	216	2394	139	100
+human	bovine	3331	289	213	2394	173	131
+human	chicken	3331	135	83	2394	79	54
+human	zebrafish	3331	121	75	2394	83	60
+mouse	rat	796	290	97	457	139	68
+mouse	bovine	796	289	97	457	173	71
+mouse	chicken	796	135	52	457	79	42
+mouse	zebrafish	796	121	67	457	83	58
+rat	bovine	290	289	40	139	173	24
+rat	chicken	290	135	32	139	79	25
+rat	zebrafish	290	121	34	139	83	32
+bovine	chicken	289	135	11	173	79	3
+bovine	zebrafish	289	121	5	173	83	4
+chicken	zebrafish	135	121	35	79	83	34
