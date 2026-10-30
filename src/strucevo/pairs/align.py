@@ -2,7 +2,7 @@
 
 * ``tmalign``  Foldseek TM-align (coordinate-only), primary.
 * ``tdiaa``    Foldseek structurealign 3Di+AA (``--alignment-type 2``).
-* ``seqonly``  Biopython PairwiseAligner: global, BLOSUM62, open -11, extend -1, end gaps free.
+* ``seqonly``  Biopython PairwiseAligner: global, BLOSUM62, open -12 (BLAST 11/1 convention, C23), extend -1, end gaps free.
 
 Foldseek runs on an exhaustive "fake prefilter" built with ``tsv2db`` from the DB keys of the given pairs,
 with ``-e inf`` (structurealign) and ``--tmscore-threshold 0``; the caller asserts rows out == rows in and
@@ -117,7 +117,7 @@ def get_aligner():
     if _ALIGNER is None:
         from Bio.Align import PairwiseAligner, substitution_matrices
         al = PairwiseAligner(mode="global", substitution_matrix=substitution_matrices.load("BLOSUM62"),
-                             open_gap_score=-11, extend_gap_score=-1)
+                             open_gap_score=-12, extend_gap_score=-1)  # C23: BLAST 11/1 convention
         al.end_gap_score = 0  # end gaps free (both sequences, both ends)
         _ALIGNER = al
     return _ALIGNER
