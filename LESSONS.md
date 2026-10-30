@@ -9,3 +9,5 @@
 6. Three short review rounds (5 → 3 → 1 reviewers) turned a plausible design into a much sharper one: per-HOG branch lengths, pre-set equivalence margins, a positive control and power checks. Running data acquisition in parallel with review cost nothing. (evidence: M2)
 7. Subagents may be blocked from writing some files; ask them to return content inline as a fallback. (evidence: the round-3 reviewer could not write ANALYSIS_PLAN.md)
 8. Agents put licence-restricted values (TimeTree ages) into "small" committed tables. Grep committed tables for restricted columns before every commit. (evidence: `nearest_age_at_selection_mya` in species_panel.tsv, M2)
+9. Run the pipeline end to end on a small real dataset before freezing tuning; it caught a primary-method flaw (TM-align mis-registration) that no reviewer predicted. (evidence: D22)
+10. Ancestra's families stage is single-threaded Python over all DIAMOND hits: 94 min for 3.46M proteins. Budget wall time, not CPU-h, when extrapolating. (evidence: euk180 run)
