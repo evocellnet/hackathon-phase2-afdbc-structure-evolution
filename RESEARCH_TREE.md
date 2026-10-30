@@ -4,6 +4,18 @@ Legend: [ ] planned · [~] in progress · [x] done · [-] abandoned/negative · 
 
 ## Status summary (latest first)
 
+### M5: 2026-10-30 22:00, node 2 started (project wall-clock 12.5 h; node-1 compute 10.9 h)
+We resumed from NODE_MOVE.md on host dnagpu008. Following the user's instruction, the total cap stays at 48 h of compute, so node 2 has at most about 36.5 h. Hard stop is 2026-11-01 10:30, and the report should be done by about 08:00. We relaunched the V3 curvature simulation that had been killed for the node move (resume-table step 6).
+
+Three exploratory analyses run in parallel. None of them reads the confirm split.
+- **X4**: AF-versus-PDB artefact.
+- **X5**: AFDB cluster audit against HOGs, plus the rate of domain-architecture change.
+- **X6**: completion of the cytoskeleton case study.
+
+The critical path is: finish tuning → freeze the §Tuning table → dry run on the tune split → one confirmation run → independent re-derivation (V11) → exploratory analyses on all data → report.
+
+**Decision note M5:** With 36 h available, we add no new confirmatory endpoints. Any extra time goes to verification, sensitivity analyses and the report. If time allows, a kinase case study will be added as an exploratory item.
+
 ### M4: 2026-10-30 20:15 (t = 10.9 h). END OF NODE 1; checkpointed for the node move
 **Data and orthology are complete.** Ancestra finished on 180 eukaryotes (5.0 h; 109,598 HOGs). The panel tree was rebuilt without the CI-overlap collapse (D30). The HOG build sampled 7,000 HOGs (1,400 tune / 5,600 confirm; the split md5 is in the ledger). Pair metrics are done for 1.40M pairs (1.09M primary + 0.31M E6) under all three alignments, plus the H1e (PDB) pairs. Two estimator biases were found in synthetic worlds before any real endpoint was computed, and fixed: E1 SIMEX residual bias (D31, parametric-bootstrap correction) and the E4 null slope (D32, information-based cell merge). Both are logged in DEVIATIONS.md, and the original-criterion results are reported alongside.
 
