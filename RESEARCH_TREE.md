@@ -117,6 +117,7 @@ Four scouting agents run in parallel: literature (LITERATURE.md), data acquisiti
 - [x] 4b. Distance library with toy/simulation tests (src/strucevo): 33/33 pass
 - [x] 4c. P-clu baseline (agents/pclu_report.md): 27.7M member→rep pairs. Median TM 0.39 at 10% id → plateau ≈0.83 from ≥40% id; LDDT rises smoothly 0.52→0.94. Plateau tracks rep pLDDT/length (at id ≥0.6, TM 0.58 for pLDDT<60 vs 0.97 for ≥90), i.e. a prediction-quality ceiling, not saturation. Older (cross-superkingdom) clusters have higher TM at equal identity [exploratory; confounded with pLDDT → check in X7]. Artefact below 7% id (short alignments).
 - [~] 4q. Tuning on 20% split: α, floors, κ/ρ, τ_misfit, B_E4, E5 power done; V3 on real designs pending (node 2)
+- [!] X4 (H1e, exploratory; agents/h1e_analysis_report.md): on matched residues, AF–AF ortholog divergence is 0.59× [0.52,0.66] PDB–PDB for 3Di (0.69 TM, 0.70 LDDT; 197 post-cutoff pairs). The bias is a roughly constant offset, not compression with d_AA (AF slope 1.34× PDB). AF vs own PDB chain: 3Di d = 0.24 > AF ortholog–ortholog 0.17, so AF homogenises homologs. Post-cutoff bias is smaller (+0.05)
 - [ ] 5. Goal 1 — Is structural divergence linear in time? (Elofsson 2009 revisited at AFDB scale)
 - [ ] 6. Goal 2 — Evolution of AFDB clusters (orthologs/paralogs, domains, case studies)
 - [ ] 7. Verification & independent review of results
