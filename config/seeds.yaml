@@ -1,0 +1,5 @@
+# Fixed seeds (DESIGN §8, ANALYSIS_PLAN §0). Never change.
+global: 20261030
+replicates: [20261030, 1, 2, 3, 4, 5]
+# Per-stage streams: np.random.SeedSequence(20261030).spawn keyed by stage name (stage -> spawn index):
+stages: {hog_presample: 0, hog_sample: 1, split: 2, floor_random_pairs: 3, se_calibration: 4, bootstrap_E1: 5, bootstrap_E2: 6, bootstrap_E3: 7, bootstrap_E4: 8, bootstrap_E5: 9, bootstrap_E6: 10, spikein: 11, v3_sim: 12, v4_sim: 13, e6_p1_choice: 14, age_perm: 15}
