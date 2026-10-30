@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/scripts/ancestra/run_ancestra.py", line 212, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/scripts/ancestra/run_ancestra.py", line 200, in main
+    subprocess.run([py, os.path.join(HERE, "hog_pair_labels.py"), os.path.join(out, "ancestra", "hogs.orthoxml"),
+  File "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/conda_envs/ancestra/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/conda_envs/ancestra/bin/python', '/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/scripts/ancestra/hog_pair_labels.py', '/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/results/ancestra/runs/euk20_accurate/ancestra/hogs.orthoxml', '/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/results/ancestra/runs/euk20_accurate/pair_labels.tsv.gz', '--families-from-run', '/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/results/ancestra/runs/euk20_accurate/ancestra']' died with <Signals.SIGTERM: 15>.

@@ -1,0 +1,12 @@
+{
+ "v3_entries": 214684311,
+ "v6_entries": 241030641,
+ "v3_entries_in_v6": 175359062,
+ "v3_cluster_members": 188252820,
+ "v3_cluster_members_in_v6": 152566291,
+ "v3_reps_in_v6_entries": 2026460,
+ "v3_reps_also_v6_reps": 213062,
+ "v6_taxId0_entries": 82392903,
+ "v6_taxId0_fillable_from_v3": 59418828,
+ "v6_entries_listed_more_than_once": 21936
+}

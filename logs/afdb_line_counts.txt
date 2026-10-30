@@ -1,0 +1,6 @@
+v3/6-all-vs-all-similarity-queryId_targetId_eValue-Dec16_2024.tsv.gz 600195809
+v6/6-all-vs-all-similarity-queryId_targetId_eValue.tsv.gz 552702072
+v3/7-AFDB50-repId_memId.tsv.gz 214684311
+v6/7-AFDB50-repId_memId.tsv.gz 241070489
+v3/1-AFDBClusters-entryId_repId_taxId.tsv.gz 30045247
+v6/1-AFDBClusters-repId_entryId_cluFlag_taxId.tsv.gz 199373567

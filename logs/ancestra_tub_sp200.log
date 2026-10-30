@@ -1,0 +1,55 @@
+[run_ancestra] 200 species; 0 sequences skipped (no taxid/short)
+{
+ "returncode": 0,
+ "prep_s": 4.3,
+ "ancestra_wall_s": 161.5,
+ "ancestra_cpu_s": 1011.7,
+ "peak_rss_gb_max_single_process": 2.88,
+ "n_species": 200,
+ "threads": 8,
+ "preset": "accurate",
+ "n_genes": 3320,
+ "stages": {
+  "input": {
+   "wall_s": 0.004,
+   "peak_rss_mb": 36.6,
+   "children_max_rss_mb": 36.6
+  },
+  "families": {
+   "wall_s": 8.098,
+   "peak_rss_mb": 85.6,
+   "children_max_rss_mb": 420.5
+  },
+  "scores": {
+   "wall_s": 147.733,
+   "peak_rss_mb": 1918.5,
+   "children_max_rss_mb": 2815.8
+  },
+  "merge": {
+   "wall_s": 4.844,
+   "peak_rss_mb": 746.7,
+   "children_max_rss_mb": 2815.8
+  },
+  "output": {
+   "wall_s": 0.225,
+   "peak_rss_mb": 347.6,
+   "children_max_rss_mb": 2815.8
+  }
+ },
+ "merge_stats": {
+  "n_root_groups": 51,
+  "n_root_anc_genes": 313,
+  "merge_s_sum_nodes": 4.535,
+  "tree_clusters": 5,
+  "tree_units": 53,
+  "tree_s": 2.57
+ },
+ "families_stats": {
+  "source": "ancestra.families",
+  "n_families": 1,
+  "n_singletons": 0,
+  "max_family": 3320,
+  "sum_g2": 11022400
+ },
+ "labels_wall_s": 33.5
+}

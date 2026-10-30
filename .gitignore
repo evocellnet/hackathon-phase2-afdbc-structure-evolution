@@ -12,3 +12,11 @@ logs/*.out
 __pycache__/
 .ipynb_checkpoints/
 # small processed results ARE committed (results/, data/processed/ small tables, see DATA.md)
+.venv_datascout/
+# intermediate run outputs (regenerable; large)
+results/**/runs/
+results/**/stages/
+*.npz
+*.dmnd
+*.parquet
+data/interim/

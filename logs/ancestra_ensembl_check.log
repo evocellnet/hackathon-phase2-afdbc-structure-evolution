@@ -1,0 +1,33 @@
+sampled human genes: 200; homology pairs mapped to UniProt accessions in run: 2458
+
+## human-mouse pairs: Ensembl type (rows) vs Ancestra relation (cols)
+
+anc_relation        not_same_root_hog  ortholog  out_paralog  All
+ens_type                                                         
+ortholog_many2many                 11        13           22   46
+ortholog_one2many                   2         9            3   14
+ortholog_one2one                    1       148            0  149
+All                                14       170           25  209
+
+## human-human Ensembl paralogues: Ancestra relation
+
+anc_relation            in_paralog  not_same_root_hog   All
+ens_type                                                   
+other_paralog                  742               1337  2079
+within_species_paralog         113                 57   170
+All                            855               1394  2249
+
+## duplication level (node below duplication branch) for pairs paralogous in both: n=855, exact agreement=0.213
+Ancestra younger than Ensembl: 0.354; older: 0.433; within one node: 0.526
+
+confusion (rows Ensembl P, cols Ancestra P), human lineage order leaf->root:
+
+col_0             UP000005640_9606  Euarchontoglires  Amniota  Tetrapoda  Euteleostomi  Bilateria  Eumetazoa  Opisthokonta
+row_0                                                                                                                     
+UP000005640_9606                11                 0       15          0             0          0          0             1
+Euarchontoglires                 0                 8        5          9             3          0          0             1
+Amniota                          0                 0        3          0             7          0          0             0
+Tetrapoda                        0                 3       13          7             8          0          0             0
+Euteleostomi                     0                 8       50         16            98         17          7             4
+Bilateria                        1                50        6         30            79         10        124           169
+Opisthokonta                     1                 2        5          3            28          2          6            45

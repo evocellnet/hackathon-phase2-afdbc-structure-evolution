@@ -1,0 +1,346 @@
+09:34:40 loading taxonomy
+09:34:43 file2 rows 2302908
+09:34:44 reading file5
+09:34:58 file5 rows 214684311
+09:35:55 members of file2 clusters 188252820
+09:36:07 done
+{
+ "version": "v3",
+ "file2_n_clusters": 2302908,
+ "file2_n_dark": 711705,
+ "file2_sum_nMem": 30045247,
+ "file2_nMem_quantiles": {
+  "0.0": 2.0,
+  "0.1": 2.0,
+  "0.25": 2.0,
+  "0.5": 3.0,
+  "0.75": 7.0,
+  "0.9": 19.0,
+  "0.99": 153.0,
+  "0.999": 932.0,
+  "1.0": 38901.0
+ },
+ "file2_nMem_bins": {
+  "[1,2)": 0,
+  "[2,5)": 1428664,
+  "[5,10)": 431906,
+  "[10,20)": 219794,
+  "[20,50)": 138002,
+  "[50,100)": 46272,
+  "[100,1000)": 36209,
+  "[1000,10000)": 2035,
+  "[10000,1000000000)": 26
+ },
+ "file2_avgPlddt_quantiles": {
+  "0.0": 24.15,
+  "0.1": 50.5,
+  "0.25": 61.825,
+  "0.5": 74.03,
+  "0.75": 83.15,
+  "0.9": 88.7938,
+  "0.99": 94.345,
+  "0.999": 96.375,
+  "1.0": 98.5
+ },
+ "file2_n_avgPlddt_ge70": 1366830,
+ "file2_n_avgPlddt_ge90": 169964,
+ "file2_LCA_domain_counts": {
+  "Bacteria": 896304,
+  "Eukaryota": 832194,
+  "Other": 529384,
+  "Archaea": 38080,
+  "None": 6946
+ },
+ "file2_LCA_top_taxa": [
+  [
+   "cellular organisms",
+   131567,
+   529373
+  ],
+  [
+   "Bacteria",
+   2,
+   370762
+  ],
+  [
+   "Eukaryota",
+   2759,
+   311226
+  ],
+  [
+   "Opisthokonta",
+   33154,
+   64235
+  ],
+  [
+   "Pseudomonadota",
+   1224,
+   59244
+  ],
+  [
+   "Bilateria",
+   33213,
+   44771
+  ],
+  [
+   "Mesangiospermae",
+   1437183,
+   38520
+  ],
+  [
+   "Actinomycetes",
+   1760,
+   33647
+  ],
+  [
+   "Bacillati",
+   1783272,
+   29141
+  ],
+  [
+   "Protostomia",
+   33317,
+   21228
+  ],
+  [
+   "Gammaproteobacteria",
+   1236,
+   20308
+  ],
+  [
+   "leotiomyceta",
+   716546,
+   20231
+  ],
+  [
+   "Bacillota",
+   1239,
+   20189
+  ],
+  [
+   "Bacteroidota",
+   976,
+   17129
+  ],
+  [
+   "Alphaproteobacteria",
+   28211,
+   15506
+  ],
+  [
+   "Pentapetalae",
+   1437201,
+   15240
+  ],
+  [
+   "Dikarya",
+   451864,
+   14193
+  ],
+  [
+   "Archaea",
+   2157,
+   11336
+  ],
+  [
+   "Eubacteriales",
+   186802,
+   10881
+  ],
+  [
+   "Eumetazoa",
+   6072,
+   10655
+  ],
+  [
+   "Fungi",
+   4751,
+   10637
+  ],
+  [
+   "Euteleostomi",
+   117571,
+   9313
+  ],
+  [
+   "Streptomyces",
+   1883,
+   8636
+  ],
+  [
+   "Ecdysozoa",
+   1206794,
+   8282
+  ],
+  [
+   "Hyphomicrobiales",
+   356,
+   7237
+  ]
+ ],
+ "file5_n_rows": 214684311,
+ "file5_n_unique_entries": 214684311,
+ "file5_n_unique_reps": 18861407,
+ "file5_cluFlag_counts": {
+  "1": 162356898,
+  "2": 30045247,
+  "3": 9269828,
+  "4": 13012338
+ },
+ "file5_n_taxId0_or_null": 152,
+ "file5_n_unique_taxIds": 1006700,
+ "members_in_file2_clusters_n": 188252820,
+ "members_in_file2_clusters_cluFlag": {
+  "1": 153535861,
+  "2": 30045247,
+  "3": 4671712
+ },
+ "members_domain_counts": {
+  "Bacteria": 138355565,
+  "Eukaryota": 43159214,
+  "Archaea": 5060390,
+  "Other": 1676521,
+  "None": 1111,
+  "Viruses": 19
+ },
+ "span_n_clusters": 2302908,
+ "span_n_clusters_ge2_cell_domains": 605881,
+ "span_n_clusters_all3_cell_domains": 103776,
+ "span_n_clusters_ge2_kingdoms": 1302998,
+ "span_n_clusters_ge5_phyla": 486389,
+ "span_domain_combos": {
+  "Eukaryota": 795150,
+  "Bacteria": 731410,
+  "Bacteria;Eukaryota": 307071,
+  "Bacteria;Other": 119317,
+  "Archaea;Bacteria": 67855,
+  "Archaea;Bacteria;Eukaryota;Other": 62009,
+  "Bacteria;Eukaryota;Other": 55413,
+  "Archaea;Bacteria;Other": 50276,
+  "Archaea;Bacteria;Eukaryota": 41765,
+  "Archaea": 30166,
+  "Archaea;Eukaryota": 19744,
+  "Eukaryota;Other": 10606,
+  "Other": 5961,
+  "Archaea;Other": 4410,
+  "Archaea;Eukaryota;Other": 1744,
+  "Bacteria;Other;Viruses": 4,
+  "Archaea;Bacteria;Other;Viruses": 2,
+  "Archaea;Bacteria;Eukaryota;Other;Viruses": 2,
+  "Archaea;Viruses": 2,
+  "Bacteria;Viruses": 1
+ },
+ "span_n_taxa_quantiles": {
+  "0.0": 1.0,
+  "0.1": 2.0,
+  "0.25": 3.0,
+  "0.5": 5.0,
+  "0.75": 15.0,
+  "0.9": 49.0,
+  "0.99": 706.0,
+  "0.999": 6076.0,
+  "1.0": 340635.0
+ },
+ "model_organisms": {
+  "H.sapiens": {
+   "taxId": 9606,
+   "clusters_with_member": 33987,
+   "proteins_in_clusters": 145625,
+   "proteins_in_file5": 186020
+  },
+  "M.musculus": {
+   "taxId": 10090,
+   "clusters_with_member": 25014,
+   "proteins_in_clusters": 59096,
+   "proteins_in_file5": 79301
+  },
+  "R.norvegicus": {
+   "taxId": 10116,
+   "clusters_with_member": 15220,
+   "proteins_in_clusters": 30553,
+   "proteins_in_file5": 34526
+  },
+  "D.rerio": {
+   "taxId": 7955,
+   "clusters_with_member": 19499,
+   "proteins_in_clusters": 51216,
+   "proteins_in_file5": 56996
+  },
+  "D.melanogaster": {
+   "taxId": 7227,
+   "clusters_with_member": 12885,
+   "proteins_in_clusters": 30161,
+   "proteins_in_file5": 38754
+  },
+  "C.elegans": {
+   "taxId": 6239,
+   "clusters_with_member": 11521,
+   "proteins_in_clusters": 21578,
+   "proteins_in_file5": 26483
+  },
+  "A.thaliana": {
+   "taxId": 3702,
+   "clusters_with_member": 23714,
+   "proteins_in_clusters": 113752,
+   "proteins_in_file5": 132903
+  },
+  "S.cerevisiae": {
+   "taxId": 559292,
+   "clusters_with_member": 4567,
+   "proteins_in_clusters": 5480,
+   "proteins_in_file5": 6720
+  },
+  "S.pombe": {
+   "taxId": 284812,
+   "clusters_with_member": 4057,
+   "proteins_in_clusters": 4655,
+   "proteins_in_file5": 5128
+  },
+  "D.discoideum": {
+   "taxId": 44689,
+   "clusters_with_member": 7334,
+   "proteins_in_clusters": 9956,
+   "proteins_in_file5": 12967
+  },
+  "E.coli_K12": {
+   "taxId": 83333,
+   "clusters_with_member": 3349,
+   "proteins_in_clusters": 4272,
+   "proteins_in_file5": 4584
+  },
+  "M.jannaschii": {
+   "taxId": 243232,
+   "clusters_with_member": 1466,
+   "proteins_in_clusters": 1612,
+   "proteins_in_file5": 1773
+  },
+  "C.albicans": {
+   "taxId": 237561,
+   "clusters_with_member": 4826,
+   "proteins_in_clusters": 5538,
+   "proteins_in_file5": 5979
+  },
+  "Z.mays": {
+   "taxId": 4577,
+   "clusters_with_member": 40547,
+   "proteins_in_clusters": 151317,
+   "proteins_in_file5": 197448
+  },
+  "O.sativa": {
+   "taxId": 39947,
+   "clusters_with_member": 31175,
+   "proteins_in_clusters": 91617,
+   "proteins_in_file5": 145703
+  },
+  "G.max": {
+   "taxId": 3847,
+   "clusters_with_member": 22271,
+   "proteins_in_clusters": 71497,
+   "proteins_in_file5": 84347
+  }
+ },
+ "span_n_clusters_any_model_org": 152380,
+ "span_n_clusters_human_and_ecoli": 332,
+ "span_n_clusters_human_and_yeast": 1093,
+ "span_n_clusters_ge3_model_orgs": 25542
+}

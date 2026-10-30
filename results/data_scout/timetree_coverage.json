@@ -1,0 +1,55 @@
+{
+ "ttol2015_tips": 50641,
+ "ttol2015_tips_mapped_to_ncbi": 49928,
+ "ttol2015_tips_by_domain": {
+  "Eukaryota": 49751,
+  "None": 713,
+  "Bacteria": 152,
+  "Archaea": 25
+ },
+ "ttol2015_tips_by_kingdom": {
+  "Metazoa": 31952,
+  "Viridiplantae": 16267,
+  "None": 1319,
+  "Fungi": 926,
+  "Bacillati": 81,
+  "Pseudomonadati": 68,
+  "Methanobacteriati": 20,
+  "Thermoproteati": 4,
+  "Thermotogati": 2,
+  "Fusobacteriati": 1,
+  "Nanobdellati": 1
+ },
+ "afdb_v3_species": 966981,
+ "afdb_v3_species_in_ttol2015": 40826,
+ "afdb_v3_proteins_in_ttol2015_species": 30409474,
+ "afdb_v3_proteins_total": 214684311,
+ "afdb_v3_species_in_ttol_by_domain": {
+  "Eukaryota": [
+   40675,
+   876981
+  ],
+  "Bacteria": [
+   129,
+   85571
+  ],
+  "Archaea": [
+   22,
+   3976
+  ],
+  "None": [
+   0,
+   444
+  ],
+  "Adnaviria": [
+   0,
+   5
+  ],
+  "Duplodnaviria": [
+   0,
+   4
+  ]
+ },
+ "v3_clusters_with_ge2_ttol_species": 592761,
+ "v3_clusters_with_ge10_ttol_species": 126949
+}

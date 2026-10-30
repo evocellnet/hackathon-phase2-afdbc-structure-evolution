@@ -1,0 +1,11 @@
+orthologs == ancestra.hogs_to_pairs: True | paralogs == hogs_to_pairs: True | ortholog TaxRange == species MRCA for all: True
+relation_pred   in_paralog  none  ortholog  out_paralog  root_split   All
+relation_truth                                                           
+in_paralog             368    12         0            0          37   417
+ortholog                 0   343      4208           34          28  4613
+out_paralog              0    22        10          487          48   567
+All                    368   377      4218          521         113  5597
+ortholog pairs in both: 4208, speciation level agrees: 1.0000
+paralog pairs in both: 855, duplication level agrees: 0.9591
+ortholog: P=0.9976 R=0.9122
+paralog: P=0.9618 R=0.8689

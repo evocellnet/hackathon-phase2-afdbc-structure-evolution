@@ -1,0 +1,75 @@
+gene-order tables written for 6 species
+== preset: accurate
+[ancestra] stage input: running
+[ancestra] stage input: done in 0.0s, peak RSS 40 MB
+[ancestra] stage families: running
+[ancestra] stage families: done in 5.9s, peak RSS 43 MB
+[ancestra] stage scores: running
+[ancestra] stage scores: done in 2.4s, peak RSS 102 MB
+[ancestra] stage merge: running
+[ancestra] stage merge: done in 1.2s, peak RSS 184 MB
+[ancestra] stage output: running
+[ancestra] stage output: done in 0.1s, peak RSS 186 MB
+[ancestra] done in 9.6s -> example/out/accurate/hogs.orthoxml
+[verify_orthoxml] PASS xsd (0.0s): {}
+[verify_orthoxml] PASS generef_integrity (0.0s): {"n_genes_declared": 1828, "n_generefs": 1717, "n_groups": 1400}
+[verify_orthoxml] PASS genes_once (0.0s): {"n_genes_in_groups": 1717, "n_singletons": 111, "n_genes_referenced_more_than_once": 0, "gene_table": "example/out/accurate/stages/input/genes.tsv", "n_input_genes": 1828, "n_missing": 0, "n_extra": 0, "n_wrong_species": 0}
+[verify_orthoxml] PASS taxrange_lca (0.0s): {"n_orthologGroups": 1233, "n_paralogGroups": 167, "n_taxrange_ne_lca": 0, "n_taxonid_ne_taxrange": 0, "n_nesting_violations": 0, "n_paralog_level_violations": 0, "n_unknown_levels": 0}
+[verify_orthoxml] PASS pairs_count (0.0s): {"n_pairs_hogs": 4218, "n_lines_pairs_tsv": 4218}
+[verify_orthoxml] SKIP flattening_vs_qfo (s): {"skipped": "QfO map_relations.py not found in /scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/tools/ancestra-mvp-ai/data/qfo/benchmark-webservice (set QFO_BENCHMARK_DIR)"}
+[verify_orthoxml] PASS pyham (0.6s): {"n_top_level_hogs_pyham": 284, "n_expected": 284, "n_genes": 1717, "load_s": 0.0, "mode": "full"}
+[verify_orthoxml] SKIP orthobench_export (s): {"skipped": "Open_Orthobench benchmark.py not found in /scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/tools/ancestra-mvp-ai/data/orthobench/Open_Orthobench/BENCHMARKS (set ORTHOBENCH_DIR)"}
+[verify_orthoxml] overall: PASS
+genes=1828  pred_unknown=0  missing_in_pred=0
+ortholog pairs: P=0.9976 R=0.9122 F1=0.9530 (tp=4208 pred=4218 true=4613; FP: paralogs=10 cross-family=0 other=0)
+level	depth	nsp	truthHOGs	predHOGs	exact	meanJacc	fissions	fusions	pairP	pairR	pairF1
+== preset: fast
+[ancestra] stage input: running
+[ancestra] stage input: done in 0.0s, peak RSS 36 MB
+[ancestra] stage families: running
+[ancestra] stage families: done in 5.5s, peak RSS 38 MB
+[ancestra] stage scores: running
+[ancestra] stage scores: done in 2.3s, peak RSS 96 MB
+[ancestra] stage merge: running
+[ancestra] stage merge: done in 0.5s, peak RSS 178 MB
+[ancestra] stage output: running
+[ancestra] stage output: done in 0.1s, peak RSS 185 MB
+[ancestra] done in 8.5s -> example/out/fast/hogs.orthoxml
+[verify_orthoxml] PASS xsd (0.0s): {}
+[verify_orthoxml] PASS generef_integrity (0.0s): {"n_genes_declared": 1828, "n_generefs": 1717, "n_groups": 1403}
+[verify_orthoxml] PASS genes_once (0.0s): {"n_genes_in_groups": 1717, "n_singletons": 111, "n_genes_referenced_more_than_once": 0, "gene_table": "example/out/fast/stages/input/genes.tsv", "n_input_genes": 1828, "n_missing": 0, "n_extra": 0, "n_wrong_species": 0}
+[verify_orthoxml] PASS taxrange_lca (0.0s): {"n_orthologGroups": 1236, "n_paralogGroups": 167, "n_taxrange_ne_lca": 0, "n_taxonid_ne_taxrange": 0, "n_nesting_violations": 0, "n_paralog_level_violations": 0, "n_unknown_levels": 0}
+[verify_orthoxml] PASS pairs_count (0.0s): {"n_pairs_hogs": 4229, "n_lines_pairs_tsv": 4229}
+[verify_orthoxml] SKIP flattening_vs_qfo (s): {"skipped": "QfO map_relations.py not found in /scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/tools/ancestra-mvp-ai/data/qfo/benchmark-webservice (set QFO_BENCHMARK_DIR)"}
+[verify_orthoxml] PASS pyham (0.5s): {"n_top_level_hogs_pyham": 284, "n_expected": 284, "n_genes": 1717, "load_s": 0.0, "mode": "full"}
+[verify_orthoxml] SKIP orthobench_export (s): {"skipped": "Open_Orthobench benchmark.py not found in /scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/tools/ancestra-mvp-ai/data/orthobench/Open_Orthobench/BENCHMARKS (set ORTHOBENCH_DIR)"}
+[verify_orthoxml] overall: PASS
+genes=1828  pred_unknown=0  missing_in_pred=0
+ortholog pairs: P=0.9979 R=0.9148 F1=0.9545 (tp=4220 pred=4229 true=4613; FP: paralogs=9 cross-family=0 other=0)
+level	depth	nsp	truthHOGs	predHOGs	exact	meanJacc	fissions	fusions	pairP	pairR	pairF1
+[orthoxml_to_pairs] 4218 ortholog pairs -> example/out/pairs_regen.tsv
+pairs regenerated from OrthoXML: identical
+example finished OK in 22 s
+	Command being timed: "bash example/run_example.sh 4"
+	User time (seconds): 41.61
+	System time (seconds): 4.49
+	Percent of CPU this job got: 211%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:21.79
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 427108
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 891914
+	Voluntary context switches: 85805
+	Involuntary context switches: 2236
+	Swaps: 0
+	File system inputs: 286
+	File system outputs: 1720
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
