@@ -51,8 +51,8 @@ Four scouting agents run in parallel: literature (LITERATURE.md), data acquisiti
 - [x] 4a. Species panel (agents/panel_report.md): 180 eukaryotes (Metazoa 66, Fungi 40, plants 20, protists across all supergroups) + 100 prokaryotes (60 bacteria / 40 archaea, Asgard = MK-D1 only). Gate: ≥80% exact-sequence v4 coverage. 3.29M + 0.28M structures fetched, 0 errors; 94.9% exact-sequence match. TimeTree: 15,755/16,110 pairs dated, 138 distinct ages (0.4–1,516 Mya); 52% of pairs at the root age → analyse by node/edge, not pair (already in design). Missing: rat/zebrafish/chicken/Xenopus (low v4 coverage). Polyploids included (cotton×4, soybean, Brassica, goldfish), handled by the 1:1-copy rule; limitation noted.
 - [~] 4g. Ancestra on 180 eukaryotes (accurate, launched 11:18). Families stage done 12:52 (94 min, 37 GB; single-threaded Python passes over 139M DIAMOND hits dominate)
 - [x] 4h. Pair-metrics pipeline (agents/pairs_pipeline_report.md): 3 alignments, V5/V8/V9 pass, 56k demo pairs in 4.5 min. [!] TM-align mis-registers close homologs (human–mouse core p 0.091 vs 0.064) and fails V5 → D22: primary alignment = Foldseek 3Di+AA; tmalign/seqonly as brackets
-- [~] 4i. Panel species tree + node ages; HOG construction §1.6 (tested on euk20)
-- [~] 4j. Noise floors (floor_random, floor_ident) → floors.json
+- [x] 4i. Panel tree (180 leaves, 100 internal nodes after collapsing; human–mouse 89.5 Mya) + HOG builder tested on euk20 (projection euk180: 1.0–1.8M primary pairs)
+- [x] 4j. Noise floors: 100k random pairs (TM 0.22–0.33 tmalign) + 17.8k identical-sequence pairs. [!] AF prediction noise: identical sequences median TM 0.95, η_3Di = 0.053 (rising with length), η(1−LDDT) = 0.02
 - [x] 4k. Goal 2-ii per-protein annotation: 3.74M proteins; 80% (euk) in non-singleton AFDB clusters; TED domain in 89%; classes α 19.6% β 9.8% α/β 24.0%
 - [~] 4l. Goal 2-iii cytoskeleton case study prep (actin/tubulin superfamilies, fixed AA tree)
 - [x] 4b. Distance library with toy/simulation tests (src/strucevo): 33/33 pass
