@@ -1,0 +1,234 @@
+{
+ "name": "panel_v4",
+ "table": "data/processed/panel/protein_table.parquet",
+ "random20": [
+  {
+   "acc": "A0A7R8UQF5",
+   "leaf": "UP000594454_343691",
+   "len_2026": 129,
+   "len_v4": 129,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|A0A7R8UQF5|A0A7R8UQF5_HERIL Uncharacterized protein OS=Hermetia illucens OX=343691 GN=HERILL_LOC"
+  },
+  {
+   "acc": "G4YEE0",
+   "leaf": "UP000002640_1094619",
+   "len_2026": 161,
+   "len_v4": 161,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|G4YEE0|G4YEE0_PHYSP RxLR effector protein OS=Phytophthora sojae (strain P6497) OX=1094619 GN=PHY"
+  },
+  {
+   "acc": "G4Z718",
+   "leaf": "UP000002640_1094619",
+   "len_2026": 266,
+   "len_v4": 266,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|G4Z718|G4Z718_PHYSP YrhK domain-containing protein OS=Phytophthora sojae (strain P6497) OX=10946"
+  },
+  {
+   "acc": "I1L6Q0",
+   "leaf": "UP000008827_3847",
+   "len_2026": 341,
+   "len_v4": 341,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|I1L6Q0|I1L6Q0_SOYBN rRNA adenine N(6)-methyltransferase OS=Glycine max OX=3847 GN=LOC100780381 P"
+  },
+  {
+   "acc": "A2GC43",
+   "leaf": "UP000001542_412133",
+   "len_2026": 97,
+   "len_v4": 97,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|A2GC43|A2GC43_TRIV3 DUF7777 domain-containing protein OS=Trichomonas vaginalis (strain ATCC PRA-"
+  },
+  {
+   "acc": "A2GIN5",
+   "leaf": "UP000001542_412133",
+   "len_2026": 291,
+   "len_v4": 291,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|A2GIN5|A2GIN5_TRIV3 Uncharacterized protein OS=Trichomonas vaginalis (strain ATCC PRA-98 / G3) O"
+  },
+  {
+   "acc": "A0A672P4G3",
+   "leaf": "UP000472262_75366",
+   "len_2026": 405,
+   "len_v4": 405,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|A0A672P4G3|A0A672P4G3_SINGR Dilute domain-containing protein OS=Sinocyclocheilus grahami OX=7536"
+  },
+  {
+   "acc": "A0A1Y1Z0H3",
+   "leaf": "UP000193498_1314790",
+   "len_2026": 436,
+   "len_v4": 436,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|A0A1Y1Z0H3|A0A1Y1Z0H3_9FUNG MFS general substrate transporter OS=Basidiobolus meristosporus CBS "
+  },
+  {
+   "acc": "A0A3P5ZJP2",
+   "leaf": "UP000011750_3711",
+   "len_2026": 323,
+   "len_v4": 323,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|A0A3P5ZJP2|A0A3P5ZJP2_BRACM 60S acidic ribosomal protein P0 OS=Brassica campestris OX=3711 PE=3 "
+  },
+  {
+   "acc": "A0A2K6DTY9",
+   "leaf": "UP000233120_9545",
+   "len_2026": 348,
+   "len_v4": 348,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|A0A2K6DTY9|A0A2K6DTY9_MACNE UDP-glucose 4-epimerase OS=Macaca nemestrina OX=9545 PE=3 SV=1"
+  },
+  {
+   "acc": "H3GMI6",
+   "leaf": "UP000005238_164328",
+   "len_2026": 144,
+   "len_v4": 144,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|H3GMI6|H3GMI6_PHYRM Transposase Tc1-like domain-containing protein OS=Phytophthora ramorum OX=16"
+  },
+  {
+   "acc": "E9H5U2",
+   "leaf": "UP000000305_6669",
+   "len_2026": 88,
+   "len_v4": 88,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|E9H5U2|E9H5U2_DAPPU Uncharacterized protein OS=Daphnia pulex OX=6669 GN=DAPPUDRAFT_253753 PE=4 S"
+  },
+  {
+   "acc": "A0A1D2MYA7",
+   "leaf": "UP000094527_48709",
+   "len_2026": 228,
+   "len_v4": 228,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|A0A1D2MYA7|A0A1D2MYA7_ORCCI Transcription initiation factor TFIID subunit 9 OS=Orchesella cincta"
+  },
+  {
+   "acc": "A0A2R9BM96",
+   "leaf": "UP000240080_9597",
+   "len_2026": 518,
+   "len_v4": 518,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|A0A2R9BM96|A0A2R9BM96_PANPA Serine--tRNA ligase, mitochondrial OS=Pan paniscus OX=9597 PE=3 SV=1"
+  },
+  {
+   "acc": "A0A2P5XTR2",
+   "leaf": "UP000327439_3634",
+   "len_2026": 85,
+   "len_v4": 85,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|A0A2P5XTR2|A0A2P5XTR2_GOSBA Mitochondrial import inner membrane translocase subunit OS=Gossypium"
+  },
+  {
+   "acc": "A0A6J2U6C7",
+   "leaf": "UP000504634_7225",
+   "len_2026": 933,
+   "len_v4": 933,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|A0A6J2U6C7|A0A6J2U6C7_DROLE Monocarboxylate transporter 7 OS=Drosophila lebanonensis OX=7225 GN="
+  },
+  {
+   "acc": "A0A6P4Y044",
+   "leaf": "UP000515135_7741",
+   "len_2026": 544,
+   "len_v4": 544,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|A0A6P4Y044|A0A6P4Y044_BRABE Uncharacterized protein LOC109468452 OS=Branchiostoma belcheri OX=77"
+  },
+  {
+   "acc": "Q1PE17",
+   "leaf": "UP000006548_3702",
+   "len_2026": 534,
+   "len_v4": 534,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">sp|Q1PE17|CDPKI_ARATH Calcium-dependent protein kinase 18 OS=Arabidopsis thaliana OX=3702 GN=CPK18 "
+  },
+  {
+   "acc": "D7L3E9",
+   "leaf": "UP000008694_81972",
+   "len_2026": 252,
+   "len_v4": 252,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|D7L3E9|D7L3E9_ARALL Peptidase C1A papain C-terminal domain-containing protein OS=Arabidopsis lyr"
+  },
+  {
+   "acc": "A0A6P6K6F1",
+   "leaf": "UP000515129_7957",
+   "len_2026": 291,
+   "len_v4": 291,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|A0A6P6K6F1|A0A6P6K6F1_CARAU U3 small nucleolar ribonucleoprotein IMP4 OS=Carassius auratus OX=79"
+  }
+ ],
+ "random20_foldcomp_eq_live": 20,
+ "random20_live_eq_local2026": 20,
+ "n_fetched": 3290300,
+ "n_seq_match_foldcomp": 3283644,
+ "n_seq_match_ted": 3283644,
+ "n_ted_foldcomp_disagree": 0,
+ "mismatch_rate_among_fetched": 0.00202,
+ "mismatch_len_diff_zero_frac": 0.7835,
+ "n_canonical": 3460494,
+ "n_has_v4": 3290300,
+ "n_has_v4_not_fetched": 0,
+ "n_no_v4": 170194,
+ "n_no_v4_len_gt2700": 16160,
+ "n_len_gt2700_total": 16172,
+ "frac_proteins_seq_match": 0.9489,
+ "n_species": 180,
+ "per_species_n": {
+  "min": 2787.0,
+  "median": 15661.0,
+  "max": 82543.0
+ },
+ "per_species_frac_match": {
+  "min": 0.831,
+  "median": 0.9546,
+  "max": 0.9957
+ },
+ "species_below_0.80": [],
+ "mean_plddt_overall": 70.38
+}

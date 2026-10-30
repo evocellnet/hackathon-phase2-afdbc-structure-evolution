@@ -1,0 +1,234 @@
+{
+ "name": "panel_prok_v4",
+ "table": "data/processed/panel/protein_table_prok.parquet",
+ "random20": [
+  {
+   "acc": "I0AGQ4",
+   "leaf": "UP000007394_945713",
+   "len_2026": 290,
+   "len_v4": 290,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|I0AGQ4|I0AGQ4_IGNAJ ATP phosphoribosyltransferase OS=Ignavibacterium album (strain DSM 19864 / J"
+  },
+  {
+   "acc": "D1C6T5",
+   "leaf": "UP000002027_479434",
+   "len_2026": 179,
+   "len_v4": 179,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|D1C6T5|D1C6T5_SPHTD YbaK/prolyl-tRNA synthetase associated region OS=Sphaerobacter thermophilus "
+  },
+  {
+   "acc": "A0A5Q0UG31",
+   "leaf": "UP000377803_2565781",
+   "len_2026": 357,
+   "len_v4": 357,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|A0A5Q0UG31|A0A5Q0UG31_9ARCH Uncharacterized protein OS=Candidatus Nanohalobium constans OX=25657"
+  },
+  {
+   "acc": "A0A6P1LZN2",
+   "leaf": "UP000464954_2697043",
+   "len_2026": 208,
+   "len_v4": 208,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|A0A6P1LZN2|A0A6P1LZN2_9BACT Response regulator OS=Tichowtungia aerotolerans OX=2697043 GN=GT409_"
+  },
+  {
+   "acc": "P74805",
+   "leaf": "UP000001425_1111708",
+   "len_2026": 54,
+   "len_v4": 54,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">sp|P74805|Y1169_SYNY3 PMP3 family protein ssr1169 OS=Synechocystis sp. (strain ATCC 27184 / PCC 680"
+  },
+  {
+   "acc": "Q1D801",
+   "leaf": "UP000002402_246197",
+   "len_2026": 459,
+   "len_v4": 459,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">sp|Q1D801|HSLU_MYXXD ATP-dependent protease ATPase subunit HslU OS=Myxococcus xanthus (strain DK162"
+  },
+  {
+   "acc": "A0A4Y6PVM2",
+   "leaf": "UP000315995_2292766",
+   "len_2026": 269,
+   "len_v4": 269,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|A0A4Y6PVM2|A0A4Y6PVM2_PERCE Right-handed parallel beta-helix repeat-containing protein OS=Persic"
+  },
+  {
+   "acc": "B5ID02",
+   "leaf": "UP000001400_439481",
+   "len_2026": 161,
+   "len_v4": 161,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|B5ID02|B5ID02_ACIB4 Adenosine monophosphate-protein transferase OS=Aciduliprofundum boonei (stra"
+  },
+  {
+   "acc": "W0RJ24",
+   "leaf": "UP000019151_861299",
+   "len_2026": 553,
+   "len_v4": 553,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|W0RJ24|W0RJ24_9BACT Bacillithiol biosynthesis cysteine-adding enzyme BshC OS=Gemmatirosa kalamaz"
+  },
+  {
+   "acc": "Q8F3S9",
+   "leaf": "UP000001408_189518",
+   "len_2026": 568,
+   "len_v4": 568,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|Q8F3S9|Q8F3S9_LEPIN DNA repair protein RecN OS=Leptospira interrogans serogroup Icterohaemorrhag"
+  },
+  {
+   "acc": "Q8F880",
+   "leaf": "UP000001408_189518",
+   "len_2026": 692,
+   "len_v4": 692,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|Q8F880|Q8F880_LEPIN Methyl-accepting chemotaxis protein OS=Leptospira interrogans serogroup Icte"
+  },
+  {
+   "acc": "A0A0S4MN44",
+   "leaf": "UP000320623_1643428",
+   "len_2026": 481,
+   "len_v4": 481,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|A0A0S4MN44|A0A0S4MN44_9BACT Xaa-Pro aminopeptidase OS=Candidatus Thermokryptus mobilis OX=164342"
+  },
+  {
+   "acc": "A0A5D0MKG7",
+   "leaf": "UP000324143_2703815",
+   "len_2026": 208,
+   "len_v4": 208,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|A0A5D0MKG7|A0A5D0MKG7_9BACT Uncharacterized protein OS=Candidatus Mcinerneyibacterium aminivoran"
+  },
+  {
+   "acc": "A5ULI8",
+   "leaf": "UP000001992_420247",
+   "len_2026": 164,
+   "len_v4": 164,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|A5ULI8|A5ULI8_METS3 Flavodoxin OS=Methanobrevibacter smithii (strain ATCC 35061 / DSM 861 / OCM "
+  },
+  {
+   "acc": "S0ESC6",
+   "leaf": "UP000014227_1303518",
+   "len_2026": 861,
+   "len_v4": 861,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|S0ESC6|S0ESC6_CHTCT Predicted bile acid beta-glucosidase OS=Chthonomonas calidirosea (strain DSM"
+  },
+  {
+   "acc": "O24995",
+   "leaf": "UP000000429_85962",
+   "len_2026": 91,
+   "len_v4": 91,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|O24995|O24995_HELPY Uncharacterized protein OS=Helicobacter pylori (strain ATCC 700392 / 26695) "
+  },
+  {
+   "acc": "B5YJ51",
+   "leaf": "UP000000718_289376",
+   "len_2026": 160,
+   "len_v4": 160,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|B5YJ51|B5YJ51_THEYD Type IV pilus assembly protein PilP OS=Thermodesulfovibrio yellowstonii (str"
+  },
+  {
+   "acc": "A0A2Z3H8S0",
+   "leaf": "UP000245802_114",
+   "len_2026": 60,
+   "len_v4": 60,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|A0A2Z3H8S0|A0A2Z3H8S0_9BACT Uncharacterized protein OS=Gemmata obscuriglobus OX=114 GN=C1280_300"
+  },
+  {
+   "acc": "P0A9G8",
+   "leaf": "UP000000625_83333",
+   "len_2026": 262,
+   "len_v4": 262,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">sp|P0A9G8|MODE_ECOLI DNA-binding transcriptional dual regulator ModE OS=Escherichia coli (strain K1"
+  },
+  {
+   "acc": "D2Z3H4",
+   "leaf": "UP000006427_469381",
+   "len_2026": 431,
+   "len_v4": 431,
+   "live_eq_local2026": true,
+   "foldcomp_eq_local2026": true,
+   "foldcomp_eq_live": true,
+   "uniprot_header": ">tr|D2Z3H4|D2Z3H4_9BACT ATP-dependent Clp protease ATP-binding subunit ClpX OS=Dethiosulfovibrio pep"
+  }
+ ],
+ "random20_foldcomp_eq_live": 20,
+ "random20_live_eq_local2026": 20,
+ "n_fetched": 275566,
+ "n_seq_match_foldcomp": 274881,
+ "n_seq_match_ted": 274881,
+ "n_ted_foldcomp_disagree": 0,
+ "mismatch_rate_among_fetched": 0.00249,
+ "mismatch_len_diff_zero_frac": 0.1781,
+ "n_canonical": 277544,
+ "n_has_v4": 275566,
+ "n_has_v4_not_fetched": 0,
+ "n_no_v4": 1978,
+ "n_no_v4_len_gt2700": 175,
+ "n_len_gt2700_total": 175,
+ "frac_proteins_seq_match": 0.9904,
+ "n_species": 100,
+ "per_species_n": {
+  "min": 483.0,
+  "median": 2247.5,
+  "max": 8253.0
+ },
+ "per_species_frac_match": {
+  "min": 0.8096,
+  "median": 0.9957,
+  "max": 1.0
+ },
+ "species_below_0.80": [],
+ "mean_plddt_overall": 84.96
+}
