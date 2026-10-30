@@ -1,0 +1,23 @@
+{
+  "build_world_s": 6.20449686050415,
+  "n_pairs": 696971,
+  "branch_engine_3metrics_s": 19.149900197982788,
+  "E1_n_pairs": 582063,
+  "E1_point_simex_plus_2boot_s": 7.60094952583313,
+  "E1_point_simex_s": 5.255707502365112,
+  "E1_per_boot_rep_s": 1.1726210117340088,
+  "E1_full_estimate_s(B=200,Bs=50,Bs_boot=10,+B_naive=1000)": 262.6603198342207,
+  "E3_B100_s": 1.0485939979553223,
+  "E4_cells_s": 0.028104066848754883,
+  "E4_n_cells": 12645,
+  "E4_statsmodels_point_s": 14.53351378440857,
+  "E4_fastreml_fit_s": 0.9290440082550049,
+  "E4_fast_vs_statsmodels_beta_diff": 1.257982086540297e-07,
+  "E4_est_B1000_s": 971.2001085281372,
+  "E5_setup_s": 14.24885106086731,
+  "E5_floor_P10_s": 0.9442973136901855,
+  "E5_core_B100_Bcv50_s": 0.7369959354400635,
+  "E5_est_full_s(P=100,B=1000,Bcv=200,spike 4x50xB200)": 211.87119007110596,
+  "E5_n_lineages": 253,
+  "E5_n_contrasts": 165
+}

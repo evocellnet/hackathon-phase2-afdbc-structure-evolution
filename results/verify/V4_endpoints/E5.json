@@ -1,0 +1,92 @@
+{
+  "endpoint": "E5",
+  "estimand": "N0 (proportional lineage effects): disattenuated sister-contrast slope beta and excess lineage SD sigma_L",
+  "estimate": 0.9549155647693158,
+  "se_boot": 0.1211083796771288,
+  "ci98": [
+    0.6731753431788963,
+    1.2366557863597354
+  ],
+  "ci_pct98": [
+    0.5722498304897448,
+    1.272400893616995
+  ],
+  "one_sided_bound": {
+    "sigma2_L_lower99": -0.0029879300811599925,
+    "sigma2_L_upper99": 0.003210222200473333,
+    "sigma_L_upper99": 0.05665882279463043,
+    "sigma_L_lower99": 0.0
+  },
+  "p_value": 0.1004224380620653,
+  "p_holm": 0.4016897522482612,
+  "decision": "inconclusive",
+  "n_hogs": 5000,
+  "n_units": 196,
+  "n_excluded": {},
+  "sensitivity": {
+    "internal_edges_only": {
+      "estimate": {
+        "beta": 0.9835757704147169,
+        "sigma2_L": -4.0497049178172834e-05
+      },
+      "ci98": {
+        "beta": [
+          0.9164411248104212,
+          1.0507104160190126
+        ],
+        "sigma2_L": [
+          -0.00245040155118545,
+          0.0023694074528291045
+        ]
+      },
+      "decision": "no_excess"
+    }
+  },
+  "alignment_robust": null,
+  "flags": [],
+  "plan_md5": "23e1bb17b1dfe5803cb9da394391a298",
+  "tuning_md5": null,
+  "commit": "1f583263982ebc28a08d45732d5a8944cf2e2b08",
+  "input_md5": "220bd508013bb7b2fa6d0e7c8e0b75e8",
+  "sigma_L": 0.010542583158631954,
+  "sigma2_L": 0.00011114605965667013,
+  "sigma2_obs": 0.0038737126180243085,
+  "beta_contrast": 0.9549155647693158,
+  "power": {
+    "f=1.5": {
+      "detect_rate": 1.0,
+      "accept_rate": 0.0
+    },
+    "f=1.0": {
+      "detect_rate": 0.0,
+      "accept_rate": 0.0
+    }
+  },
+  "floor_F": 0.0037625665583676383,
+  "floor_F_sd": 0.00047644690527135126,
+  "n_lineages": 196,
+  "n_contrasts": 146,
+  "decision_detail": {
+    "margins_met": false,
+    "beta_in": false,
+    "beta_out": false,
+    "sigma_ok": true,
+    "sigma_excess": false,
+    "p_iut": 0.1004224380620653,
+    "p_reject": {
+      "beta_lt_0.8": 0.8995775619379347,
+      "beta_gt_1.25": 0.9925855700894626,
+      "sigma_gt_0.10": 0.9999999999999428
+    },
+    "e6_significant": false,
+    "power": 1.0
+  },
+  "min_t_snr": 8.0,
+  "beta_ci98_hog_only": [
+    0.7483762667552396,
+    1.161454862783392
+  ],
+  "B": 300,
+  "P": 30,
+  "runtime_s": 45.12199544906616
+}

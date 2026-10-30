@@ -1,0 +1,52 @@
+{
+  "endpoint": "E4",
+  "estimand": "beta: slope of y=log(S_3Di/S_AA) on centred log mean cell age (MixedLM); beta_k = -beta",
+  "estimate": 0.0003823552490232069,
+  "se_boot": 0.0036755088697638634,
+  "ci98": [
+    -0.00816815699617021,
+    0.008932867494216625
+  ],
+  "ci_pct98": [
+    -0.0035446999398504376,
+    0.010210651788833812
+  ],
+  "one_sided_bound": {
+    "lower99": -0.00816815699617021,
+    "upper99": 0.008932867494216625
+  },
+  "p_value": 0.9171472552147941,
+  "p_holm": 1.0,
+  "decision": "beta_k_approx_0",
+  "n_hogs": 5000,
+  "n_units": 11311,
+  "n_excluded": {
+    "cells_aa_nonpositive": 0
+  },
+  "sensitivity": {},
+  "alignment_robust": null,
+  "flags": [
+    "re_slope_fallback"
+  ],
+  "plan_md5": "23e1bb17b1dfe5803cb9da394391a298",
+  "tuning_md5": null,
+  "commit": "1f583263982ebc28a08d45732d5a8944cf2e2b08",
+  "input_md5": "220bd508013bb7b2fa6d0e7c8e0b75e8",
+  "beta_k": -0.0003823552490232069,
+  "mu": -1.0938461279512868,
+  "gamma": 0.052003970292575884,
+  "x_center": 3.3667318931130548,
+  "z_center": -2.116265683944482,
+  "se_model": [
+    0.005455584315299647,
+    0.0027768630971089624,
+    0.004010686882425006
+  ],
+  "censored_frac": 0.011493236672265936,
+  "B": 20,
+  "rep_fallback_count": 0,
+  "rep_failed": 0,
+  "mixed_engine_boot": "fast",
+  "fast_vs_statsmodels_abs_diff": 0.00033293694295376557,
+  "runtime_s": 136.52189469337463
+}
