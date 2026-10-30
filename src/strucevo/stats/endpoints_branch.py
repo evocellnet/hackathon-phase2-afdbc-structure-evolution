@@ -193,9 +193,18 @@ def run_E3(bf, panel, tau_misfit=None, cath_class=None, hog_groups=None, B=1000,
 
 
 # ------------------------------------------------------------------------------------------ E4
-def build_cells(ev: EdgeView, age: np.ndarray, w=None, min_aa=0.05, drop_bin5=False, tau_perm=None):
+def build_cells(ev: EdgeView, age: np.ndarray, w=None, min_aa=0.05, drop_bin5=False, tau_perm=None,
+                rule="aa", info_T=None, tip_var=0.0, r_bar=None, tip_all=False):
     """Cells (h, g) with the AA-only merge rule (ANALYSIS_PLAN §2.6). age: per panel node.
-    Returns dict of arrays: hog, S_aa, S_t, n_edges, mean_tau, censored, bin."""
+
+    rule = 'aa'   : the plan's rule (merge while S_AA < min_aa).
+    rule = 'info' : DEVIATION D30 (agents/bias_fix_report.md): additionally merge while the cell's PREDICTED 3Di
+                    signal-to-noise r_bar * S_AA / sqrt(V_t) < info_T, where V_t = sum w^2 (b_se_3Di^2 + tip_var *
+                    terminal) (3Di SEs + per-protein tip-noise variance; no 3Di VALUES of the cell enter) and r_bar
+                    is one global scalar (the D8 precedent). Merge direction as the plan (into the next-older cell;
+                    the oldest into the next-younger).
+    Returns dict of arrays: hog, S_aa, S_t, n_edges, mean_tau, censored, bin, V_aa, V_t (delta-method variances of
+    the cell sums: sum w^2 se^2, plus tip_var on terminal 3Di edges)."""
     w = np.ones(len(ev.child)) if w is None else w
     tau = 0.5 * (age[ev.child] + age[ev.parent])
     if tau_perm is not None:          # V6 'edges' negative control: tau permuted across all HOG edges
@@ -207,18 +216,28 @@ def build_cells(ev: EdgeView, age: np.ndarray, w=None, min_aa=0.05, drop_bin5=Fa
     ST = np.bincount(key, w * ev.b_t, H * 5).reshape(H, 5)
     NE = np.bincount(key, w, H * 5).reshape(H, 5)
     TS = np.bincount(key, w * tau, H * 5).reshape(H, 5)
+    se_a = np.nan_to_num(ev.se_aa, nan=0.0); se_t = np.nan_to_num(ev.se_t, nan=0.0)
+    VA = np.bincount(key, w * w * se_a ** 2, H * 5).reshape(H, 5)
+    tip_w = np.ones(len(ev.child)) if tip_all else ev.is_terminal.astype(float)
+    VT = np.bincount(key, w * w * (se_t ** 2 + tip_var * tip_w), H * 5).reshape(H, 5)
     present = np.bincount(key, (w > 0).astype(float), H * 5).reshape(H, 5) > 0
-    out = {k: [] for k in ("hog", "S_aa", "S_t", "n_edges", "mean_tau", "bin")}
+    out = {k: [] for k in ("hog", "S_aa", "S_t", "n_edges", "mean_tau", "bin", "V_aa", "V_t")}
     n_aa_nonpos = 0
+    if rule == "info" and r_bar is None:
+        r_bar = float(np.sum(w * ev.b_t) / np.sum(w * ev.b_aa))
     for h in np.flatnonzero(present.any(1)):
-        cells = [[j, SA[h, j], ST[h, j], NE[h, j], TS[h, j]] for j in range(5) if present[h, j]]
+        cells = [[j, SA[h, j], ST[h, j], NE[h, j], TS[h, j], VA[h, j], VT[h, j]] for j in range(5) if present[h, j]]
         while len(cells) > 1:
-            bad = [i for i, c in enumerate(cells) if c[1] < min_aa]
+            if rule == "info":
+                bad = [i for i, c in enumerate(cells)
+                       if c[1] < min_aa or r_bar * c[1] < info_T * np.sqrt(max(c[6], 0.0))]
+            else:
+                bad = [i for i, c in enumerate(cells) if c[1] < min_aa]
             if not bad:
                 break
             i = bad[0]
             tgt = i + 1 if i + 1 < len(cells) else i - 1
-            for q in (1, 2, 3, 4):
+            for q in (1, 2, 3, 4, 5, 6):
                 cells[tgt][q] += cells[i][q]
             del cells[i]
         for c in cells:
@@ -226,7 +245,7 @@ def build_cells(ev: EdgeView, age: np.ndarray, w=None, min_aa=0.05, drop_bin5=Fa
                 n_aa_nonpos += 1
                 continue
             out["hog"].append(h); out["S_aa"].append(c[1]); out["S_t"].append(c[2]); out["n_edges"].append(c[3])
-            out["mean_tau"].append(c[4] / c[3]); out["bin"].append(c[0])
+            out["mean_tau"].append(c[4] / c[3]); out["bin"].append(c[0]); out["V_aa"].append(c[5]); out["V_t"].append(c[6])
     o = {k: np.asarray(v) for k, v in out.items()}
     o["censored"] = o["S_t"] <= 0
     o["S_t"] = np.where(o["censored"], 0.005, o["S_t"])
@@ -284,15 +303,23 @@ def fit_mixed(y, x, z, groups, start=None):
 
 def run_E4(bf, panel: PanelTree, tau_misfit=None, B=200, sensitivities=True, B_sens=None, ages_override=None,
            perm_rng=None, extra_sens=None, input_md5=None, verbose=False, repair_draws=True, engine="fast",
-           tau_perm=None):
+           tau_perm=None, cell_rule="info", info_T=4.0, tip_var=0.0):
     """E4: y = log(S_3Di/S_AA) per HOG x age-bin cell; MixedLM; pigeonhole + age-redraw bootstrap.
-    ages_override: (age, lo, hi) arrays per panel node (e.g. permuted ages for V6 / deep-age sensitivities)."""
+    ages_override: (age, lo, hi) arrays per panel node (e.g. permuted ages for V6 / deep-age sensitivities).
+    cell_rule / info_T / tip_var: cell merge rule (DEVIATION D30: 'info' = plan AA rule + AA-only predicted-3Di
+    information rule; 'aa' = the plan's rule, always reported as sensitivity 'cells_plan_rule'). tip_var = per-protein
+    3Di tip-noise variance (tip_sd^2) added to terminal edges in the predicted cell variance."""
     t0 = time.time()
+    _bc = build_cells
+    _ckw = {"rule": cell_rule, "info_T": info_T, "tip_var": tip_var}
+
+    def _cells(*a, **k):           # every cell construction in this endpoint uses the same rule
+        return _bc(*a, **(_ckw | k))
     if ages_override is not None:
         panel = panel.with_ages(*ages_override)
     ev = edge_view(bf, panel, tau_misfit=tau_misfit)
     H = len(ev.hog_ids)
-    cells = build_cells(ev, panel.age, tau_perm=tau_perm)
+    cells = _cells(ev, panel.age, tau_perm=tau_perm)
     y, x, z, xc, zc = cell_design(cells)
     fit = fit_mixed(y, x, z, cells["hog"])
     flags = list(fit["flags"])
@@ -314,7 +341,7 @@ def run_E4(bf, panel: PanelTree, tau_misfit=None, B=200, sensitivities=True, B_s
         age_b = draw_ages(panel, rng, repair=repair_draws)
         # build cells on the expanded HOG set: edges of HOG h are reused for each copy; Lambda weights inside sums
         ew = _edge_w(evv, np.ones(len(evv.hog_ids)), L)
-        c = build_cells(evv, age_b, w=ew, drop_bin5=drop_bin5, tau_perm=tau_perm if evv is ev else None)
+        c = _cells(evv, age_b, w=ew, drop_bin5=drop_bin5, tau_perm=tau_perm if evv is ev else None)
         if drop_cens:
             m = ~c["censored"]; c = {k: (v[m] if isinstance(v, np.ndarray) else v) for k, v in c.items()}
         # expand cells by W_h copies with new ids
@@ -363,7 +390,7 @@ def run_E4(bf, panel: PanelTree, tau_misfit=None, B=200, sensitivities=True, B_s
         for name, kw in (("censored_dropped", dict(drop_cens=True)), ("bin5_excluded", dict(drop_bin5=True)),
                          ("internal_edges_only", dict(internal=True))):
             evv = edge_view(bf, panel, tau_misfit=tau_misfit, internal_only=True) if kw.get("internal") else ev
-            c0 = build_cells(evv, panel.age, drop_bin5=kw.get("drop_bin5", False))
+            c0 = _cells(evv, panel.age, drop_bin5=kw.get("drop_bin5", False))
             if kw.get("drop_cens"):
                 m = ~c0["censored"]; c0 = {k: (v[m] if isinstance(v, np.ndarray) else v) for k, v in c0.items()}
             y0, x0, z0, _, _ = cell_design(c0)
@@ -372,6 +399,18 @@ def run_E4(bf, panel: PanelTree, tau_misfit=None, B=200, sensitivities=True, B_s
             s0 = float(np.std(rr, ddof=1))
             sens[name] = {"estimate": f0["beta"], "ci98": normal_ci(f0["beta"], s0),
                           "p_unadjusted": float(2 * (1 - norm.cdf(abs(f0["beta"]) / s0))), "B": Bs}
+        if cell_rule != "aa":          # the plan's cell rule (known null bias, agents/bias_fix_report.md)
+            c0 = _bc(ev, panel.age)
+            y0, x0, z0, _, _ = cell_design(c0)
+            f0 = fit_mixed(y0, x0, z0, c0["hog"])
+            _ckw_save = dict(_ckw); _ckw.update(rule="aa")
+            rr = [one_rep(ev)[0]["beta"] for _ in range(Bs)]
+            _ckw.clear(); _ckw.update(_ckw_save)
+            s0 = float(np.std(rr, ddof=1))
+            sens["cells_plan_rule"] = {"estimate": f0["beta"], "ci98": normal_ci(f0["beta"], s0),
+                                       "p_unadjusted": float(2 * (1 - norm.cdf(abs(f0["beta"]) / s0))), "B": Bs,
+                                       "n_cells": int(len(y0)), "censored_frac": float(c0["censored"].mean()),
+                                       "note": "ANALYSIS_PLAN §2.6 rule; biased under the null (D30)"}
     for name, v in (extra_sens or {}).items():
         sens[name] = v
     rec = endpoint_record(
@@ -382,7 +421,7 @@ def run_E4(bf, panel: PanelTree, tau_misfit=None, B=200, sensitivities=True, B_s
         n_excluded=ev.n_excluded | {"cells_aa_nonpositive": int(cells["n_aa_nonpos"])}, sensitivity=sens,
         alignment_robust=None, flags=flags, input_md5=input_md5 or md5_arrays(ev.b_aa, ev.b_t),
         beta_k=-beta, mu=fit["mu"], gamma=fit["gamma"], x_center=xc, z_center=zc, se_model=fit["se_model"],
-        censored_frac=cens_frac, B=B, rep_fallback_count=rep_flags, rep_failed=n_failed, mixed_engine_boot=engine, fast_vs_statsmodels_abs_diff=fast_vs_sm, runtime_s=time.time() - t0)
+        censored_frac=cens_frac, cell_rule=cell_rule, info_T=info_T, tip_var=tip_var, B=B, rep_fallback_count=rep_flags, rep_failed=n_failed, mixed_engine_boot=engine, fast_vs_statsmodels_abs_diff=fast_vs_sm, runtime_s=time.time() - t0)
     return rec
 
 

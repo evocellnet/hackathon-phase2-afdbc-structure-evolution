@@ -1,65 +1,76 @@
 {
   "endpoint": "E1",
-  "estimand": "global curvature c in y = eta + a_h x^c (SIMEX-corrected) ; y = tdi_ml",
-  "estimate": 1.0037426779452798,
-  "se_boot": 0.0025046062589941186,
+  "estimand": "global curvature c in y = eta + a_h x^c (SIMEX-corrected) ; y = tdi_ml ; SIMEX bias-corrected by parametric bootstrap (D29)",
+  "estimate": 1.0026183412650334,
+  "se_boot": 0.006383561045870399,
   "ci98": [
-    0.9979160924993595,
-    1.0095692633912001
+    0.9877679575971628,
+    1.017468724932904
   ],
   "ci_pct98": [
-    0.9986167059181869,
-    1.007138549422968
+    0.9926912736351957,
+    1.018355481110945
   ],
   "one_sided_bound": {
-    "lower99": 0.9979160924993595,
-    "upper99": 1.0095692633912001
+    "lower99": 0.9877679575971628,
+    "upper99": 1.017468724932904
   },
   "p_value": 0.0,
   "p_holm": 0.0,
   "decision": "linear",
-  "n_hogs": 4405,
-  "n_units": 479949,
+  "n_hogs": 871,
+  "n_units": 98561,
   "n_excluded": {
     "not_1to1": 0,
-    "aa_ml_seq_out_of_range": 75939,
+    "aa_ml_seq_out_of_range": 14771,
     "hog_excluded_metric": 0,
-    "pair_weight0_fail_or_sat": 123,
-    "hog_lt_min_pairs_or_range": 26073
+    "pair_weight0_fail_or_sat": 0,
+    "hog_lt_min_pairs_or_range": 5538
   },
   "sensitivity": {},
   "alignment_robust": null,
   "flags": [
-    "simex_x_clipped:36192"
+    "simex_x_clipped:1522"
   ],
   "plan_md5": "23e1bb17b1dfe5803cb9da394391a298",
-  "tuning_md5": null,
-  "commit": "faba7e4ea37fd10736b8325d18e27fb12fdc81b6",
-  "input_md5": "2f9726b355397fca4a1f410cdafba5e9",
-  "c_naive": 0.9746245366121759,
-  "c_naive_se_boot_B1000": 0.0019141928850591565,
+  "tuning_md5": "8b986dab128397fef7c084501ed80dfa",
+  "commit": "df2161c14547e5524eccd59476c95e81d959c968",
+  "input_md5": "c8779fd650fe99015208db9d9e509c38",
+  "c_naive": 0.9362573693251373,
+  "c_naive_se_boot_B1000": 0.004324349354046648,
   "c_lambda": {
-    "0.0": 0.9746245366121759,
-    "0.5": 0.9616362924583204,
-    "1.0": 0.9499188132834305,
-    "1.5": 0.9391964334437859,
-    "2.0": 0.9295808350962844
+    "0.0": 0.9362573693251373,
+    "0.5": 0.9104581140750723,
+    "1.0": 0.8879126926255262,
+    "1.5": 0.8672229038350385,
+    "2.0": 0.8488593655007308
   },
-  "s2": 0.0005157368989967804,
+  "s2": 0.001866554042708633,
   "p_lin": 0.0,
-  "p_conc": 0.9324537245855548,
+  "p_conc": 0.6591591488965187,
   "v3_false_concave": null,
   "checks": {
-    "recompute_abs_diff": 1.4950535920377206e-08,
+    "recompute_abs_diff": 1.3341997728844035e-08,
     "grid_boundary": false,
     "n_fit_equals_filter_log": true
   },
   "eta": 0.04,
   "kappa_x": 1.0,
   "kappa_y": 1.0,
-  "rho": 0.3,
-  "B": 20,
-  "B_s": 10,
+  "rho": 0.0,
+  "rho_mean": 0.0,
+  "c_simex_plan": 0.9940816427184143,
+  "pb_bias": -0.008536698546619093,
+  "pb_mc_se": 0.0004112414823054623,
+  "pb_K": 25,
+  "pb_design": "tree",
+  "pb_design_tree": {
+    "x_tree_n_nofit": 0,
+    "x_tree_n_nonpositive": 2,
+    "x_tree_median_sd_ratio": 0.04246057442040747
+  },
+  "B": 60,
+  "B_s": 20,
   "B_s_boot": 5,
-  "runtime_s": 11.048534154891968
+  "runtime_s": 25.67695927619934
 }

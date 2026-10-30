@@ -28,7 +28,7 @@ import tuning_common as tc
 from strucevo.stats.branch import fit_branches, nnls_fit
 from strucevo.stats.common import Z98
 from strucevo.stats.endpoints_branch import run_E4
-from strucevo.stats.endpoints_curve import prepare_curve_data, fit_curve_full, curve_decision
+from strucevo.stats.endpoints_curve import prepare_curve_data, fit_curve_full, curve_decision, tree_x
 from strucevo.stats.synth import World, se_of, true_pair_distances, _panel_edge_lengths_for_hog
 
 warnings.simplefilter("ignore")
@@ -49,6 +49,17 @@ ap.add_argument("--tip-sd", type=float, default=None, help="override the tuned t
 ap.add_argument("--scalar-noise", action="store_true",
                 help="diagnostic: simulate with the scalar kappa/rho summaries the estimator uses (not per bin)")
 ap.add_argument("--out-name", default="v3_tuned", help="fragment name (diagnostic runs: use another name)")
+ap.add_argument("--pb-K", type=int, default=25, help="D29 parametric-bootstrap SIMEX correction (0 = plan)")
+ap.add_argument("--pb-Bs", type=int, default=20)
+ap.add_argument("--pb-design", choices=["tree", "x"], default="tree", help="D29 pseudo-world design D*")
+ap.add_argument("--noise-struct", choices=["pair", "edge"], default="edge",
+                help="E1 simulation: independent pair errors or edge-level (realised substitutions per edge, "
+                     "shared by all pairs through the edge) + pair remainder (default; real data are edge-dominated)")
+ap.add_argument("--se-at", choices=["obs", "true"], default="obs",
+                help="Fisher SE columns at the observed distance (production ML engine; default) or at the truth")
+ap.add_argument("--rho-mode", choices=["pair", "scalar"], default="pair",
+                help="SIMEX rho: per-pair rho(bin) (D29, default) or the scalar summary")
+ap.add_argument("--e4-cell-rule", choices=["info", "aa"], default="info", help="E4 cells: D30 (info) or plan (aa)")
 ap.add_argument("--skip-e1", action="store_true")
 ap.add_argument("--skip-e4", action="store_true")
 a = ap.parse_args()
@@ -81,7 +92,7 @@ for hf in bf.hogs:
     L = ncore[hf.pair_index]
     L = np.where(np.isfinite(L) & (L >= 20), L, np.nanmedian(L))
     designs.append({"hog": hf.hog, "S": hf.ht.species, "ia": hf.ia, "ib": hf.ib, "Daa": Daa, "r": r,
-                    "ok": hf.ok[ka] & hf.ok[kt], "L": L})
+                    "ok": hf.ok[ka] & hf.ok[kt], "L": L, "X": hf.X, "b": bn})
 rs = np.array([d["r"] for d in designs])
 r_med = float(np.nanmedian(rs))
 for d in designs:
@@ -106,8 +117,21 @@ def simulate(rng, c_true=1.0):
         z1 = rng.standard_normal(n); z2 = rr * z1 + np.sqrt(1 - rr ** 2) * rng.standard_normal(n)
         cols["hog"].append(np.full(n, f"{d['hog']}#{j}")); cols["species_a"].append(d["S"][d["ia"]])
         cols["species_b"].append(d["S"][d["ib"]]); cols["status"].append(np.where(d["ok"], "ok", "fail_cov"))
-        cols["aa_ml"].append(d["Daa"] + kx * sx * z1); cols["aa_ml_se"].append(sx)
-        cols["tdi_ml"].append(y_true + ky * sy * z2); cols["tdi_ml_se"].append(sy)
+        if a.noise_struct == "edge":
+            X = d["X"].astype(float); b = np.maximum(d["b"], 0.0); Lh = float(np.median(d["L"]))
+            ve_a = (kaa(b) * se_of("LG", b, Lh)) ** 2 * (b > 0)
+            ve_t = (ktd(b) * se_of("Q3Di", d["r"] * b, Lh)) ** 2 * (b > 0)
+            re_ = rh_(b)
+            za = rng.standard_normal(len(b)); zt = re_ * za + np.sqrt(1 - re_ ** 2) * rng.standard_normal(len(b))
+            ex_ = X @ (np.sqrt(ve_a) * za) + np.sqrt(np.maximum(0.0, (kx * sx) ** 2 - X @ ve_a)) * z1
+            ey_ = X @ (np.sqrt(ve_t) * zt) + np.sqrt(np.maximum(0.0, (ky * sy) ** 2 - X @ ve_t)) * z2
+        else:
+            ex_ = kx * sx * z1; ey_ = ky * sy * z2
+        xo = d["Daa"] + ex_; yo = y_true + ey_
+        if a.se_at == "obs":       # the ML engine reports the Fisher SE at the OBSERVED distance
+            sx = se_of("LG", np.maximum(xo, 0.0), d["L"]); sy = se_of("Q3Di", np.maximum(yo, 0.0), d["L"])
+        cols["aa_ml"].append(xo); cols["aa_ml_se"].append(sx)
+        cols["tdi_ml"].append(yo); cols["tdi_ml_se"].append(sy)
         cols["aa_ml_seq"].append(d["Daa"] + kx * sx * rng.standard_normal(n)); cols["len_a"].append(d["L"])
     t = {k: np.concatenate(v) for k, v in cols.items()}
     n = len(t["hog"])
@@ -122,17 +146,36 @@ kx_s, ky_s, rho_s = tuned["summary"]["kappa_aa"], tuned["summary"]["kappa_tdi"],
 def one(i, c_true=1.0, tag=0):
     rng = tc.tuning_rng("v3_tuned", tag, i)
     t = simulate(rng, c_true)
+    # driver convention: calibrated SE = kappa(bin of the observed aa_ml) x Fisher SE; engines get kx = ky = 1
+    xo = t["aa_ml"]
+    t["aa_ml_se"] = t["aa_ml_se"] * kaa(xo); t["tdi_ml_se"] = t["tdi_ml_se"] * ktd(xo)
     data, inf, idx, sp = prepare_curve_data(t, "E1")
-    res = fit_curve_full(data, 2 * nu, kx_s, ky_s, rho_s, B=a.B, B_s=a.Bs, B_s_boot=a.Bs_boot, B_naive=a.B,
-                         seed_stage="v3_sim", sp=sp, seed_extra=(500 + tag, i))
+    xd = None
+    if a.pb_K and a.pb_design == "tree":
+        import copy
+        hs = {}
+        for h, sa_, sb_ in zip(t["hog"], t["species_a"], t["species_b"]):
+            hs.setdefault(h, set()).update((int(sa_), int(sb_)))
+        bfx = fit_branches(t, panel, metrics=["aa_ml"], hog_species={h: np.array(sorted(v)) for h, v in hs.items()},
+                           misfit=False, display_nnls=False, se_method="model")
+        dc = copy.deepcopy(data); tree_x(bfx, dc, idx); xd = np.where(dc.w0 > 0, dc.x, data.x)
+    rho_use = rh_(xo[idx]) if a.rho_mode == "pair" else rho_s
+    res = fit_curve_full(data, 2 * nu, 1.0, 1.0, rho_use, B=a.B, B_s=a.Bs, B_s_boot=a.Bs_boot, B_naive=a.B,
+                         seed_stage="v3_sim", sp=sp, seed_extra=(500 + tag, i), pb_K=a.pb_K, pb_Bs=a.pb_Bs,
+                         x_design=xd)
     cls, p, ex = curve_decision(res["c"], res["se_boot"])
-    return {"c_naive": res["c_naive"], "c_simex": res["c"], "se": res["se_boot"], "class": cls,
+    return {"c_naive": res["c_naive"], "c_simex": res["c"], "c_simex_plan": res.get("c_simex_uncorrected", res["c"]),
+            "se": res["se_boot"], "class": cls,
             "n_pairs": inf["n_pairs_fit"], "n_hogs": inf["n_hogs"]}
 
 
 rec = tc.header(root, "v3_tuned", a)
 rec["noise"] = {"summary": tuned["summary"], "provisional": tuned["provisional"], "sources": tuned["sources"],
-                "kappa_rho_in_estimator": "scalar summaries (median over bins); simulation uses the per-bin values"}
+                "kappa_rho_in_estimator": ("kappa(bin of observed aa_ml) on the SE columns (driver convention); rho "
+                                           + ("per pair rho(bin)" if a.rho_mode == "pair" else "scalar summary")
+                                           + "; simulation uses per-bin values at the true distance"),
+                "se_columns_at": a.se_at, "noise_struct": a.noise_struct, "pb_K": a.pb_K, "pb_design": a.pb_design,
+                "e4_cell_rule": a.e4_cell_rule}
 rec["designs"] = {"n_real_hogs": nH, "hogs_per_dataset": n_per, "r_h_median": r_med,
                   "D_aa_quantiles": np.quantile(np.concatenate([d["Daa"] for d in designs]), [0.05, 0.5, 0.95]).tolist()}
 if not a.skip_e1:
@@ -145,6 +188,8 @@ if not a.skip_e1:
     e1 = {"n_datasets": a.n_datasets, "false_concave_rate": float(np.mean([c == "concave" for c in cls])),
           "class_counts": {k: cls.count(k) for k in set(cls)}, "mean_c_naive": float(cn.mean()),
           "mean_c_simex": float(cs.mean()), "sd_c_simex": float(cs.std(ddof=1)) if len(cs) > 1 else None,
+          "mean_c_simex_plan_uncorrected": float(np.mean([r["c_simex_plan"] for r in runs])),
+          "false_concave_rate_plan_uncorrected_same_se": float(np.mean([r["c_simex_plan"] + Z98 * r["se"] < 1 for r in runs])),
           "mean_se_boot": float(se.mean()), "coverage98_of_1": float(np.mean(np.abs(cs - 1) <= Z98 * se)),
           "mean_n_pairs": float(np.mean([r["n_pairs"] for r in runs])),
           "mean_n_hogs": float(np.mean([r["n_hogs"] for r in runs])), "runtime_s": t_e1,
@@ -198,7 +243,7 @@ if not a.skip_e4:
         w = world(rng, age_beta)
         t = tc.observe_world_tuned(w, tuned, rng)
         bfw = fit_branches(t, panel, metrics=["aa_ml", "tdi_ml"], nu={"tdi_ml": nu}, se_method="model", misfit=False)
-        r = run_E4(bfw, panel, B=a.beta_B, sensitivities=False)
+        r = run_E4(bfw, panel, B=a.beta_B, sensitivities=False, cell_rule=a.e4_cell_rule, tip_var=tuned["tip_sd"] ** 2)
         return r["estimate"], r["se_boot"], r["p_value"], r["n_units"]
 
     nulls = [e4_once(0.0, i, 0) for i in range(a.beta_datasets)]
@@ -207,12 +252,16 @@ if not a.skip_e4:
           "null_mean_beta": float(np.mean([b for b, *_ in nulls])), "null_mean_se": se0,
           "null_sd_beta": float(np.std([b for b, *_ in nulls], ddof=1)) if len(nulls) > 1 else None,
           "null_false_positive_rate_98": float(np.mean([p < 0.02 for *_, p, _ in nulls])),
+          "null_false_positive_rate_95": float(np.mean([p < 0.05 for *_, p, _ in nulls])),
+          "null_mean_abs_beta_over_se": float(np.mean([abs(b) / s for b, s, _, _ in nulls])),
+          "null_mean_beta_over_mean_se": float(np.mean([b for b, *_ in nulls]) / max(1e-12, np.mean([s for _, s, _, _ in nulls]))),
           "mean_n_cells": float(np.mean([n for *_, n in nulls])),
           "analytic_mde_abs_beta_hat": float((Z98 + norm.ppf(0.8)) * se0)}
     grid = {}
     for j, bt in enumerate(a.beta_grid):
         rr = [e4_once(bt, i, 10 + j) for i in range(a.beta_datasets)]
         grid[str(bt)] = {"detect_rate_98": float(np.mean([p < 0.02 for *_, p, _ in rr])),
+                         "detect_rate_95": float(np.mean([p < 0.05 for *_, p, _ in rr])),
                          "mean_beta_hat": float(np.mean([b for b, *_ in rr])),
                          "mean_se": float(np.mean([s for _, s, _, _ in rr]))}
         print(f"  age_beta={bt}: detect {grid[str(bt)]['detect_rate_98']:.2f} beta_hat {grid[str(bt)]['mean_beta_hat']:.4f}", flush=True)

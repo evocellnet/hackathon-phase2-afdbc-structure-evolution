@@ -37,10 +37,13 @@ ap.add_argument("--spike_reps", type=int, default=20, help="spike-in replicates 
 ap.add_argument("--triplets", type=int, default=400)
 ap.add_argument("--spike_f", type=float, default=1.5)
 ap.add_argument("--min_t_snr", type=float, default=None, help="proposed deviation D8 (plan: None)")
+ap.add_argument("--pb-K", type=int, default=25, help="D29 SIMEX parametric-bootstrap correction (0 = plan)")
+ap.add_argument("--cell-rule", choices=["info", "aa"], default="info", help="E4 cells (D30 info = adopted)")
 ap.add_argument("--out", default=str(ROOT / "results" / "verify" / "V4.json"))
 a = ap.parse_args()
 t0 = time.time()
 NU = 0.02
+TIP_SD = 0.01
 outdir = ROOT / "results" / "verify" / "V4_endpoints"
 rng = stage_rng("v4_sim", 0)
 panel = random_panel(a.species, rng=rng)
@@ -51,7 +54,7 @@ RHO = 0.0 if a.obs == "counts" else 0.3          # counts: independent AA/3Di dr
 def world_and_fit(spike_frac=0.0, seed_extra=0):
     r = stage_rng("v4_sim", 1)                                  # same world draws for N0 and spike
     w = make_world(panel, a.hogs, rng=r, spike_frac=spike_frac, spike_f=a.spike_f)
-    tab = obs(w, rng=stage_rng("v4_sim", 2, seed_extra), nu_tdi=NU, tip_sd=0.01)
+    tab = obs(w, rng=stage_rng("v4_sim", 2, seed_extra), nu_tdi=NU, tip_sd=TIP_SD)
     bf = fit_branches(tab, panel, metrics=["aa_ml", "tdi_ml"], nu={"tdi_ml": NU}, se_method="model", misfit=True)
     return w, tab, bf
 
@@ -64,14 +67,14 @@ res["n_pairs"] = int(len(tab["hog"])); res["frac_sat_tdi"] = float(np.mean(tab["
 # ---------------- E1
 t = time.time()
 rec1, curve, _ = run_curve_endpoint(tab, "E1", eta=2 * NU, kx=1.0, ky=1.0, rho=RHO, B=a.B1, B_s=a.Bs, B_s_boot=5,
-                                     B_naive=a.B1, v3_false_concave=None)
+                                     B_naive=a.B1, v3_false_concave=None, bf=bf, pb_K=a.pb_K)   # D29 PB correction
 write_json(rec1, outdir / "E1.json"); res["timing"]["E1_s"] = time.time() - t
 # ---------------- E3
 t = time.time()
 rec3 = run_E3(bf, panel, B=a.B); write_json(rec3, outdir / "E3.json"); res["timing"]["E3_s"] = time.time() - t
 # ---------------- E4
 t = time.time()
-rec4 = run_E4(bf, panel, B=a.B4, sensitivities=False); write_json(rec4, outdir / "E4.json"); res["timing"]["E4_s"] = time.time() - t
+rec4 = run_E4(bf, panel, B=a.B4, sensitivities=False, cell_rule=a.cell_rule, tip_var=TIP_SD ** 2); write_json(rec4, outdir / "E4.json"); res["timing"]["E4_s"] = time.time() - t
 # ---------------- E6 (N0 paralogs)
 t = time.time()
 trip, ppairs = make_triplets(w, a.triplets, rng=stage_rng("v4_sim", 3), nu_tdi=NU)
@@ -85,7 +88,7 @@ holm = apply_holm(outdir); interp = write_interpretation(outdir)
 # ---------------- spike world
 t = time.time()
 ws, tabs, bfs = world_and_fit(spike_frac=0.10, seed_extra=1)
-rec4s = run_E4(bfs, panel, B=max(20, a.B4 // 4), sensitivities=False)
+rec4s = run_E4(bfs, panel, B=max(20, a.B4 // 4), sensitivities=False, cell_rule=a.cell_rule, tip_var=TIP_SD ** 2)
 rec5s, _, cores = run_E5(bfs, panel, rec4s, rho=RHO, nu_t=NU, P=a.P, B=a.B, B_cv=min(200, a.B), spike_reps=0,
                          spike_fs=(), power_override=1.0, min_t_snr=a.min_t_snr)
 res["timing"]["spike_world_s"] = time.time() - t
@@ -98,10 +101,12 @@ res["timing"]["dup_world_s"] = time.time() - t
 
 cov = lambda ci, v: bool(ci[0] <= v <= ci[1])
 res["E1"] = {"c": rec1["estimate"], "ci98": rec1["ci98"], "c_naive": rec1["c_naive"], "decision": rec1["decision"],
+             "c_simex_plan": rec1.get("c_simex_plan"), "pb_bias": rec1.get("pb_bias"),
              "covers_1": cov(rec1["ci98"], 1.0), "n_pairs": rec1["n_units"], "n_hogs": rec1["n_hogs"], "flags": rec1["flags"]}
 res["E3"] = {"k": rec3["estimate"], "ci98": rec3["ci98"], "true_k": true_k, "covers_true": cov(rec3["ci98"], true_k),
              "sigma_k": rec3["sigma_k"], "true_sigma_k_approx": 0.3}
 res["E4"] = {"beta": rec4["estimate"], "ci98": rec4["ci98"], "covers_0": cov(rec4["ci98"], 0.0), "p": rec4["p_value"],
+             "cell_rule": rec4.get("cell_rule"), "censored_frac": rec4.get("censored_frac"),
              "flags": rec4["flags"], "n_cells": rec4["n_units"]}
 res["E5"] = {"beta": rec5["estimate"], "beta_ci98": rec5["ci98"], "beta_ci98_hog_only": rec5["beta_ci98_hog_only"], "sigma2_L": rec5["sigma2_L"],
              "sigma_L_upper99": rec5["one_sided_bound"]["sigma_L_upper99"], "floor_F": rec5["floor_F"],

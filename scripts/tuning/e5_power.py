@@ -44,7 +44,7 @@ rho = tuned["summary"]["rho_tdi"]
 
 def e5_power_block(bf, panel, label, stage_off):
     t = time.time()
-    e4 = run_E4(bf, panel, tau_misfit=tau, B=a.e4_B, sensitivities=False)
+    e4 = run_E4(bf, panel, tau_misfit=tau, B=a.e4_B, sensitivities=False, tip_var=tuned["tip_sd"] ** 2)
     fe = {"mu": e4["mu"], "gamma": e4["gamma"], "x_center": e4["x_center"], "z_center": e4["z_center"],
           "beta": e4["estimate"]}
     ev = edge_view(bf, panel, tau_misfit=tau)

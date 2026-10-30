@@ -1,29 +1,29 @@
 {
   "endpoint": "E3",
   "estimand": "k = sum b_AA / sum b_3Di (tip-corrected, all edges, ratio of sums)",
-  "estimate": 2.742006179353393,
-  "se_boot": 0.015152047610292868,
+  "estimate": 2.7860940929515383,
+  "se_boot": 0.03725737319515747,
   "ci98": [
-    2.7069391381120735,
-    2.777527496556852
+    2.700683827994759,
+    2.874205493555656
   ],
   "ci_pct98": [
-    2.7033935411413457,
-    2.7730877372190474
+    2.700961375215483,
+    2.866498014083857
   ],
   "one_sided_bound": null,
   "p_value": null,
   "p_holm": null,
   "decision": "estimation_only",
-  "n_hogs": 5000,
-  "n_units": 106388,
+  "n_hogs": 1000,
+  "n_units": 21459,
   "n_excluded": {},
   "sensitivity": {
     "internal_edges_only": {
-      "estimate": 2.7425714560914174,
+      "estimate": 2.760137555402485,
       "ci98": [
-        2.701389977777236,
-        2.7843807275676724
+        2.6742414980762192,
+        2.8487925754737025
       ],
       "decision": null
     }
@@ -31,18 +31,18 @@
   "alignment_robust": null,
   "flags": [],
   "plan_md5": "23e1bb17b1dfe5803cb9da394391a298",
-  "tuning_md5": null,
-  "commit": "faba7e4ea37fd10736b8325d18e27fb12fdc81b6",
-  "input_md5": "220bd508013bb7b2fa6d0e7c8e0b75e8",
-  "sigma_k": 0.3070689873360947,
-  "sigma2_k": 0.09429136298361471,
+  "tuning_md5": "8b986dab128397fef7c084501ed80dfa",
+  "commit": "df2161c14547e5524eccd59476c95e81d959c968",
+  "input_md5": "037e6008be9a481bf3d6a75bbe74e091",
+  "sigma_k": 0.3125681575987886,
+  "sigma2_k": 0.09769885314470114,
   "sigma_k_ci98": [
-    0.1286214843859164,
-    0.4855164902862731
+    0.19095714822119292,
+    0.43417916697638426
   ],
   "ci98_overlaps_3_10": false,
   "cath_contrast": null,
   "B": 300,
-  "runtime_s": 2.1469566822052,
-  "r_ratio": 0.36469647936235333
+  "runtime_s": 0.4698638916015625,
+  "r_ratio": 0.3589254227019368
 }

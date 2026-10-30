@@ -35,8 +35,8 @@ tau = tc.tau_from_fragment(root)
 
 
 def per_rep(bf, panel, b1, b2):
-    t = time.time(); r1 = run_E4(bf, panel, tau_misfit=tau, B=b1, sensitivities=False); t1 = time.time() - t
-    t = time.time(); r2 = run_E4(bf, panel, tau_misfit=tau, B=b2, sensitivities=False); t2 = time.time() - t
+    t = time.time(); r1 = run_E4(bf, panel, tau_misfit=tau, B=b1, sensitivities=False, tip_var=tuned["tip_sd"] ** 2); t1 = time.time() - t
+    t = time.time(); r2 = run_E4(bf, panel, tau_misfit=tau, B=b2, sensitivities=False, tip_var=tuned["tip_sd"] ** 2); t2 = time.time() - t
     pr = max((t2 - t1) / (b2 - b1), 1e-6)
     return {"per_rep_s": pr, "point_s": max(t1 - b1 * pr, 0.0), "t_B1_s": t1, "t_B2_s": t2, "B1": b1, "B2": b2,
             "n_hogs": r2["n_hogs"], "n_cells": r2["n_units"], "beta": r2["estimate"], "se_boot_smallB": r2["se_boot"],

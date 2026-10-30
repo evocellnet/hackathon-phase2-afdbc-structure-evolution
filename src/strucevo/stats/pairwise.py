@@ -200,10 +200,24 @@ def two_pass(engine: CurveEngine, wmult=None, fixed_s2=None):
     return {"c": c, "boundary": boundary, "s2": s2, "w": w2, "a_h": engine.a_h(c, w=w2).cpu().numpy(), "Qmin": qmin}
 
 
+@dataclass
+class TreeX:
+    """Error structure of the tree-smoothed regressor x_hat = X_h b_hat_AA (DEVIATION D29).
+    L: (H, p, p) square roots of V_h = Cov(b_hat_AA) (padded with zeros); Xrow: (n, p) path-incidence rows of the
+    curve pairs (padded); sd: (n,) SD of x_hat; rho_scale: (n,) Corr(x_hat error, own AA error) so that the y noise
+    gets Corr(e_x_hat, e_y) = rho * rho_scale (own-pair term of the hat matrix)."""
+    L: object
+    Xrow: object
+    sd: object
+    rho_scale: object
+
+
 def simex(engine: CurveEngine, w, c0, kx=1.0, ky=1.0, rho=0.0, lambdas=LAMBDAS, B_s=50, rng=None,
-          window=0.3, batch=None):
+          window=0.3, batch=None, xtree: TreeX | None = None, clip_mode="clip"):
     """SIMEX for c (quadratic extrapolant to lambda=-1). w: pass-2 weights (tensor, incl. bootstrap mult).
     kx, ky, rho: scalars or per-pair arrays (n,) (per-pair Sigma_ij, ANALYSIS_PLAN §4.1).
+    xtree: if given, x is the tree-smoothed AA distance and its remeasurement noise is drawn with its exact
+    within-HOG covariance X_h V_h X_h' (b* = b_hat + sqrt(lambda) L_h zeta); sx/kx are then ignored.
     Returns dict(c_simex, c_lambda, n_clip, boundary_any)."""
     rng = np.random.default_rng(rng)
     dev = engine.dev
@@ -217,21 +231,34 @@ def simex(engine: CurveEngine, w, c0, kx=1.0, ky=1.0, rho=0.0, lambdas=LAMBDAS, 
              else math.sqrt(max(0.0, 1 - rho * rho)))
     win = None if window is None else (max(GRID[0], c0 - window), min(GRID[-1], c0 + window))
     c_lam, n_clip, bnd = [], 0, False
+    if xtree is not None:
+        p = xtree.L.shape[-1]
+        batch = batch or max(1, min(B_s, int(6e7 // max(1, n * p))))
+        rho_t = rho * xtree.rho_scale
+        rho_tc = torch.sqrt(torch.clamp(1 - rho_t * rho_t, min=0.0))
     batch = batch or B_s
     for lam in lambdas:
         vals = []
         for s in range(0, B_s, batch):
             R = min(batch, B_s - s)
-            z1 = torch.as_tensor(rng.standard_normal((R, n)), dtype=torch.float64, device=dev)
             z2 = torch.as_tensor(rng.standard_normal((R, n)), dtype=torch.float64, device=dev)
-            ex = math.sqrt(lam) * sx * z1
-            ey = math.sqrt(lam) * sy * (rho * z1 + rho_c * z2)
+            if xtree is None:
+                z1 = torch.as_tensor(rng.standard_normal((R, n)), dtype=torch.float64, device=dev)
+                ex = math.sqrt(lam) * sx * z1
+                ey = math.sqrt(lam) * sy * (rho * z1 + rho_c * z2)
+            else:
+                zeta = torch.as_tensor(rng.standard_normal((R,) + tuple(xtree.L.shape[:2])), dtype=torch.float64, device=dev)
+                u = torch.einsum("hkl,rhl->rhk", xtree.L, zeta)                   # (R,H,p) edge-parameter errors
+                z1 = (xtree.Xrow[None] * u[:, engine.g, :]).sum(-1) / xtree.sd   # standardised x_hat errors
+                ex = math.sqrt(lam) * xtree.sd * z1
+                ey = math.sqrt(lam) * sy * (rho_t * z1 + rho_tc * z2)
             xs = engine.x + ex
             clip = xs < 1e-4
             n_clip += int((clip & (engine.w0 > 0)).sum())
             xs = torch.clamp(xs, min=1e-4)
             ys = engine.y + ey
-            c, b = fit_batch(engine, x=xs, y=ys, w=w, window=win)
+            wr = w if clip_mode == "clip" else torch.where(clip, torch.zeros_like(xs), w if w.dim() == 2 else w[None].expand(R, -1))
+            c, b = fit_batch(engine, x=xs, y=ys, w=wr, window=win)
             bnd |= bool(b.any())
             vals.append(c)
         c_lam.append(float(np.mean(np.concatenate(vals))))
@@ -285,3 +312,48 @@ def reference_fit(g, x, y, w, eta, grid=GRID):
     r = minimize_scalar(Q, bounds=(grid[max(i - 1, 0)], grid[min(i + 1, len(grid) - 1)]), method="bounded",
                         options={"xatol": 1e-10})
     return float(r.x)
+
+
+# ------------------------------------------------------------------------------------------ D29: SIMEX bias correction
+def simex_pb_correction(engine: CurveEngine, fit2: dict, c_simex: float, kx=1.0, ky=1.0, rho=0.0, K=25, B_s=20,
+                        rng=None, lambdas=LAMBDAS, window=0.3, x_design=None):
+    """DEVIATION D29 (agents/bias_fix_report.md): parametric-bootstrap correction of the residual SIMEX bias.
+
+    The quadratic SIMEX extrapolant under-corrects when the naive attenuation is large (realistic AA SEs). Pseudo
+    worlds take the fitted model as the truth: D* = observed x (design), y* mean = eta + a_h(c_S) x^c_S with
+    c_S = the SIMEX estimate; observation noise = the calibrated per-pair Sigma_ij (same kx, ky, rho as SIMEX) plus
+    N(0, s2) on y. Each pseudo data set is re-estimated with the identical estimator (two-pass + SIMEX, B_s).
+    bias = mean(c*_S) - c_S ; c_corrected = c_S - bias. Returns dict(c_corrected, bias, mc_se, reps).
+    The correction is computed once on the full data and held fixed in bootstrap replicates (as the pass-2
+    weights, D5); its Monte-Carlo SE is added in quadrature to the bootstrap SE by the caller."""
+    rng = np.random.default_rng(rng)
+    dev = engine.dev
+    d = engine.d
+    _t = lambda v: (torch.as_tensor(np.asarray(v, float), dtype=torch.float64, device=dev) if np.ndim(v) else float(v))
+    kx_, ky_, rho_ = _t(kx), _t(ky), _t(rho)
+    sx = engine.sx * kx_
+    sy = engine.sy * ky_
+    rho_c = torch.sqrt(torch.clamp(1 - rho_ * rho_, min=0.0)) if torch.is_tensor(rho_) else math.sqrt(max(0.0, 1 - rho_ ** 2))
+    cS = float(min(max(c_simex, GRID[0]), GRID[-1]))
+    ah = engine.a_h(cS, w=fit2["w"])
+    xd = engine.x if x_design is None else torch.as_tensor(np.asarray(x_design, float), dtype=torch.float64, device=dev)
+    mu = engine.eta + ah[engine.g] * torch.exp(cS * torch.log(xd))
+    s2 = float(fit2["s2"])
+    elig = engine.w0 > 0
+    reps = []
+    for k in range(K):
+        z1 = torch.as_tensor(rng.standard_normal(engine.n), dtype=torch.float64, device=dev)
+        z2 = torch.as_tensor(rng.standard_normal(engine.n), dtype=torch.float64, device=dev)
+        z3 = torch.as_tensor(rng.standard_normal(engine.n), dtype=torch.float64, device=dev)
+        xs = torch.clamp(xd + sx * z1, min=1e-4)
+        ys = mu + sy * (rho_ * z1 + rho_c * z2) + math.sqrt(s2) * z3
+        xs = torch.where(elig, xs, engine.x); ys = torch.where(elig, ys, engine.y)
+        dd = CurveData(g=d.g, x=xs.cpu().numpy(), y=ys.cpu().numpy(), sx=d.sx, sy=d.sy, w0=d.w0, eta=engine.eta, H=d.H)
+        e2 = CurveEngine(dd, device=dev)
+        f2 = two_pass(e2)
+        sm = simex(e2, f2["w"], f2["c"], kx=kx, ky=ky, rho=rho, lambdas=lambdas, B_s=B_s, rng=rng, window=window)
+        reps.append(sm["c_simex"])
+    reps = np.asarray(reps)
+    bias = float(reps.mean() - cS)
+    return {"c_corrected": float(c_simex - bias), "bias": bias, "mc_se": float(reps.std(ddof=1) / math.sqrt(K)),
+            "reps": reps, "K": K, "B_s": B_s}

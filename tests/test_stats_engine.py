@@ -249,3 +249,32 @@ def test_interpret_rows():
     assert interpret(d)["row_ids"] == ["none"]
     assert "R4_E4neg" in interpret({"E1": "concave", "E4": "beta_k_lt_0", "E5": "inconclusive"})["row_ids"]
     assert "R5_N0_rejected_robust" in interpret({"E1": "linear", "E4": "beta_k_approx_0", "E5": "N0_rejected"})["row_ids"]
+
+
+# ------------------------------------------------------------------ bias fixes D29 / D30 (agents/bias_fix_report.md)
+def test_simex_per_pair_arrays_equal_scalars():
+    from strucevo.stats.pairwise import simex
+    d = _curve_data(c=1.0, noise=1e-2)
+    e = CurveEngine(d)
+    f = two_pass(e)
+    n = len(d.x)
+    s1 = simex(e, f["w"], f["c"], kx=1.2, ky=0.9, rho=0.3, B_s=4, rng=1)
+    s2 = simex(e, f["w"], f["c"], kx=np.full(n, 1.2), ky=np.full(n, 0.9), rho=np.full(n, 0.3), B_s=4, rng=1)
+    assert abs(s1["c_simex"] - s2["c_simex"]) < 1e-6
+
+
+def test_cell_info_rule_merges_low_information_cells():
+    p = panel()
+    child = np.array([p.index["1"], p.index["2"], p.index["D"]])
+    parent = np.array([p.index["A"], p.index["A"], p.index["R"]])
+    ev = EdgeView(hog_code=np.zeros(3, int), hog_ids=np.array(["h"]), child=child, parent=parent,
+                  is_terminal=np.array([True, True, False]), simple=np.ones(3, bool), b_aa=np.array([0.05, 0.05, 0.3]),
+                  b_t=np.array([0.02, 0.01, 0.1]), se_aa=np.full(3, 0.01), se_t=np.full(3, 0.002), cov=np.zeros(3),
+                  span_ptr=np.arange(4), span_edges=child, hog_var_aa=np.ones(1), hog_var_t=np.ones(1), hog_cov=np.zeros(1),
+                  n_excluded={})
+    c_plan = build_cells(ev, p.age)                    # AA rule: bin-0 S_AA = 0.10 >= 0.05 -> two cells
+    assert len(c_plan["hog"]) == 2
+    c_info = build_cells(ev, p.age, rule="info", info_T=4.0, tip_var=0.03 ** 2)   # tip noise -> merged
+    assert len(c_info["hog"]) == 1 and np.isclose(c_info["S_aa"][0], 0.40)
+    c_info0 = build_cells(ev, p.age, rule="info", info_T=4.0, tip_var=0.0, r_bar=0.4)  # precise -> kept
+    assert len(c_info0["hog"]) == 2

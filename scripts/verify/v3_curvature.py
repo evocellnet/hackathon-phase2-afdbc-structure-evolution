@@ -5,6 +5,10 @@ realistic ML-engine SEs, correlated x/y errors (kappa, rho), per-protein tip noi
 SIMEX, pigeonhole bootstrap, decision rules). Reports the false-concave rate (pass: <= 10%; otherwise E1/E2 are
 'inconclusive') and the minimal detectable |c-1| at 80% power from concave-truth worlds.
 Placeholder noise kappa=1, rho=0.3 until §Tuning; rerun with --kappa/--rho/--nu/--tip_sd once measured.
+2026-10-30 (D29, agents/bias_fix_report.md): default estimator = plan SIMEX + parametric-bootstrap bias correction
+(pseudo-world design = tree-smoothed AA distance); Fisher SE columns are recomputed at the OBSERVED distances (as
+the ML engine reports them) and calibrated (x kappa) before the engines (driver convention, kx = ky = 1).
+--pb-K 0 reproduces the plan's estimator. The production V3 is scripts/tuning/v3_tuned.py (real designs).
 """
 import argparse, json, sys, time, warnings
 from pathlib import Path
@@ -14,7 +18,9 @@ sys.path.insert(0, str(ROOT / "src"))
 warnings.simplefilter("ignore")
 from strucevo.stats.common import stage_rng, write_json, Z98
 from strucevo.stats.synth import random_panel, make_world, observe_gauss
-from strucevo.stats.endpoints_curve import prepare_curve_data, fit_curve_full, curve_decision
+from strucevo.stats.endpoints_curve import prepare_curve_data, fit_curve_full, curve_decision, tree_x
+from strucevo.stats.synth import se_of
+from strucevo.stats.branch import fit_branches
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--datasets", type=int, default=100)
@@ -26,8 +32,11 @@ ap.add_argument("--tip_sd", type=float, default=0.01)
 ap.add_argument("--B", type=int, default=30, help="bootstrap reps (plan: 200)")
 ap.add_argument("--Bs", type=int, default=20, help="SIMEX B_s (plan: 50)")
 ap.add_argument("--Bs_boot", type=int, default=5, help="SIMEX B_s inside bootstrap (plan: 10)")
-ap.add_argument("--power_c", type=float, nargs="*", default=[0.97, 0.94, 0.90])
+ap.add_argument("--power_c", type=float, nargs="*", default=[0.97, 0.94, 0.90, 0.80])
 ap.add_argument("--power_datasets", type=int, default=20)
+ap.add_argument("--pb-K", type=int, default=20)
+ap.add_argument("--pb-design", choices=["tree", "x"], default="tree")
+ap.add_argument("--se-at", choices=["obs", "true"], default="obs")
 ap.add_argument("--out", default=str(ROOT / "results" / "verify" / "V3.json"))
 a = ap.parse_args()
 t0 = time.time()
@@ -38,11 +47,22 @@ def one(i, c_true=None, tag=0):
     r = stage_rng("v3_sim", 1 + tag, i)
     w = make_world(panel, a.hogs, rng=r)
     tab = observe_gauss(w, rng=r, kappa=a.kappa, rho=a.rho, nu_tdi=a.nu, tip_sd=a.tip_sd, c_true=c_true)
+    if a.se_at == "obs":
+        tab["aa_ml_se"] = se_of("LG", np.maximum(tab["aa_ml"], 0), tab["len_a"])
+        tab["tdi_ml_se"] = se_of("Q3Di", np.maximum(tab["tdi_ml"], 0), tab["len_a"])
+    tab["aa_ml_se"] = tab["aa_ml_se"] * a.kappa; tab["tdi_ml_se"] = tab["tdi_ml_se"] * a.kappa   # calibrated SEs
     data, info, idx, sp = prepare_curve_data(tab, "E1")
-    res = fit_curve_full(data, 2 * a.nu, a.kappa, a.kappa, a.rho, B=a.B, B_s=a.Bs, B_s_boot=a.Bs_boot, B_naive=a.B,
-                         seed_stage="v3_sim", sp=sp, seed_extra=(100 + tag, i))
+    xd = None
+    if a.pb_K and a.pb_design == "tree":
+        import copy
+        bf = fit_branches(tab, panel, metrics=["aa_ml"], hog_species=w.species, misfit=False, display_nnls=False,
+                          se_method="model")
+        dc = copy.deepcopy(data); tree_x(bf, dc, idx); xd = np.where(dc.w0 > 0, dc.x, data.x)
+    res = fit_curve_full(data, 2 * a.nu, 1.0, 1.0, a.rho, B=a.B, B_s=a.Bs, B_s_boot=a.Bs_boot, B_naive=a.B,
+                         seed_stage="v3_sim", sp=sp, seed_extra=(100 + tag, i), pb_K=a.pb_K, x_design=xd)
     cls, p, ex = curve_decision(res["c"], res["se_boot"])
-    return {"c_naive": res["c_naive"], "c_simex": res["c"], "se": res["se_boot"], "class": cls,
+    return {"c_naive": res["c_naive"], "c_simex": res["c"], "c_simex_plan": res.get("c_simex_uncorrected", res["c"]),
+            "se": res["se_boot"], "class": cls,
             "n_pairs": info["n_pairs_fit"], "n_clip": res.get("n_clip", 0)}
 
 
@@ -53,6 +73,7 @@ res = {"check": "V3", "settings": vars(a), "n_datasets": a.datasets,
        "false_concave_rate": float(np.mean([c == "concave" for c in cls])),
        "class_counts": {k: cls.count(k) for k in set(cls)},
        "mean_c_naive": float(cn.mean()), "mean_c_simex": float(cs.mean()), "sd_c_simex": float(cs.std(ddof=1)),
+       "mean_c_simex_plan_uncorrected": float(np.mean([r["c_simex_plan"] for r in runs])),
        "mean_se_boot": float(se.mean()), "coverage98_of_1": float(np.mean(np.abs(cs - 1) <= Z98 * se)),
        "mean_n_pairs": float(np.mean([r["n_pairs"] for r in runs]))}
 power = {}

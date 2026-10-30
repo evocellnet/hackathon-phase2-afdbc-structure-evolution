@@ -9,7 +9,7 @@ import torch
 from scipy.stats import norm
 
 from .common import (Z98, guard_split, endpoint_record, normal_ci, pct_ci, stage_rng, md5_arrays)
-from .pairwise import (CurveData, CurveEngine, two_pass, simex, fit_batch, fit_eta_free, reference_fit,
+from .pairwise import (CurveData, CurveEngine, two_pass, simex, fit_batch, fit_eta_free, reference_fit, simex_pb_correction,
                        weighted_median, GRID, LAMBDAS)
 from .bootstrap import multinomial_weights
 
@@ -80,6 +80,57 @@ def prepare_curve_data(tab, endpoint="E1", excluded_hogs=(), x_range=(0.05, 2.0)
     return data, info, idx, sp
 
 
+def tree_x(bf, data: CurveData, idx, device=None, metric="aa_ml"):
+    """DEVIATION D29: replace x = aa_ml by the tree-smoothed AA distance x_hat = X_h b_hat_AA of the HOG's branch
+    fit (pass-2 WLS, calibrated SEs + s2_hm; same fit as E3-E5), and return its error structure for SIMEX.
+    idx: row indices (into the pair table the BranchFit was built from) of the curve pairs (prepare_curve_data).
+    Pairs of HOGs without an AA fit (underdetermined) or with x_hat <= 0 get weight 0 (counted).
+    Modifies `data` in place (x, sx, w0); returns (TreeX, info)."""
+    from .pairwise import TreeX, _dev
+    dev = _dev(device)
+    k = bf.metrics.index(metric)
+    by = {hf.hog: hf for hf in bf.hogs}
+    n = len(data.x)
+    pmax = max([hf.X.shape[1] for hf in bf.hogs] + [1])
+    Lp = np.zeros((data.H, pmax, pmax)); Xr = np.zeros((n, pmax))
+    xh = np.full(n, np.nan); sd = np.full(n, np.nan); rs = np.zeros(n)
+    rowpos = {}
+    for hf in bf.hogs:
+        for j, r in enumerate(hf.pair_index):
+            rowpos[int(r)] = j
+    n_nofit = 0
+    for h, hid in enumerate(data.hog_ids):
+        hf = by.get(str(hid))
+        sel = np.flatnonzero(data.g == h)
+        if hf is None or hf.fit["under"][k] or not np.all(np.isfinite(hf.fit["b"][k])):
+            n_nofit += len(sel); continue
+        A = hf.fit["A"][k]; wv = hf.fit["w"][k]; p = A.shape[0]
+        okc = wv > 0
+        V = (A[:, okc] / wv[okc]) @ A[:, okc].T
+        ev_, Q = np.linalg.eigh(0.5 * (V + V.T))
+        Lp[h, :p, :p] = Q * np.sqrt(np.clip(ev_, 0, None))
+        pos = np.array([rowpos.get(int(r), -1) for r in idx[sel]])
+        good = pos >= 0
+        Xc = hf.X[pos[good]]
+        ss = sel[good]
+        Xr[ss, :p] = Xc
+        xh[ss] = Xc @ hf.fit["b"][k]
+        sd[ss] = np.sqrt(np.einsum("ij,jk,ik->i", Xc, V, Xc))
+        own = np.einsum("ij,ji->i", Xc, A[:, pos[good]])                      # hat-matrix own-pair element
+        sig_d = np.sqrt(np.where(wv[pos[good]] > 0, 1 / np.where(wv[pos[good]] > 0, wv[pos[good]], 1), 0.0))
+        rs[ss] = np.clip(own * sig_d / np.where(sd[ss] > 0, sd[ss], 1), -1, 1)
+        n_nofit += int((~good).sum())
+    bad = ~(np.isfinite(xh) & (xh > 0) & np.isfinite(sd) & (sd > 0))
+    n_nonpos = int((bad & (data.w0 > 0) & np.isfinite(xh)).sum())
+    data.w0 = np.where(bad, 0.0, data.w0)
+    data.x = np.where(bad, 1.0, xh)
+    data.sx = np.where(bad, 1.0, sd)
+    t = lambda a: torch.as_tensor(a, dtype=torch.float64, device=dev)
+    tx = TreeX(L=t(Lp), Xrow=t(Xr), sd=t(np.where(bad, 1.0, sd)), rho_scale=t(np.where(bad, 0.0, rs)))
+    return tx, {"x_tree_n_nofit": int(n_nofit), "x_tree_n_nonpositive": n_nonpos,
+                "x_tree_median_sd_ratio": float(np.nanmedian(sd[~bad] / np.maximum(xh[~bad], 1e-9))) if (~bad).any() else None}
+
+
 def curve_decision(c, se, v3_false_concave=None):
     ci = normal_ci(c, se)
     lo99, hi99 = c - Z98 * se, c + Z98 * se
@@ -106,8 +157,10 @@ def _species_codes(sp_a, sp_b):
 
 def fit_curve_full(data: CurveData, eta, kx=1.0, ky=1.0, rho=0.0, B=200, B_s=50, B_s_boot=10, B_naive=1000,
                    seed_stage="bootstrap_E1", sp=None, device=None, window=0.3, simex_on=True, verbose=False,
-                   seed_extra=()):
-    """Point estimate (two-pass + SIMEX) and pigeonhole bootstrap. Returns dict."""
+                   seed_extra=(), xtree=None, pb_K=0, pb_Bs=20, x_design=None):
+    """Point estimate (two-pass + SIMEX [+ D29 parametric-bootstrap bias correction]) and pigeonhole bootstrap.
+    pb_K > 0: c = c_SIMEX - bias_PB (simex_pb_correction, design x_design or x); bootstrap replicates are shifted
+    by the same (fixed) correction and SE = sqrt(SE_boot^2 + MC_SE^2). Returns dict."""
     data.eta = float(eta)
     eng = CurveEngine(data, device=device)
     t0 = time.time()
@@ -115,10 +168,18 @@ def fit_curve_full(data: CurveData, eta, kx=1.0, ky=1.0, rho=0.0, B=200, B_s=50,
     out = {"c_naive": f["c"], "s2": f["s2"], "boundary_naive": f["boundary"], "a_h_naive": f["a_h"]}
     rng = stage_rng(seed_stage, *seed_extra, 0)
     if simex_on:
-        sm = simex(eng, f["w"], f["c"], kx=kx, ky=ky, rho=rho, B_s=B_s, rng=rng, window=window)
+        sm = simex(eng, f["w"], f["c"], kx=kx, ky=ky, rho=rho, B_s=B_s, rng=rng, window=window, xtree=xtree)
         out.update({"c_simex": sm["c_simex"], "c_lambda": sm["c_lambda"], "n_clip": sm["n_clip"],
                     "simex_boundary": sm["boundary_any"]})
         c_hat = sm["c_simex"]
+        pb_bias, pb_mc = 0.0, 0.0
+        if pb_K:
+            pb = simex_pb_correction(eng, f, sm["c_simex"], kx=kx, ky=ky, rho=rho, K=pb_K, B_s=pb_Bs,
+                                     rng=stage_rng(seed_stage, *seed_extra, 2), window=window, x_design=x_design)
+            pb_bias, pb_mc = pb["bias"], pb["mc_se"]
+            out.update({"c_simex_uncorrected": sm["c_simex"], "pb_bias": pb_bias, "pb_mc_se": pb_mc, "pb_K": pb_K,
+                        "pb_Bs": pb_Bs, "pb_design": "tree" if x_design is not None else "x"})
+            c_hat = pb["c_corrected"]
     else:
         c_hat = f["c"]
     out["c"] = c_hat
@@ -142,14 +203,16 @@ def fit_curve_full(data: CurveData, eta, kx=1.0, ky=1.0, rho=0.0, B=200, B_s=50,
             reps_naive.append(cn[0])
         if b < B and simex_on:
             sm = simex(eng, wb, cn[0] if b < B_naive else fit_batch(eng, w=wb)[0][0], kx=kx, ky=ky, rho=rho,
-                       B_s=B_s_boot, rng=brng, window=window)
+                       B_s=B_s_boot, rng=brng, window=window, xtree=xtree)
             reps.append(sm["c_simex"])
         if verbose and b % 50 == 0:
             print(f"   boot {b}  {time.time() - t0:.1f}s", flush=True)
     reps = np.asarray(reps if simex_on else reps_naive[:B])
+    if simex_on and pb_K:
+        reps = reps - pb_bias                      # fixed correction (held, like the pass-2 weights, D5)
     out["reps"] = reps
     out["reps_naive"] = np.asarray(reps_naive)
-    out["se_boot"] = float(np.std(reps, ddof=1))
+    out["se_boot"] = float(np.sqrt(np.std(reps, ddof=1) ** 2 + (pb_mc ** 2 if simex_on and pb_K else 0.0)))
     out["se_boot_naive"] = float(np.std(reps_naive, ddof=1))
     out["runtime_s"] = time.time() - t0
     out["engine"] = eng
@@ -202,14 +265,35 @@ def d_star_boot(x, y_raw, w, g, H, eta_raw, sp, B=200, seed_stage="bootstrap_E2"
 
 def run_curve_endpoint(tab, endpoint="E1", eta=0.0, kx=1.0, ky=1.0, rho=0.0, excluded_hogs=(), B=200, B_s=50,
                        B_s_boot=10, B_naive=1000, v3_false_concave=None, sensitivities=None, B_sens=50,
-                       eta_raw=None, device=None, alignment_results=None, verbose=False, input_md5=None):
+                       eta_raw=None, device=None, alignment_results=None, verbose=False, input_md5=None,
+                       bf=None, rho_pair=None, pb_K=25, pb_Bs=20, pb_K_sens=10):
     """Full E1/E2 endpoint. `sensitivities` = {name: dict(tab=..., extra_mask=..., eta_free=True, impute_cap=...,
-    x_range=..., ycols=...)}; each is re-estimated (SIMEX + B_sens bootstrap) and reported with its decision.
-    `alignment_results` = {aln: (estimate, se)} for seqonly / tdiaa (alignment robustness)."""
+    x_range=..., ycols=..., bf=...)}; each is re-estimated (SIMEX + B_sens bootstrap) and reported with its decision.
+    `alignment_results` = {aln: (estimate, se)} for seqonly / tdiaa (alignment robustness).
+    DEVIATION D29: the SIMEX estimate is bias-corrected by a parametric bootstrap (pb_K pseudo worlds,
+    simex_pb_correction); the plan's uncorrected SIMEX value is reported as `c_simex_plan`. bf: BranchFit built from
+    THIS `tab` (row order); used ONLY for the pseudo-world design D* = tree-smoothed AA distance (tree_x); without
+    it D* = observed x. The regressor is always x = aa_ml (plan). rho_pair: per-row rho(bin) array over `tab`
+    (per-pair Sigma_ij); None -> scalar `rho`. pb_K = 0 reproduces the plan's estimator."""
     stage = "bootstrap_E1" if endpoint == "E1" else "bootstrap_E2"
-    data, info, idx, sp = prepare_curve_data(tab, endpoint, excluded_hogs)
-    res = fit_curve_full(data, eta, kx, ky, rho, B=B, B_s=B_s, B_s_boot=B_s_boot, B_naive=B_naive,
-                         seed_stage=stage, sp=sp, device=device, verbose=verbose)
+    import copy
+
+    def _prep(t, bfx, rp, **kw):
+        d, inf, ix, spx = prepare_curve_data(t, endpoint, **kw)
+        xd = None
+        if bfx is not None:
+            dc = copy.deepcopy(d)
+            _, xi = tree_x(bfx, dc, ix, device=device)
+            xd = np.where(dc.w0 > 0, dc.x, d.x)
+            inf["pb_design_tree"] = xi
+        r_ = rho if rp is None else np.asarray(rp, float)[ix]
+        return d, inf, ix, spx, xd, r_
+
+    data, info, idx, sp, xdes, rho_used = _prep(tab, bf, rho_pair, excluded_hogs=excluded_hogs)
+    res = fit_curve_full(data, eta, kx, ky, rho_used, B=B, B_s=B_s, B_s_boot=B_s_boot, B_naive=B_naive,
+                         seed_stage=stage, sp=sp, device=device, verbose=verbose, pb_K=pb_K, pb_Bs=pb_Bs,
+                         x_design=xdes)
+    xtree = None
     c, se = res["c"], res["se_boot"]
     cls, p, extra = curve_decision(c, se, v3_false_concave)
     flags = []
@@ -229,20 +313,32 @@ def run_curve_endpoint(tab, endpoint="E1", eta=0.0, kx=1.0, ky=1.0, rho=0.0, exc
     if check_recompute > 1e-6:
         flags.append("recompute_mismatch")
     sens = {}
-    for name, opt in (sensitivities or {}).items():
+    sens_items = list((sensitivities or {}).items())
+    for name, opt in sens_items:
         opt = dict(opt)
+        note = opt.pop("note", None)
+        same_tab = "tab" not in opt
         t2 = opt.pop("tab", tab)
+        bf2 = opt.pop("bf", bf if same_tab else None)
         if opt.pop("eta_free", False):
             f2 = fit_eta_free(res["engine"], res["w"])
             sens[name] = {"estimate": f2["c"], "eta": f2["eta"], "ci98": None, "decision": None,
                           "note": "naive c with eta profiled; no bootstrap"}
             continue
-        d2, i2, _, sp2 = prepare_curve_data(t2, endpoint, opt.pop("excluded_hogs", excluded_hogs), **opt)
-        r2 = fit_curve_full(d2, eta, kx, ky, rho, B=B_sens, B_s=B_s, B_s_boot=B_s_boot, B_naive=B_sens,
-                            seed_stage=stage, sp=sp2, device=device)
+        rp2 = rho_pair if same_tab else None
+        r_sc = rho if rho_pair is None else float(np.mean(np.asarray(rho_pair, float)[idx]))
+        d2, i2, _, sp2, xd2, rho2 = _prep(t2, bf2, rp2, excluded_hogs=opt.pop("excluded_hogs", excluded_hogs), **opt)
+        if rp2 is None:
+            rho2 = r_sc
+        r2 = fit_curve_full(d2, eta, kx, ky, rho2, B=B_sens, B_s=B_s, B_s_boot=B_s_boot, B_naive=B_sens,
+                            seed_stage=stage, sp=sp2, device=device, pb_K=pb_K_sens if pb_K else 0, pb_Bs=pb_Bs,
+                            x_design=xd2)
         c2, s2 = r2["c"], r2["se_boot"]
         cl2, _, _ = curve_decision(c2, s2, v3_false_concave)
-        sens[name] = {"estimate": c2, "ci98": normal_ci(c2, s2), "decision": cl2, "n_pairs": i2["n_pairs_fit"]}
+        sens[name] = {"estimate": c2, "ci98": normal_ci(c2, s2), "decision": cl2, "n_pairs": i2["n_pairs_fit"],
+                      "c_simex_plan": r2.get("c_simex_uncorrected"), "pb_bias": r2.get("pb_bias")}
+        if note:
+            sens[name]["note"] = note
     arob = None
     if alignment_results:
         classes = [cls] + [curve_decision(e, s, v3_false_concave)[0] for e, s in alignment_results.values()]
@@ -252,7 +348,8 @@ def run_curve_endpoint(tab, endpoint="E1", eta=0.0, kx=1.0, ky=1.0, rho=0.0, exc
             sens[f"aln_{a_}"] = {"estimate": e, "ci98": normal_ci(e, s), "decision": curve_decision(e, s, v3_false_concave)[0]}
     rec = endpoint_record(
         endpoint=endpoint,
-        estimand="global curvature c in y = eta + a_h x^c (SIMEX-corrected)" + (" ; y = tdi_ml" if endpoint == "E1" else " ; y = lddt_D"),
+        estimand="global curvature c in y = eta + a_h x^c (SIMEX-corrected)" + (" ; y = tdi_ml" if endpoint == "E1" else " ; y = lddt_D")
+                 + (" ; SIMEX bias-corrected by parametric bootstrap (D29)" if pb_K else ""),
         estimate=c, se_boot=se, ci98=ci_n, ci_pct98=ci_p,
         one_sided_bound={"lower99": extra["lower99"], "upper99": extra["upper99"]},
         p_value=p, p_holm=None, decision=cls, n_hogs=info["n_hogs"], n_units=info["n_pairs_fit"],
@@ -262,7 +359,10 @@ def run_curve_endpoint(tab, endpoint="E1", eta=0.0, kx=1.0, ky=1.0, rho=0.0, exc
         s2=res["s2"], p_lin=extra["p_lin"], p_conc=extra["p_conc"], v3_false_concave=v3_false_concave,
         checks={"recompute_abs_diff": check_recompute, "grid_boundary": res["boundary_naive"],
                 "n_fit_equals_filter_log": info["n_pairs_fit"] == int(data.w0.sum())},
-        eta=eta, kappa_x=kx, kappa_y=ky, rho=rho, B=B, B_s=B_s, B_s_boot=B_s_boot, runtime_s=res["runtime_s"])
+        eta=eta, kappa_x=kx, kappa_y=ky, rho=rho if rho_pair is None else "per_pair_bin",
+        rho_mean=float(np.mean(rho_used)), c_simex_plan=res.get("c_simex_uncorrected"), pb_bias=res.get("pb_bias"),
+        pb_mc_se=res.get("pb_mc_se"), pb_K=pb_K, pb_design=res.get("pb_design"), pb_design_tree=info.get("pb_design_tree"),
+        B=B, B_s=B_s, B_s_boot=B_s_boot, runtime_s=res["runtime_s"])
     if endpoint == "E2" and eta_raw is not None:
         lg = _get(tab, "lddt_global").astype(float)[idx]
         rec["d_star"] = d_star_boot(data.x, 1 - lg, (data.w0 > 0).astype(float) / data.sy ** 2, data.g, data.H,
