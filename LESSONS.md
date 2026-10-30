@@ -13,3 +13,4 @@
 10. If a subagent's file write is blocked, have it return the content inline (round-3 reviewer, ANALYSIS_PLAN.md).
 11. AFDB: files are `_v6`; EBI needs `-A "Mozilla/5.0"`; bulk S3 downloads via `aria2c -x8` are cheap (25 GB in ~3 min). Don't over-deliberate them.
 12. Agents report "decisions for you". Decide immediately, record them in DEVIATIONS.md (C-items) and keep going. This kept the critical path moving. (M2–M3)
+13. Error patterns in wait loops must not match benign log text ("failed 0" matched /FAIL/i). Use `Traceback|exit status [1-9]`. A wait's own timeout can hide a deadline: check the clock at every notification. (evidence: a false wake at 17:40; a 2 h wait ran up to 20:11, leaving only 40 min before the node stop)

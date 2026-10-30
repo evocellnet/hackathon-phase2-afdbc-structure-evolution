@@ -1,6 +1,6 @@
 # NODE_MOVE.md: checkpoint and resume protocol
 
-*Living document; last updated 2026-10-30 ~17:45 on node 1. Final update before 20:30.*
+*Living document; FINAL node-1 update 2026-10-30 20:15. All node-1 jobs were stopped cleanly; nothing is running.*
 
 ## On the new node: first steps
 1. Go to the project directory:
@@ -28,9 +28,9 @@ Every step is idempotent. A step is complete when its sentinel exists; rerunning
 | 1 | Ancestra euk180 (accurate) | `data/interim/ancestra_euk180/ancestra/hogs.orthoxml` | (done; do not rerun) | DONE 16:20 (5.0 h, 161 GB) |
 | 2 | Panel tree (D30, no CI-overlap collapse) | `data/interim/timetree/panel_tree.nwk`, `node_ages.tsv` | `python scripts/hogs/panel_tree.py` | DONE |
 | 3 | HOG build (7000 HOGs; split.tsv md5 is in RESULTS_LEDGER) | `data/interim/hogs.parquet`, `split.tsv`, `pairlists/` | **never rebuild** (split must not change) | DONE 16:43 |
-| 4 | Pair metrics a–c4 and H1e step d | `logs/pipeline/<step>.done` plus shard `.done` files | `ALLOW_BUILD=0 THREADS=48 scripts/run_after_ancestra.sh` (resumes at the first unfinished shard); progress: `scripts/run_after_ancestra.sh status` | a–c4 DONE 18:11 (1.40M pairs × 3 alignments); d (H1e) running since 18:11 |
+| 4 | Pair metrics a–c4 and H1e step d | `logs/pipeline/<step>.done` plus shard `.done` files | `ALLOW_BUILD=0 THREADS=48 scripts/run_after_ancestra.sh` (resumes at the first unfinished shard); progress: `scripts/run_after_ancestra.sh status` | ALL DONE (a–c4 at 18:11: 1.40M pairs × 3 alignments; d (H1e) done) |
 | 5 | Tuning part 1 (α from seqonly (C29), floors, boot-sub column dumps, SE calibration) | `logs/tuning/<step>.done` | `PAIRS_THREADS=48 bash scripts/tuning/run_tuning.sh --only "validate_profile_alpha tune_alpha yaml_alpha floors_tuned select_bootsub bootsub_pairs se_calibration yaml_se"` | DONE 17:48 (α AA 1.64, 3Di 1.60) |
-| 6 | Tuning part 2 (only after step 4/c4, because apply_tuning rewrites the pair tables in place) | `logs/tuning/*.done` | `PAIRS_THREADS=48 V3_ARGS="--B 100 --pb-K 10" bash scripts/tuning/run_tuning.sh --from apply_tuning` (resumable per step) | launched 18:12 |
+| 6 | Tuning part 2 (only after step 4/c4, because apply_tuning rewrites the pair tables in place) | `logs/tuning/*.done` | `PAIRS_THREADS=48 V3_ARGS="--B 100 --pb-K 10" bash scripts/tuning/run_tuning.sh --from apply_tuning` (resumable per step) | apply_tuning, tau_misfit (=3.0), b_e4_timing (B_E4=1000), e5_power DONE. **v3_tuned was KILLED at 20:12 for the node move**: rerun it first on node 2 (it restarts from scratch, ~1.5–2 h at 48 threads; consider `--B 100 --pb-K 10`), then sample_throughput and write_tuning_yaml. Command: `PAIRS_THREADS=48 V3_ARGS="--B 100 --pb-K 10" bash scripts/tuning/run_tuning.sh --from v3_tuned` |
 | 7 | Fill the §Tuning table, then freeze | `config/tuning.yaml` has no nulls | `python scripts/tuning/fill_tuning_table.py --plan ANALYSIS_PLAN.md --tuning config/tuning.yaml`, then commit, then add a ledger line with the md5 of ANALYSIS_PLAN.md and tuning.yaml | pending |
 | 8 | Tune dry run of endpoints (exploratory, `results/tuning/`) | `results/tuning/dryrun/*.json` | `python scripts/endpoints/run_dryrun.py` | pending |
 | 9 | Confirmation run (**once**) | `results/endpoints/E*.json` | `CONFIRM_RUN=1 python scripts/endpoints/run_confirm.py && python scripts/endpoints/interpret.py --dir results/endpoints` | pending; needs a clean git tree and the ledger md5 |
