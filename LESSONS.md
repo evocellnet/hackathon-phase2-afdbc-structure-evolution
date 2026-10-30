@@ -8,3 +8,4 @@
 5. FoldComp index/lookup + afdb_rep_v4 (25 GB) downloaded from S3 in ~3 min with aria2c -x8 — bulk S3 downloads are cheap; don't over-deliberate them. (evidence: M0)
 6. Three short review rounds (5 → 3 → 1 reviewers) turned a plausible design into a much sharper one: per-HOG branch lengths, pre-set equivalence margins, a positive control and power checks. Running data acquisition in parallel with review cost nothing. (evidence: M2)
 7. Subagents may be blocked from writing some files; ask them to return content inline as a fallback. (evidence: the round-3 reviewer could not write ANALYSIS_PLAN.md)
+8. Agents put licence-restricted values (TimeTree ages) into "small" committed tables. Grep committed tables for restricted columns before every commit. (evidence: `nearest_age_at_selection_mya` in species_panel.tsv, M2)
