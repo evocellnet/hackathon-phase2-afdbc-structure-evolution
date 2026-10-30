@@ -40,3 +40,5 @@ Checksum notes. "md5" is the local `md5sum` of the downloaded file. On S3, a sin
 | Per-cluster taxonomic span (number of domains, kingdoms and phyla, model-organism counts) joined with the file-2 statistics | scripts/afdb_cluster_stats.py v3/v6 | results/data_scout/afdb_clusters_{v3,v6}_taxspan.parquet ; afdb_cluster_stats_{v3,v6}.json |
 | Overlap between v3 and v6 | scripts/afdb_v3_v6_overlap.py | results/data_scout/afdb_v3_v6_overlap.json |
 | Mapping of TimeTree 2015 tips to NCBI taxIds, with coverage | scripts/timetree_coverage.py | data/interim/timetree/ttol2015_tips_taxid.tsv ; results/data_scout/timetree_coverage.json |
+| Q.3Di.AF / Q.3Di.LLM 3Di substitution models | Edmond doi:10.17617/3.1MJJBH | 2025 release | data/raw/models/ | 8f897fffd14f247afbee44dad2fce2ce / 3a6c99bdf5cc5fc72ba5eaedfc2dd2bd | CC0 | PAML format, letters in ARNDCQEGHILKMFPSTWYV order denote 3Di states; fetched by design reviewer (algorithms) 2026-10-30 |
+| LG, WAG AA models | PAML GitHub (abacus-gene/paml) | see src/strucevo/data/PROVENANCE.txt | src/strucevo/data/ | sha256 in PROVENANCE.txt | GPL-3 (PAML) data files | bundled small text files |

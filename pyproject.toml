@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "strucevo"
+version = "0.1.0"
+description = "Pairwise sequence/3Di/structure divergence measures and curve models (phase2-afdbc-evolution)"
+requires-python = ">=3.10"
+dependencies = ["numpy", "scipy", "torch"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+strucevo = ["data/*.dat", "data/PROVENANCE.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: long-running (AliSim/IQ-TREE, GPU benchmark)"]

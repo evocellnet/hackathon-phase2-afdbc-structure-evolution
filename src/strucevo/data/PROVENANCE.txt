@@ -1,0 +1,14 @@
+Bundled substitution matrices (PAML format: 19-line lower triangle of exchangeabilities S, then 20 frequencies pi,
+amino-acid order ARNDCQEGHILKMFPSTWYV).
+
+lg.dat   Le & Gascuel 2008, Mol Biol Evol 25:1307-1320.
+         Source: https://raw.githubusercontent.com/abacus-gene/paml/master/dat/lg.dat  (fetched 2026-10-30)
+         sha256 bf05bee9a1917601feb688e6729a63205289b4324486ae2194333f181811cf44
+wag.dat  Whelan & Goldman 2001, Mol Biol Evol 18:691-699.
+         Source: https://raw.githubusercontent.com/abacus-gene/paml/master/dat/wag.dat (fetched 2026-10-30)
+         sha256 600e4392a09fb9471dc346b1a58bbd7158748a2e9635430db481ecddc7f2e9a9
+         (numerically identical to the copy bundled with easel in conda_envs/main/share/easel/formats/wag.dat)
+
+No 3Di substitution matrix is bundled. Load a published one (e.g. Q.3Di.AF, Puente-Lelievre et al.) with
+strucevo.distances.load_paml(path, alphabet=THREEDI_ORDER) -- check the alphabet order of the source file! --
+or estimate one from close pairs with strucevo.distances.estimate_gtr().
