@@ -1,0 +1,7 @@
+sf	tree	path	parts	method	b_aa	b_3di	rho	rho_lo	rho_hi	pct_in_window	pct_all_internal
+actin	ml	path: below crenactin+EUK+Asgard -> EUK+Asgard ancestor	crenactin+EUK+Asgard;EUK+Asgard stem	iq_linsi	0.7964658239	0.4514885591	1.400092018048098	0.8823033975871453	2.3809958660376602	92.0	87.08133971291866
+actin	ml	path: below crenactin+EUK+Asgard -> EUK+Asgard ancestor	crenactin+EUK+Asgard;EUK+Asgard stem	iq_famsa	0.5183644924999999	0.4513267181	1.5730549639762923	1.0589634055711676	3.2258514274145997	96.0	92.57425742574257
+actin	ml	path: below crenactin+EUK+Asgard -> EUK+Asgard ancestor	crenactin+EUK+Asgard;EUK+Asgard stem	iq_fmg	1.1196756798	0.26779371350000003	0.6388120848448713	0.3277126156615527	1.9295570184482216	42.0	33.17307692307692
+actin	ml	path: below crenactin+EUK+Asgard -> EUK+Asgard ancestor	crenactin+EUK+Asgard;EUK+Asgard stem	eng_tdiaa	0.811777277994048	0.12646819827574646	0.7050066242007256				
+actin	ml	path: below crenactin+EUK+Asgard -> EUK+Asgard ancestor	crenactin+EUK+Asgard;EUK+Asgard stem	eng_msa	1.128504153322183	0.49145753760305183	1.252458355775715				
+actin	ml	path: below crenactin+EUK+Asgard -> EUK+Asgard ancestor	crenactin+EUK+Asgard;EUK+Asgard stem	iq_linsi_LG+C20(AA)	1.4228759384999998	0.4514885591	1.152230999662485				

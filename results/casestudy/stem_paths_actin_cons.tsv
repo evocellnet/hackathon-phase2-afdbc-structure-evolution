@@ -1,0 +1,4 @@
+sf	tree	path	parts	method	b_aa	b_3di	rho	rho_lo	rho_hi	pct_in_window	pct_all_internal
+actin	cons	path: below crenactin+EUK+Asgard -> EUK ancestor	crenactin+EUK+Asgard;EUK+Asgard stem;EUK stem (actin+Arps)	iq_linsi	1.5367464654	0.5838873114	0.9564827805815707	0.7860997475271225	1.348761973976163	70.0	68.68131868131869
+actin	cons	path: below crenactin+EUK+Asgard -> EUK ancestor	crenactin+EUK+Asgard;EUK+Asgard stem;EUK stem (actin+Arps)	iq_famsa	1.1293498143	0.7022306317999999	1.118146034495863	0.8161461773506513	1.4715520119789889	90.0	80.68181818181817
+actin	cons	path: below crenactin+EUK+Asgard -> EUK ancestor	crenactin+EUK+Asgard;EUK+Asgard stem;EUK stem (actin+Arps)	iq_fmg	2.5694884167	0.9406755302	0.9759021172246481	0.7752981592905707	1.2534972962528341	74.0	61.53846153846154

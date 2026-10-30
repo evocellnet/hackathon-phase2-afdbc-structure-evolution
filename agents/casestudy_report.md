@@ -344,3 +344,224 @@ two-pass WLS with HC1 sandwich SEs; the design matrix is built from a `PanelTree
   `pfam/`, `refs/`, `members_all.fasta`, `members_vs_refs.tsv`, `{sf}_sample.fasta`, `{sf}_linsi.fasta`, `pdb/`,
   `fsdb/`, `{sf}_3di.fasta`, `foldmason/`, `aln/`, `iqtree/`.
 - **DATA.md:** not edited. The two rows in §1 are ready to paste.
+
+---
+
+## Node 2 results (2026-10-30, 21:54–23:10 CET, ≤ 12 threads; exploratory/descriptive, DESIGN §11.8)
+
+Scripts `scripts/casestudy/13–22`; tables `results/casestudy/`; figures `figures/casestudy/`. Nothing committed.
+Ledger: 15 new lines in RESULTS_LEDGER.md (X6, reviewed-by = pending).
+
+### TL;DR
+- **No robust structural acceleration on either eukaryotic stem.** The 3Di/AA ratio ρ (relative to the tree) on the
+  stems depends on the alignment and the method:
+  - Sequence MSAs (MAFFT, FAMSA) give moderately high values: actin path to the Euk+Asgard ancestor ρ = 1.40 / 1.57,
+    tubulin path to the tubulin-clade ancestor ρ = 1.14 / 1.31, at the 87th–93rd percentile, with bootstrap CIs
+    covering 1 or close to it.
+  - Structure-guided FoldMason, the pairwise branch engine (tdiaa) and a site-heterogeneous AA model (LG+C20) give
+    ≤ 1: 0.56–1.15 across methods.
+  - On constrained topologies (Asgard sister to eukaryotes; eukaryotic tubulins excluding artubulins/BtubAB, both not
+    rejected by AU) the eukaryote-only stem has b_AA ≈ 0, and the path ρ is unchanged (actin 0.96–1.12, tubulin
+    0.55–1.33).
+- **Where the actin stem signal sits:** the high-ratio branch is the one *below crenactin* (crenactin+Euk+Asgard
+  vs other prokaryotic actins; ρ = 2.40 [1.52, 5.71], robust in MAFFT), not the Euk+Asgard stem (ρ = 0.33). Its
+  structure-shift columns concentrate in the hydrophobic plug, the D-loop and the C-terminal region. The two
+  adjacent short branches trade length (FAMSA puts b_AA ≈ 0.02 on it), so only the path value is interpretable.
+- **Within eukaryotes:** within-eukaryote and prokaryote/mixed internal branches have the same median ρ (actin
+  0.77 vs 0.76, tubulin 0.75 vs 0.72). Robust high flags are almost all *terminal* branches of single proteins:
+  - Tubulin: *Trichomonas* β and γ (ρ ≈ 9.4), *Paramecium* β, *Hibiscus* α.
+  - Actin: *Capsella* Arp6, *Dictyostelium purpureum* Arp10.
+  - Two clades: the Arp10 clade and a δ/divergent tubulin clade.
+
+  None of these is supported by the pairwise engine at its own 97.5 % level in more than half the cases.
+  Low-pLDDT models are over-represented among them (actin terminal ρ vs pLDDT Spearman −0.15, p = 0.004).
+  *Giardia*, apicomplexan, fungal and plant actins/tubulins do **not** stand out at supergroup level.
+- **Method agreement is the main caveat:**
+  - Per-branch b_AA agrees between IQ-TREE and the pairwise engine (Spearman 0.74–0.76), but per-branch ρ does not
+    (0.13 actin, 0.29 tubulin).
+  - Between alignments ρ agrees moderately (0.61–0.84).
+  - Only large, multiply-supported deviations should be read.
+
+### 1. Methods added on node 2
+- **Alignments (15):**
+  - FAMSA 2 (default; 379/438 columns kept at ≥ 50 % occupancy).
+  - FoldMason guided by the AA ML tree (`fmg`, actin; 358 columns, 0 isolated rows). The node-1 default FoldMason
+    actin MSA isolated 67–69 FtsA/MreB rows.
+  - For tubulin the guided run isolated rows instead, so the default FoldMason MSA is used.
+  - 3Di is projected onto the AA columns, as in 06.
+- **IQ-TREE on the fixed topology (16):**
+  - `-te` on the binary AA ML tree; LG+G4 for AA and Q.3Di.AF+G4 for 3Di on the same columns.
+  - Column bootstrap: B = 100 (ML tree) or B = 50 (constrained trees). The same resampled columns are used for AA
+    and 3Di, with α fixed at the full-data value.
+  - In the tubulin AA replicates IQ-TREE re-attaches sequences that became identical as cherries (RF 2–4 in about
+    1/3 of replicates). Those near-zero splits are NaN in that replicate.
+  - Saturation and LBA check: LG+C20+G4 AA lengths on the same topology. These are on average 1.47× (actin) and
+    1.43× (tubulin) the LG lengths, but 1.98× and 1.88× on the stems.
+- **Branch engine (14):**
+  - Store built from the 800 AFDB models.
+  - All 79,800 within-superfamily pairs, Foldseek `structurealign` 3Di+AA (the project's tdiaa).
+  - Counts from `strucevo.pairs.posthoc`; aa_ml/tdi_ml at the tuned α (1.64/1.60), SE × κ (tdiaa), lddt_D with the
+    tdiaa S0/SE model.
+  - `fit_branches` on the UFBoot ≥ 95 collapsed topology (polytomies native), se_method = model (D2),
+    ν = η/2 = 0.026 (3Di).
+  - A second variant uses pairwise ML distances on the MAFFT columns (`msa`).
+  - Fits: rss_rel ≈ 0.01, misfit ratio 1.13 (actin) and 1.68 (tubulin); 2.5k hidden-paralogy pair flags per
+    superfamily.
+  - Wall time 2–3 min per superfamily.
+- **Ratio and flags (17):**
+  - ρ_e = (b_3Di/b_AA)/(Σb_3Di/Σb_AA).
+  - Comparable branches: supported, same kind (internal or terminal), 0.02 ≤ b_AA ≤ 2. b_AA > 2 is labelled
+    "saturated" and excluded.
+  - Flag: log ρ outside the 2.5–97.5 % range of the 50 comparable branches nearest in log b_AA.
+  - "Robust": flagged in MAFFT, with bootstrap p_beyond ≥ 0.8, and flagged in the same direction in ≥ 2 of 3
+    alignments.
+  - Stem paths: the sum over consecutive stem branches, because adjacent short deep branches trade length between
+    methods.
+- **Constraint/LBA (13, 22):** constrained ML searches (IQ-TREE `-g`, LG+G4):
+  - actin: ((Euk actin+Arps),(Asgard actins)), with prokaryotes free;
+  - tubulin: eukaryotic tubulins form a clade that excludes the artubulins and BtubA/B.
+
+  AU test (RELL 10,000):
+  - actin ΔlnL 112.8, p_AU 0.061;
+  - tubulin ΔlnL 31.7, p_AU 0.32.
+
+  Neither constrained topology is rejected.
+- **Structure mapping (18):**
+  - Clade vs sister (the sister side is widened to ≥ 5 sequences).
+  - Representatives: the highest-pLDDT member of each side's modal subfamily, superposed with US-align, giving
+    per-residue CA deviations.
+  - Per MSA column: total-variation distance of 3Di (TV_3Di) and AA distributions between the two sides.
+    "Shift" = TV_3Di ≥ 0.5.
+  - Reference numbering via `mafft --add --keeplength`: rabbit skeletal α-actin P68135 (mature numbering) and pig
+    α-tubulin P02550.
+  - Approximate literature loop boundaries plus UniProt features.
+  - Control: 8 random unflagged eukaryotic tubulin tips (seed 20261030).
+
+### 2. Focal question (i): eukaryotic stems vs prokaryotic homologues
+
+| | MAFFT (IQ) | FAMSA (IQ) | FoldMason (IQ) | engine tdiaa | engine MSA | MAFFT, LG+C20 AA |
+|---|---|---|---|---|---|---|
+| actin, Euk+Asgard stem alone (b_AA 0.39) | 0.33 [0.00, 0.93] | 0.24 | 0.18 | 0.45 | 0.47 | 0.25 |
+| actin, crenactin+Euk+Asgard stem (b_AA 0.41) | **2.40 [1.52, 5.71], robust high** | 30 (b_AA 0.02) | 1.01 | 0.85 | 1.78 | 2.21 |
+| actin path, both branches (b_AA 0.80) | 1.40 [0.88, 2.38], 87th pct | 1.57 [1.06, 3.23] | 0.64 [0.33, 1.93] | 0.71 | 1.25 | 1.15 |
+| actin path on constrained tree (Euk stem b_AA 0.0008) | 0.96 [0.79, 1.35] | 1.12 [0.82, 1.47] | 0.98 [0.78, 1.25] | – | – | – |
+| tubulin, tubulin-clade stem (b_AA 1.49) | 1.21 [0.93, 1.75] | 1.20 | 0.60 | 0.52 | 0.93 | 0.92 |
+| tubulin path CetZ+tub → tubulin clade (b_AA 1.9) | 1.14 [0.87, 1.66], 81st pct | 1.31 [0.92, 1.81] | 0.56 [0.42, 0.85] | 0.52 | 0.85 | 0.91 |
+| tubulin path on constrained tree (Euk stem b_AA < 0.001) | 1.20 [0.93, 1.68] | 1.33 [0.85, 1.80] | 0.55 [0.41, 0.84] | – | – | – |
+
+Reading:
+- No method gives a stem ρ outside the comparable-length window except the MAFFT branch below crenactin. Any
+  structural change concentrated at the prokaryote→eukaryote transition is therefore **not detectable robustly**
+  with this sampling.
+- The sequence MSAs lean high and the structure-guided and pairwise-structural methods lean low. This is the
+  signature of alignment error at deep divergence:
+  - structure-guided columns put more AA substitutions on deep branches (FoldMason path b_AA 4.2 vs 1.9 for MAFFT);
+  - sequence MSAs misalign 3Di-variable regions.
+- The engine's lddt_D/AA ratio is high on these stems (2.7). However, lddt_D for deep pairs sits near the S0 floor,
+  so this is not taken as evidence.
+- **AA saturation:** the tubulin path is at b_AA 1.9–4.2 and the artubulin stem (b_AA 2.13) is excluded as
+  saturated. LG+C20 lengthens the stems more than the rest of the tree (1.9–2.0× vs 1.45×). Under C20 the
+  sequence-MSA ρ falls to about 1 (actin path 1.15, tubulin 0.91).
+- **LBA:** forcing the textbook placements does not reveal a eukaryote-specific stem. The constrained Euk-only stem
+  has zero length in both superfamilies, i.e. the data place all stem change below the Asgard/artubulin divergence.
+
+### 3. Focal question (ii): lineage-specific changes within eukaryotes
+
+`results/casestudy/lineage_rho.tsv` (per supergroup and genus) and `flagged_branches.tsv` (all robust flags):
+- Supergroup medians of ρ over comparable within-eukaryote branches range 0.82–1.32 (actin) and 0.82–1.75
+  (tubulin). Land plants and Rhizaria have the highest tubulin medians (n = 11 and 5). No supergroup has more than
+  2 robust high flags.
+- Genera:
+  - *Giardia*: actin 1.12, tubulin 0.89 (n = 3 each).
+  - *Plasmodium*: actin 1.02, tubulin 2.09 (n = 6, 0 flags).
+  - *Cryptosporidium*: 0.87.
+  - *Trichomonas*: tubulin 1.68, with 2 robust high flags.
+  - *Leishmania*: tubulin 0.46.
+
+  The classic divergent protist actins (*Giardia*, *Plasmodium*) and apicomplexan tubulins are long in AA, but
+  **not** structurally accelerated relative to AA.
+- Robust within-eukaryote high flags:
+  - Actin (7): mostly terminal branches. These are *Capsella* Arp6 (b_AA 0.64, ρ 2.0), *D. purpureum* Arp10,
+    *Thalassiosira* Arp10, *Monodelphis* Arp5, a cavefish Arp2 and *Leishmania* Arp1 (b_AA 0.02). The one
+    internal branch is the Arp10 clade (18 tips, ρ 3.9).
+  - Tubulin (10): terminal *Trichomonas vaginalis* β (A2EEB7) and γ (A2G7V3), *Paramecium* β (b_AA 0.03),
+    *Hibiscus* α, *Marchantia*, two macaque tubulins, *Gonapodya* and *Planoprotostelium*, plus one δ/divergent
+    clade (17 tips).
+  - Outside eukaryotes, the Brugia "euk_FtsZ" tip (ρ 4.9) is presumably the Wolbachia FtsZ (endosymbiont-derived
+    sequence; not checked).
+- **Caveats for terminal flags:** terminal 3Di lengths include AF prediction noise. Many flagged tips have mean
+  pLDDT 70–80, below the typical 85–92, and actin terminal ρ correlates negatively with pLDDT. The pairwise
+  engine, which subtracts the tip floor ν, puts only 3/6 (actin) and 4/10 (tubulin) robust terminal flags beyond its
+  own 97.5 %. For the two *Trichomonas* tubulins the engine gives a *negative* terminal 3Di length. Treat these as
+  candidates, not findings.
+
+### 4. Structural mapping of selected branches
+
+Tables: `structmap_summary.tsv`, `structmap_{actin,tubulin}_known_regions.tsv` (per functional region) and
+`structmap_*_regions.tsv` (runs of shift columns, with UniProt features).
+- **Actin, branch below crenactin / Euk+Asgard stem:**
+  - Representatives: *T. brucei* actin vs *Sphaerobacter* MreB (TM 0.74, RMSD 3.1 Å, 13 % identity); 47 % of
+    columns are shift columns.
+  - The shift share is higher than the core average in the **hydrophobic plug** (res. 262–274: 6/7 columns, TV_3Di
+    0.77 vs core 0.47, CA deviation 3.0 Å), the **D-loop** (38–52: 0.60; CA 6.1 Å vs core 2.1 Å) and the
+    **C-terminal region** (349–375: 0.67; CA 6.0 Å).
+  - It is lower in the nucleotide P-loops (0.12–0.33) and the 137–144 hinge (0.12).
+  - Consistent with the filament-specific elements (H-plug, D-loop) distinguishing actin from MreB-type filaments,
+    while the nucleotide pocket is conserved.
+- **Actin Arp10 clade (ρ 3.9):** *Anopheles* Arp10 vs *T. brucei* actin. Shifts are in the sensor loop (70–78,
+  9/9 columns, CA 5.6 Å), the SD2 base (60–69, 0.78) and the H-plug (0.70).
+- ***Tritrichomonas* actin (robust low, ρ 0.38):** few shifts (20 %), TM 0.93 vs *Entamoeba*. The shifts sit in
+  the D-loop (TV 0.63 vs core 0.25), i.e. AA change outpaces 3Di change elsewhere.
+- **Tubulin clade stem:**
+  - *T. cruzi* α vs *Pyrococcus* CetZ (TM 0.64, RMSD 3.3 Å); 54 % shift columns.
+  - Highest in the **M-loop** (272–288: 0.88, CA 6.6 Å), the **S9–S10 loop** (1.00, CA 6.9 Å) and the **T7 loop**
+    (CA 4.3 Å). These are the lateral/longitudinal protofilament contacts.
+- ***Trichomonas* β (519) and γ (600), δ/divergent clade (766):** the **M-loop** is the most shifted region in all
+  three (frac_shift 0.92 / 1.00 / 0.88; CA 2.1 / 4.2 / 3.1 Å). The T7 loop (β, δ), H8 (γ, δ) and the H1–S2 loop
+  (δ) are also shifted.
+- **Control:** in 8 unflagged tubulin tips the M-loop is also above the core share (0.37 vs 0.21). The M-loop is
+  intrinsically variable, but much more so on the flagged branches.
+- **Limits:**
+  - One representative per side, an AF model each.
+  - Loop boundaries are approximate literature ranges.
+  - No test was done; these are descriptions.
+
+### 5. Figures
+- `figures/casestudy/{actin,tubulin}_tree_rho.{pdf,png}`: ML tree, x = AA length, branches coloured by log2 ρ.
+  Grey = not comparable; dashed = saturated; stars = robust flags.
+- `figures/casestudy/rho_distributions.{pdf,png}`: ρ vs b_AA with the comparable-length window and the named clades
+  with bootstrap CIs. The display is clipped to [0.01, 100]: b_3Di at IQ-TREE's 1e-6 floor gives ρ ≈ 1e-5.
+- `figures/casestudy/method_comparison.{pdf,png}`: IQ-TREE vs engine for b_AA, b_3Di and ρ, and named clades across
+  methods.
+
+### 6. Files
+- Scripts: `13_constraint_trees.py`, `14_pairs_engine.py`, `15_alignments_node2.py`, `16_iqtree_fixed.py`,
+  `17_ratio_analysis.py <sf> <ml|cons>`, `18_structural_map.py <sf> <branch_id…>`, `19_figures_node2.py`,
+  `20_lineage_summary.py`, `21_run_after_cons.sh`, `22_au_test.sh`.
+- Results:
+  - `branch_ratios_{sf}_{ml,cons}.tsv`: per bipartition, all methods, windows, flags, bootstrap CIs, clade content.
+  - `branch_ratio_summary_{sf}_{ml,cons}.json`, `stem_paths_{sf}_{ml,cons}.tsv`.
+  - `engine_branches_{sf}_{tdiaa,msa}.tsv`, `engine_summary_{sf}.json`.
+  - `lineage_rho.tsv`, `flagged_branches.tsv`.
+  - `structmap_*` (focal, plus a `_control_` set).
+  - `alignment_stats.tsv` (now with famsa/fmg).
+- Big files (`data/interim/casestudy/`): `famsa/`, `foldmason/guide/`, `aln/*_{famsa,fmg}_*`, `iqfix/` (full and
+  boot treefiles), `constraint/` (constrained trees, AU), `pairs/` (store, counts, distances), `structmap/`,
+  `refs/P68135*`, `refs/P02550*`.
+
+### 7. Caveats and what remains
+- Per-branch ρ depends on the method. IQ-TREE joint-likelihood ρ and pairwise-engine ρ are nearly uncorrelated
+  across internal branches, which reflects the large 3Di SEs on short internal edges. Only path-level or strongly
+  flagged values are interpretable.
+- One Asgard genome and no Asgard tubulin; ParM is absent. The tubulin "eukaryote stem" is in practice the tubulin
+  clade stem.
+- Not done:
+  - PMSF/C60 tree *searches*; only C20 branch lengths on fixed trees were run.
+  - Re-sampling of the 400-sequence subsets.
+  - Per-region tests.
+  - An independent re-derivation (V11).
+- Operational notes:
+  - The early-launched `21_run_after_cons.sh` started on intermediate constrained treefiles. Those outputs were
+    deleted and the constrained-tree runs were redone after the searches had finished. The constrained trees used
+    are final: actin lnL −203,478.5, tubulin −151,701.2.
+  - The MAFFT boot-tree topology check is in §1.

@@ -1,0 +1,4 @@
+sf	tree	path	parts	method	b_aa	b_3di	rho	rho_lo	rho_hi	pct_in_window	pct_all_internal
+tubulin	cons	path: CetZ+tubulin -> EUK tubulin ancestor	CetZ+tubulin;tubulin clade (euk+artubulin+BtubAB);EUK stem (euk tubulins)	iq_linsi	1.7291443627999998	1.0621443017999999	1.19497036932326	0.924640075733944	1.6781013897122485	92.0	82.48587570621469
+tubulin	cons	path: CetZ+tubulin -> EUK tubulin ancestor	CetZ+tubulin;tubulin clade (euk+artubulin+BtubAB);EUK stem (euk tubulins)	iq_famsa	2.4142177558	1.9422252704999998	1.331795639682925	0.8503433679585588	1.7980571965019552	94.0	88.33333333333333
+tubulin	cons	path: CetZ+tubulin -> EUK tubulin ancestor	CetZ+tubulin;tubulin clade (euk+artubulin+BtubAB);EUK stem (euk tubulins)	iq_foldmason	4.6109291958	0.9156339264000001	0.5471479223628097	0.4067735172679431	0.8369345946112378	38.0	29.18918918918919

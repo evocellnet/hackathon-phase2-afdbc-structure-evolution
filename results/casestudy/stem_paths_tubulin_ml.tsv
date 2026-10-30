@@ -1,0 +1,7 @@
+sf	tree	path	parts	method	b_aa	b_3di	rho	rho_lo	rho_hi	pct_in_window	pct_all_internal
+tubulin	ml	path: CetZ+tubulin -> tubulin clade ancestor	CetZ+tubulin;tubulin clade (euk+artubulin+BtubAB)	iq_linsi	1.8832872569999999	1.0704375081	1.1427499493812154	0.8646428442597448	1.6593114632152832	92.0	81.25
+tubulin	ml	path: CetZ+tubulin -> tubulin clade ancestor	CetZ+tubulin;tubulin clade (euk+artubulin+BtubAB)	iq_famsa	2.4691959551	2.0125640036	1.3061621398245407	0.9243806010055208	1.8053471946653685	94.0	90.10416666666666
+tubulin	ml	path: CetZ+tubulin -> tubulin clade ancestor	CetZ+tubulin;tubulin clade (euk+artubulin+BtubAB)	iq_foldmason	4.2446390725	0.8472861023	0.561020580367737	0.42084112765443993	0.85303476871635	38.0	29.797979797979796
+tubulin	ml	path: CetZ+tubulin -> tubulin clade ancestor	CetZ+tubulin;tubulin clade (euk+artubulin+BtubAB)	eng_tdiaa	2.3044704249077026	0.3121198873308274	0.5212839700551803				
+tubulin	ml	path: CetZ+tubulin -> tubulin clade ancestor	CetZ+tubulin;tubulin clade (euk+artubulin+BtubAB)	eng_msa	2.6600403197100215	0.9142823751673945	0.8506096658938841				
+tubulin	ml	path: CetZ+tubulin -> tubulin clade ancestor	CetZ+tubulin;tubulin clade (euk+artubulin+BtubAB)	iq_linsi_LG+C20(AA)	3.3840144598	1.0704375081	0.9091242293178798				
