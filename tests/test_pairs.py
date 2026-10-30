@@ -120,8 +120,8 @@ def test_seqonly_gap_scores():
     al = get_aligner()
     a = "WWWWWWWWWWCCCCCCCCCC"
     b = "WWWWWWWWWWGGGCCCCCCCCCC"  # 3-residue internal insertion
-    # BLOSUM62 W/W = 11, C/C = 9; gap of length 3 = open(-11) + 2 * extend(-1)
-    assert al.score(a, b) == pytest.approx(10 * 11 + 10 * 9 - 11 - 2)
+    # BLOSUM62 W/W = 11, C/C = 9; gap of length 3 = open(-12) + 2 * extend(-1)  (BLAST 11/1 convention, DEVIATIONS C23)
+    assert al.score(a, b) == pytest.approx(10 * 11 + 10 * 9 - 12 - 2)
 
 
 # ------------------------------------------------------------------------------------------ post-hoc
