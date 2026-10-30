@@ -46,7 +46,7 @@ Four scouting agents run in parallel: literature (LITERATURE.md), data acquisiti
 - [x] 3. Ancestra feasibility (agents/ancestra_report.md): works; orthologs reliable, duplication timing not
 - [x] 4. DESIGN.md v3 + 3 review rounds; ANALYSIS_PLAN.md frozen pending tuning
 - [~] 4d. Pair-metrics pipeline (src/strucevo/pairs)
-- [~] 4e. Statistical engines E1–E6 + synthetic verification V2–V4
+- [x] 4e. Statistical engines E1–E6 + synthetic verification (V2 cov 0.96 with D2; V3 false-concave 0/100, min detectable |c−1|≈0.10; V4 recovers truth; V6 20/20 with D13). [!] E5 N0 acceptance practically unreachable (β CI ±0.24); margins kept, E5 likely inconclusive unless it rejects
 - [x] 4f. PDB/SIFTS control set (H1e): human 3502 qualifying chains (2524 post-AF2); ~513 human–mouse pairs with PDB on both sides (304 post-AF2); deep pairs ~100–300
 - [x] 4a. Species panel (agents/panel_report.md): 180 eukaryotes (Metazoa 66, Fungi 40, plants 20, protists across all supergroups) + 100 prokaryotes (60 bacteria / 40 archaea, Asgard = MK-D1 only). Gate: ≥80% exact-sequence v4 coverage. 3.29M + 0.28M structures fetched, 0 errors; 94.9% exact-sequence match. TimeTree: 15,755/16,110 pairs dated, 138 distinct ages (0.4–1,516 Mya); 52% of pairs at the root age → analyse by node/edge, not pair (already in design). Missing: rat/zebrafish/chicken/Xenopus (low v4 coverage). Polyploids included (cotton×4, soybean, Brassica, goldfish), handled by the 1:1-copy rule; limitation noted.
 - [~] 4g. Ancestra on 180 eukaryotes (accurate, launched 11:18)
