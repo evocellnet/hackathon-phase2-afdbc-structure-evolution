@@ -53,7 +53,7 @@ Four scouting agents run in parallel: literature (LITERATURE.md), data acquisiti
 - [x] 4h. Pair-metrics pipeline (agents/pairs_pipeline_report.md): 3 alignments, V5/V8/V9 pass, 56k demo pairs in 4.5 min. [!] TM-align mis-registers close homologs (human–mouse core p 0.091 vs 0.064) and fails V5 → D22: primary alignment = Foldseek 3Di+AA; tmalign/seqonly as brackets
 - [~] 4i. Panel species tree + node ages; HOG construction §1.6 (tested on euk20)
 - [~] 4j. Noise floors (floor_random, floor_ident) → floors.json
-- [~] 4k. Goal 2-ii per-protein annotation (AFDB v3 cluster, TED/CATH architecture, Pfam)
+- [x] 4k. Goal 2-ii per-protein annotation: 3.74M proteins; 80% (euk) in non-singleton AFDB clusters; TED domain in 89%; classes α 19.6% β 9.8% α/β 24.0%
 - [~] 4l. Goal 2-iii cytoskeleton case study prep (actin/tubulin superfamilies, fixed AA tree)
 - [x] 4b. Distance library with toy/simulation tests (src/strucevo): 33/33 pass
 - [x] 4c. P-clu baseline (agents/pclu_report.md): 27.7M member→rep pairs. Median TM 0.39 at 10% id → plateau ≈0.83 from ≥40% id; LDDT rises smoothly 0.52→0.94. Plateau tracks rep pLDDT/length (at id ≥0.6, TM 0.58 for pLDDT<60 vs 0.97 for ≥90), i.e. a prediction-quality ceiling, not saturation. Older (cross-superkingdom) clusters have higher TM at equal identity [exploratory; confounded with pLDDT → check in X7]. Artefact below 7% id (short alignments).
