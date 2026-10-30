@@ -4,7 +4,7 @@ Legend: [ ] planned · [~] in progress · [x] done · [-] abandoned/negative · 
 
 ## Status summary (latest first)
 
-### M2 — 2026-10-30 ~11:40 (t ≈ 2.2 h)
+### M2 — 2026-10-30 ~11:10 (t = 1.8 h)
 The design passed three review rounds: 5 reviewers in round 1, 3 in round 2, and a round-3 consistency check. DESIGN.md v3 is final, and ANALYSIS_PLAN.md is the executable, frozen specification; only its tuning values remain open. The core design is two engines.
 - Within-family pairwise distances test the response shape (does structure saturate relative to sequence?).
 - Per-family branch lengths on the fixed species tree estimate the 3Di/AA conservation ratio, its trend with node age, and lineage effects (the neutral-structural-clock null N0).
