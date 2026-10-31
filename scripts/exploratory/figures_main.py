@@ -337,9 +337,8 @@ def figC():
         sl[m] = float(np.polyfit(np.log(s["age"].to_numpy()), np.log(s[m].to_numpy()), 1)[0])
     KEY["C_loglog_slope_10_1000Mya"] = sl
 
-    fig, axs = plt.subplots(1, 2, figsize=(7.2, 3.3), constrained_layout=True)
-    ax = axs[0]
-    lab = {"aa_ml": "AA ML", "tdi_ml": "3Di ML − $\\eta$", "lddt_D": "LDDT $D$ − $\\eta$"}
+    fig, ax = plt.subplots(1, 1, figsize=(4.8, 3.6), constrained_layout=True)
+    lab = {"aa_ml": "AA distance", "tdi_ml": "3Di distance − $\\eta$", "lddt_D": "LDDT distance − $\\eta$"}
     cc = {"aa_ml": C1, "tdi_ml": C2, "lddt_D": C3}
     for m in ("aa_ml", "tdi_ml", "lddt_D"):
         for sub, filled in ((shallow, True), (deep, False)):
@@ -358,11 +357,13 @@ def figC():
     ax.set_xscale("log"); ax.set_yscale("log"); ax.set_xlim(3, 2000); logx(ax)
     ax.set_xlim(3, 2000)
     ax.set_xlabel("Age of last common ancestor of the pair (Mya, TimeTree)")
-    ax.set_ylabel("Path distance (node median over HOGs)")
+    ax.set_ylabel("Ortholog distance (median over families)")
     ax.set_title("Distance vs divergence time", loc="left")
     ax.legend(loc="lower right", fontsize=6.5)
-    panel_label(ax, "a")
-    ax = axs[1]
+    fig.savefig(OUT / "figC_time.png")
+    plt.close(fig)
+    return
+    ax = None
     E3 = ep("E3")
     for sub, filled in ((shallow, True), (deep, False)):
         ax.scatter(sub["age"], sub["ratio_aa_tdi"], s=10 + 2 * np.sqrt(sub["nh_ratio"].to_numpy()),
@@ -453,12 +454,13 @@ def figD(B):
     ax = fig.add_subplot(gs[:, 0])
     ax.hist(np.log10(kh), bins=hb, color=C1, edgecolor="white", lw=0.4)
     for v, ls, lab in ((np.log10(allk["k"]), "-", f"pooled k = {allk['k']:.2f}"),
-                       (np.log10(np.median(kh)), "--", f"median $k_h$ = {np.median(kh):.2f}")):
+                       (np.log10(np.median(kh)), "--", f"median per-family k = {np.median(kh):.2f}")):
         ax.axvline(v, color=INK, ls=ls, lw=1.2, label=lab)
     ax.set_xticks(np.log10([0.1, 0.3, 1, 3, 10, 30])); ax.set_xticklabels(["0.1", "0.3", "1", "3", "10", "30"])
     ax.set_xlim(-1, 1.8)
-    ax.set_xlabel("$k_h$ = AA / 3Di branch length (per HOG, log scale)"); ax.set_ylabel("Number of HOGs")
-    ax.set_title(f"Per-HOG ratio ({len(kh):,} HOGs)", loc="left")
+    ax.set_ylim(0, hcnt.max() * 1.3)
+    ax.set_xlabel("k = AA / 3Di branch length (per family, log scale)"); ax.set_ylabel("Number of families")
+    ax.set_title(f"Per-family ratio ({len(kh):,} families)", loc="left")
     ax.legend(loc="upper right", fontsize=6.5)
     panel_label(ax, "a")
 
@@ -484,12 +486,12 @@ def figD(B):
     sl = {"1": "<100", "2": "100–300", "3": "300–1000", "4": "≥1000"}
     hogroot = pl.read_parquet(ROOT / "data" / "interim" / "hogs.parquet")
     dots(fig.add_subplot(gs[0, 2]), [(f"{sl[s]} Mya", strat[s], s3.get(f"k_stratum_{s}", {}).get("estimate"))
-                                     for s in ("1", "2", "3", "4") if s in strat], "By HOG root age", "c")
-    dots(fig.add_subplot(gs[1, 1:]), [("all edges", allk, E3["estimate"]),
-                                      ("internal edges only", intk, s3["internal_edges_only"]["estimate"])],
-         "All vs internal edges", "d")
-    fig.legend(handles=[Line2D([], [], marker="o", color=C1, ms=5, lw=2, label="all data (tune + confirm), 95% HOG-bootstrap CI"),
-                        Line2D([], [], marker="D", ls="", mfc="white", mec=INK, ms=4.5, label="confirmatory E3 value (confirm split)")],
+                                     for s in ("1", "2", "3", "4") if s in strat], "By age of sampled clade", "c")
+    dots(fig.add_subplot(gs[1, 1:]), [("all branches", allk, E3["estimate"]),
+                                      ("internal branches only", intk, s3["internal_edges_only"]["estimate"])],
+         "All vs internal branches", "d")
+    fig.legend(handles=[Line2D([], [], marker="o", color=C1, ms=5, lw=2, label="all data (tuning + confirmation sets), 95% family-bootstrap CI; n = families"),
+                        Line2D([], [], marker="D", ls="", mfc="white", mec=INK, ms=4.5, label="pre-registered value (confirmation set only)")],
                loc="lower center", bbox_to_anchor=(0.6, -0.06), ncol=2, fontsize=6.5)
     KEY["D_stratum_def"] = "hogs.parquet stratum 1..4 (root-age strata; see ANALYSIS_PLAN §0)"
     fig.savefig(OUT / "figD_ratio_k.png")

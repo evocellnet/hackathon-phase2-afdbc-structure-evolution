@@ -163,7 +163,10 @@ def dist_fig():
 
 
 def method_fig():
-    fig, axs = plt.subplots(2, 4, figsize=(13, 6.2))
+    """Report version (Figure 11): 2 x 3 panels, Spearman rank correlation, plain-language labels."""
+    from scipy.stats import spearmanr
+    fig, axs = plt.subplots(2, 3, figsize=(10, 6.6))
+    names = {"b_AA": "AA branch length", "b_3Di": "3Di branch length", "rho": "3Di/AA ratio relative to tree (\u03c1)"}
     for i, sf in enumerate(("actin", "tubulin")):
         B = pd.read_csv(f"{OUT}/branch_ratios_{sf}_ml.tsv", sep="\t")
         c = B.supported & ~B.terminal & B.eng_tdiaa_b_aa.notna()
@@ -171,28 +174,15 @@ def method_fig():
                                          ("iq_linsi_rho", "eng_tdiaa_rho", "rho"))):
             ax = axs[i, j]
             d = B[c & (B[a] > 0) & (B[b] > 0)]
-            ax.scatter(d[a], d[b], s=5, color="#2a78d6", alpha=0.6, lw=0)
+            ax.scatter(d[a], d[b], s=8, color="#2a78d6", alpha=0.6, lw=0)
             lim = [min(d[a].min(), d[b].min()), max(d[a].max(), d[b].max())]
             ax.plot(lim, lim, color="#888888", lw=0.6)
             ax.set_xscale("log"); ax.set_yscale("log")
-            rr = np.corrcoef(np.log(d[a]), np.log(d[b]))[0, 1]
-            ax.set_title(f"{sf} {lab} (internal, n={len(d)}; r_log={rr:.2f})")
-            ax.set_xlabel("IQ-TREE fixed topology (MAFFT)"); ax.set_ylabel("branch engine (pairwise tdiaa)")
-        ax = axs[i, 3]
-        nm = B[(B.clade_name.fillna("") != "") & ~B.terminal].copy()
-        nm = nm.sort_values("iq_linsi_b_aa", ascending=False).head(14)
-        meths = [("iq_linsi_rho", "IQ MAFFT", "#2a78d6"), ("iq_famsa_rho", "IQ FAMSA", "#1baf7a"), ("iq_fmg_rho", "IQ FoldMason", "#eda100"), ("iq_foldmason_rho", "IQ FoldMason", "#eda100"),
-                 ("eng_tdiaa_rho", "engine tdiaa", "#e87ba4"), ("eng_msa_rho", "engine MSA", "#7a5195")]
-        yy = np.arange(len(nm))
-        for k, (col, lab, colr) in enumerate(meths):
-            if col in nm:
-                ax.scatter(nm[col], yy + (k - 2) * 0.12, s=10, color=colr, label=lab, lw=0)
-        ax.hlines(yy, nm.iq_linsi_rho_lo, nm.iq_linsi_rho_hi, color="#2a78d6", lw=0.8)
-        ax.set_yticks(yy); ax.set_yticklabels([f"{short(s)} [bAA {b:.2f}]" for s, b in zip(nm.clade_name, nm.iq_linsi_b_aa)], fontsize=5)
-        ax.set_xscale("log"); ax.axvline(1, color="#888888", lw=0.6); ax.invert_yaxis()
-        ax.set_xlabel("rho"); ax.set_title(f"{sf}: named clades across methods")
-        if i == 0:
-            ax.legend(fontsize=5, frameon=False, loc="lower right")
+            rs = spearmanr(d[a], d[b]).correlation
+            print(sf, lab, "n", len(d), "spearman", round(rs, 3))
+            ax.set_title(f"{sf.capitalize()}: {names[lab]}\nSpearman {rs:.2f}, n = {len(d)} internal branches", fontsize=8)
+            ax.set_xlabel("IQ-TREE on fixed tree (MAFFT alignment)", fontsize=7)
+            ax.set_ylabel("Pairwise branch engine (3Di+AA alignment)", fontsize=7)
     fig.tight_layout()
     for ext in ("pdf", "png"):
         fig.savefig(f"{FIG}/method_comparison.{ext}", dpi=200)
