@@ -4,6 +4,18 @@ Legend: [ ] planned · [~] in progress · [x] done · [-] abandoned/negative · 
 
 ## Status summary (latest first)
 
+### M8: 2026-10-31 ~09:00 (project wall-clock 23.7 h; node 2 11.2 h)
+**V11 passes:** 42/42 confirmatory numbers were re-derived independently.
+
+**The critical post-hoc review (reviews/results_review_statistics.md) finds one likely common artefact.** Each AF model carries about 0.015 3Di subst/site of protein-specific structural excess beyond the identical-sequence floor η. The fixed η and the tip correction ν do not absorb it.
+- With HOG-specific baselines, E1 ĉ goes from 0.72 to about 0.90 (0.98 for d_AA 0.3–2).
+- E4 is driven by terminal edges. Internal-edge k is flat at about 4.6 from 30 My on. The E4 sign flips within the plausible range of ν.
+- E3 σ_k = 0 is an estimator failure. The defensible ratio is k_internal ≈ 4.6, post hoc.
+
+These claims would turn "structure saturates" into "structure is roughly proportional to sequence once per-model noise is accounted for". An independent agent is now trying to refute them, with synthetic checks of the alternative estimator. Report writing waits for this.
+
+**Decision note M8:** The pre-registered decisions are reported unchanged, as required. Post-hoc reinterpretations go into a clearly separated section, and only if independently confirmed. This is the main lesson of the confirmatory phase: a fixed noise floor estimated from one kind of control (identical sequences) did not capture every source of per-model noise.
+
 ### M7: 2026-10-31 07:55. CONFIRMATION RUN DONE (project wall-clock 22.5 h; node 2 10.0 h)
 **The single confirmation run passed all 10 guards (5,600 confirm HOGs; 4,891 analysed).**
 
