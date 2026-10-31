@@ -4,6 +4,30 @@ Legend: [ ] planned · [~] in progress · [x] done · [-] abandoned/negative · 
 
 ## Status summary (latest first)
 
+### M9: 2026-10-31 ~10:15. PROJECT COMPLETE (compute about 23 h of the 48 h cap: node 1 10.9 h + node 2 about 12 h)
+**Final answer to Goal 1, from the pre-registered tests, unchanged:**
+- E1/E2: concave (ĉ 0.72 / 0.70).
+- E3: k = 3.32.
+- E4: the AA/3Di ratio rises with age.
+- E5: artefact-suspect.
+- E6: positive control detected.
+
+**Post-hoc reading, independently verified:** an unmodelled per-protein 3Di offset of about 0.01–0.017, pLDDT-dependent and most likely AF model noise, biases those tests.
+- Curvature is bracketed at about 0.75–1.0. In pLDDT ≥ 90 models the estimate moves toward linear.
+- On internal branches the AA/3Di ratio is constant at about 4.6 from 30 My to over 1 Gy.
+- β-rich folds change 3Di about 1.6× faster per substitution than α folds (internal branches).
+- No robust lineage-specific structural rates were found.
+- AF compresses ortholog structural divergence by 30–40%.
+
+**Goal 2:**
+- AFDB clusters split and merge ortholog groups, mainly through length differences and the coverage rule.
+- The MDO structural excess replicates in direction; it is about 0.011 after pLDDT adjustment.
+- The case studies (cytoskeleton, kinases) show no robust single-branch structural bursts.
+
+Deliverables: `technical report/report.md` (about 13.5k words, 13 figures, 47 verified references), README.md, a full audit trail (DEVIATIONS: 34 entries; RESULTS_LEDGER; V11 42/42; 13 reviews).
+
+**Decision note M9:** We stopped about 25 h before the cap. The remaining open question, whether the per-protein offset is AF noise or real fast structural change, needs new data: PDB–PDB same-protein floors at scale, or AF predictions with varied MSA depth. That is outside this project's scope and is recorded as future work.
+
 ### M8: 2026-10-31 ~09:00 (project wall-clock 23.7 h; node 2 11.2 h)
 **V11 passes:** 42/42 confirmatory numbers were re-derived independently.
 
@@ -167,7 +191,7 @@ Four scouting agents run in parallel: literature (LITERATURE.md), data acquisiti
 - [!] X4 (H1e, exploratory; agents/h1e_analysis_report.md): on matched residues, AF–AF ortholog divergence is 0.59× [0.52,0.66] PDB–PDB for 3Di (0.69 TM, 0.70 LDDT; 197 post-cutoff pairs). The bias is a roughly constant offset, not compression with d_AA (AF slope 1.34× PDB). AF vs own PDB chain: 3Di d = 0.24 > AF ortholog–ortholog 0.17, so AF homogenises homologs. Post-cutoff bias is smaller (+0.05)
 - [!] X5 (Goal 2-ii, exploratory; agents/goal2_cluster_audit_report.md): AFDB structural clusters are not orthology units. 70% of HOGs with clustered members span >1 cluster; 48.5% of clusters merge HOGs; 61% of HOGs are both split and merged. Splits are driven by length ratio (log-odds 4.06/SD; R² 0.30) and AA divergence (1.17), not TED architecture (0.02, ns): the Foldseek 90%-coverage rule. Cluster LCA = HOG root in only 27% (51% consistent); panel-restricted cluster LCAs are too young in 70%. TED architecture differs in 21–25% of even near-identical orthologs (annotation noise) and is flat with time; paralogs exceed orthologs at matched d_AA (+0.23 log-odds)
 - [-] X8 Kinase case study (exploratory; agents/kinase_report.md): 500 PKL domains. The TK-origin stem has ρ 1.47–2.00 (88–91st pct, same direction in 3 alignments), a weak tendency, not a burst. Prokaryotic vs eukaryotic ρ CIs include 1. Flagged branches mostly alignment-specific (1/12 robust). Deep ePK–atypical pairs are AA-saturated
-- [x] 5. Goal 1, confirmatory E1–E5 done (see M7); verification/review in progress
-- [ ] 6. Goal 2 — Evolution of AFDB clusters (orthologs/paralogs, domains, case studies)
-- [ ] 7. Verification & independent review of results
-- [ ] 8. Technical report
+- [!] 5. Goal 1: confirmatory E1–E5 done (M7); post-hoc reinterpretation verified (M8–M9)
+- [x] 6. Goal 2: E6 duplication (confirmatory), X5 cluster audit, X6 cytoskeleton, X8 kinases (exploratory)
+- [x] 7. Verification: V11 42/42; critical results review; independent post-hoc verification; extra robustness checks
+- [x] 8. Technical report (technical report/report.md), independently reviewed, and edits applied

@@ -17,3 +17,5 @@
 14. If a subagent's write is blocked (reports, plans), have it save under a neutral name via Bash, else return the text inline. (round-3 ANALYSIS_PLAN, report draft)
 15. Don't over-deliberate cheap data logistics: AFDB files are `_v6`; EBI needs `-A "Mozilla/5.0"`; `aria2c -x8` pulled 25 GB in ~3 min. (panel fetch)
 16. Never wait on a process with `while pgrep -f NAME`: the pattern matches the waiting shell's own command line, so the loop never ends. Wait on a PID or a sentinel file instead. (evidence: dry-run wait timed out 1 h after the job had finished, node 2)
+17. A noise floor estimated from one control type (identical sequences) can miss other noise sources (per-model offsets in non-identical homologs). Validate floors with a second, independent control before freezing. (evidence: the post-hoc review overturned the reading of E1/E4/E5, node 2)
+18. After a surprising post-hoc reinterpretation, commission an independent agent to try to refute it with its own code and with synthetic truths; it confirmed the core claims but moderated one (curvature range 0.75–1.0, not 0.98). (evidence: agents/posthoc_verification_report.md)
