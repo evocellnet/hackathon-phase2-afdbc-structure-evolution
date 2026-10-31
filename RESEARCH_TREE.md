@@ -4,6 +4,21 @@ Legend: [ ] planned · [~] in progress · [x] done · [-] abandoned/negative · 
 
 ## Status summary (latest first)
 
+### M7: 2026-10-31 07:55. CONFIRMATION RUN DONE (project wall-clock 22.5 h; node 2 10.0 h)
+**The single confirmation run passed all 10 guards (5,600 confirm HOGs; 4,891 analysed).**
+
+- **[!] E1, 3Di vs AA:** concave, ĉ = 0.72 [98% CI 0.64, 0.80]. The result holds for all 3 alignments (seqonly 0.80, tmalign 0.80) and every sensitivity (all columns 0.54; d_AA ≤ 1 0.66).
+- **[!] E2, LDDT vs AA:** concave, 0.70.
+- **[!] E3, k = ΣAA/Σ3Di:** 3.32 [3.09, 3.57], at the low end of Illergård's 3–10×. By fold class, α HOGs 4.68 vs β HOGs 2.55: β folds change structurally faster, as Illergård found. k rises with age stratum (2.3 → 3.7) and is 4.6 on internal edges. σ_k = 0.
+- **E4:** β = −0.150 [−0.200, −0.101], so β_k > 0: the AA/3Di ratio rises with node age. It is robust to α, to the Strassert/Betts timescales and to alignment. But it is NOT significant with internal edges only (−0.047) or with WLS-clustered SEs (−0.034). Possible terminal-edge or tip-noise contribution; under review.
+- **E5:** artefact_suspect. β = 0.57 and σ_L = 0.31 reject N0, but with internal edges only β = 1.06 and there is no excess.
+- **E6:** detected, 0.030 [0.026, 0.033]; MDO 0.017, in the PMID 40813247 direction. It is not alignment-robust: seqonly gives −0.011, n.s.
+- **Interpretation row:** R6_artefact_suspect.
+
+Running now: V11 independent re-derivation; a critical statistical review (E4 terminal edges, the sources of E1 concavity); and the main figures on all data.
+
+**Decision note M7:** The pre-registered decisions are reported as-is. The internal-edge caveats will be reported prominently, but they do not overturn the decisions. Any reinterpretation goes into the Discussion, labelled as post hoc.
+
 ### M6: 2026-10-31 ~04:40 (project wall-clock 19.3 h; node 2 6.8 h)
 **Tuning is finished and the plan is frozen.** Freeze md5s are in RESULTS_LEDGER.md. V3 on 1,377 real tune designs gives a false-concave rate of 0 and mean ĉ = 1.03 under a linear truth, so the curvature test is conservative. But its empirical power is low: c = 0.90 is detected only 55% of the time, and c = 0.92–0.96 is never detected. E4 recovers only about 46% of a true slope (attenuation). E5 power at f = 1.5 is 0.24, with a null rate of 0.18, so per the plan E5 can only be inconclusive unless it rejects. The empirical power is written next to the analytic minimal detectable effect (MDE) in the §Tuning table.
 
@@ -140,7 +155,7 @@ Four scouting agents run in parallel: literature (LITERATURE.md), data acquisiti
 - [!] X4 (H1e, exploratory; agents/h1e_analysis_report.md): on matched residues, AF–AF ortholog divergence is 0.59× [0.52,0.66] PDB–PDB for 3Di (0.69 TM, 0.70 LDDT; 197 post-cutoff pairs). The bias is a roughly constant offset, not compression with d_AA (AF slope 1.34× PDB). AF vs own PDB chain: 3Di d = 0.24 > AF ortholog–ortholog 0.17, so AF homogenises homologs. Post-cutoff bias is smaller (+0.05)
 - [!] X5 (Goal 2-ii, exploratory; agents/goal2_cluster_audit_report.md): AFDB structural clusters are not orthology units. 70% of HOGs with clustered members span >1 cluster; 48.5% of clusters merge HOGs; 61% of HOGs are both split and merged. Splits are driven by length ratio (log-odds 4.06/SD; R² 0.30) and AA divergence (1.17), not TED architecture (0.02, ns): the Foldseek 90%-coverage rule. Cluster LCA = HOG root in only 27% (51% consistent); panel-restricted cluster LCAs are too young in 70%. TED architecture differs in 21–25% of even near-identical orthologs (annotation noise) and is flat with time; paralogs exceed orthologs at matched d_AA (+0.23 log-odds)
 - [-] X8 Kinase case study (exploratory; agents/kinase_report.md): 500 PKL domains. The TK-origin stem has ρ 1.47–2.00 (88–91st pct, same direction in 3 alignments), a weak tendency, not a burst. Prokaryotic vs eukaryotic ρ CIs include 1. Flagged branches mostly alignment-specific (1/12 robust). Deep ePK–atypical pairs are AA-saturated
-- [ ] 5. Goal 1 — Is structural divergence linear in time? (Elofsson 2009 revisited at AFDB scale)
+- [x] 5. Goal 1, confirmatory E1–E5 done (see M7); verification/review in progress
 - [ ] 6. Goal 2 — Evolution of AFDB clusters (orthologs/paralogs, domains, case studies)
 - [ ] 7. Verification & independent review of results
 - [ ] 8. Technical report
