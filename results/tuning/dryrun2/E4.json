@@ -1,0 +1,378 @@
+{
+  "endpoint": "E4",
+  "estimand": "beta: slope of y=log(S_3Di/S_AA) on centred log mean cell age (MixedLM); beta_k = -beta",
+  "estimate": -0.13565031262347263,
+  "se_boot": 0.05185709907910425,
+  "ci98": [
+    -0.25628796482007205,
+    -0.015012660426873228
+  ],
+  "ci_pct98": [
+    -0.19194184748725665,
+    0.06603123930499596
+  ],
+  "one_sided_bound": {
+    "lower99": -0.25628796482007205,
+    "upper99": -0.015012660426873228
+  },
+  "p_value": 0.008900605091461511,
+  "p_holm": 0.017801210182923022,
+  "decision": "beta_k_gt_0",
+  "n_hogs": 1221,
+  "n_units": 1653,
+  "n_excluded": {
+    "misfit": 134,
+    "fail_frac": 43,
+    "underdetermined": 23,
+    "rank_deficient": 21,
+    "cells_aa_nonpositive": 0
+  },
+  "sensitivity": {
+    "pooled_ratio_of_sums_slope": {
+      "estimate": -0.11270740021453816,
+      "ci98": [
+        -0.9522016223865808,
+        0.7267868219575044
+      ],
+      "decision": null
+    },
+    "wls_1_over_vhg_clustered": {
+      "estimate": -0.11638257488293902,
+      "ci98": [
+        -0.2670822391277541,
+        0.03431708936187605
+      ],
+      "p_unadjusted": 0.07239984138324394,
+      "n_cells": 1653
+    },
+    "censored_dropped": {
+      "estimate": -0.15988244064586704,
+      "ci98": [
+        -0.2231923971932934,
+        -0.09657248409844069
+      ],
+      "p_unadjusted": 4.229973482594573e-09,
+      "B": 200
+    },
+    "bin5_excluded": {
+      "estimate": -0.13485991381083148,
+      "ci98": [
+        -0.28287200343035207,
+        0.013152175808689104
+      ],
+      "p_unadjusted": 0.034037141698400886,
+      "B": 200
+    },
+    "internal_edges_only": {
+      "estimate": -0.014364474533571136,
+      "ci98": [
+        -0.1372261850824551,
+        0.10849723601531282
+      ],
+      "p_unadjusted": 0.7856321608304946,
+      "B": 200
+    },
+    "cells_plan_rule": {
+      "estimate": -0.239890921348826,
+      "ci98": [
+        -0.4007543302656632,
+        -0.07902751243198883
+      ],
+      "p_unadjusted": 0.0005219817480790478,
+      "B": 200,
+      "n_cells": 4042,
+      "censored_frac": 0.05912914398812469,
+      "note": "ANALYSIS_PLAN \u00a72.6 rule; biased under the null (D30)"
+    },
+    "alpha_x1.5": {
+      "estimate": -0.13070583014956597,
+      "ci98": [
+        -0.23018349264305754,
+        -0.031228167656074404
+      ],
+      "p_unadjusted": 0.002238342182107056,
+      "B": 200,
+      "decision": null,
+      "flags": [
+        "censored_cells_gt2pct:0.029",
+        "ci_disagree"
+      ]
+    },
+    "alpha_div1.5": {
+      "estimate": -0.1453255737108796,
+      "ci98": [
+        -0.2636192219904852,
+        -0.02703192543127396
+      ],
+      "p_unadjusted": 0.004263818095945782,
+      "B": 200,
+      "decision": null,
+      "flags": [
+        "reml_polished:dllf=1.3",
+        "censored_cells_gt2pct:0.029",
+        "ci_disagree"
+      ]
+    },
+    "aa_ml_seq_le_1_hogs": {
+      "estimate": -0.12734355862753233,
+      "ci98": [
+        -0.397828738435665,
+        0.14314162118060036
+      ],
+      "p_unadjusted": 0.2734127550305825,
+      "B": 200,
+      "decision": null,
+      "flags": [
+        "fast_reml_mismatch:7.40e-04",
+        "censored_cells_gt2pct:0.065"
+      ],
+      "note": "HOGs whose primary pairs all have aa_ml_seq <= 1",
+      "n_hogs": 294
+    },
+    "ages_strassert2021": {
+      "estimate": -0.12556419472652336,
+      "ci98": [
+        -0.2594448433878238,
+        0.008316453934777063
+      ],
+      "p_unadjusted": 0.029121429888377293,
+      "B": 200,
+      "decision": null,
+      "flags": [
+        "reml_polished:dllf=1.73",
+        "censored_cells_gt2pct:0.029"
+      ],
+      "n_cells": 1694,
+      "nodes_overridden": {
+        "N001": [
+          2132.2,
+          1951.1,
+          2335.5
+        ],
+        "N007": [
+          1821.0,
+          1725.3,
+          1935.1
+        ],
+        "N009": [
+          1111.8,
+          849.2,
+          1396.7
+        ],
+        "N030": [
+          881.7,
+          662.6,
+          1111.4
+        ],
+        "N039": [
+          493.1,
+          365.8,
+          675.6
+        ],
+        "N054": [
+          973.6,
+          804.9,
+          1184.2
+        ],
+        "N055": [
+          837.9,
+          734.8,
+          968.9
+        ],
+        "N056": [
+          650.8,
+          633.9,
+          672.0
+        ],
+        "N103": [
+          1026.0,
+          758.3,
+          1651.9
+        ],
+        "N029": [
+          1359.0,
+          1051.0,
+          1679.0
+        ],
+        "N006": [
+          1925.0,
+          1799.0,
+          2063.0
+        ]
+      },
+      "panel_flags": [
+        "age_imputed:6",
+        "age_override_repair:0",
+        "age_ci_missing:11"
+      ],
+      "note": "literature ages on deep panel nodes (TimeTree median >= 500 My) only; TimeTree elsewhere; branch engine refitted on the re-aged panel"
+    },
+    "ages_betts2018": {
+      "estimate": -0.13249757714623742,
+      "ci98": [
+        -0.2612923374843694,
+        -0.0037028168081054413
+      ],
+      "p_unadjusted": 0.01670077789106661,
+      "B": 200,
+      "decision": null,
+      "flags": [
+        "reml_polished:dllf=2.91",
+        "censored_cells_gt2pct:0.029",
+        "ci_disagree"
+      ],
+      "n_cells": 1676,
+      "nodes_overridden": {
+        "N001": [
+          1492.923306804472,
+          1210.0,
+          1842.0
+        ],
+        "N029": [
+          1385.775955917839,
+          1125.0,
+          1707.0
+        ],
+        "N006": [
+          1365.176179106565,
+          1118.0,
+          1667.0
+        ]
+      },
+      "panel_flags": [
+        "age_imputed:6",
+        "age_override_repair:0",
+        "age_ci_missing:13"
+      ],
+      "note": "literature ages on deep panel nodes (TimeTree median >= 500 My) only; TimeTree elsewhere; branch engine refitted on the re-aged panel"
+    },
+    "aln_seqonly": {
+      "estimate": -0.09900836490953807,
+      "ci98": [
+        -0.18929749768625687,
+        -0.00871923213281929
+      ],
+      "p_unadjusted": 0.010741322836487655,
+      "B": 200,
+      "decision": null,
+      "flags": [
+        "censored_cells_gt2pct:0.027",
+        "ci_disagree"
+      ]
+    },
+    "aln_tmalign": {
+      "estimate": -0.15025007659290354,
+      "ci98": [
+        -0.25684776019928607,
+        -0.04365239298652103
+      ],
+      "p_unadjusted": 0.001041751451541506,
+      "B": 200,
+      "decision": null,
+      "flags": [
+        "ci_disagree"
+      ]
+    }
+  },
+  "alignment_robust": true,
+  "flags": [
+    "censored_cells_gt2pct:0.030",
+    "ci_disagree",
+    "exploratory_dryrun_tune"
+  ],
+  "plan_md5": "6e19158062dfd7fe6e56e13eb615c7c6",
+  "tuning_md5": "def68634581662caf4e33542176294ed",
+  "commit": "cd0792686526719233a84299e5afbe6f9e8cb358",
+  "input_md5": "cd6bf87d9a4d7559650768400f295af6",
+  "beta_k": 0.13565031262347263,
+  "mu": -1.382828717709787,
+  "gamma": -0.11812075523488837,
+  "x_center": 5.0381060099624895,
+  "z_center": -2.385952078309038,
+  "se_model": [
+    0.02498704999951266,
+    0.017699897938406355,
+    0.03017159060222356
+  ],
+  "censored_frac": 0.029643073200241985,
+  "cell_rule": "info",
+  "info_T": 4.0,
+  "tip_var": 0.0007930497991755137,
+  "B": 1000,
+  "rep_fallback_count": 0,
+  "rep_failed": 0,
+  "mixed_engine_boot": "fast",
+  "fast_vs_statsmodels_abs_diff": 4.005477191870721e-07,
+  "runtime_s": 466.6994061470032,
+  "robust_alpha_timescale_detail": {
+    "alpha_x1.5": {
+      "sign_same": true,
+      "p_unadjusted": 0.002238342182107056
+    },
+    "alpha_div1.5": {
+      "sign_same": true,
+      "p_unadjusted": 0.004263818095945782
+    },
+    "ages_strassert2021": {
+      "sign_same": true,
+      "p_unadjusted": 0.029121429888377293
+    },
+    "ages_betts2018": {
+      "sign_same": true,
+      "p_unadjusted": 0.01670077789106661
+    }
+  },
+  "robust_alpha_timescale": true,
+  "robust_alpha_timescale_note": "\u00a74.4: same sign as beta-hat and unadjusted p < 0.05 in alpha x1.5, alpha /1.5, Strassert 2021 and Betts 2018 deep ages",
+  "alignment_robust_rule": "same sign of beta across tdiaa/seqonly/tmalign",
+  "negative_control_D13": {
+    "n_perm": 20,
+    "n_cover_0": 20,
+    "pass": true,
+    "B_per_perm": 200
+  },
+  "run_meta": {
+    "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+    "split": "tune",
+    "primary_alignment": "tdiaa",
+    "label": "exploratory_dryrun_tune",
+    "created": "2026-10-31T05:55:34",
+    "sizes": {
+      "B1": 200,
+      "Bs": 50,
+      "Bs_boot": 10,
+      "B_naive": 1000,
+      "B_sens": 50,
+      "B_alt": 200,
+      "B3": 1000,
+      "B4": 1000,
+      "B4_sens": 200,
+      "B4_alt": 200,
+      "B5": 1000,
+      "P": 100,
+      "B_cv": 200,
+      "spike_reps": 50,
+      "spike_B": 200,
+      "B6": 1000,
+      "neg_perms": 20,
+      "neg_B": 200,
+      "B3_alt": 200
+    },
+    "tuning": {
+      "tuning_md5": "def68634581662caf4e33542176294ed",
+      "provisional": false,
+      "used_provisional": []
+    },
+    "pair_table_flags": {
+      "tdiaa": [],
+      "seqonly": [],
+      "tmalign": []
+    },
+    "split_md5": "29da378aec763731b728b38fa262941f",
+    "driver_flags": [
+      "age_imputed:6",
+      "age_ci_missing:13",
+      "species_plddt_from_pair_tables"
+    ]
+  }
+}

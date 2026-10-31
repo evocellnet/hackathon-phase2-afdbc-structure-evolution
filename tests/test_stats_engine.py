@@ -278,3 +278,24 @@ def test_cell_info_rule_merges_low_information_cells():
     assert len(c_info["hog"]) == 1 and np.isclose(c_info["S_aa"][0], 0.40)
     c_info0 = build_cells(ev, p.age, rule="info", info_T=4.0, tip_var=0.0, r_bar=0.4)  # precise -> kept
     assert len(c_info0["hog"]) == 2
+
+
+def test_wls_rank_deficient_flagged():
+    """Pre-confirm fix: a design whose ok rows do not identify every edge is flagged (no exploding b)."""
+    from strucevo.stats.branch import wls_two_pass
+    # 4-taxon tree ((a,b),(c,d)) with 5 edges: a, b, c, d, internal e
+    pairs = [("a", "b"), ("a", "c"), ("a", "d"), ("b", "c"), ("b", "d"), ("c", "d")]
+    edges = {"a": 0, "b": 1, "c": 2, "d": 3}
+    X = np.zeros((len(pairs) * 3, 5))
+    for r, (u, v) in enumerate(pairs * 3):
+        X[r, edges[u]] = X[r, edges[v]] = 1
+        if {u, v} not in ({"a", "b"}, {"c", "d"}):
+            X[r, 4] = 1
+    d = (X @ np.array([0.1, 0.2, 0.3, 0.4, 0.5]))[None]
+    se = np.full_like(d, 0.01)
+    ok = np.ones_like(d, bool)
+    f = wls_two_pass(X, d, se, ok, min_extra=0)
+    assert not f["under"][0] and np.allclose(f["b"][0], [0.1, 0.2, 0.3, 0.4, 0.5])
+    ok2 = ok.copy(); ok2[0, [r for r, (u, v) in enumerate(pairs * 3) if {u, v} == {"a", "b"}]] = False
+    f2 = wls_two_pass(X, d, se, ok2, min_extra=0)
+    assert f2["under"][0] and f2["rank_def"][0] and np.all(np.isnan(f2["b"][0]))

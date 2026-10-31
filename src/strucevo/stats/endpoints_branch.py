@@ -296,9 +296,30 @@ def fit_mixed(y, x, z, groups, start=None):
             flags.append("fit_failed")
             return {"mu": np.nan, "beta": np.nan, "gamma": np.nan, "flags": flags, "se_model": np.full(3, np.nan),
                     "params": None}
+    if conv:
+        # REML-maximum polish (pre-confirm fix): statsmodels' optimiser chain accepts the first fit flagged
+        # 'converged', which can stop short of the REML maximum (tune dry run: llf -1961.34 vs -1960.62). Restart
+        # statsmodels from the fast-REML optimum and keep whichever statsmodels fit has the higher REML llf.
+        try:
+            from statsmodels.regression.mixed_linear_model import MixedLM, MixedLMParams
+            fm = fast_mixed(y, x, z, groups)
+            if fm["converged"]:
+                Lf = np.zeros((2, 2)); Lf[np.tril_indices(2)] = fm["theta"]
+                sp = MixedLMParams.from_components(fe_params=np.array([fm["mu"], fm["beta"], fm["gamma"]]),
+                                                   cov_re=Lf @ Lf.T)
+                with warnings.catch_warnings():
+                    warnings.simplefilter("ignore")
+                    r2 = MixedLM(y, exog, groups=groups, exog_re=np.column_stack([np.ones_like(x), x])).fit(
+                        reml=True, method=["lbfgs"], start_params=sp)
+                if bool(r2.converged) and np.all(np.isfinite(r2.fe_params)) and r2.llf > r.llf + 1e-6:
+                    flags_polish = f"reml_polished:dllf={r2.llf - r.llf:.3g}"
+                    r = r2
+                    flags.append(flags_polish)
+        except Exception:
+            pass
     fe = np.asarray(r.fe_params)
     return {"mu": fe[0], "beta": fe[1], "gamma": fe[2], "flags": flags, "se_model": np.asarray(r.bse_fe)[:3],
-            "params": r.params if conv else None}
+            "params": r.params if conv else None, "llf": float(r.llf)}
 
 
 def run_E4(bf, panel: PanelTree, tau_misfit=None, B=200, sensitivities=True, B_sens=None, ages_override=None,
@@ -325,7 +346,7 @@ def run_E4(bf, panel: PanelTree, tau_misfit=None, B=200, sensitivities=True, B_s
     flags = list(fit["flags"])
     fchk = fast_mixed(y, x, z, cells["hog"])
     fast_vs_sm = abs(fchk["beta"] - fit["beta"])
-    if engine == "fast" and not fit["flags"] and fast_vs_sm > 1e-5:
+    if engine == "fast" and not [f for f in fit["flags"] if not f.startswith("reml_polished")] and fast_vs_sm > 1e-5:
         flags.append(f"fast_reml_mismatch:{fast_vs_sm:.2e}")
     cens_frac = float(cells["censored"].mean()) if len(y) else np.nan
     if cens_frac > 0.02:
@@ -364,6 +385,7 @@ def run_E4(bf, panel: PanelTree, tau_misfit=None, B=200, sensitivities=True, B_s
                 f = fast_mixed(yy, xx, zz, grp, slope=False); f["flags"] = ["re_slope_fallback"]
         else:
             f = fit_mixed(yy, xx, zz, grp, start=fit.get("params"))
+            f["flags"] = [q for q in f["flags"] if not q.startswith("reml_polished")]
         return f, cc
 
     for b in range(B):

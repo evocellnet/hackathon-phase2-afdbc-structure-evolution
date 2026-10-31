@@ -243,7 +243,13 @@ def d_star(x, y_raw, w, g, H, eta_raw, x_grid=np.round(np.arange(0.05, 2.0 + 1e-
     Ap = weighted_median(a_pow, den2)
     rel = np.abs((eta_raw + Ap * x_grid ** cp) / (eta_raw + A * x_grid) - 1)
     hit = np.flatnonzero(rel > 0.10)
-    return {"d_star": float(x_grid[hit[0]]) if hit.size else float("nan"), "A": A, "A_pow": Ap, "c_pow": float(cp)}, engine
+    ok = np.flatnonzero(rel <= 0.10)
+    # descriptive only (not the plan's estimand): where the two fits agree within 10%, and the departure above it
+    desc = {"rel_at_grid_min": float(rel[0]),
+            "agree_within_10pct": [float(x_grid[ok[0]]), float(x_grid[ok[-1]])] if ok.size else None,
+            "upper_departure_x": (float(x_grid[ok[-1] + 1]) if ok.size and ok[-1] + 1 < len(x_grid) else None)}
+    return {"d_star": float(x_grid[hit[0]]) if hit.size else float("nan"), "A": A, "A_pow": Ap, "c_pow": float(cp),
+            "at_grid_min": bool(hit.size and hit[0] == 0), "descriptive": desc}, engine
 
 
 def d_star_boot(x, y_raw, w, g, H, eta_raw, sp, B=200, seed_stage="bootstrap_E2"):

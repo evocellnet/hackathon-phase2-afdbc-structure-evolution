@@ -44,12 +44,20 @@ def wls_two_pass(X: np.ndarray, d: np.ndarray, se: np.ndarray, ok: np.ndarray, m
     ok = ok & np.isfinite(d) & np.isfinite(se) & (se > 0)
     n_ok = ok.sum(1)
     under = n_ok < p + min_extra
+    # identifiability (pre-confirm fix C/D, presconfirm_fixes_report): the count rule alone admits designs whose
+    # ok rows do not identify every edge (e.g. after hidden-paralogy pair removal); X'WX is then singular and b
+    # explodes (|b| ~ 1e12 seen on the tune split). Such fits are flagged rank-deficient and treated as underdetermined.
+    rank_def = np.zeros(K, bool)
+    for k in np.flatnonzero(~under):
+        if np.linalg.matrix_rank(X[ok[k]]) < p:
+            rank_def[k] = True
+    under = under | rank_def
     dz = np.where(ok, d, 0.0)
     se2 = np.where(ok, se * se, 1.0)
     out = {"b": np.full((K, p), np.nan), "A": np.zeros((K, p, n)), "r": np.zeros((K, n)), "w": np.zeros((K, n)),
            "s2": np.full(K, np.nan), "rss_rel": np.full(K, np.nan), "n_ok": n_ok, "under": under.copy(),
            "hc1": np.full(K, np.nan), "V": np.full((K, p, p), np.nan), "G": np.zeros((K, p, n)),
-           "se_method": se_method}
+           "se_method": se_method, "rank_def": rank_def}
     act = ~under
     if not act.any():
         return out
@@ -256,7 +264,7 @@ def fit_branches(pairs, panel: PanelTree, metrics=("aa_ml", "tdi_ml", "lddt_D"),
         for k, m in enumerate(metrics):
             reasons = []
             if fit["under"][k]:
-                reasons.append("underdetermined")
+                reasons.append("rank_deficient" if fit.get("rank_def", np.zeros(len(metrics), bool))[k] else "underdetermined")
             if fail[k] > fail_gate:
                 reasons.append("fail_frac")
             if tau_misfit is not None and np.isfinite(hf.misfit_ratio) and hf.misfit_ratio > tau_misfit:

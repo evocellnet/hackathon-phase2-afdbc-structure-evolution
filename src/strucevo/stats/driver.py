@@ -307,10 +307,12 @@ def load_variant(path, split):
 
 
 # ======================================================================================== panel tree
-def load_panel(root, flags):
+def load_panel(root, flags, age_override=None):
     """PanelTree from data/interim/timetree/panel_tree.nwk (+ node_ages.tsv median/lo95/hi95). Leaf labels
     'UPxxxx_<taxid>' -> taxid. Nodes without an age get (parent + oldest child)/2 (flag age_imputed);
-    nodes without a CI keep sigma = 0 in age draws (flag age_ci_missing)."""
+    nodes without a CI keep sigma = 0 in age draws (flag age_ci_missing).
+    age_override: {node: (median, lo95, hi95)} replacing node_ages.tsv values BEFORE imputation (E4 deep-age
+    sensitivities, §4.4); followed by the top-down repair child = min(child, parent - 0.1) (flag age_override_repair)."""
     import dendropy
     import polars as pl
     from .trees import PanelTree
@@ -322,6 +324,11 @@ def load_panel(root, flags):
     na = pl.read_csv(tt / "node_ages.tsv", separator="\t", infer_schema_length=0)
     f = lambda v: float(v) if v not in (None, "", "NA") else np.nan
     ages = {r["node"]: (f(r["median"]), f(r["lo95"]), f(r["hi95"])) for r in na.iter_rows(named=True)}
+    if age_override:
+        missing = sorted(set(age_override) - set(ages))
+        if missing:
+            raise KeyError(f"age_override nodes not in node_ages.tsv: {missing}")
+        ages.update(age_override)
     panel = PanelTree.from_dendropy(t, ages)
     age = panel.age.copy()
     miss = np.flatnonzero(~np.isfinite(age))
@@ -338,10 +345,37 @@ def load_panel(root, flags):
                 age[i] = 0.5 * (pa + oldest[i])
         panel = panel.with_ages(age)
         flags.append(f"age_imputed:{len(miss)}")
+    if age_override:
+        age = panel.age.copy(); nfix = 0
+        for i in range(len(age)):                    # preorder (parents first)
+            p = panel.parent[i]
+            if p >= 0 and not panel.is_leaf[i] and age[i] > age[p] - 0.1:
+                age[i] = age[p] - 0.1; nfix += 1
+        if nfix:
+            panel = panel.with_ages(age, panel.lo, panel.hi)
+        flags.append(f"age_override_repair:{nfix}")
     nci = int(np.sum(~panel.is_leaf & ~(np.isfinite(panel.lo) & np.isfinite(panel.hi))))
     if nci:
         flags.append(f"age_ci_missing:{nci}")
     return panel
+
+
+def deep_age_overrides(root):
+    """{'ages_strassert2021': {node: (med, lo, hi)}, 'ages_betts2018': {...}} from
+    data/interim/timetree/deep_ages_panel.tsv (scripts/tuning/map_deep_ages.py), or None if absent."""
+    import polars as pl
+    p = Path(root) / "data" / "interim" / "timetree" / "deep_ages_panel.tsv"
+    if not p.exists():
+        return None
+    d = pl.read_csv(p, separator="\t", infer_schema_length=0, null_values=["NA", ""])
+    out = {}
+    for name, pre in (("ages_strassert2021", "s21"), ("ages_betts2018", "b18")):
+        ov = {}
+        for r in d.iter_rows(named=True):
+            if r[f"{pre}_median"] is not None:
+                ov[r["node"]] = (float(r[f"{pre}_median"]), float(r[f"{pre}_lo"]), float(r[f"{pre}_hi"]))
+        out[name] = ov
+    return out
 
 
 # ======================================================================================== annotations
@@ -449,14 +483,14 @@ class EndpointDriver:
         self._t("load", t0)
 
     # ------------------------------------------------------------------ branches
-    def fit(self, tab, aln, hog_subset=None):
+    def fit(self, tab, aln, hog_subset=None, panel=None):
         from .branch import fit_branches
         import polars as pl
         if hog_subset is not None:
             tab = tab.filter(pl.col("hog").is_in(list(hog_subset)))
         eta = self.tun.eta(aln)
         hs = {h: self.hog_species[h] for h in np.unique(tab["hog"].to_numpy()) if h in self.hog_species}
-        return fit_branches(tab, self.panel, metrics=("aa_ml", "tdi_ml", "lddt_D"),
+        return fit_branches(tab, self.panel if panel is None else panel, metrics=("aa_ml", "tdi_ml", "lddt_D"),
                             nu={"tdi_ml": eta["tdi_ml"] / 2, "lddt_D": eta["lddt_D"] / 2}, aln=aln,
                             hog_species=hs, tau_misfit=self.tau, se_method="model", misfit=True)
 
@@ -574,6 +608,42 @@ class EndpointDriver:
             out[name] = df.filter(pl.col("pair_set") == "primary")
         return out
 
+    def _all_columns(self, aln):
+        """E1/E2 sensitivity 'All aligned columns' (§4.1): aa_ml / tdi_ml (+ SE, sat, p) recomputed at the tuned alpha
+        from AA/3Di counts over EVERY aligned column of the same Foldseek alignment (strucevo.pairs.allcols; the
+        alignment is re-run, core counts verified identical). kappa(bin) applied as for the core columns; status,
+        aa_ml_seq (selection, C26), lddt_* unchanged. Branch engine refitted on the all-column table (PB design).
+        Cached per alignment. Returns (primary-pair table, BranchFit, meta)."""
+        cache = getattr(self, "_allcols_cache", {})
+        if aln in cache:
+            return cache[aln]
+        import polars as pl
+        from strucevo.pairs.allcols import all_column_counts
+        from strucevo.pairs.ml import ml_from_counts
+        f, meta = all_column_counts(self.root, aln, self.split, threads=int(os.environ.get("ALLCOLS_THREADS", "40")),
+                                    log=self.log)
+        z = np.load(f)
+        tab = self.tabs[aln]
+        pos = {p: i for i, p in enumerate(z["pair_id"].tolist())}
+        rows = np.array([pos.get(p, -1) for p in tab["pair_id"].to_list()])
+        good = rows >= 0
+        good[good] = z["core_match"][rows[good]] & z["aligned"][rows[good]]
+        cols = {}
+        for key in ("aa", "tdi"):
+            cnt = np.zeros((tab.height, 20, 20), np.int64)
+            cnt[good] = z[f"{key}_all"][rows[good]]
+            r = ml_from_counts(cnt, key, self.alpha[key], self.device)
+            nan = lambda v: np.where(good, v, np.nan)
+            cols.update({f"{key}_p": nan(r["p"]), f"{key}_ml": nan(r["ml"]), f"{key}_ml_se": nan(r["se"]),
+                         f"{key}_sat": np.where(good, r["sat"], False)})
+        cols["status"] = np.where(good, tab["status"].to_numpy().astype(str), "fail_allcols_recompute")
+        df = apply_kappa(_with_cols(tab, cols), self.tun.kappa(aln))
+        bfa = self.fit(df, aln)
+        meta = {k: v for k, v in meta.items() if k != "source_sig"} | {"n_rows_not_matched": int((~good).sum())}
+        cache[aln] = (df, bfa, meta)
+        self._allcols_cache = cache
+        return cache[aln]
+
     def _finish(self, rec, name):
         bad = []
         for k, v in (rec.get("sensitivity") or {}).items():      # graceful degradation: mark empty sensitivities
@@ -646,6 +716,15 @@ class EndpointDriver:
                 sens[k] = {"tab": v}
         except Exception as e:
             self.flags.append(f"alpha_variant_failed:{e}")
+        allcols_meta, allcols_err = None, None
+        try:
+            t_all, bf_all, allcols_meta = self._all_columns(aln)
+            sens["all_aligned_columns"] = {"tab": t_all, "bf": bf_all,
+                                           "note": "aa_ml/tdi_ml over all aligned columns (core = pLDDT>=70 both)"
+                                                   + ("; y = lddt_D unchanged (lddt_global is already all-column)" if ep == "E2" else "")}
+        except Exception as e:
+            allcols_err = f"{type(e).__name__}: {str(e)[:300]}"
+            self.log(f"  {ep} all-columns sensitivity failed: {allcols_err}")
         rec, curve, _ = run_curve_endpoint(tab, ep, eta=eta[ekey], rho=rho, excluded_hogs=self.excl[(mkey, aln)],
                                            rho_pair=self._rho_pair(aln, rkey, tab), bf=self.bf[aln],
                                            B=S["B1"], B_naive=S["B_naive"], sensitivities=sens, B_sens=S["B_sens"],
@@ -656,9 +735,12 @@ class EndpointDriver:
                 rec["sensitivity"][f"aln_{a2}"] = {"estimate": None, "ci98": None, "decision": "not_estimable"}
                 rec["alignment_robust"] = None
                 rec["flags"].append(f"alignment_{a2}_not_estimable")
-        rec["sensitivity"]["all_aligned_columns"] = {"estimate": None, "ci98": None, "decision": "unavailable",
-                                                     "note": "no all-column 3Di counts (only seqonly aa_all); lddt_global is already all-column"}
-        rec["flags"].append("all_columns_sensitivity_unavailable")
+        if allcols_err is not None:
+            rec["sensitivity"]["all_aligned_columns"] = {"estimate": None, "ci98": None, "decision": "not_estimable",
+                                                         "error": allcols_err}
+            rec["flags"].append("all_columns_sensitivity_not_estimable")
+        else:
+            rec["sensitivity"]["all_aligned_columns"]["recompute_meta"] = allcols_meta
         rec["rho_scalar"] = rho
         rec["sensitivity_failures_imputed_rule"] = "C14: HOG max eligible y, SE = median eligible SE"
         self._t(ep, t0)
@@ -727,9 +809,27 @@ class EndpointDriver:
                 "note": "HOGs whose primary pairs all have aa_ml_seq <= 1", "n_hogs": len(sub)}
         except Exception as e:
             extra["aa_ml_seq_le_1_hogs"] = {"estimate": None, "ci98": None, "decision": "not_estimable", "error": str(e)[:200]}
+        # deep-age sensitivities (§4.4): literature ages on the deep panel nodes (TimeTree elsewhere), branch engine
+        # refitted on the re-aged panel (D1 root-merged shares use ages), then E4 at B4_sens (as the alpha variants)
+        deep = deep_age_overrides(self.root)
         for name in ("ages_strassert2021", "ages_betts2018"):
-            extra[name] = {"estimate": None, "ci98": None, "decision": "unavailable",
-                           "note": "no deep-age table in data/interim/timetree"}
+            ov = (deep or {}).get(name)
+            if not ov:
+                extra[name] = {"estimate": None, "ci98": None, "decision": "unavailable",
+                               "note": "no deep-age table data/interim/timetree/deep_ages_panel.tsv (scripts/tuning/map_deep_ages.py)"}
+                continue
+            try:
+                pfl = []
+                pan = load_panel(self.root, pfl, age_override=ov)
+                bfd = self.fit(tab, self.primary, panel=pan)
+                r = run_E4(bfd, pan, self.tau, B=S["B4_sens"], sensitivities=False, tip_var=tv)
+                extra[name] = {"estimate": r["estimate"], "ci98": r["ci98"], "p_unadjusted": r["p_value"],
+                               "B": S["B4_sens"], "decision": None, "flags": r["flags"], "n_cells": r["n_units"],
+                               "nodes_overridden": {k: list(v) for k, v in ov.items()}, "panel_flags": pfl,
+                               "note": "literature ages on deep panel nodes (TimeTree median >= 500 My) only; "
+                                       "TimeTree elsewhere; branch engine refitted on the re-aged panel"}
+            except Exception as e:
+                extra[name] = {"estimate": None, "ci98": None, "decision": "not_estimable", "error": str(e)[:300]}
         signs = {}
         for a2, bfa in self.bf.items():
             if a2 != self.primary:
@@ -739,9 +839,21 @@ class EndpointDriver:
                     extra[f"aln_{a2}"] = {"estimate": None, "ci98": None, "decision": "not_estimable", "error": str(e)[:200]}
         rec = run_E4(bf, self.panel, self.tau, B=S["B4"], sensitivities=True, B_sens=S["B4_sens"], extra_sens=extra,
                      tip_var=tv)
-        rec["flags"].append("deep_age_sensitivity_unavailable")
-        rec["robust_alpha_timescale"] = False
-        rec["robust_alpha_timescale_note"] = "deep-age sensitivities unavailable -> cannot be established"
+        need = ("alpha_x1.5", "alpha_div1.5", "ages_strassert2021", "ages_betts2018")
+        sv = rec["sensitivity"]
+        avail = [n for n in need if isinstance(sv.get(n), dict) and sv[n].get("estimate") is not None
+                 and np.isfinite(sv[n]["estimate"])]
+        rec["robust_alpha_timescale_detail"] = {
+            n: ({"sign_same": bool(np.sign(sv[n]["estimate"]) == np.sign(rec["estimate"])),
+                 "p_unadjusted": sv[n].get("p_unadjusted")} if n in avail else "unavailable") for n in need}
+        if len(avail) < len(need):
+            rec["flags"].append("robust_alpha_timescale_incomplete:" + ",".join(n for n in need if n not in avail))
+            rec["robust_alpha_timescale"] = False
+            rec["robust_alpha_timescale_note"] = "a required alpha/deep-age sensitivity is unavailable -> cannot be established"
+        else:
+            rec["robust_alpha_timescale"] = bool(e4_robust_alpha_timescale(rec, need[:2], need[2:]))
+            rec["robust_alpha_timescale_note"] = ("§4.4: same sign as beta-hat and unadjusted p < 0.05 in alpha x1.5, "
+                                                  "alpha /1.5, Strassert 2021 and Betts 2018 deep ages")
         if signs:
             rec["alignment_robust"] = bool(all(s == np.sign(rec["estimate"]) for s in signs.values()))
             rec["alignment_robust_rule"] = "same sign of beta across tdiaa/seqonly/tmalign"

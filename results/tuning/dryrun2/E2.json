@@ -1,0 +1,264 @@
+{
+  "endpoint": "E2",
+  "estimand": "global curvature c in y = eta + a_h x^c (SIMEX-corrected) ; y = lddt_D ; SIMEX bias-corrected by parametric bootstrap (D29)",
+  "estimate": 0.6732584777902783,
+  "se_boot": 0.043835276499370794,
+  "ci98": [
+    0.5712823754979746,
+    0.775234580082582
+  ],
+  "ci_pct98": [
+    0.5849198275691813,
+    0.7920781369014053
+  ],
+  "one_sided_bound": {
+    "lower99": 0.5712823754979746,
+    "upper99": 0.775234580082582
+  },
+  "p_value": 4.532795136148076e-14,
+  "p_holm": 1.8131180544592304e-13,
+  "decision": "concave",
+  "n_hogs": 1223,
+  "n_units": 149943,
+  "n_excluded": {
+    "not_1to1": 41511,
+    "aa_ml_seq_out_of_range": 20041,
+    "hog_excluded_metric": 2380,
+    "pair_weight0_fail_or_sat": 296,
+    "hog_lt_min_pairs_or_range": 5935
+  },
+  "sensitivity": {
+    "eta_free": {
+      "estimate": 0.6964157813946551,
+      "eta": 0.039504539506190206,
+      "ci98": null,
+      "decision": null,
+      "note": "naive c with eta profiled; no bootstrap"
+    },
+    "d_aa_le_1": {
+      "estimate": 0.5137586548256903,
+      "ci98": [
+        0.43478657784240665,
+        0.5927307318089738
+      ],
+      "decision": "concave",
+      "n_pairs": 109469,
+      "c_simex_plan": 0.5096049829026301,
+      "pb_bias": -0.004153671923060154
+    },
+    "failures_imputed_C14": {
+      "estimate": 0.6679179414253027,
+      "ci98": [
+        0.5621394563703634,
+        0.773696426480242
+      ],
+      "decision": "concave",
+      "n_pairs": 150256,
+      "c_simex_plan": 0.6586584419059894,
+      "pb_bias": -0.009259499519313263
+    },
+    "hidden_paralogy_removed": {
+      "estimate": 0.6717681611862054,
+      "ci98": [
+        0.5724566300885334,
+        0.7710796922838774
+      ],
+      "decision": "concave",
+      "n_pairs": 142285,
+      "c_simex_plan": 0.6662492200025727,
+      "pb_bias": -0.00551894118363272
+    },
+    "single_copy_hogs": {
+      "estimate": 0.6591123475362891,
+      "ci98": [
+        0.24848186706518138,
+        1.0697428280073968
+      ],
+      "decision": "inconclusive",
+      "n_pairs": 3919,
+      "c_simex_plan": 0.6501533331561165,
+      "pb_bias": -0.008959014380172658
+    },
+    "alpha_x1.5": {
+      "estimate": 0.7048264208363784,
+      "ci98": [
+        0.5969280816211968,
+        0.8127247600515599
+      ],
+      "decision": "concave",
+      "n_pairs": 149799,
+      "c_simex_plan": 0.6978819903496095,
+      "pb_bias": -0.006944430486768849
+    },
+    "alpha_div1.5": {
+      "estimate": 0.6711310690959604,
+      "ci98": [
+        0.5641670016947684,
+        0.7780951364971525
+      ],
+      "decision": "concave",
+      "n_pairs": 150447,
+      "c_simex_plan": 0.6593231903799582,
+      "pb_bias": -0.011807878716002196
+    },
+    "all_aligned_columns": {
+      "estimate": 0.7892133070421171,
+      "ci98": [
+        0.672975721371043,
+        0.9054508927131912
+      ],
+      "decision": "concave",
+      "n_pairs": 148779,
+      "c_simex_plan": 0.7794693768661539,
+      "pb_bias": -0.0097439301759632,
+      "note": "aa_ml/tdi_ml over all aligned columns (core = pLDDT>=70 both); y = lddt_D unchanged (lddt_global is already all-column)",
+      "recompute_meta": {
+        "aln": "tdiaa",
+        "split": "tune",
+        "n_pairs": 220104,
+        "n_aligned": 220104,
+        "n_core_match": 220104,
+        "n_core_mismatch_among_stored_nonempty": 0,
+        "runtime_s": 55.3,
+        "threads": 40,
+        "done": true,
+        "created": "2026-10-31T04:49:59",
+        "note": "Foldseek alignment re-run with the production method/flags; counts over every aligned M column",
+        "n_rows_not_matched": 0
+      }
+    },
+    "aln_seqonly": {
+      "estimate": 0.6990758343249287,
+      "ci98": [
+        0.5961735889726061,
+        0.8019780796772513
+      ],
+      "decision": "concave"
+    },
+    "aln_tmalign": {
+      "estimate": 0.3210658293459996,
+      "ci98": [
+        0.2342171288427095,
+        0.40791452984928966
+      ],
+      "decision": "concave"
+    }
+  },
+  "alignment_robust": true,
+  "flags": [
+    "simex_x_clipped:60661",
+    "exploratory_dryrun_tune"
+  ],
+  "plan_md5": "6e19158062dfd7fe6e56e13eb615c7c6",
+  "tuning_md5": "def68634581662caf4e33542176294ed",
+  "commit": "cd0792686526719233a84299e5afbe6f9e8cb358",
+  "input_md5": "8602df44ff524791d099fd534cb35968",
+  "c_naive": 0.6162804698346732,
+  "c_naive_se_boot_B1000": 0.032016325617304595,
+  "c_lambda": {
+    "0.0": 0.6162804698346732,
+    "0.5": 0.5944316898013389,
+    "1.0": 0.5765267597231261,
+    "1.5": 0.5632055107400822,
+    "2.0": 0.5501639918133245
+  },
+  "s2": 0.0053303053772906514,
+  "p_lin": 0.9999998845588752,
+  "p_conc": 4.532795136148076e-14,
+  "v3_false_concave": 0.0,
+  "checks": {
+    "recompute_abs_diff": 8.206368029561872e-09,
+    "grid_boundary": false,
+    "n_fit_equals_filter_log": true
+  },
+  "eta": 0.0253,
+  "kappa_x": 1.0,
+  "kappa_y": 1.0,
+  "rho": "per_pair_bin",
+  "rho_mean": 0.2634689040249739,
+  "c_simex_plan": 0.6677035417324129,
+  "pb_bias": -0.0055549360578653895,
+  "pb_mc_se": 0.0007968410810270278,
+  "pb_K": 25,
+  "pb_design": "tree",
+  "pb_design_tree": {
+    "x_tree_n_nofit": 1035,
+    "x_tree_n_nonpositive": 1,
+    "x_tree_median_sd_ratio": 0.05715943457267135
+  },
+  "B": 200,
+  "B_s": 50,
+  "B_s_boot": 10,
+  "runtime_s": 99.39190554618835,
+  "d_star": {
+    "d_star": 0.05,
+    "A": 0.13903999855308677,
+    "A_pow": 0.1072958180247436,
+    "c_pow": 0.645342767638801,
+    "at_grid_min": true,
+    "descriptive": {
+      "rel_at_grid_min": 0.3122249510005013,
+      "agree_within_10pct": [
+        0.33,
+        0.69
+      ],
+      "upper_departure_x": 0.7
+    },
+    "se_boot": 0.0,
+    "ci98": [
+      0.05,
+      0.05
+    ],
+    "ci_pct98": [
+      0.05,
+      0.05
+    ],
+    "n_rep_nan": 0
+  },
+  "rho_scalar": 0.25235596959164763,
+  "sensitivity_failures_imputed_rule": "C14: HOG max eligible y, SE = median eligible SE",
+  "run_meta": {
+    "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+    "split": "tune",
+    "primary_alignment": "tdiaa",
+    "label": "exploratory_dryrun_tune",
+    "created": "2026-10-31T05:10:59",
+    "sizes": {
+      "B1": 200,
+      "Bs": 50,
+      "Bs_boot": 10,
+      "B_naive": 1000,
+      "B_sens": 50,
+      "B_alt": 200,
+      "B3": 1000,
+      "B4": 1000,
+      "B4_sens": 200,
+      "B4_alt": 200,
+      "B5": 1000,
+      "P": 100,
+      "B_cv": 200,
+      "spike_reps": 50,
+      "spike_B": 200,
+      "B6": 1000,
+      "neg_perms": 20,
+      "neg_B": 200,
+      "B3_alt": 200
+    },
+    "tuning": {
+      "tuning_md5": "def68634581662caf4e33542176294ed",
+      "provisional": false,
+      "used_provisional": []
+    },
+    "pair_table_flags": {
+      "tdiaa": [],
+      "seqonly": [],
+      "tmalign": []
+    },
+    "split_md5": "29da378aec763731b728b38fa262941f",
+    "driver_flags": [
+      "age_imputed:6",
+      "age_ci_missing:13",
+      "species_plddt_from_pair_tables"
+    ]
+  }
+}
