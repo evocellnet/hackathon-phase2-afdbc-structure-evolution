@@ -4,6 +4,26 @@ Legend: [ ] planned · [~] in progress · [x] done · [-] abandoned/negative · 
 
 ## Status summary (latest first)
 
+### M6: 2026-10-31 ~04:40 (project wall-clock 19.3 h; node 2 6.8 h)
+**Tuning is finished and the plan is frozen.** Freeze md5s are in RESULTS_LEDGER.md. V3 on 1,377 real tune designs gives a false-concave rate of 0 and mean ĉ = 1.03 under a linear truth, so the curvature test is conservative. But its empirical power is low: c = 0.90 is detected only 55% of the time, and c = 0.92–0.96 is never detected. E4 recovers only about 46% of a true slope (attenuation). E5 power at f = 1.5 is 0.24, with a null rate of 0.18, so per the plan E5 can only be inconclusive unless it rejects. The empirical power is written next to the analytic minimal detectable effect (MDE) in the §Tuning table.
+
+**Tune dry run (exploratory, 1,400 HOGs):**
+- E1: concave, ĉ = 0.71 [0.61, 0.80], alignment-robust.
+- E2: concave, 0.67.
+- E3: k = 3.3 [3.05, 3.60].
+- E4: β_k > 0 (p = 0.013), but the deep-age robustness check is not yet wired.
+- E5: inconclusive.
+- E6: detected, with the MDO direction replicating PMID 40813247.
+
+Before confirming, an agent is wiring the plan-specified sensitivities the dry run found missing: E4 deep ages, E1/E2 all columns, the E5 single-copy guard, and the degenerate E2 d*. These are implementation fixes only; no rule changes. Next: the one confirmation run.
+
+**Exploratory results, all done:**
+- X4: AF compresses ortholog structural divergence by about 30–40%, as a constant offset.
+- X5: AFDB clusters split HOGs, mainly through length and coverage.
+- X6 cytoskeleton and X8 kinase: no robust single-branch structural bursts; the TK origin shows a weak, consistent excess.
+
+**Decision note M6:** The analytic-MDE row in §Tuning was annotated with the empirical power rather than left optimistic. No thresholds were changed.
+
 ### M5: 2026-10-30 22:00, node 2 started (project wall-clock 12.5 h; node-1 compute 10.9 h)
 We resumed from NODE_MOVE.md on host dnagpu008. Following the user's instruction, the total cap stays at 48 h of compute, so node 2 has at most about 36.5 h. Hard stop is 2026-11-01 10:30, and the report should be done by about 08:00. We relaunched the V3 curvature simulation that had been killed for the node move (resume-table step 6).
 
