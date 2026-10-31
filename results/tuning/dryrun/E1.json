@@ -1,0 +1,220 @@
+{
+  "endpoint": "E1",
+  "estimand": "global curvature c in y = eta + a_h x^c (SIMEX-corrected) ; y = tdi_ml ; SIMEX bias-corrected by parametric bootstrap (D29)",
+  "estimate": 0.7083013499418743,
+  "se_boot": 0.0406662869225297,
+  "ci98": [
+    0.6136974198145125,
+    0.8029052800692361
+  ],
+  "ci_pct98": [
+    0.6400409648545968,
+    0.8135826710793331
+  ],
+  "one_sided_bound": {
+    "lower99": 0.6136974198145125,
+    "upper99": 0.8029052800692361
+  },
+  "p_value": 3.669005381285819e-13,
+  "p_holm": 1.1007016143857457e-12,
+  "decision": "concave",
+  "n_hogs": 1217,
+  "n_units": 149652,
+  "n_excluded": {
+    "not_1to1": 41511,
+    "aa_ml_seq_out_of_range": 20041,
+    "hog_excluded_metric": 2652,
+    "pair_weight0_fail_or_sat": 315,
+    "hog_lt_min_pairs_or_range": 5935
+  },
+  "sensitivity": {
+    "eta_free": {
+      "estimate": 0.692799146129494,
+      "eta": 0.05802422384132895,
+      "ci98": null,
+      "decision": null,
+      "note": "naive c with eta profiled; no bootstrap"
+    },
+    "d_aa_le_1": {
+      "estimate": 0.6550608304920846,
+      "ci98": [
+        0.5600674443942977,
+        0.7500542165898716
+      ],
+      "decision": "concave",
+      "n_pairs": 109306,
+      "c_simex_plan": 0.6515993057999557,
+      "pb_bias": -0.0034615246921289033
+    },
+    "failures_imputed_C14": {
+      "estimate": 0.7350917786988216,
+      "ci98": [
+        0.5286830661840891,
+        0.9415004912135541
+      ],
+      "decision": "concave",
+      "n_pairs": 149984,
+      "c_simex_plan": 0.7268315382492248,
+      "pb_bias": -0.008260240449596834
+    },
+    "hidden_paralogy_removed": {
+      "estimate": 0.7065771957690755,
+      "ci98": [
+        0.603531896232645,
+        0.809622495305506
+      ],
+      "decision": "concave",
+      "n_pairs": 141873,
+      "c_simex_plan": 0.7022300437283302,
+      "pb_bias": -0.004347152040745317
+    },
+    "single_copy_hogs": {
+      "estimate": 0.6027632550009918,
+      "ci98": [
+        0.3710456632095216,
+        0.834480846792462
+      ],
+      "decision": "concave",
+      "n_pairs": 3798,
+      "c_simex_plan": 0.6058177661457735,
+      "pb_bias": 0.003054511144781724
+    },
+    "alpha_x1.5": {
+      "estimate": 0.7317287715466102,
+      "ci98": [
+        0.6483815466243513,
+        0.8150759964688691
+      ],
+      "decision": "concave",
+      "n_pairs": 149508,
+      "c_simex_plan": 0.7259138012939086,
+      "pb_bias": -0.005814970252701612
+    },
+    "alpha_div1.5": {
+      "estimate": 0.7009243259443374,
+      "ci98": [
+        0.6130429418221579,
+        0.7888057100665169
+      ],
+      "decision": "concave",
+      "n_pairs": 150156,
+      "c_simex_plan": 0.6953576254591769,
+      "pb_bias": -0.005566700485160503
+    },
+    "aln_seqonly": {
+      "estimate": 0.7904604410392596,
+      "ci98": [
+        0.6714587071305406,
+        0.9094621749479787
+      ],
+      "decision": "concave"
+    },
+    "aln_tmalign": {
+      "estimate": 0.788064136517922,
+      "ci98": [
+        0.6859939512874449,
+        0.890134321748399
+      ],
+      "decision": "concave"
+    },
+    "all_aligned_columns": {
+      "estimate": null,
+      "ci98": null,
+      "decision": "unavailable",
+      "note": "no all-column 3Di counts (only seqonly aa_all); lddt_global is already all-column"
+    }
+  },
+  "alignment_robust": true,
+  "flags": [
+    "simex_x_clipped:60559",
+    "all_columns_sensitivity_unavailable",
+    "exploratory_dryrun_tune"
+  ],
+  "plan_md5": "6e19158062dfd7fe6e56e13eb615c7c6",
+  "tuning_md5": "def68634581662caf4e33542176294ed",
+  "commit": "fddd304895469438825e202f3cb48dee7ddd0160",
+  "input_md5": "1db58829381e177a25e91d73f290594c",
+  "c_naive": 0.6598728791851703,
+  "c_naive_se_boot_B1000": 0.028939097153058226,
+  "c_lambda": {
+    "0.0": 0.6598728791851703,
+    "0.5": 0.6415084532750006,
+    "1.0": 0.6257847408546713,
+    "1.5": 0.6124329453925048,
+    "2.0": 0.6012601464105444
+  },
+  "s2": 0.0018415987739686908,
+  "p_lin": 0.9999987851701391,
+  "p_conc": 3.669005381285819e-13,
+  "v3_false_concave": 0.0,
+  "checks": {
+    "recompute_abs_diff": 9.435005110525196e-09,
+    "grid_boundary": false,
+    "n_fit_equals_filter_log": true
+  },
+  "eta": 0.0524,
+  "kappa_x": 1.0,
+  "kappa_y": 1.0,
+  "rho": "per_pair_bin",
+  "rho_mean": 0.24052926234788122,
+  "c_simex_plan": 0.7034473932108583,
+  "pb_bias": -0.004853956731016074,
+  "pb_mc_se": 0.0006579361218356163,
+  "pb_K": 25,
+  "pb_design": "tree",
+  "pb_design_tree": {
+    "x_tree_n_nofit": 0,
+    "x_tree_n_nonpositive": 1,
+    "x_tree_median_sd_ratio": 0.05737833301891944
+  },
+  "B": 200,
+  "B_s": 50,
+  "B_s_boot": 10,
+  "runtime_s": 97.85945343971252,
+  "rho_scalar": 0.2302153078226657,
+  "sensitivity_failures_imputed_rule": "C14: HOG max eligible y, SE = median eligible SE",
+  "run_meta": {
+    "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+    "split": "tune",
+    "primary_alignment": "tdiaa",
+    "label": "exploratory_dryrun_tune",
+    "created": "2026-10-31T02:32:38",
+    "sizes": {
+      "B1": 200,
+      "Bs": 50,
+      "Bs_boot": 10,
+      "B_naive": 1000,
+      "B_sens": 50,
+      "B_alt": 200,
+      "B3": 1000,
+      "B4": 1000,
+      "B4_sens": 200,
+      "B4_alt": 200,
+      "B5": 1000,
+      "P": 100,
+      "B_cv": 200,
+      "spike_reps": 50,
+      "spike_B": 200,
+      "B6": 1000,
+      "neg_perms": 20,
+      "neg_B": 200,
+      "B3_alt": 200
+    },
+    "tuning": {
+      "tuning_md5": "def68634581662caf4e33542176294ed",
+      "provisional": false,
+      "used_provisional": []
+    },
+    "pair_table_flags": {
+      "tdiaa": [],
+      "seqonly": [],
+      "tmalign": []
+    },
+    "split_md5": "29da378aec763731b728b38fa262941f",
+    "driver_flags": [
+      "age_imputed:6",
+      "age_ci_missing:13",
+      "species_plddt_from_pair_tables"
+    ]
+  }
+}

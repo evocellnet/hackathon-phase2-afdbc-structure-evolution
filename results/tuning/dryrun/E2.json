@@ -1,0 +1,236 @@
+{
+  "endpoint": "E2",
+  "estimand": "global curvature c in y = eta + a_h x^c (SIMEX-corrected) ; y = lddt_D ; SIMEX bias-corrected by parametric bootstrap (D29)",
+  "estimate": 0.6733143735257747,
+  "se_boot": 0.04383524963509536,
+  "ci98": [
+    0.5713383337291211,
+    0.7752904133224283
+  ],
+  "ci_pct98": [
+    0.5849756342921482,
+    0.7921340539241779
+  ],
+  "one_sided_bound": {
+    "lower99": 0.5713383337291211,
+    "upper99": 0.7752904133224283
+  },
+  "p_value": 4.576677902426443e-14,
+  "p_holm": 1.8306711609705772e-13,
+  "decision": "concave",
+  "n_hogs": 1223,
+  "n_units": 149943,
+  "n_excluded": {
+    "not_1to1": 41511,
+    "aa_ml_seq_out_of_range": 20041,
+    "hog_excluded_metric": 2380,
+    "pair_weight0_fail_or_sat": 296,
+    "hog_lt_min_pairs_or_range": 5935
+  },
+  "sensitivity": {
+    "eta_free": {
+      "estimate": 0.6964157699705645,
+      "eta": 0.03950453950839688,
+      "ci98": null,
+      "decision": null,
+      "note": "naive c with eta profiled; no bootstrap"
+    },
+    "d_aa_le_1": {
+      "estimate": 0.5136894210435012,
+      "ci98": [
+        0.4347172200107285,
+        0.5926616220762739
+      ],
+      "decision": "concave",
+      "n_pairs": 109469,
+      "c_simex_plan": 0.5096050566033646,
+      "pb_bias": -0.004084364440136601
+    },
+    "failures_imputed_C14": {
+      "estimate": 0.6677996309596469,
+      "ci98": [
+        0.5620218378252975,
+        0.7735774240939963
+      ],
+      "decision": "concave",
+      "n_pairs": 150256,
+      "c_simex_plan": 0.6586584908223699,
+      "pb_bias": -0.00914114013727696
+    },
+    "hidden_paralogy_removed": {
+      "estimate": 0.6691165581237211,
+      "ci98": [
+        0.5768122556500357,
+        0.7614208605974064
+      ],
+      "decision": "concave",
+      "n_pairs": 142092,
+      "c_simex_plan": 0.6620204013642039,
+      "pb_bias": -0.007096156759517136
+    },
+    "single_copy_hogs": {
+      "estimate": 0.6591123525406658,
+      "ci98": [
+        0.2484818563718174,
+        1.0697428487095142
+      ],
+      "decision": "inconclusive",
+      "n_pairs": 3919,
+      "c_simex_plan": 0.6501533647793122,
+      "pb_bias": -0.00895898776135362
+    },
+    "alpha_x1.5": {
+      "estimate": 0.7048263464477577,
+      "ci98": [
+        0.5969280007028536,
+        0.8127246921926617
+      ],
+      "decision": "concave",
+      "n_pairs": 149799,
+      "c_simex_plan": 0.6978819080596605,
+      "pb_bias": -0.006944438388097107
+    },
+    "alpha_div1.5": {
+      "estimate": 0.6711311063496985,
+      "ci98": [
+        0.5641670466872524,
+        0.7780951660121447
+      ],
+      "decision": "concave",
+      "n_pairs": 150447,
+      "c_simex_plan": 0.6593232167366616,
+      "pb_bias": -0.011807889613036915
+    },
+    "aln_seqonly": {
+      "estimate": 0.699084556543661,
+      "ci98": [
+        0.5961821559107329,
+        0.8019869571765891
+      ],
+      "decision": "concave"
+    },
+    "aln_tmalign": {
+      "estimate": 0.3219611623176454,
+      "ci98": [
+        0.23511099432556049,
+        0.40881133030973027
+      ],
+      "decision": "concave"
+    },
+    "all_aligned_columns": {
+      "estimate": null,
+      "ci98": null,
+      "decision": "unavailable",
+      "note": "no all-column 3Di counts (only seqonly aa_all); lddt_global is already all-column"
+    }
+  },
+  "alignment_robust": true,
+  "flags": [
+    "simex_x_clipped:60661",
+    "all_columns_sensitivity_unavailable",
+    "exploratory_dryrun_tune"
+  ],
+  "plan_md5": "6e19158062dfd7fe6e56e13eb615c7c6",
+  "tuning_md5": "def68634581662caf4e33542176294ed",
+  "commit": "fddd304895469438825e202f3cb48dee7ddd0160",
+  "input_md5": "8602df44ff524791d099fd534cb35968",
+  "c_naive": 0.6162804793169925,
+  "c_naive_se_boot_B1000": 0.03201632574733667,
+  "c_lambda": {
+    "0.0": 0.6162804793169925,
+    "0.5": 0.5944316935919777,
+    "1.0": 0.5765267548620827,
+    "1.5": 0.5632055125273633,
+    "2.0": 0.5501639896993066
+  },
+  "s2": 0.0053303053744428765,
+  "p_lin": 0.9999998837701787,
+  "p_conc": 4.576677902426443e-14,
+  "v3_false_concave": 0.0,
+  "checks": {
+    "recompute_abs_diff": 6.678925190684026e-10,
+    "grid_boundary": false,
+    "n_fit_equals_filter_log": true
+  },
+  "eta": 0.0253,
+  "kappa_x": 1.0,
+  "kappa_y": 1.0,
+  "rho": "per_pair_bin",
+  "rho_mean": 0.2634689040249739,
+  "c_simex_plan": 0.6677035723086304,
+  "pb_bias": -0.005610801217144301,
+  "pb_mc_se": 0.000795582107300868,
+  "pb_K": 25,
+  "pb_design": "tree",
+  "pb_design_tree": {
+    "x_tree_n_nofit": 0,
+    "x_tree_n_nonpositive": 1,
+    "x_tree_median_sd_ratio": 0.057401330271188884
+  },
+  "B": 200,
+  "B_s": 50,
+  "B_s_boot": 10,
+  "runtime_s": 98.48220872879028,
+  "d_star": {
+    "d_star": 0.05,
+    "A": 0.13903999855308677,
+    "A_pow": 0.1072958180247436,
+    "c_pow": 0.645342767638801,
+    "se_boot": 0.0,
+    "ci98": [
+      0.05,
+      0.05
+    ],
+    "ci_pct98": [
+      0.05,
+      0.05
+    ],
+    "n_rep_nan": 0
+  },
+  "rho_scalar": 0.25235596959164763,
+  "sensitivity_failures_imputed_rule": "C14: HOG max eligible y, SE = median eligible SE",
+  "run_meta": {
+    "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+    "split": "tune",
+    "primary_alignment": "tdiaa",
+    "label": "exploratory_dryrun_tune",
+    "created": "2026-10-31T02:39:10",
+    "sizes": {
+      "B1": 200,
+      "Bs": 50,
+      "Bs_boot": 10,
+      "B_naive": 1000,
+      "B_sens": 50,
+      "B_alt": 200,
+      "B3": 1000,
+      "B4": 1000,
+      "B4_sens": 200,
+      "B4_alt": 200,
+      "B5": 1000,
+      "P": 100,
+      "B_cv": 200,
+      "spike_reps": 50,
+      "spike_B": 200,
+      "B6": 1000,
+      "neg_perms": 20,
+      "neg_B": 200,
+      "B3_alt": 200
+    },
+    "tuning": {
+      "tuning_md5": "def68634581662caf4e33542176294ed",
+      "provisional": false,
+      "used_provisional": []
+    },
+    "pair_table_flags": {
+      "tdiaa": [],
+      "seqonly": [],
+      "tmalign": []
+    },
+    "split_md5": "29da378aec763731b728b38fa262941f",
+    "driver_flags": [
+      "age_imputed:6",
+      "age_ci_missing:13",
+      "species_plddt_from_pair_tables"
+    ]
+  }
+}

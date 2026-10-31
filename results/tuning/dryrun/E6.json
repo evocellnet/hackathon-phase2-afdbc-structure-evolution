@@ -1,0 +1,156 @@
+{
+  "endpoint": "E6",
+  "estimand": "(a) E6a = mean_dcg[r(P1,P2) - mean_O1 r(P1,O)] (x half A, y half B); (b) E6b = mean_dcg MDO-LDO excess (half B)",
+  "estimate": 0.02549504175761561,
+  "se_boot": 0.0028895308870143417,
+  "ci98": [
+    0.01877298772163445,
+    0.032217095793596766
+  ],
+  "ci_pct98": [
+    0.019204689680280666,
+    0.032003380796780674
+  ],
+  "one_sided_bound": {
+    "E6a_lower99": 0.01877298772163445,
+    "E6b_lower99": 0.010228851497284641
+  },
+  "p_value": 0.0,
+  "p_holm": 0.0,
+  "decision": "detected",
+  "n_hogs": 931,
+  "n_units": {
+    "a": 2304,
+    "b": 1530
+  },
+  "n_excluded": {
+    "leaf_level": 0,
+    "pid_gt_0.95_or_dseq_gt_2": 0,
+    "no_E1_fit": 776,
+    "no_O1": 0,
+    "no_O2": 2269,
+    "missing_pairs_a": 229,
+    "missing_pairs_b": 136
+  },
+  "sensitivity": {
+    "aln_seqonly": {
+      "estimate": -0.015598380830069607,
+      "ci98": [
+        -0.031773234307677256,
+        0.0005764726475380403
+      ],
+      "E6b": 0.029390583321683067,
+      "p_value": 2.2735096465442695e-06,
+      "decision": null,
+      "note": "reference curve = E1 curve of seqonly"
+    },
+    "aln_tmalign": {
+      "estimate": -0.003627399408706575,
+      "ci98": [
+        -0.058136271194458064,
+        0.05088147237704492
+      ],
+      "E6b": 0.07058743197480825,
+      "p_value": 0.0023306209871869488,
+      "decision": null,
+      "note": "reference curve = E1 curve of tmalign"
+    }
+  },
+  "alignment_robust": null,
+  "flags": [
+    "exploratory_dryrun_tune"
+  ],
+  "plan_md5": "6e19158062dfd7fe6e56e13eb615c7c6",
+  "tuning_md5": "def68634581662caf4e33542176294ed",
+  "commit": "fddd304895469438825e202f3cb48dee7ddd0160",
+  "input_md5": "ee397bd239202011f3131442a665ca2e",
+  "E6a": 0.02549504175761561,
+  "E6b": 0.01757777592436283,
+  "se_a": 0.0028895308870143417,
+  "se_b": 0.0031589963431879974,
+  "ci98_b": [
+    0.010228851497284641,
+    0.024926700351441018
+  ],
+  "ci_pct98_b": [
+    0.010051164065261489,
+    0.025227333393009848
+  ],
+  "p_a": 0.0,
+  "p_b": 1.3156218447996082e-08,
+  "replication_direction": {
+    "a": 1.0,
+    "b": 1.0,
+    "note": "compare with the direction reported in PMID 40813247 before interpreting",
+    "expected": "positive (C19-C21: MDO shows MORE structural divergence)"
+  },
+  "checks": {
+    "o1_o2_disjoint": true,
+    "no_leaf_events_used": true
+  },
+  "B": 1000,
+  "secondary_lddtD": {
+    "E6a": 0.008085554937973187,
+    "E6b": 0.021924202239820636,
+    "ci98": [
+      -0.004395082173493273,
+      0.020566192049439647
+    ],
+    "ci98_b": [
+      0.01006577409684515,
+      0.03378263038279612
+    ],
+    "p_value": 1.7001470565380927e-05,
+    "n_units": {
+      "a": 2304,
+      "b": 1529
+    },
+    "flags": [
+      "not_split_half_valid"
+    ]
+  },
+  "run_meta": {
+    "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+    "split": "tune",
+    "primary_alignment": "tdiaa",
+    "label": "exploratory_dryrun_tune",
+    "created": "2026-10-31T03:20:56",
+    "sizes": {
+      "B1": 200,
+      "Bs": 50,
+      "Bs_boot": 10,
+      "B_naive": 1000,
+      "B_sens": 50,
+      "B_alt": 200,
+      "B3": 1000,
+      "B4": 1000,
+      "B4_sens": 200,
+      "B4_alt": 200,
+      "B5": 1000,
+      "P": 100,
+      "B_cv": 200,
+      "spike_reps": 50,
+      "spike_B": 200,
+      "B6": 1000,
+      "neg_perms": 20,
+      "neg_B": 200,
+      "B3_alt": 200
+    },
+    "tuning": {
+      "tuning_md5": "def68634581662caf4e33542176294ed",
+      "provisional": false,
+      "used_provisional": []
+    },
+    "pair_table_flags": {
+      "tdiaa": [],
+      "seqonly": [],
+      "tmalign": []
+    },
+    "split_md5": "29da378aec763731b728b38fa262941f",
+    "driver_flags": [
+      "age_imputed:6",
+      "age_ci_missing:13",
+      "species_plddt_from_pair_tables"
+    ]
+  }
+}

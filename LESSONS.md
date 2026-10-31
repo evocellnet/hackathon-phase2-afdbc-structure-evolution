@@ -16,3 +16,4 @@
 13. Keep the critical path (freeze, dry run, confirm, V11 re-derivation) ahead of exploratory add-ons; start extras only when a job is waiting on compute. (X4-X7 run during V3 rerun; kinase X7 added after "no new endpoints" decision)
 14. If a subagent's write is blocked (reports, plans), have it save under a neutral name via Bash, else return the text inline. (round-3 ANALYSIS_PLAN, report draft)
 15. Don't over-deliberate cheap data logistics: AFDB files are `_v6`; EBI needs `-A "Mozilla/5.0"`; `aria2c -x8` pulled 25 GB in ~3 min. (panel fetch)
+16. Never wait on a process with `while pgrep -f NAME`: the pattern matches the waiting shell's own command line, so the loop never ends. Wait on a PID or a sentinel file instead. (evidence: dry-run wait timed out 1 h after the job had finished, node 2)

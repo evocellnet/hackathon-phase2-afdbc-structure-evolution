@@ -1,0 +1,53 @@
+{
+  "timing_s": {
+    "load": 1.18,
+    "branches": 26.99,
+    "E1": 404.52,
+    "E2": 391.77,
+    "E3": 8.64,
+    "E4": 2493.22,
+    "E6": 3.56,
+    "E5": 86.66,
+    "total": 3416.7
+  },
+  "sizes": {
+    "B1": 200,
+    "Bs": 50,
+    "Bs_boot": 10,
+    "B_naive": 1000,
+    "B_sens": 50,
+    "B_alt": 200,
+    "B3": 1000,
+    "B4": 1000,
+    "B4_sens": 200,
+    "B4_alt": 200,
+    "B5": 1000,
+    "P": 100,
+    "B_cv": 200,
+    "spike_reps": 50,
+    "spike_B": 200,
+    "B6": 1000,
+    "neg_perms": 20,
+    "neg_B": 200,
+    "B3_alt": 200
+  },
+  "flags": [
+    "age_imputed:6",
+    "age_ci_missing:13",
+    "species_plddt_from_pair_tables"
+  ],
+  "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+  "split": "tune",
+  "tuning": {
+    "tuning_md5": "def68634581662caf4e33542176294ed",
+    "provisional": false,
+    "used_provisional": []
+  },
+  "label": "exploratory_dryrun_tune",
+  "n_pairs": {
+    "tdiaa": 220104,
+    "seqonly": 220104,
+    "tmalign": 220104
+  },
+  "n_hogs": 1400
+}

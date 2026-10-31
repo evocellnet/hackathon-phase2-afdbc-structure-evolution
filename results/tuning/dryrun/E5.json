@@ -1,0 +1,180 @@
+{
+  "endpoint": "E5",
+  "estimand": "N0 (proportional lineage effects): disattenuated sister-contrast slope beta and excess lineage SD sigma_L",
+  "estimate": 0.584379468754423,
+  "se_boot": 0.39974941249920104,
+  "ci98": [
+    -0.34557672716216836,
+    1.5143356646710144
+  ],
+  "ci_pct98": [
+    -0.28882571827256887,
+    1.7513534783998168
+  ],
+  "one_sided_bound": {
+    "sigma2_L_lower99": -0.040297491801037894,
+    "sigma2_L_upper99": 0.1642023109060172,
+    "sigma_L_upper99": 0.4052188432267399,
+    "sigma_L_lower99": 0.0
+  },
+  "p_value": 0.881397138150126,
+  "p_holm": 0.881397138150126,
+  "decision": "inconclusive",
+  "n_hogs": 1225,
+  "n_units": 106,
+  "n_excluded": {
+    "misfit": 137,
+    "underdetermined": 23,
+    "fail_frac": 43
+  },
+  "sensitivity": {
+    "internal_edges_only": {
+      "estimate": {
+        "beta": 1.2283516600766917,
+        "sigma2_L": 0.02131126844315667
+      },
+      "ci98": {
+        "beta": [
+          0.9622075016420293,
+          1.4944958185113542
+        ],
+        "sigma2_L": [
+          -0.2266800201594968,
+          0.26930255704581013
+        ]
+      },
+      "decision": "no_excess"
+    },
+    "hidden_paralogy_removed": {
+      "estimate": {
+        "beta": 0.3690454453844585,
+        "sigma2_L": -77.96067953194331
+      },
+      "ci98": {
+        "beta": [
+          -0.5558427266430557,
+          1.2939336174119727
+        ],
+        "sigma2_L": [
+          -93.45402165356151,
+          -62.467337410325115
+        ]
+      },
+      "decision": "no_excess"
+    },
+    "single_copy_hogs": {
+      "estimate": null,
+      "ci98": null,
+      "decision": "not_estimable",
+      "note": "n_lineages=0 < 3"
+    }
+  },
+  "alignment_robust": null,
+  "flags": [
+    "power_lt_0.80",
+    "guards_not_estimable:single_copy_hogs",
+    "exploratory_dryrun_tune"
+  ],
+  "plan_md5": "6e19158062dfd7fe6e56e13eb615c7c6",
+  "tuning_md5": "def68634581662caf4e33542176294ed",
+  "commit": "fddd304895469438825e202f3cb48dee7ddd0160",
+  "input_md5": "f4a758a09857160e92cca2ae3cf23c1c",
+  "sigma_L": 0.24890240969602856,
+  "sigma2_L": 0.06195240955248965,
+  "sigma2_obs": 0.08175549462711708,
+  "beta_contrast": 0.584379468754423,
+  "power": {
+    "f=1.5": {
+      "detect_rate": 0.24,
+      "accept_rate": 0.0
+    },
+    "f=1.25": {
+      "detect_rate": 0.08,
+      "accept_rate": 0.0
+    },
+    "f=2.0": {
+      "detect_rate": 0.6,
+      "accept_rate": 0.0
+    },
+    "f=1.0": {
+      "detect_rate": 0.18,
+      "accept_rate": 0.0
+    }
+  },
+  "floor_F": 0.019803085074627424,
+  "floor_F_sd": 0.0024376944181936505,
+  "n_lineages": 106,
+  "n_contrasts": 98,
+  "decision_detail": {
+    "margins_met": false,
+    "beta_in": false,
+    "beta_out": false,
+    "sigma_ok": false,
+    "sigma_excess": false,
+    "p_iut": 0.881397138150126,
+    "p_reject": {
+      "beta_lt_0.8": 0.294809152455192,
+      "beta_gt_1.25": 0.9520530438594017,
+      "sigma_gt_0.10": 0.11860286184987401
+    },
+    "e6_significant": true,
+    "power": 0.24
+  },
+  "min_t_snr": 8,
+  "beta_ci98_hog_only": [
+    -0.03952225871580617,
+    1.2082811962246522
+  ],
+  "B": 1000,
+  "P": 100,
+  "runtime_s": 81.88408541679382,
+  "rho_scalar": 0.2302153078226657,
+  "guards_not_estimable": {
+    "single_copy_hogs": "n_lineages=0 < 3"
+  },
+  "e6_gate": "applied after Holm: E6 detected",
+  "run_meta": {
+    "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+    "split": "tune",
+    "primary_alignment": "tdiaa",
+    "label": "exploratory_dryrun_tune",
+    "created": "2026-10-31T03:22:22",
+    "sizes": {
+      "B1": 200,
+      "Bs": 50,
+      "Bs_boot": 10,
+      "B_naive": 1000,
+      "B_sens": 50,
+      "B_alt": 200,
+      "B3": 1000,
+      "B4": 1000,
+      "B4_sens": 200,
+      "B4_alt": 200,
+      "B5": 1000,
+      "P": 100,
+      "B_cv": 200,
+      "spike_reps": 50,
+      "spike_B": 200,
+      "B6": 1000,
+      "neg_perms": 20,
+      "neg_B": 200,
+      "B3_alt": 200
+    },
+    "tuning": {
+      "tuning_md5": "def68634581662caf4e33542176294ed",
+      "provisional": false,
+      "used_provisional": []
+    },
+    "pair_table_flags": {
+      "tdiaa": [],
+      "seqonly": [],
+      "tmalign": []
+    },
+    "split_md5": "29da378aec763731b728b38fa262941f",
+    "driver_flags": [
+      "age_imputed:6",
+      "age_ci_missing:13",
+      "species_plddt_from_pair_tables"
+    ]
+  }
+}
