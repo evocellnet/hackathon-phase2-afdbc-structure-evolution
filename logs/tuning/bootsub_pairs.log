@@ -1,0 +1,75 @@
+20000 pairs, 0 without structure in store, 8 shards
+[shard 0000 seqonly] rows 2984->2984 status {'ok': 2984} {'align+posthoc_s': 3.861006021499634, 'ml_s': 0.49472999572753906, 'total_s': 5.602917671203613}
+[shard 0000 tmalign] rows 2984->2984 status {'fail_core': 1, 'fail_cov': 14, 'ok': 2969} {'tsv2db_s': 0.041673898696899414, 'align_s': 31.025333166122437, 'convertalis_s': 1.912635326385498, 'parse_s': 0.017410755157470703, 'posthoc_s': 0.4360322952270508, 'ml_s': 0.05226016044616699, 'total_s': 34.62560725212097}
+[shard 0000 tdiaa] rows 2984->2984 status {'ok': 2984} {'tsv2db_s': 0.0383756160736084, 'align_s': 1.1568045616149902, 'convertalis_s': 2.1605165004730225, 'parse_s': 0.01682257652282715, 'posthoc_s': 0.42298221588134766, 'ml_s': 0.04687166213989258, 'total_s': 5.009584903717041}
+[shard 0001 seqonly] rows 2615->2615 status {'ok': 2615} {'align+posthoc_s': 3.4525506496429443, 'ml_s': 0.055693864822387695, 'total_s': 4.558007001876831}
+[shard 0001 tmalign] rows 2615->2615 status {'fail_core': 14, 'fail_cov': 52, 'ok': 2549} {'tsv2db_s': 0.03903317451477051, 'align_s': 28.207818031311035, 'convertalis_s': 1.6579790115356445, 'parse_s': 0.014667749404907227, 'posthoc_s': 0.35547614097595215, 'ml_s': 0.04984545707702637, 'total_s': 31.293468713760376}
+[shard 0001 tdiaa] rows 2615->2615 status {'ok': 2615} {'tsv2db_s': 0.03882932662963867, 'align_s': 1.0423016548156738, 'convertalis_s': 1.796008825302124, 'parse_s': 0.014652252197265625, 'posthoc_s': 0.3710665702819824, 'ml_s': 0.04637312889099121, 'total_s': 4.308665990829468}
+[shard 0002 seqonly] rows 2360->2360 status {'fail_core': 1, 'ok': 2359} {'align+posthoc_s': 3.538788080215454, 'ml_s': 0.060510873794555664, 'total_s': 4.611600160598755}
+[shard 0002 tmalign] rows 2360->2360 status {'fail_core': 3, 'fail_cov': 21, 'ok': 2336} {'tsv2db_s': 0.03831052780151367, 'align_s': 30.62503981590271, 'convertalis_s': 1.828190565109253, 'parse_s': 0.014885425567626953, 'posthoc_s': 0.3337130546569824, 'ml_s': 0.04335951805114746, 'total_s': 33.776596546173096}
+[shard 0002 tdiaa] rows 2360->2360 status {'ok': 2360} {'tsv2db_s': 0.03763175010681152, 'align_s': 1.0738046169281006, 'convertalis_s': 2.0372390747070312, 'parse_s': 0.012591361999511719, 'posthoc_s': 0.3550233840942383, 'ml_s': 0.042429447174072266, 'total_s': 4.492212772369385}
+[shard 0003 seqonly] rows 2324->2324 status {'ok': 2324} {'align+posthoc_s': 3.8297462463378906, 'ml_s': 0.06453180313110352, 'total_s': 4.882059574127197}
+[shard 0003 tmalign] rows 2324->2324 status {'fail_core': 18, 'fail_cov': 23, 'ok': 2283} {'tsv2db_s': 0.03852558135986328, 'align_s': 29.86808133125305, 'convertalis_s': 1.7112979888916016, 'parse_s': 0.012814998626708984, 'posthoc_s': 0.2689216136932373, 'ml_s': 0.042923927307128906, 'total_s': 32.82781147956848}
+[shard 0003 tdiaa] rows 2324->2324 status {'ok': 2324} {'tsv2db_s': 0.040592193603515625, 'align_s': 1.0329418182373047, 'convertalis_s': 2.09128737449646, 'parse_s': 0.012061357498168945, 'posthoc_s': 0.2773439884185791, 'ml_s': 0.04250645637512207, 'total_s': 4.4198081493377686}
+[shard 0004 seqonly] rows 2455->2455 status {'ok': 2455} {'align+posthoc_s': 2.9090449810028076, 'ml_s': 0.05943584442138672, 'total_s': 4.025618553161621}
+[shard 0004 tmalign] rows 2455->2455 status {'fail_core': 1, 'fail_cov': 19, 'ok': 2435} {'tsv2db_s': 0.03801321983337402, 'align_s': 24.12138295173645, 'convertalis_s': 1.4881007671356201, 'parse_s': 0.014035701751708984, 'posthoc_s': 0.34262514114379883, 'ml_s': 0.044303178787231445, 'total_s': 26.928560495376587}
+[shard 0004 tdiaa] rows 2455->2455 status {'ok': 2455} {'tsv2db_s': 0.03882551193237305, 'align_s': 0.9906387329101562, 'convertalis_s': 1.598010540008545, 'parse_s': 0.014348268508911133, 'posthoc_s': 0.3166015148162842, 'ml_s': 0.04375314712524414, 'total_s': 3.932577133178711}
+[shard 0005 seqonly] rows 2706->2706 status {'ok': 2706} {'align+posthoc_s': 3.5599374771118164, 'ml_s': 0.06210160255432129, 'total_s': 4.668660402297974}
+[shard 0005 tmalign] rows 2706->2706 status {'fail_core': 18, 'fail_cov': 34, 'ok': 2654} {'tsv2db_s': 0.038207054138183594, 'align_s': 24.619649648666382, 'convertalis_s': 1.5256972312927246, 'parse_s': 0.012820959091186523, 'posthoc_s': 0.3685641288757324, 'ml_s': 0.046593427658081055, 'total_s': 27.557446718215942}
+[shard 0005 tdiaa] rows 2706->2706 status {'ok': 2706} {'tsv2db_s': 0.03916144371032715, 'align_s': 0.9949886798858643, 'convertalis_s': 1.737168312072754, 'parse_s': 0.015056610107421875, 'posthoc_s': 0.3837141990661621, 'ml_s': 0.046753644943237305, 'total_s': 4.1987669467926025}
+[shard 0006 seqonly] rows 2581->2581 status {'ok': 2581} {'align+posthoc_s': 3.3031790256500244, 'ml_s': 0.06701898574829102, 'total_s': 4.428221702575684}
+[shard 0006 tmalign] rows 2581->2581 status {'fail_core': 11, 'fail_cov': 34, 'ok': 2536} {'tsv2db_s': 0.039400339126586914, 'align_s': 27.001335382461548, 'convertalis_s': 1.6639947891235352, 'parse_s': 0.01302337646484375, 'posthoc_s': 0.3126041889190674, 'ml_s': 0.04677605628967285, 'total_s': 30.0405330657959}
+[shard 0006 tdiaa] rows 2581->2581 status {'ok': 2581} {'tsv2db_s': 0.03926587104797363, 'align_s': 1.0085761547088623, 'convertalis_s': 1.8323578834533691, 'parse_s': 0.013356924057006836, 'posthoc_s': 0.3401942253112793, 'ml_s': 0.045531511306762695, 'total_s': 4.277281999588013}
+[shard 0007 seqonly] rows 1975->1975 status {'fail_core': 1, 'ok': 1974} {'align+posthoc_s': 3.100226879119873, 'ml_s': 0.05416297912597656, 'total_s': 3.9569218158721924}
+[shard 0007 tmalign] rows 1975->1975 status {'fail_core': 4, 'fail_cov': 25, 'ok': 1946} {'tsv2db_s': 0.03789973258972168, 'align_s': 23.573597192764282, 'convertalis_s': 1.410036563873291, 'parse_s': 0.013477563858032227, 'posthoc_s': 0.28693389892578125, 'ml_s': 0.048250436782836914, 'total_s': 26.084081411361694}
+[shard 0007 tdiaa] rows 1975->1975 status {'ok': 1975} {'tsv2db_s': 0.038663625717163086, 'align_s': 0.9442126750946045, 'convertalis_s': 1.548492431640625, 'parse_s': 0.011734724044799805, 'posthoc_s': 0.29686975479125977, 'ml_s': 0.03899025917053223, 'total_s': 3.622399091720581}
+{
+ "seqonly": {
+  "rows_in": 20000,
+  "rows_out": 20000,
+  "status": {
+   "ok": 19998,
+   "fail_core": 2
+  },
+  "timings": {
+   "align+posthoc_s": 27.55,
+   "ml_s": 0.91,
+   "total_s": 36.74
+  }
+ },
+ "tmalign": {
+  "rows_in": 20000,
+  "rows_out": 20000,
+  "status": {
+   "fail_core": 70,
+   "fail_cov": 222,
+   "ok": 19708
+  },
+  "timings": {
+   "tsv2db_s": 0.32,
+   "align_s": 219.05,
+   "convertalis_s": 13.2,
+   "parse_s": 0.09,
+   "posthoc_s": 2.71,
+   "ml_s": 0.37,
+   "total_s": 243.14
+  }
+ },
+ "tdiaa": {
+  "rows_in": 20000,
+  "rows_out": 20000,
+  "status": {
+   "ok": 20000
+  },
+  "timings": {
+   "tsv2db_s": 0.32,
+   "align_s": 8.23,
+   "convertalis_s": 14.81,
+   "parse_s": 0.1,
+   "posthoc_s": 2.77,
+   "ml_s": 0.36,
+   "total_s": 34.26
+  }
+ },
+ "wall_s": 314.8
+}

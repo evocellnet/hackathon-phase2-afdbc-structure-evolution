@@ -1,0 +1,4 @@
+tune: 0.17051146030426026 s/rep 1658 cells
+prod: 0.8316396713256836 s/rep 7476 cells
+wrote /scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/results/tuning/b_e4_timing.json
+B_E4 = 1000 runtime 284.98979783058167

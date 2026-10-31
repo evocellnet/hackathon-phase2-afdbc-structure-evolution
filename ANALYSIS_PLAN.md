@@ -216,17 +216,17 @@ For each HOG h, metric m and alignment, work on T_h: the collapsed panel tree pr
 
 | Parameter | Value | Source/date |
 |---|---|---|
-| α_AA (LG+Γ4) | `<TBD>` | |
-| α_3Di (Q.3Di.AF+Γ4) | `<TBD>` | |
-| S0(L) floor table (LDDT_global, TM; bins, median, q95) | `<TBD: floors.json#S0>` | |
-| HOG-misfit threshold τ_misfit | `<TBD>` (≥ 3) | |
-| η_tdi, η_lddtD (ν = η/2) | `<TBD>` | measured |
-| κ_m(bin), ρ_m(bin) | `<TBD>` | measured |
-| B_E4 | `<TBD>` | timing |
-| HOGs per stratum; total primary + E6 pairs | `<TBD>` | |
-| tmalign pairs/s | `<TBD>` | |
-| E5 spike-in power at f = 1.5 (also 1.25, 2; null rate) | `<TBD>` | §4.5 |
-| V3 false-concave rate; minimal detectable \|c−1\| and \|β_E4\| | `<TBD>` | §7 |
+| α_AA (LG+Γ4) | 1.64 | alpha.json; 2026-10-31 |
+| α_3Di (Q.3Di.AF+Γ4) | 1.6 | alpha.json; 2026-10-31 |
+| S0(L) floor table (LDDT_global, TM; bins, median, q95) | tdiaa lddt_D floor (C28 S0_ok), len bins ≥ [0, 100, 200, 300, 500, 800]: median [0.276, 0.201, 0.179, 0.168, 0.157, 0.156]; q95 [0.533, 0.363, 0.308, 0.266, 0.243, 0.234] (all alignments in tuning.yaml#s0) | floors_tuned.json; 2026-10-31 |
+| HOG-misfit threshold τ_misfit | 3 | tau_misfit.json; 2026-10-31 |
+| η_tdi, η_lddtD (ν = η/2) | tdiaa: η_tdi = 0.0524, η_lddtD = 0.0253 (ν = η/2) | floors_tuned.json; 2026-10-31 |
+| κ_m(bin), ρ_m(bin) | tdiaa, range over aa_ml bins: κ_AA 1.04–1.46, κ_3Di 1.08–1.2; ρ_AA,3Di 0.0832–0.33, ρ_AA,lddt 0.0823–0.427 (per bin in tuning.yaml) | se_calibration.json; 2026-10-31 |
+| B_E4 | 1000 | b_e4_timing.json; 2026-10-31 |
+| HOGs per stratum; total primary + E6 pairs | strata {1: 224, 2: 756, 3: 5064, 4: 956}; primary 1,087,063 + E6 312,674 = 1,399,737 pairs | sample_throughput.json; 2026-10-31 |
+| tmalign pairs/s | 370.5 (48 threads; tdiaa 2295, seqonly 2046) [measured at 48 threads, scaled to 48] | sample_throughput.json; 2026-10-31 |
+| E5 spike-in power at f = 1.5 (also 1.25, 2; null rate) | 0.24 (f = 1.25: 0.08; f = 2: 0.6; null rate f = 1: 0.18; P(accept \| f = 1.5) = 0; min_t_snr = 8; real_tune) | e5_power.json; 2026-10-31 |
+| V3 false-concave rate; minimal detectable \|c−1\| and \|β_E4\| | false-concave 0 (mean ĉ under linear truth 1.030); min. detectable \|c−1\| = 0.0402 ANALYTIC, but EMPIRICAL power never reached 80% for c ∈ {0.90–0.96} (c = 0.90: 55%); \|β̂_E4\| = 0.0457 (true β −0.10 → β̂ −0.046, attenuation ≈ 0.46) | v3_tuned.json; 2026-10-31 |
 
 ## 4. Endpoints
 

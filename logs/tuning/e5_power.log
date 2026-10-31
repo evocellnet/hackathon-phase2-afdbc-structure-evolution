@@ -1,0 +1,11 @@
+  [real_tune] f=1.5: detect 0.24 accept 0.00
+  [real_tune] f=1.25: detect 0.08 accept 0.00
+  [real_tune] f=2.0: detect 0.60 accept 0.00
+  [real_tune] f=1.0: detect 0.18 accept 0.00
+real tune: ok 106 lineages
+  [synthetic_prod_tune_size] f=1.5: detect 0.62 accept 0.00
+  [synthetic_prod_tune_size] f=1.25: detect 0.00 accept 0.00
+  [synthetic_prod_tune_size] f=2.0: detect 1.00 accept 0.00
+  [synthetic_prod_tune_size] f=1.0: detect 0.00 accept 0.00
+wrote /scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/results/tuning/e5_power.json
+{'power_f1.5': 0.24, 'power_f1.25': 0.08, 'power_f2': 0.6, 'null_rate_f1': 0.18, 'p_accept_f1.5': 0.0, 'min_t_snr': 8.0} [] runtime 206.30277824401855

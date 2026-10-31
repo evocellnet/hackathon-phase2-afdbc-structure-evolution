@@ -1,0 +1,12 @@
+1377 real designs; 1377 HOGs per dataset; r_h median 0.485
+  c=0.9: concave rate 0.55
+  c=0.92: concave rate 0.00
+  c=0.94: concave rate 0.00
+  c=0.96: concave rate 0.00
+E1: {'false_concave_rate': 0.0, 'mean_c_simex': 1.030454356248366, 'mean_se_boot': 0.012683049297345927, 'min_detectable_abs_c_minus_1': None, 'analytic_mde_abs_c_minus_1': 0.04017950836433424}
+  age_beta=-0.05: detect 0.10 beta_hat -0.0191
+  age_beta=-0.1: detect 1.00 beta_hat -0.0457
+E4: {'null_mean_se': 0.01196824623832655, 'analytic_mde_abs_beta_hat': 0.03791503435533304, 'min_detectable_abs_beta_hat_empirical': 0.04565697196927844}
+flags: ['E1_simex_bias_under_linear_truth:+0.030', 'E4_null_bias:+0.010(se 0.012)']
+wrote /scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/results/tuning/v3_tuned.json
+{'false_concave_rate': 0.0, 'min_detectable_c': 0.04017950836433424, 'min_detectable_beta_e4': 0.04565697196927844} runtime 11119.175908088684

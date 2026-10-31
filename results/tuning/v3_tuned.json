@@ -1,0 +1,197 @@
+{
+  "step": "v3_tuned",
+  "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+  "split_md5": "29da378aec763731b728b38fa262941f",
+  "split_used": "tune",
+  "date": "2026-10-30 21:52:46 CET",
+  "args": {
+    "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+    "aln": "tdiaa",
+    "n_datasets": 100,
+    "hogs": 0,
+    "hogs_scale": null,
+    "B": 100,
+    "Bs": 50,
+    "Bs_boot": 10,
+    "power_c": [
+      0.9,
+      0.92,
+      0.94,
+      0.96
+    ],
+    "power_datasets": 20,
+    "beta_hogs": 0,
+    "beta_datasets": 10,
+    "beta_grid": [
+      -0.05,
+      -0.1
+    ],
+    "beta_B": 100,
+    "tip_sd": null,
+    "scalar_noise": false,
+    "out_name": "v3_tuned",
+    "pb_K": 10,
+    "pb_Bs": 20,
+    "pb_design": "tree",
+    "noise_struct": "edge",
+    "se_at": "obs",
+    "rho_mode": "pair",
+    "e4_cell_rule": "info",
+    "skip_e1": false,
+    "skip_e4": false
+  },
+  "threads": {
+    "omp": "2",
+    "torch": 2
+  },
+  "noise": {
+    "summary": {
+      "kappa_aa": 1.4364403110245927,
+      "kappa_tdi": 1.1740163340266854,
+      "rho_tdi": 0.29399403773036403,
+      "eta_tdi": 0.05240013804330884,
+      "nu_tdi": 0.02620006902165442,
+      "tip_sd": 0.028161139877063104,
+      "alpha": {
+        "aa": 1.64,
+        "tdi": 1.6
+      }
+    },
+    "provisional": [],
+    "sources": {
+      "kappa": "results/tuning/se_calibration.json",
+      "rho": "results/tuning/se_calibration.json",
+      "eta": "results/tuning/floors_tuned.json",
+      "tip_sd": "floors.json floor_ident tdi_ml (q95-q05)/3.29/sqrt2 (upper bound)",
+      "alpha": "results/tuning/alpha.json"
+    },
+    "kappa_rho_in_estimator": "kappa(bin of observed aa_ml) on the SE columns (driver convention); rho per pair rho(bin); simulation uses per-bin values at the true distance",
+    "se_columns_at": "obs",
+    "noise_struct": "edge",
+    "pb_K": 10,
+    "pb_design": "tree",
+    "e4_cell_rule": "info"
+  },
+  "designs": {
+    "n_real_hogs": 1377,
+    "hogs_per_dataset": 1377,
+    "r_h_median": 0.4850239932305038,
+    "D_aa_quantiles": [
+      0.009032570809635642,
+      0.4717356840095175,
+      1.1340790112304227
+    ]
+  },
+  "E1": {
+    "n_datasets": 100,
+    "false_concave_rate": 0.0,
+    "class_counts": {
+      "linear": 100
+    },
+    "mean_c_naive": 0.8907201632505263,
+    "mean_c_simex": 1.030454356248366,
+    "sd_c_simex": 0.007779551095966865,
+    "mean_c_simex_plan_uncorrected": 1.0006123420083426,
+    "false_concave_rate_plan_uncorrected_same_se": 0.0,
+    "mean_se_boot": 0.012683049297345927,
+    "coverage98_of_1": 0.42,
+    "mean_n_pairs": 186748.81,
+    "mean_n_hogs": 1302.19,
+    "runtime_s": 5310.516963481903,
+    "per_dataset_s": 53.10516963481903,
+    "power": {
+      "0.9": {
+        "concave_rate": 0.55,
+        "mean_c_simex": 0.9267369924046964,
+        "mean_c_naive": 0.8135001650605533,
+        "mean_se": 0.011615408237082781
+      },
+      "0.92": {
+        "concave_rate": 0.0,
+        "mean_c_simex": 0.9454411663634167,
+        "mean_c_naive": 0.827875198882279,
+        "mean_se": 0.011656870816176442
+      },
+      "0.94": {
+        "concave_rate": 0.0,
+        "mean_c_simex": 0.9677306912056212,
+        "mean_c_naive": 0.8448807287236282,
+        "mean_se": 0.012253594791849901
+      },
+      "0.96": {
+        "concave_rate": 0.0,
+        "mean_c_simex": 0.9881514599582489,
+        "mean_c_naive": 0.8597670485956431,
+        "mean_se": 0.012316533394759284
+      }
+    },
+    "min_detectable_abs_c_minus_1": null,
+    "min_detectable_note": "no c in [0.9, 0.92, 0.94, 0.96] reached 80% power",
+    "analytic_mde_abs_c_minus_1": 0.04017950836433424,
+    "pass": true
+  },
+  "E4": {
+    "hogs_per_world": 1377,
+    "B": 100,
+    "n_null_worlds": 10,
+    "null_mean_beta": 0.010124876346915267,
+    "null_mean_se": 0.01196824623832655,
+    "null_sd_beta": 0.006996346536864885,
+    "null_false_positive_rate_98": 0.0,
+    "null_false_positive_rate_95": 0.0,
+    "null_mean_abs_beta_over_se": 0.8656811865363162,
+    "null_mean_beta_over_mean_se": 0.8459782782954314,
+    "mean_n_cells": 2209.1,
+    "analytic_mde_abs_beta_hat": 0.03791503435533304,
+    "grid_generating_beta": {
+      "-0.05": {
+        "detect_rate_98": 0.1,
+        "detect_rate_95": 0.2,
+        "mean_beta_hat": -0.019121965321636986,
+        "mean_se": 0.012696363901361219
+      },
+      "-0.1": {
+        "detect_rate_98": 1.0,
+        "detect_rate_95": 1.0,
+        "mean_beta_hat": -0.04565697196927844,
+        "mean_se": 0.013940858724093615
+      }
+    },
+    "min_detectable_abs_beta_hat_empirical": 0.04565697196927844,
+    "runtime_s": 1537.7540485858917
+  },
+  "min_detectable_c_basis": "analytic (z_.99 + z_.80) x mean SE_boot (no grid value reached 80%)",
+  "min_detectable_beta_basis": "empirical mean |beta_hat| at the smallest grid beta with >= 80% detection",
+  "yaml": {
+    "false_concave_rate": 0.0,
+    "min_detectable_c": 0.04017950836433424,
+    "min_detectable_beta_e4": 0.04565697196927844
+  },
+  "flags": [
+    "E1_simex_bias_under_linear_truth:+0.030",
+    "E4_null_bias:+0.010(se 0.012)"
+  ],
+  "fit_info": {
+    "panel": {
+      "n_nodes": 303,
+      "n_leaves": 180,
+      "age_filled": [
+        "N003",
+        "N004",
+        "N005",
+        "N036",
+        "N105",
+        "N117"
+      ],
+      "n_no_ci": 15
+    },
+    "branch_fit_s": 3.556739091873169,
+    "metrics": [
+      "aa_ml",
+      "tdi_ml"
+    ],
+    "n_hogs": 1400,
+    "n_pairs": 220104
+  },
+  "runtime_s": 11119.175908088684
+}

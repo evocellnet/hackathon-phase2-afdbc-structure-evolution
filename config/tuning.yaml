@@ -29,33 +29,40 @@ lddt_se_model:                  # §2.3: SD of S (block bootstrap) by length bin
   tdiaa: {len_bin_lo: [0, 100, 200, 300, 500, 800], s_bin_lo: [0.0, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9], sd_S: [[0.060434, 0.060434, 0.060434, 0.060434, 0.060434, 0.060434, 0.041226, 0.036321, 0.013346], [0.034411, 0.034411, 0.034411, 0.034411, 0.035626, 0.038065, 0.038542, 0.032441, 0.015354], [0.028355, 0.028355, 0.028355, 0.028355, 0.028355, 0.034228, 0.031638, 0.027964, 0.017334], [0.023866, 0.023866, 0.023866, 0.023866, 0.023866, 0.030997, 0.02813, 0.023794, 0.013845], [0.026583, 0.026583, 0.026583, 0.026583, 0.026583, 0.024954, 0.024115, 0.020479, 0.012797], [0.023288, 0.023288, 0.023288, 0.023288, 0.023288, 0.023288, 0.019724, 0.016608, 0.01137]]}
   seqonly: {len_bin_lo: [0, 100, 200, 300, 500, 800], s_bin_lo: [0.0, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9], sd_S: [[0.068568, 0.068568, 0.068568, 0.068568, 0.068568, 0.068568, 0.068568, 0.044499, 0.014457], [0.053617, 0.053617, 0.053617, 0.053617, 0.053617, 0.053617, 0.051061, 0.039364, 0.017544], [0.050965, 0.050965, 0.050965, 0.050965, 0.050965, 0.047111, 0.038576, 0.031831, 0.018456], [0.027815, 0.027815, 0.027815, 0.027815, 0.032822, 0.038518, 0.033814, 0.027621, 0.015116], [0.032904, 0.032904, 0.032904, 0.032904, 0.032904, 0.031417, 0.028141, 0.023589, 0.014017], [0.02629, 0.02629, 0.02629, 0.02629, 0.02629, 0.02629, 0.023028, 0.018531, 0.01219]]}
   tmalign: {len_bin_lo: [0, 100, 200, 300, 500, 800], s_bin_lo: [0.0, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9], sd_S: [[0.036509, 0.036509, 0.036509, 0.036509, 0.036509, 0.030667, 0.031138, 0.031998, 0.01343], [0.057933, 0.057933, 0.057933, 0.044556, 0.046359, 0.036996, 0.031488, 0.025493, 0.013122], [0.033258, 0.033258, 0.033258, 0.042617, 0.03726, 0.030313, 0.02754, 0.021616, 0.013602], [0.033838, 0.033838, 0.033838, 0.035112, 0.031799, 0.029583, 0.02481, 0.019213, 0.011613], [0.032354, 0.032354, 0.032354, 0.029445, 0.028453, 0.026075, 0.022057, 0.017884, 0.011257], [0.030785, 0.030785, 0.030785, 0.024283, 0.021538, 0.021731, 0.019501, 0.01531, 0.010199]]}
-tau_misfit: null                # max(3, q95 of misfit_ratio under parametric simulation)
-B_E4: null                      # largest of {1000, 500, 200} with E4 bootstrap <= 1 h
+tau_misfit: 3.0                 # max(3, q95 of misfit_ratio under parametric simulation)
+B_E4: 1000                      # largest of {1000, 500, 200} with E4 bootstrap <= 1 h
 e5:
   min_t_snr: 8                  # D8 (threshold confirmed by spike-in power / null rate on tune)
-  power_f1.5: null
-  power_f1.25: null
-  power_f2: null
-  null_rate_f1: null
-  p_accept_f1.5: null
+  power_f1.5: 0.24
+  power_f1.25: 0.08
+  power_f2: 0.6
+  null_rate_f1: 0.18
+  p_accept_f1.5: 0.0
 v3:
-  false_concave_rate: null
-  min_detectable_c: null        # minimal detectable |c - 1| at 80% power
-  min_detectable_beta_e4: null
+  false_concave_rate: 0.0
+  min_detectable_c: 0.04018     # ANALYTIC MDE only (SE-based). EMPIRICAL (v3_tuned.json, 1377 real tune designs): no c in {0.90,0.92,0.94,0.96} reached 80% power; c=0.90 detected as concave in 55%; mean c_simex under linear truth = 1.030 (conservative bias +0.03)
+  empirical_power_concave: {c0.90: 0.55, c0.92: 0.0, c0.94: 0.0, c0.96: 0.0}
+  min_detectable_beta_e4: 0.045657  # in beta_hat units; true beta -0.10 -> beta_hat -0.046 (attenuation ~0.46 on real designs), detected 100%; true -0.05 detected 10%
 sample:
-  hogs_per_stratum: null
-  n_primary_pairs: null
-  n_e6_pairs: null
+  hogs_per_stratum: {1: 224, 2: 756, 3: 5064, 4: 956}
+  n_primary_pairs: 1087063
+  n_e6_pairs: 312674
 throughput_pairs_per_s:         # measured, 48 threads
-  tmalign: null
-  tdiaa: null
-  seqonly: null
+  tmalign: 370.5
+  tdiaa: 2294.6
+  seqonly: 2045.6
 
 # ---- appended by write_tuning_yaml.py (new keys; schema keys above are unchanged) ----
-written: 2026-10-30 17:48:15 CET
+written: 2026-10-31 00:58:03 CET
 sources:                        # yaml path -> fragment (date); PROVISIONAL = computed with untuned noise
+  B_E4: results/tuning/b_e4_timing.json (2026-10-30)
   alpha.aa: results/tuning/alpha.json (2026-10-30)
   alpha.tdi: results/tuning/alpha.json (2026-10-30)
+  e5.null_rate_f1: results/tuning/e5_power.json (2026-10-30) [real_tune]
+  e5.p_accept_f1.5: results/tuning/e5_power.json (2026-10-30) [real_tune]
+  e5.power_f1.25: results/tuning/e5_power.json (2026-10-30) [real_tune]
+  e5.power_f1.5: results/tuning/e5_power.json (2026-10-30) [real_tune]
+  e5.power_f2: results/tuning/e5_power.json (2026-10-30) [real_tune]
   eta.seqonly.lddt_D: results/tuning/floors_tuned.json (2026-10-30)
   eta.seqonly.lddt_raw: results/tuning/floors_tuned.json (2026-10-30)
   eta.seqonly.tdi_ml: results/tuning/floors_tuned.json (2026-10-30)
@@ -107,5 +114,15 @@ sources:                        # yaml path -> fragment (date); PROVISIONAL = co
   s0.tmalign.n: results/tuning/floors_tuned.json (2026-10-30)
   s0.tmalign.q95: results/tuning/floors_tuned.json (2026-10-30)
   s0.tmalign.source: results/tuning/floors_tuned.json (2026-10-30)
+  sample.hogs_per_stratum: results/tuning/sample_throughput.json (2026-10-31)
+  sample.n_e6_pairs: results/tuning/sample_throughput.json (2026-10-31)
+  sample.n_primary_pairs: results/tuning/sample_throughput.json (2026-10-31)
   split_md5: 'computed: md5(data/interim/split.tsv)'
+  tau_misfit: results/tuning/tau_misfit.json (2026-10-30)
+  throughput_pairs_per_s.seqonly: results/tuning/sample_throughput.json (2026-10-31) (measured at 48 threads, scaled to 48)
+  throughput_pairs_per_s.tdiaa: results/tuning/sample_throughput.json (2026-10-31) (measured at 48 threads, scaled to 48)
+  throughput_pairs_per_s.tmalign: results/tuning/sample_throughput.json (2026-10-31) (measured at 48 threads, scaled to 48)
+  v3.false_concave_rate: results/tuning/v3_tuned.json (2026-10-31)
+  v3.min_detectable_beta_e4: results/tuning/v3_tuned.json (2026-10-31)
+  v3.min_detectable_c: results/tuning/v3_tuned.json (2026-10-31)
 provisional: {}                 # paths whose fragment used provisional kappa/rho/eta

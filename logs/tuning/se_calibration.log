@@ -1,0 +1,14 @@
+tdiaa: N=20000 B=100 load 2.2s boot 2.9s ml 4.2s total 10.1s; count mismatches 0, max|S_dump-S| 5.82465642384733e-09
+  kappa_aa [1.04 1.21 1.34 1.42 1.44 1.46 1.43 1.44  nan  nan] n [2376, 2780, 2780, 2780, 2780, 2779, 2779, 524, 17, 1]
+  kappa_tdi [1.08 1.11 1.11 1.16 1.18 1.19 1.2  1.17  nan  nan] n [2735, 2772, 2775, 2780, 2778, 2776, 2772, 524, 12, 1]
+  rho_aa_tdi [0.08 0.16 0.2  0.24 0.28 0.31 0.33 0.31  nan  nan]  rho_aa_lddt [0.08 0.14 0.19 0.26 0.32 0.36 0.4  0.43  nan  nan]
+seqonly: N=19998 B=100 load 2.2s boot 2.9s ml 4.2s total 9.7s; count mismatches 0, max|S_dump-S| 4.506556794403593e-09
+  kappa_aa [1.03 1.21 1.33 1.42 1.43 1.44 1.4  1.3   nan  nan] n [2386, 2772, 2785, 2807, 2860, 2872, 2846, 256, 4, 0]
+  kappa_tdi [1.09 1.12 1.13 1.19 1.26 1.32 1.41 1.39  nan  nan] n [2751, 2764, 2780, 2807, 2858, 2869, 2839, 251, 4, 0]
+  rho_aa_tdi [0.09 0.17 0.21 0.26 0.31 0.36 0.38 0.29  nan  nan]  rho_aa_lddt [0.08 0.13 0.18 0.24 0.29 0.34 0.37 0.36  nan  nan]
+tmalign: N=19708 B=100 load 2.1s boot 2.8s ml 4.1s total 9.4s; count mismatches 0, max|S_dump-S| 5.82465642384733e-09
+  kappa_aa [1.05 1.23 1.4  1.48 1.53 1.55 1.56 1.64 2.4  2.35] n [2098, 2523, 2738, 2728, 2730, 2633, 3033, 664, 106, 91]
+  kappa_tdi [1.08 1.13 1.16 1.2  1.27 1.29 1.38 1.45 2.24 2.22] n [2386, 2518, 2734, 2726, 2728, 2632, 3030, 664, 106, 99]
+  rho_aa_tdi [0.15 0.25 0.33 0.37 0.42 0.44 0.49 0.52 0.66 0.41]  rho_aa_lddt [0.17 0.23 0.32 0.36 0.43 0.48 0.53 0.58 0.66 0.35]
+iid simulation check (kappa should be ~1): {'n_pairs': 600, 'B': 100, 'alpha': 1.64, 'kappa_median': 0.9397646218711446, 'kappa_mean': 0.953481396083381}
+/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/results/tuning/se_calibration.json

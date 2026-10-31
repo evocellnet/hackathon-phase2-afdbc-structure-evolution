@@ -1,0 +1,18 @@
+wrote /scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/config/tuning.yaml  (split_md5 29da378aec763731b728b38fa262941f)
+NULLS (16):
+   tau_misfit
+   B_E4
+   e5.power_f1.5
+   e5.power_f1.25
+   e5.power_f2
+   e5.null_rate_f1
+   e5.p_accept_f1.5
+   v3.false_concave_rate
+   v3.min_detectable_c
+   v3.min_detectable_beta_e4
+   sample.hogs_per_stratum
+   sample.n_primary_pairs
+   sample.n_e6_pairs
+   throughput_pairs_per_s.tmalign
+   throughput_pairs_per_s.tdiaa
+   throughput_pairs_per_s.seqonly

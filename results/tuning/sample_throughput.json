@@ -1,0 +1,93 @@
+{
+  "step": "sample_throughput",
+  "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+  "split_md5": "29da378aec763731b728b38fa262941f",
+  "split_used": "tune",
+  "date": "2026-10-31 00:58:01 CET",
+  "args": {
+    "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+    "threads_used": 48,
+    "alns": [
+      "tmalign",
+      "tdiaa",
+      "seqonly"
+    ]
+  },
+  "threads": {
+    "omp": "2",
+    "torch": 2
+  },
+  "sample": {
+    "hogs_per_stratum": {
+      "1": 224,
+      "2": 756,
+      "3": 5064,
+      "4": 956
+    },
+    "hogs_per_stratum_eligible": {
+      "1": 224,
+      "2": 756,
+      "3": 6275,
+      "4": 956
+    },
+    "split_per_stratum": {
+      "1": {
+        "confirm": 179,
+        "tune": 45
+      },
+      "2": {
+        "confirm": 605,
+        "tune": 151
+      },
+      "3": {
+        "confirm": 4051,
+        "tune": 1013
+      },
+      "4": {
+        "confirm": 765,
+        "tune": 191
+      }
+    },
+    "n_hogs_sampled": 7000,
+    "n_primary_pairs": 1087063,
+    "n_e6_pairs": 312674,
+    "n_total_pairs": 1399737,
+    "e6_triplets": 36500,
+    "split_md5_in_summary": "29da378aec763731b728b38fa262941f",
+    "split_md5_now": "29da378aec763731b728b38fa262941f"
+  },
+  "throughput": {
+    "tmalign": {
+      "n_shards": 94,
+      "rows": 1399737,
+      "seconds": 3778.0564465522766,
+      "threads_used": 48,
+      "pairs_per_s": 370.4912882594307,
+      "pairs_per_s_48threads": 370.49128825943063,
+      "scaling": "measured at 48"
+    },
+    "tdiaa": {
+      "n_shards": 94,
+      "rows": 1399737,
+      "seconds": 610.0171353816986,
+      "threads_used": 48,
+      "pairs_per_s": 2294.5863629292307,
+      "pairs_per_s_48threads": 2294.5863629292307,
+      "scaling": "measured at 48"
+    },
+    "seqonly": {
+      "n_shards": 94,
+      "rows": 1399737,
+      "seconds": 684.25435090065,
+      "threads_used": 48,
+      "pairs_per_s": 2045.6384357039099,
+      "pairs_per_s_48threads": 2045.6384357039099,
+      "scaling": "measured at 48"
+    }
+  },
+  "projection_full_run_h_48threads": {
+    "tmalign": 1.0494601240422994,
+    "tdiaa": 0.16944920427269405,
+    "seqonly": 0.19007065302795834
+  }
+}

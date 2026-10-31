@@ -1,0 +1,7 @@
+tdiaa aa: alpha=1.529 CI95=1.524-1.535 n=218147 (14.8 s)
+tdiaa tdi: alpha=1000.000 CI95=140.524-30566.413 n=218147 (17.0 s)
+seqonly aa: alpha=1.640 CI95=1.634-1.646 n=218170 (15.0 s)
+seqonly tdi: alpha=1.603 CI95=1.591-1.616 n=218170 (14.3 s)
+tmalign aa: alpha=1.062 CI95=1.060-1.065 n=215211 (14.6 s)
+tmalign tdi: alpha=0.935 CI95=0.931-0.940 n=215211 (15.1 s)
+/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/results/tuning/alpha.json

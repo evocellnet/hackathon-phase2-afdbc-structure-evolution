@@ -1,0 +1,8 @@
+LG/alpha0.5 alisim 0.501 [0.492, 0.512] | inhouse 0.504 [0.499, 0.51]
+LG/alpha1 alisim 1.0 [0.974, 1.027] | inhouse 1.015 [1.002, 1.028]
+LG/alpha2 alisim 1.995 [1.916, 2.08] | inhouse 2.035 [1.993, 2.078]
+Q.3Di.AF/alpha0.5 alisim 0.503 [0.493, 0.513] | inhouse 0.501 [0.496, 0.505]
+Q.3Di.AF/alpha1 alisim 1.027 [1.001, 1.053] | inhouse 1.011 [0.998, 1.024]
+Q.3Di.AF/alpha2 alisim 2.017 [1.942, 2.098] | inhouse 2.048 [2.009, 2.089]
+/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/results/tuning/profile_alpha_validation.json
+/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/figures/tuning/profile_alpha_validation.png

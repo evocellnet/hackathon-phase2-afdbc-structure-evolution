@@ -1,0 +1,4 @@
+tdiaa: 94 shards, 1399737 rows; alpha {'aa': 1.64, 'tdi': 1.6}; S0 /scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/config/tuning.yaml; SE model /scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/config/tuning.yaml
+seqonly: 94 shards, 1399737 rows; alpha {'aa': 1.64, 'tdi': 1.6}; S0 /scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/config/tuning.yaml; SE model /scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/config/tuning.yaml
+tmalign: 94 shards, 1399737 rows; alpha {'aa': 1.64, 'tdi': 1.6}; S0 /scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/config/tuning.yaml; SE model /scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/config/tuning.yaml
+/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution/data/interim/pairs/apply_tuning.json
