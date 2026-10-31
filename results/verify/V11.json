@@ -1,0 +1,585 @@
+{
+  "check": "V11",
+  "pass_all": true,
+  "rows": [
+    {
+      "endpoint": "E1",
+      "quantity": "n pairs in fit",
+      "project": 591410,
+      "own": 591410,
+      "absdiff": 0,
+      "kind": "exact",
+      "tol": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E1",
+      "quantity": "n HOGs in fit",
+      "project": 4850,
+      "own": 4850,
+      "absdiff": 0,
+      "kind": "exact",
+      "tol": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E1",
+      "quantity": "s2 (pass-1 excess var)",
+      "project": 0.0017371315205417944,
+      "own": 0.0017371315173996293,
+      "absdiff": 3.1421651305180154e-12,
+      "kind": "deterministic",
+      "tol": 1e-06,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E1",
+      "quantity": "c_naive",
+      "project": 0.6695410613576521,
+      "own": 0.669541071592378,
+      "absdiff": 1.0234725844604498e-08,
+      "kind": "deterministic",
+      "tol": 1e-06,
+      "pass": true,
+      "note": "Brent xatol; diff ~1e-8"
+    },
+    {
+      "endpoint": "E1",
+      "quantity": "c_SIMEX (plan)",
+      "project": 0.7165806065035297,
+      "own": 0.7163226095984984,
+      "absdiff": 0.00025799690503136574,
+      "kind": "Monte Carlo (own seed)",
+      "tol": 0.0015,
+      "pass": true,
+      "note": "independent SIMEX draws, B_s=50; tolerance 3 x approx MC SE"
+    },
+    {
+      "endpoint": "E1",
+      "quantity": "SIMEX extrapolation from project c(lambda)",
+      "project": 0.7165806065035297,
+      "own": 0.7165806065035297,
+      "absdiff": 0.0,
+      "kind": "deterministic",
+      "tol": 1e-06,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E1",
+      "quantity": "D31 PB bias",
+      "project": -0.006040730193294652,
+      "own": -0.005787903984209586,
+      "absdiff": 0.00025282620908506637,
+      "kind": "Monte Carlo (own seed)",
+      "tol": 0.0011390115702158406,
+      "pass": true,
+      "note": "K=20 own vs K=25; z=0.67"
+    },
+    {
+      "endpoint": "E1",
+      "quantity": "c (final = SIMEX - PB bias)",
+      "project": 0.7226213366968244,
+      "own": 0.722110513582708,
+      "absdiff": 0.0005108231141164321,
+      "kind": "Monte Carlo",
+      "tol": 0.0018834402982535856,
+      "pass": true,
+      "note": "own SIMEX + own PB"
+    },
+    {
+      "endpoint": "E1",
+      "quantity": "final = c_simex_plan - pb_bias (project parts)",
+      "project": 0.7226213366968244,
+      "own": 0.7226213366968244,
+      "absdiff": 0.0,
+      "kind": "arithmetic",
+      "tol": 1e-06,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E1",
+      "quantity": "decision from CI rule",
+      "project": "concave",
+      "own": "concave",
+      "absdiff": null,
+      "kind": "rule",
+      "pass": true,
+      "note": "ci98 recomputed [0.6420, 0.8033]; p_conc 6.077e-16"
+    },
+    {
+      "endpoint": "E2",
+      "quantity": "n pairs in fit",
+      "project": 594618,
+      "own": 594618,
+      "absdiff": 0,
+      "kind": "exact",
+      "tol": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E2",
+      "quantity": "n HOGs in fit",
+      "project": 4891,
+      "own": 4891,
+      "absdiff": 0,
+      "kind": "exact",
+      "tol": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E2",
+      "quantity": "s2 (pass-1 excess var)",
+      "project": 0.005589843418393026,
+      "own": 0.005589843418482983,
+      "absdiff": 8.995755529372929e-14,
+      "kind": "deterministic",
+      "tol": 1e-06,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E2",
+      "quantity": "c_naive",
+      "project": 0.6273485215881156,
+      "own": 0.6273484950180788,
+      "absdiff": 2.6570036837370026e-08,
+      "kind": "deterministic",
+      "tol": 1e-06,
+      "pass": true,
+      "note": "Brent xatol; diff ~1e-8"
+    },
+    {
+      "endpoint": "E2",
+      "quantity": "c_SIMEX (plan)",
+      "project": 0.6892416943682899,
+      "own": 0.68948693200971,
+      "absdiff": 0.0002452376414201485,
+      "kind": "Monte Carlo (own seed)",
+      "tol": 0.0015,
+      "pass": true,
+      "note": "independent SIMEX draws, B_s=50; tolerance 3 x approx MC SE"
+    },
+    {
+      "endpoint": "E2",
+      "quantity": "SIMEX extrapolation from project c(lambda)",
+      "project": 0.6892416943682899,
+      "own": 0.6892416943682899,
+      "absdiff": 0.0,
+      "kind": "deterministic",
+      "tol": 1e-06,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E2",
+      "quantity": "D31 PB bias",
+      "project": -0.009586971009957979,
+      "own": -0.010132168824352528,
+      "absdiff": 0.0005451978143945491,
+      "kind": "Monte Carlo (own seed)",
+      "tol": 0.0015465662304479095,
+      "pass": true,
+      "note": "K=20 own vs K=25; z=1.06"
+    },
+    {
+      "endpoint": "E2",
+      "quantity": "c (final = SIMEX - PB bias)",
+      "project": 0.6988286653782478,
+      "own": 0.6996191008340625,
+      "absdiff": 0.0007904354558146975,
+      "kind": "Monte Carlo",
+      "tol": 0.00215449927016972,
+      "pass": true,
+      "note": "own SIMEX + own PB"
+    },
+    {
+      "endpoint": "E2",
+      "quantity": "final = c_simex_plan - pb_bias (project parts)",
+      "project": 0.6988286653782478,
+      "own": 0.6988286653782478,
+      "absdiff": 0.0,
+      "kind": "arithmetic",
+      "tol": 1e-06,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E2",
+      "quantity": "decision from CI rule",
+      "project": "concave",
+      "own": "concave",
+      "absdiff": null,
+      "kind": "rule",
+      "pass": true,
+      "note": "ci98 recomputed [0.6060, 0.7917]; p_conc 2.284e-14"
+    },
+    {
+      "endpoint": "E3",
+      "quantity": "k (ratio of sums)",
+      "project": 3.321810104073422,
+      "own": 3.321810104073422,
+      "absdiff": 0.0,
+      "kind": "deterministic",
+      "tol": 1e-06,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E3",
+      "quantity": "k internal edges only",
+      "project": 4.62796816969959,
+      "own": 4.62796816969959,
+      "absdiff": 0.0,
+      "kind": "deterministic",
+      "tol": 1e-06,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E3",
+      "quantity": "sigma2_k",
+      "project": -0.4102920036169958,
+      "own": -0.4102920036168655,
+      "absdiff": 1.3028467193976212e-13,
+      "kind": "deterministic",
+      "tol": 1e-06,
+      "pass": true,
+      "note": "v_h with HOG-total (co)variances var_sum/cov_sum_aa; diag-only b_se gives -2.122"
+    },
+    {
+      "endpoint": "E3",
+      "quantity": "CATH delta log k_alpha - log k_beta",
+      "project": 0.6056714403991117,
+      "own": 0.6056714403991115,
+      "absdiff": 2.220446049250313e-16,
+      "kind": "deterministic",
+      "tol": 1e-06,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E3",
+      "quantity": "n HOGs",
+      "project": 4891,
+      "own": 4891,
+      "absdiff": 0,
+      "kind": "exact",
+      "tol": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E3",
+      "quantity": "n edges",
+      "project": 146546,
+      "own": 146546,
+      "absdiff": 0,
+      "kind": "exact",
+      "tol": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E4",
+      "quantity": "beta (MixedLM REML)",
+      "project": -0.15046883804872171,
+      "own": -0.1504686065579756,
+      "absdiff": 2.31490746127605e-07,
+      "kind": "deterministic (optimiser)",
+      "tol": 0.0001,
+      "pass": true,
+      "note": "REML optimum; statsmodels optimiser tolerance ~1e-5"
+    },
+    {
+      "endpoint": "E4",
+      "quantity": "mu",
+      "project": -1.3824391442642054,
+      "own": -1.3824391501974211,
+      "absdiff": 5.9332156965297145e-09,
+      "kind": "deterministic (optimiser)",
+      "tol": 0.0001,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E4",
+      "quantity": "gamma",
+      "project": -0.07438156655925449,
+      "own": -0.07438168819407322,
+      "absdiff": 1.2163481873106452e-07,
+      "kind": "deterministic (optimiser)",
+      "tol": 0.0001,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E4",
+      "quantity": "n cells",
+      "project": 6597,
+      "own": 6597,
+      "absdiff": 0,
+      "kind": "exact",
+      "tol": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E4",
+      "quantity": "censored fraction",
+      "project": 0.026830377444292862,
+      "own": 0.026830377444292862,
+      "absdiff": 0.0,
+      "kind": "deterministic",
+      "tol": 1e-06,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E4",
+      "quantity": "beta, plan cells (sensitivity)",
+      "project": -0.2589570957223033,
+      "own": -0.25895704171127376,
+      "absdiff": 5.4011029537726074e-08,
+      "kind": "deterministic (optimiser)",
+      "tol": 0.0001,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E5",
+      "quantity": "n lineages",
+      "project": 162,
+      "own": 162,
+      "absdiff": 0,
+      "kind": "exact",
+      "tol": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E5",
+      "quantity": "sigma2_obs",
+      "project": 0.11160122663473664,
+      "own": 0.11160126539041577,
+      "absdiff": 3.8755679138136045e-08,
+      "kind": "deterministic",
+      "tol": 1e-06,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E5",
+      "quantity": "sigma2_L = sigma2_obs - F (project F)",
+      "project": 0.09784042124205405,
+      "own": 0.09784045999773319,
+      "absdiff": 3.8755679138136045e-08,
+      "kind": "deterministic given F",
+      "tol": 1e-06,
+      "pass": true,
+      "note": "floor F is a P=100 parametric bootstrap; not re-simulated"
+    },
+    {
+      "endpoint": "E5",
+      "quantity": "n contrasts (finite x_v)",
+      "project": 146,
+      "own": 146,
+      "absdiff": 0,
+      "kind": "exact",
+      "tol": 0,
+      "pass": true,
+      "note": "147 contrasts pass the >=50-HOG rule; 146 have finite x_v (project's count); 145 have finite x_v AND y_v and enter beta"
+    },
+    {
+      "endpoint": "E5",
+      "quantity": "beta contrast",
+      "project": 0.572332067924561,
+      "own": 0.5829819538321516,
+      "absdiff": 0.010649885907590528,
+      "kind": "Monte Carlo (c_v, vx_v from 200 own HOG-pigeonhole reps)",
+      "tol": 0.02274424168812566,
+      "pass": true,
+      "note": "5 own seeds sd 0.0076; naive (no disattenuation) 0.5112"
+    },
+    {
+      "endpoint": "E6",
+      "quantity": "E6a",
+      "project": 0.02968328090939951,
+      "own": 0.029683280907429922,
+      "absdiff": 1.969587687389307e-12,
+      "kind": "deterministic (seeded P1 draw)",
+      "tol": 1e-06,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E6",
+      "quantity": "E6b",
+      "project": 0.017024376420835253,
+      "own": 0.01702437642147908,
+      "absdiff": 6.438287403209841e-13,
+      "kind": "deterministic",
+      "tol": 1e-06,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E6",
+      "quantity": "n groups (a)",
+      "project": 8969,
+      "own": 8969,
+      "absdiff": 0,
+      "kind": "exact",
+      "tol": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "endpoint": "E6",
+      "quantity": "n groups (b)",
+      "project": 6027,
+      "own": 6027,
+      "absdiff": 0,
+      "kind": "exact",
+      "tol": 0,
+      "pass": true,
+      "note": ""
+    }
+  ],
+  "inputs": {
+    "split_tsv_confirm": 5600,
+    "hogs_parquet_confirm": 5600,
+    "hogs_parquet_confirm_eq_split_tsv": true,
+    "tdiaa": {
+      "rows": 1115806,
+      "primary": 866959,
+      "primary_expected_sum_C(n,2)": 866959,
+      "primary_dup_ids": 0,
+      "hogs_not_confirm_in_split_tsv": 0,
+      "hogs_in_tune": 0,
+      "confirm_hogs_without_pairs": 0,
+      "split_values": [
+        "confirm"
+      ],
+      "e6": [
+        {
+          "pair_set": "e6_orth",
+          "len": 133058
+        },
+        {
+          "pair_set": "e6_para",
+          "len": 29117
+        },
+        {
+          "pair_set": "e6_ldo",
+          "len": 86672
+        }
+      ],
+      "hogs_pair_count_mismatch": 0
+    },
+    "seqonly": {
+      "rows": 1115806,
+      "primary": 866959,
+      "primary_expected_sum_C(n,2)": 866959,
+      "primary_dup_ids": 0,
+      "hogs_not_confirm_in_split_tsv": 0,
+      "hogs_in_tune": 0,
+      "confirm_hogs_without_pairs": 0,
+      "split_values": [
+        "confirm"
+      ],
+      "e6": [
+        {
+          "pair_set": "e6_orth",
+          "len": 133058
+        },
+        {
+          "pair_set": "e6_ldo",
+          "len": 86672
+        },
+        {
+          "pair_set": "e6_para",
+          "len": 29117
+        }
+      ],
+      "hogs_pair_count_mismatch": 0
+    },
+    "tmalign": {
+      "rows": 1115806,
+      "primary": 866959,
+      "primary_expected_sum_C(n,2)": 866959,
+      "primary_dup_ids": 0,
+      "hogs_not_confirm_in_split_tsv": 0,
+      "hogs_in_tune": 0,
+      "confirm_hogs_without_pairs": 0,
+      "split_values": [
+        "confirm"
+      ],
+      "e6": [
+        {
+          "pair_set": "e6_orth",
+          "len": 133058
+        },
+        {
+          "pair_set": "e6_ldo",
+          "len": 86672
+        },
+        {
+          "pair_set": "e6_para",
+          "len": 29117
+        }
+      ],
+      "hogs_pair_count_mismatch": 0
+    },
+    "e6_triplets_total": 36500,
+    "e6_triplets_by_split": [
+      {
+        "split": "confirm",
+        "len": 29117
+      },
+      {
+        "split": "tune",
+        "len": 7383
+      }
+    ],
+    "e6_triplet_hogs_not_confirm": 0,
+    "e6_filter_log_triplets_all_splits": 36500,
+    "branch_table_hogs": 5600,
+    "branch_table_hogs_all_confirm": true,
+    "run_meta_n_pairs": {
+      "tdiaa": 866959,
+      "seqonly": 866959,
+      "tmalign": 866959
+    },
+    "run_meta_n_hogs": 5600,
+    "run_meta_split": "confirm"
+  },
+  "E6a_orientation_free": 0.030754638457402745,
+  "notes": [
+    "Inputs: confirm split only (5600 HOGs = split.tsv; pair tables, branch tables, E6 triplets all split=='confirm'); primary pairs 866959 = sum C(|S_h|,2) for every confirm HOG in all 3 alignments; no duplicate pair_ids; 29117 confirm E6 triplets (+7383 tune = 36500 = hogs_e6.tsv).",
+    "E1/E2 n_excluded bookkeeping: the 'hog_lt_min_pairs_or_range' bucket also counts weight-0 pairs already counted in 'pair_weight0_fail_or_sat' (E1: 20891 vs 20837 own; E2: 20932 vs 20877), so buckets + n_units exceed the primary-pair count by 54/55. n_units (pairs entering the fit) is correct. Reporting only.",
+    "fail_frac per HOG recomputed from the pair table (not ok, or AA/metric saturated) matches hogs_endpoint_cols exactly; same 183 (tdi) / 140 (lddt) excluded HOGs.",
+    "D31 wording vs implementation: DEVIATIONS says the PB pseudo-data use 'edge-level, tree-additive noise'; the code uses a tree-additive DESIGN (x_hat = X b_AA) with independent pair-level Sigma_ij noise. The independent PB here follows the implemented reading and reproduces pb_bias within MC error (E1 z=0.67, E2 z=1.06). Documentation fix suggested.",
+    "2 HOGs (HOG0022006, HOG0102266) have NaN misfit_ratio and are kept in E3-E5 (NaN is not > tau). Consistent with the rule as written; worth a line in the report.",
+    "E5 n_contrasts=146 counts contrasts with finite x_v; one of them has non-finite y_v (sum of 3Di path lengths <= 0 on one side) so beta uses 145. Reporting nuance.",
+    "E5 floor F (P=100 parametric bootstrap needing per-HOG WLS operators) was not re-simulated; sigma2_L checked as sigma2_obs - F. beta_contrast depends on random c_v/vx_v (200 HOG-pigeonhole reps); own 5 seeds give 0.583 +- 0.008 vs project 0.572 (1.4 sd).",
+    "E6a uses the plan's seeded P1 choice (stage e6_p1_choice) -> exact match; orientation-averaged E6a = 0.03075 (sign and conclusion unchanged).",
+    "Branch tables (b, b_se, cov_aa, ages) were used as inputs and not re-derived from pairs; their tip correction (b = b_raw - eta/2 on terminal 3Di edges) and tau = midpoint were checked."
+  ],
+  "E4_wald_p_recomputed": 1.2807532812075806e-12,
+  "E4_wald_p_project": 1.2807532812075806e-12,
+  "holm_recomputed": {
+    "E6": 0,
+    "E1": 2.4306759693316295e-15,
+    "E2": 6.852954735520311e-14,
+    "E4": 2.561506562415161e-12,
+    "E5": 4.100642022797363e-05
+  },
+  "holm_match": true
+}
