@@ -41,7 +41,17 @@ So "3Di saturates" (E1/E2), "deep branches are structurally conservative" (E4) a
 **The sign flips inside the plausible range of ν.**
 - The *mean* identical-pair tdi_ml is 0.0626, against a median of 0.0524. The mean is the relevant value for ratio-of-sums, and it gives ν = 0.031.
 - Non-identical orthologs probably have noisier AF models than identical sequences, which share their MSA.
-- The ν ± 0.005 sensitivity promised in C35 is **missing from E4.json**. The fine grid is in `e4_nu_grid.json`.
+- The ν ± 0.005 sensitivity promised in C35 is **missing from E4.json**.
+- Fine grid (`e4_nu_grid.json`), monotone in ν:
+
+| ν | 0.021 | 0.026 | 0.029 | 0.031 (mean-based) | 0.034 | 0.036 | 0.040 |
+|---|---|---|---|---|---|---|---|
+| β | −0.213 | −0.150 | −0.116 | **−0.079** | −0.034 | +0.010 | +0.081 |
+
+  - Under C35's ±0.005, β ranges from −0.21 to −0.10.
+  - With the mean-based ν (0.031), β halves to −0.079.
+  - β reaches zero at ν ≈ 0.036.
+  - Internal-only β stays at −0.047 for every ν, as it should, since internal edges are not tip-corrected.
 
 **By stratum.** β is −0.40 in stratum 2, −0.19 in stratum 3 and −0.12 in stratum 4. It is largest where terminal edges are shortest.
 
