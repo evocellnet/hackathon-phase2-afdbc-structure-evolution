@@ -57,3 +57,4 @@
 | 2026-10-31 | X7 pooled rho prok ELK internal branches MAFFT / FAMSA / FoldMason | 0.71 / 0.74 / 0.76 | scripts/kinase/08_branch_ratio.py | e205ac8+wt | pkl_sample.fasta 13706d36764e | pending |
 | 2026-10-31 | X7 per-branch rho Spearman (supported internal) L-INS-i vs FAMSA / vs FoldMason; rho_high flags in all 3 alignments | 0.74 / 0.59; 1 of 12 | scripts/kinase/11_compare_sources.py | e205ac8+wt | pkl_sample.fasta 13706d36764e | pending |
 | 2026-10-31 | X7 AA p-distance >0.75: euk ePK different group / ePK x ELK pairs (L-INS-i cols) | 60% / 95-98% | scripts/kinase/10_pairwise_pdist.py | e205ac8+wt | pkl_sample.fasta 13706d36764e | pending |
+| 2026-10-31 | FREEZE (plan/tuning/split) | plan_md5=6e19158062dfd7fe6e56e13eb615c7c6; tuning_md5=def68634581662caf4e33542176294ed; split_md5=29da378aec763731b728b38fa262941f | scripts/tuning/fill_tuning_table.py | 23a96c8 | — | PI |
