@@ -1,0 +1,87 @@
+{
+  "started": "2026-10-31T06:00:39",
+  "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+  "test_root": false,
+  "guards": {
+    "G1_tuning_no_nulls": {
+      "pass": true,
+      "detail": "ok"
+    },
+    "G2_git_clean": {
+      "pass": true,
+      "detail": "ok"
+    },
+    "G3_tuning_tracked": {
+      "pass": true,
+      "detail": "ok"
+    },
+    "G4_plan_md5_ledger": {
+      "pass": true,
+      "detail": "ok"
+    },
+    "G5_tuning_md5_ledger": {
+      "pass": true,
+      "detail": "ok"
+    },
+    "G6_split_md5_ledger": {
+      "pass": true,
+      "detail": "ok"
+    },
+    "G7_commit_ledger": {
+      "pass": true,
+      "detail": "no ledger row (not checked)"
+    },
+    "G8_tuning_split_md5": {
+      "pass": true,
+      "detail": "ok"
+    },
+    "G9_confirm_run_env": {
+      "pass": true,
+      "detail": "ok"
+    },
+    "G10_not_a_rerun": {
+      "pass": true,
+      "detail": "ok (first run)"
+    }
+  },
+  "guards_failed": [],
+  "rerun_logged_deviation": null,
+  "commit": "4e47ee57d0037f4c18f9acd60f7e6058d9c53402",
+  "provisional": false,
+  "quick": false,
+  "plan_md5": "6e19158062dfd7fe6e56e13eb615c7c6",
+  "tuning_md5": "def68634581662caf4e33542176294ed",
+  "split_md5": "29da378aec763731b728b38fa262941f",
+  "status": "done",
+  "finished": "2026-10-31T07:47:01",
+  "runtime_s": 6382.7,
+  "timing_s": {
+    "load": 3.93,
+    "branches": 118.22,
+    "E1": 1742.68,
+    "E2": 1386.04,
+    "E3": 87.12,
+    "E4": 2893.59,
+    "E6": 14.46,
+    "E5": 136.35,
+    "total": 6382.6
+  },
+  "decisions": {
+    "E1": "concave",
+    "E2": "concave",
+    "E3": "estimation_only",
+    "E4": "beta_k_gt_0",
+    "E6": "detected",
+    "E5": "artefact_suspect"
+  },
+  "holm": {
+    "E1": 2.4306759693316295e-15,
+    "E2": 6.852954735520311e-14,
+    "E4": 2.561506562415161e-12,
+    "E5": 4.100642022797363e-05,
+    "E6": 0.0
+  },
+  "interpretation": [
+    "R6_artefact_suspect"
+  ]
+}

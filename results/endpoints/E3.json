@@ -1,0 +1,219 @@
+{
+  "endpoint": "E3",
+  "estimand": "k = sum b_AA / sum b_3Di (tip-corrected, all edges, ratio of sums)",
+  "estimate": 3.321810104073422,
+  "se_boot": 0.10261263660153573,
+  "ci98": [
+    3.090697122017952,
+    3.570205015857321
+  ],
+  "ci_pct98": [
+    3.083920177163637,
+    3.547606401303823
+  ],
+  "one_sided_bound": null,
+  "p_value": null,
+  "p_holm": null,
+  "decision": "estimation_only",
+  "n_hogs": 4891,
+  "n_units": 146546,
+  "n_excluded": {
+    "underdetermined": 85,
+    "fail_frac": 183,
+    "misfit": 510,
+    "rank_deficient": 110
+  },
+  "sensitivity": {
+    "k_length_tertile_T1": {
+      "estimate": 3.7182962045906853,
+      "ci98": [
+        3.406325849242086,
+        4.058838548329058
+      ],
+      "decision": null
+    },
+    "k_length_tertile_T2": {
+      "estimate": 3.220059378057585,
+      "ci98": [
+        2.9949907697937634,
+        3.4620415203919306
+      ],
+      "decision": null
+    },
+    "k_length_tertile_T3": {
+      "estimate": 3.155325596902567,
+      "ci98": [
+        2.9207243479808027,
+        3.4087707144809882
+      ],
+      "decision": null
+    },
+    "k_plddt_tertile_T1": {
+      "estimate": 3.164364111715491,
+      "ci98": [
+        2.839652744812287,
+        3.5262058890143924
+      ],
+      "decision": null
+    },
+    "k_plddt_tertile_T2": {
+      "estimate": 3.143457325644155,
+      "ci98": [
+        2.879223523517549,
+        3.4319405483579417
+      ],
+      "decision": null
+    },
+    "k_plddt_tertile_T3": {
+      "estimate": 3.567545845106763,
+      "ci98": [
+        3.3850799843176858,
+        3.7598471574974996
+      ],
+      "decision": null
+    },
+    "k_stratum_1": {
+      "estimate": 2.2647022260869663,
+      "ci98": [
+        1.373172049294656,
+        3.7350572169581815
+      ],
+      "decision": null
+    },
+    "k_stratum_2": {
+      "estimate": 2.642847066220863,
+      "ci98": [
+        2.0690391369192946,
+        3.37578951059961
+      ],
+      "decision": null
+    },
+    "k_stratum_3": {
+      "estimate": 3.271567489395575,
+      "ci98": [
+        3.0103431413201576,
+        3.5554597383792936
+      ],
+      "decision": null
+    },
+    "k_stratum_4": {
+      "estimate": 3.742191305462795,
+      "ci98": [
+        3.567702264332361,
+        3.92521424971037
+      ],
+      "decision": null
+    },
+    "internal_edges_only": {
+      "estimate": 4.62796816969959,
+      "ci98": [
+        4.348198890307149,
+        4.925738201050789
+      ],
+      "decision": null
+    },
+    "aln_seqonly": {
+      "estimate": 3.0589916848979466,
+      "ci98": null,
+      "decision": null
+    },
+    "aln_tmalign": {
+      "estimate": 3.0796987428871043,
+      "ci98": null,
+      "decision": null
+    },
+    "cath_literal_rule": {
+      "estimate": 0.6109291768708784,
+      "ci98": null,
+      "decision": null,
+      "detail": {
+        "delta": 0.6109291768708784,
+        "se_boot": 0.04159464043461033,
+        "ci95": [
+          0.5294051790260978,
+          0.692453174715659
+        ],
+        "p_two_sided_unadjusted": 0.0,
+        "k_alpha": 4.72096444715835,
+        "k_beta": 2.5627577733382743,
+        "n_alpha": 798,
+        "n_beta": 578
+      }
+    }
+  },
+  "alignment_robust": true,
+  "flags": [],
+  "plan_md5": "6e19158062dfd7fe6e56e13eb615c7c6",
+  "tuning_md5": "def68634581662caf4e33542176294ed",
+  "commit": "4e47ee57d0037f4c18f9acd60f7e6058d9c53402",
+  "input_md5": "afb99fa4e4f4d14b36aa98008df1c2f7",
+  "sigma_k": 0.0,
+  "sigma2_k": -0.4102920036169958,
+  "sigma_k_ci98": [
+    -0.6211651954739138,
+    0.6211651954739138
+  ],
+  "ci98_overlaps_3_10": true,
+  "cath_contrast": {
+    "delta": 0.6056714403991117,
+    "se_boot": 0.037408646260493165,
+    "ci95": [
+      0.5323518404398104,
+      0.678991040358413
+    ],
+    "p_two_sided_unadjusted": 0.0,
+    "k_alpha": 4.6770530931398415,
+    "k_beta": 2.552304790193444,
+    "n_alpha": 1336,
+    "n_beta": 696
+  },
+  "B": 1000,
+  "runtime_s": 27.117859363555908,
+  "r_ratio": 0.3010406882602152,
+  "cath_rule": "C24 ted_class_labeled-equivalent (>= 60% of CATH-labelled TED residues)",
+  "run_meta": {
+    "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+    "split": "confirm",
+    "primary_alignment": "tdiaa",
+    "label": null,
+    "created": "2026-10-31T06:56:17",
+    "sizes": {
+      "B1": 200,
+      "Bs": 50,
+      "Bs_boot": 10,
+      "B_naive": 1000,
+      "B_sens": 50,
+      "B_alt": 200,
+      "B3": 1000,
+      "B4": 1000,
+      "B4_sens": 200,
+      "B4_alt": 200,
+      "B5": 1000,
+      "P": 100,
+      "B_cv": 200,
+      "spike_reps": 50,
+      "spike_B": 200,
+      "B6": 1000,
+      "neg_perms": 20,
+      "neg_B": 200,
+      "B3_alt": 200
+    },
+    "tuning": {
+      "tuning_md5": "def68634581662caf4e33542176294ed",
+      "provisional": false,
+      "used_provisional": []
+    },
+    "pair_table_flags": {
+      "tdiaa": [],
+      "seqonly": [],
+      "tmalign": []
+    },
+    "split_md5": "29da378aec763731b728b38fa262941f",
+    "driver_flags": [
+      "age_imputed:6",
+      "age_ci_missing:13",
+      "species_plddt_from_pair_tables"
+    ]
+  },
+  "confirm_guards_failed": []
+}

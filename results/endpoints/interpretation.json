@@ -1,0 +1,20 @@
+{
+  "row_ids": [
+    "R6_artefact_suspect"
+  ],
+  "modifiers": [],
+  "inputs": {
+    "E1": "concave",
+    "E2": "concave",
+    "E4": "beta_k_gt_0",
+    "E4_robust_alpha_timescale": true,
+    "E5": "artefact_suspect",
+    "E6": "detected",
+    "E6_positive": true,
+    "power": 0.24
+  },
+  "power_rule": "power >= 0.80 required for joint interpretation -> NOT met: E5 acceptance treated as inconclusive",
+  "missing_endpoints": [],
+  "not_estimable": [],
+  "labels": []
+}

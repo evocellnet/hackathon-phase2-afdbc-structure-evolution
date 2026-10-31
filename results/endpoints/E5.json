@@ -1,0 +1,175 @@
+{
+  "endpoint": "E5",
+  "estimand": "N0 (proportional lineage effects): disattenuated sister-contrast slope beta and excess lineage SD sigma_L",
+  "estimate": 0.572332067924561,
+  "se_boot": 0.20322801478811972,
+  "ci98": [
+    0.09955300777667819,
+    1.0451111280724439
+  ],
+  "ci_pct98": [
+    0.0870470126394629,
+    1.0342463116577993
+  ],
+  "one_sided_bound": {
+    "sigma2_L_lower99": 0.04595507111799902,
+    "sigma2_L_upper99": 0.1497257713661091,
+    "sigma_L_upper99": 0.38694414502109875,
+    "sigma_L_lower99": 0.21437133931101662
+  },
+  "p_value": 4.100642022797363e-05,
+  "p_holm": 4.100642022797363e-05,
+  "decision": "artefact_suspect",
+  "n_hogs": 4891,
+  "n_units": 162,
+  "n_excluded": {
+    "underdetermined": 85,
+    "fail_frac": 183,
+    "misfit": 510,
+    "rank_deficient": 110
+  },
+  "sensitivity": {
+    "internal_edges_only": {
+      "estimate": {
+        "beta": 1.064128351277094,
+        "sigma2_L": 0.0471941101385066
+      },
+      "ci98": {
+        "beta": [
+          0.7928122052032502,
+          1.3354444973509378
+        ],
+        "sigma2_L": [
+          -0.02217801905488522,
+          0.11656623933189841
+        ]
+      },
+      "decision": "no_excess"
+    },
+    "hidden_paralogy_removed": {
+      "estimate": {
+        "beta": 0.7567623737242455,
+        "sigma2_L": 0.10023362943735972
+      },
+      "ci98": {
+        "beta": [
+          -0.023547980507167776,
+          1.5370727279556586
+        ],
+        "sigma2_L": [
+          0.01261579653003124,
+          0.1878514623446882
+        ]
+      },
+      "decision": "excess"
+    },
+    "single_copy_hogs": {
+      "estimate": {
+        "beta": 0.3522258640550474,
+        "sigma2_L": 0.09484451381567852
+      },
+      "ci98": {
+        "beta": [
+          -25.944081591218794,
+          26.648533319328887
+        ],
+        "sigma2_L": [
+          -1.5869487097045407,
+          1.776637737335898
+        ]
+      },
+      "decision": "no_excess"
+    }
+  },
+  "alignment_robust": null,
+  "flags": [],
+  "plan_md5": "6e19158062dfd7fe6e56e13eb615c7c6",
+  "tuning_md5": "def68634581662caf4e33542176294ed",
+  "commit": "4e47ee57d0037f4c18f9acd60f7e6058d9c53402",
+  "input_md5": "afb99fa4e4f4d14b36aa98008df1c2f7",
+  "sigma_L": 0.3127945351857255,
+  "sigma2_L": 0.09784042124205405,
+  "sigma2_obs": 0.11160122663473664,
+  "beta_contrast": 0.572332067924561,
+  "power": {
+    "f=1.5": {
+      "detect_rate": 0.24,
+      "accept_rate": null,
+      "source": "tuning.yaml"
+    }
+  },
+  "floor_F": 0.013760805392682582,
+  "floor_F_sd": 0.001458057445184244,
+  "n_lineages": 162,
+  "n_contrasts": 146,
+  "decision_detail": {
+    "margins_met": false,
+    "beta_in": false,
+    "beta_out": false,
+    "sigma_ok": false,
+    "sigma_excess": true,
+    "p_iut": 0.999958993579772,
+    "p_reject": {
+      "beta_lt_0.8": 0.1313017885564131,
+      "beta_gt_1.25": 0.9995727666171549,
+      "sigma_gt_0.10": 4.100642022797363e-05
+    },
+    "e6_significant": true,
+    "power": 0.24
+  },
+  "min_t_snr": 8,
+  "beta_ci98_hog_only": [
+    0.2186366524138203,
+    0.9260274834353017
+  ],
+  "B": 1000,
+  "P": 100,
+  "runtime_s": 99.55002164840698,
+  "rho_scalar": 0.23233615726367368,
+  "e6_gate": "applied after Holm: E6 detected",
+  "run_meta": {
+    "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+    "split": "confirm",
+    "primary_alignment": "tdiaa",
+    "label": null,
+    "created": "2026-10-31T07:47:01",
+    "sizes": {
+      "B1": 200,
+      "Bs": 50,
+      "Bs_boot": 10,
+      "B_naive": 1000,
+      "B_sens": 50,
+      "B_alt": 200,
+      "B3": 1000,
+      "B4": 1000,
+      "B4_sens": 200,
+      "B4_alt": 200,
+      "B5": 1000,
+      "P": 100,
+      "B_cv": 200,
+      "spike_reps": 50,
+      "spike_B": 200,
+      "B6": 1000,
+      "neg_perms": 20,
+      "neg_B": 200,
+      "B3_alt": 200
+    },
+    "tuning": {
+      "tuning_md5": "def68634581662caf4e33542176294ed",
+      "provisional": false,
+      "used_provisional": []
+    },
+    "pair_table_flags": {
+      "tdiaa": [],
+      "seqonly": [],
+      "tmalign": []
+    },
+    "split_md5": "29da378aec763731b728b38fa262941f",
+    "driver_flags": [
+      "age_imputed:6",
+      "age_ci_missing:13",
+      "species_plddt_from_pair_tables"
+    ]
+  },
+  "confirm_guards_failed": []
+}

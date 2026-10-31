@@ -1,0 +1,365 @@
+{
+  "endpoint": "E4",
+  "estimand": "beta: slope of y=log(S_3Di/S_AA) on centred log mean cell age (MixedLM); beta_k = -beta",
+  "estimate": -0.15046883804872171,
+  "se_boot": 0.02120360296185299,
+  "ci98": [
+    -0.19979579472103448,
+    -0.10114188137640893
+  ],
+  "ci_pct98": [
+    -0.1793200454590727,
+    -0.07800443560849328
+  ],
+  "one_sided_bound": {
+    "lower99": -0.19979579472103448,
+    "upper99": -0.10114188137640893
+  },
+  "p_value": 1.2807532812075806e-12,
+  "p_holm": 2.561506562415161e-12,
+  "decision": "beta_k_gt_0",
+  "n_hogs": 4891,
+  "n_units": 6597,
+  "n_excluded": {
+    "underdetermined": 85,
+    "fail_frac": 183,
+    "misfit": 510,
+    "rank_deficient": 110,
+    "cells_aa_nonpositive": 0
+  },
+  "sensitivity": {
+    "pooled_ratio_of_sums_slope": {
+      "estimate": -0.15732013540187437,
+      "ci98": [
+        -0.45173878601694994,
+        0.13709851521320124
+      ],
+      "decision": null
+    },
+    "wls_1_over_vhg_clustered": {
+      "estimate": -0.0336733211431619,
+      "ci98": [
+        -0.11146393684563219,
+        0.044117294559308386
+      ],
+      "p_unadjusted": 0.3139303940866425,
+      "n_cells": 6597
+    },
+    "censored_dropped": {
+      "estimate": -0.17766043078089383,
+      "ci98": [
+        -0.22578877307938,
+        -0.12953208848240766
+      ],
+      "p_unadjusted": 0.0,
+      "B": 200
+    },
+    "bin5_excluded": {
+      "estimate": -0.16279236542975475,
+      "ci98": [
+        -0.21557492554514684,
+        -0.11000980531436268
+      ],
+      "p_unadjusted": 7.23421322845752e-13,
+      "B": 200
+    },
+    "internal_edges_only": {
+      "estimate": -0.04677672947738823,
+      "ci98": [
+        -0.12796927173593403,
+        0.03441581278115757
+      ],
+      "p_unadjusted": 0.18016151755666887,
+      "B": 200
+    },
+    "cells_plan_rule": {
+      "estimate": -0.2589570957223033,
+      "ci98": [
+        -0.319579564651871,
+        -0.1983346267927356
+      ],
+      "p_unadjusted": 0.0,
+      "B": 200,
+      "n_cells": 16110,
+      "censored_frac": 0.059652389819987585,
+      "note": "ANALYSIS_PLAN \u00a72.6 rule; biased under the null (D30)"
+    },
+    "alpha_x1.5": {
+      "estimate": -0.13775931618102288,
+      "ci98": [
+        -0.18486577662039577,
+        -0.09065285574165
+      ],
+      "p_unadjusted": 1.0229816993501117e-11,
+      "B": 200,
+      "decision": null,
+      "flags": [
+        "reml_polished:dllf=3.19",
+        "censored_cells_gt2pct:0.027"
+      ]
+    },
+    "alpha_div1.5": {
+      "estimate": -0.16743255667735438,
+      "ci98": [
+        -0.2142243921928682,
+        -0.12064072116184053
+      ],
+      "p_unadjusted": 0.0,
+      "B": 200,
+      "decision": null,
+      "flags": [
+        "censored_cells_gt2pct:0.026"
+      ]
+    },
+    "aa_ml_seq_le_1_hogs": {
+      "estimate": -0.12692025945961022,
+      "ci98": [
+        -0.24103941555780486,
+        -0.012801103361415572
+      ],
+      "p_unadjusted": 0.009673088177979405,
+      "B": 200,
+      "decision": null,
+      "flags": [
+        "reml_polished:dllf=0.00135",
+        "censored_cells_gt2pct:0.053"
+      ],
+      "note": "HOGs whose primary pairs all have aa_ml_seq <= 1",
+      "n_hogs": 1179
+    },
+    "ages_strassert2021": {
+      "estimate": -0.14160817729123848,
+      "ci98": [
+        -0.18566686155514697,
+        -0.09754949302732999
+      ],
+      "p_unadjusted": 7.593925488436071e-14,
+      "B": 200,
+      "decision": null,
+      "flags": [
+        "reml_polished:dllf=1.18",
+        "censored_cells_gt2pct:0.026"
+      ],
+      "n_cells": 6737,
+      "nodes_overridden": {
+        "N001": [
+          2132.2,
+          1951.1,
+          2335.5
+        ],
+        "N007": [
+          1821.0,
+          1725.3,
+          1935.1
+        ],
+        "N009": [
+          1111.8,
+          849.2,
+          1396.7
+        ],
+        "N030": [
+          881.7,
+          662.6,
+          1111.4
+        ],
+        "N039": [
+          493.1,
+          365.8,
+          675.6
+        ],
+        "N054": [
+          973.6,
+          804.9,
+          1184.2
+        ],
+        "N055": [
+          837.9,
+          734.8,
+          968.9
+        ],
+        "N056": [
+          650.8,
+          633.9,
+          672.0
+        ],
+        "N103": [
+          1026.0,
+          758.3,
+          1651.9
+        ],
+        "N029": [
+          1359.0,
+          1051.0,
+          1679.0
+        ],
+        "N006": [
+          1925.0,
+          1799.0,
+          2063.0
+        ]
+      },
+      "panel_flags": [
+        "age_imputed:6",
+        "age_override_repair:0",
+        "age_ci_missing:11"
+      ],
+      "note": "literature ages on deep panel nodes (TimeTree median >= 500 My) only; TimeTree elsewhere; branch engine refitted on the re-aged panel"
+    },
+    "ages_betts2018": {
+      "estimate": -0.15016752891526433,
+      "ci98": [
+        -0.19598963888071852,
+        -0.10434541894981014
+      ],
+      "p_unadjusted": 2.4646951146678475e-14,
+      "B": 200,
+      "decision": null,
+      "flags": [
+        "censored_cells_gt2pct:0.027"
+      ],
+      "n_cells": 6659,
+      "nodes_overridden": {
+        "N001": [
+          1492.923306804472,
+          1210.0,
+          1842.0
+        ],
+        "N029": [
+          1385.775955917839,
+          1125.0,
+          1707.0
+        ],
+        "N006": [
+          1365.176179106565,
+          1118.0,
+          1667.0
+        ]
+      },
+      "panel_flags": [
+        "age_imputed:6",
+        "age_override_repair:0",
+        "age_ci_missing:13"
+      ],
+      "note": "literature ages on deep panel nodes (TimeTree median >= 500 My) only; TimeTree elsewhere; branch engine refitted on the re-aged panel"
+    },
+    "aln_seqonly": {
+      "estimate": -0.10963153927172735,
+      "ci98": [
+        -0.15341079731219248,
+        -0.06585228123126222
+      ],
+      "p_unadjusted": 5.69026914476467e-09,
+      "B": 200,
+      "decision": null,
+      "flags": [
+        "censored_cells_gt2pct:0.026"
+      ]
+    },
+    "aln_tmalign": {
+      "estimate": -0.15078510812421017,
+      "ci98": [
+        -0.1936900571507048,
+        -0.10788015909771555
+      ],
+      "p_unadjusted": 2.220446049250313e-16,
+      "B": 200,
+      "decision": null,
+      "flags": []
+    }
+  },
+  "alignment_robust": true,
+  "flags": [
+    "reml_polished:dllf=4.24e-06",
+    "censored_cells_gt2pct:0.027"
+  ],
+  "plan_md5": "6e19158062dfd7fe6e56e13eb615c7c6",
+  "tuning_md5": "def68634581662caf4e33542176294ed",
+  "commit": "4e47ee57d0037f4c18f9acd60f7e6058d9c53402",
+  "input_md5": "afb99fa4e4f4d14b36aa98008df1c2f7",
+  "beta_k": 0.15046883804872171,
+  "mu": -1.3824391442642054,
+  "gamma": -0.07438156655925449,
+  "x_center": 5.024645751981377,
+  "z_center": -2.3897087225583844,
+  "se_model": [
+    0.012411192450969756,
+    0.009291677403581522,
+    0.01589754608183265
+  ],
+  "censored_frac": 0.026830377444292862,
+  "cell_rule": "info",
+  "info_T": 4.0,
+  "tip_var": 0.0007930497991755137,
+  "B": 1000,
+  "rep_fallback_count": 9,
+  "rep_failed": 0,
+  "mixed_engine_boot": "fast",
+  "fast_vs_statsmodels_abs_diff": 2.220446049250313e-16,
+  "runtime_s": 1562.370447397232,
+  "robust_alpha_timescale_detail": {
+    "alpha_x1.5": {
+      "sign_same": true,
+      "p_unadjusted": 1.0229816993501117e-11
+    },
+    "alpha_div1.5": {
+      "sign_same": true,
+      "p_unadjusted": 0.0
+    },
+    "ages_strassert2021": {
+      "sign_same": true,
+      "p_unadjusted": 7.593925488436071e-14
+    },
+    "ages_betts2018": {
+      "sign_same": true,
+      "p_unadjusted": 2.4646951146678475e-14
+    }
+  },
+  "robust_alpha_timescale": true,
+  "robust_alpha_timescale_note": "\u00a74.4: same sign as beta-hat and unadjusted p < 0.05 in alpha x1.5, alpha /1.5, Strassert 2021 and Betts 2018 deep ages",
+  "alignment_robust_rule": "same sign of beta across tdiaa/seqonly/tmalign",
+  "run_meta": {
+    "root": "/scratch/spascare/agentic-ai/workspaces/phase2-afdbc-evolution",
+    "split": "confirm",
+    "primary_alignment": "tdiaa",
+    "label": null,
+    "created": "2026-10-31T07:44:31",
+    "sizes": {
+      "B1": 200,
+      "Bs": 50,
+      "Bs_boot": 10,
+      "B_naive": 1000,
+      "B_sens": 50,
+      "B_alt": 200,
+      "B3": 1000,
+      "B4": 1000,
+      "B4_sens": 200,
+      "B4_alt": 200,
+      "B5": 1000,
+      "P": 100,
+      "B_cv": 200,
+      "spike_reps": 50,
+      "spike_B": 200,
+      "B6": 1000,
+      "neg_perms": 20,
+      "neg_B": 200,
+      "B3_alt": 200
+    },
+    "tuning": {
+      "tuning_md5": "def68634581662caf4e33542176294ed",
+      "provisional": false,
+      "used_provisional": []
+    },
+    "pair_table_flags": {
+      "tdiaa": [],
+      "seqonly": [],
+      "tmalign": []
+    },
+    "split_md5": "29da378aec763731b728b38fa262941f",
+    "driver_flags": [
+      "age_imputed:6",
+      "age_ci_missing:13",
+      "species_plddt_from_pair_tables"
+    ]
+  },
+  "confirm_guards_failed": []
+}

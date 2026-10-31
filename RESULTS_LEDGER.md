@@ -61,3 +61,9 @@
 | 2026-10-31 | freeze: ANALYSIS_PLAN.md md5 | 6e19158062dfd7fe6e56e13eb615c7c6 | scripts/endpoints/run_confirm.py --print-freeze-rows | 3c97c31 | - | PI |
 | 2026-10-31 | freeze: config/tuning.yaml md5 | def68634581662caf4e33542176294ed | scripts/endpoints/run_confirm.py --print-freeze-rows | 3c97c31 | - | PI |
 | 2026-10-31 | freeze: data/interim/split.tsv md5 | 29da378aec763731b728b38fa262941f | scripts/endpoints/run_confirm.py --print-freeze-rows | 3c97c31 | - | PI |
+| 2026-10-31 | CONFIRM E1 (global curvature c in y = eta + a_h x^c (SIMEX-corrected) ; ) | 0.7226 [98% CI 0.642, 0.8033]; concave; p_holm=2.4306759693316295e-15 | scripts/endpoints/run_confirm.py | 4e47ee5 | split confirm | pending (V11) |
+| 2026-10-31 | CONFIRM E2 (global curvature c in y = eta + a_h x^c (SIMEX-corrected) ; ) | 0.6988 [98% CI 0.606, 0.7917]; concave; p_holm=6.852954735520311e-14 | scripts/endpoints/run_confirm.py | 4e47ee5 | split confirm | pending (V11) |
+| 2026-10-31 | CONFIRM E3 (k = sum b_AA / sum b_3Di (tip-corrected, all edges, ratio of) | 3.322 [98% CI 3.091, 3.57]; estimation_only; p_holm=None | scripts/endpoints/run_confirm.py | 4e47ee5 | split confirm | pending (V11) |
+| 2026-10-31 | CONFIRM E4 (beta: slope of y=log(S_3Di/S_AA) on centred log mean cell ag) | -0.1505 [98% CI -0.1998, -0.1011]; beta_k_gt_0; p_holm=2.561506562415161e-12 | scripts/endpoints/run_confirm.py | 4e47ee5 | split confirm | pending (V11) |
+| 2026-10-31 | CONFIRM E5 (N0 (proportional lineage effects): disattenuated sister-cont) | 0.5723 [98% CI 0.09955, 1.045]; artefact_suspect; p_holm=4.100642022797363e-05 | scripts/endpoints/run_confirm.py | 4e47ee5 | split confirm | pending (V11) |
+| 2026-10-31 | CONFIRM E6 ((a) E6a = mean_dcg[r(P1,P2) - mean_O1 r(P1,O)] (x half A, y ) | 0.02968 [98% CI 0.02623, 0.03313]; detected; p_holm=0.0 | scripts/endpoints/run_confirm.py | 4e47ee5 | split confirm | pending (V11) |
